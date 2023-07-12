@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[KKeyAction.SETTING_KEY]))
         {
-            OnClick_SettingExit_Btn();
+            OnClick_Setting_Btn();
         }
     }
 
