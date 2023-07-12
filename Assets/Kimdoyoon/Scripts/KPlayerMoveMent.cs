@@ -9,7 +9,6 @@ public class KPlayerMoveMent : MonoBehaviour
     [SerializeField] private Vector2 dir;
     private bool isMove;
     [SerializeField] private float gridSize;
-    [SerializeField] private KInventoryData inven;
 
     private void Awake()
     {
@@ -34,16 +33,6 @@ public class KPlayerMoveMent : MonoBehaviour
         else if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.RIGHT_KEY]))
         {
             TryMove(Vector2.right);
-        }
-
-        /*test*/
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            inven.Save();
-        }
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            inven.Load();
         }
     }
 
@@ -80,9 +69,5 @@ public class KPlayerMoveMent : MonoBehaviour
         }
 
         isMove = false;
-    }
-    private void OnApplicationQuit()
-    {
-        inven.Container.Clear();
     }
 }
