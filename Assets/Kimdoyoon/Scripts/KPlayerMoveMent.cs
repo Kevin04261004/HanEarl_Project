@@ -9,6 +9,7 @@ public class KPlayerMoveMent : MonoBehaviour
     [SerializeField] private Vector2 dir;
     private bool isMove;
     [SerializeField] private float gridSize;
+    [SerializeField] private KInventoryData inven;
 
     private void Awake()
     {
@@ -18,21 +19,31 @@ public class KPlayerMoveMent : MonoBehaviour
     private void Update()
     {
         /* key input */
-        if (Input.GetKey(KKeySetting.key_Dictionary[KeyAction.UP_KEY]))
+        if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.UP_KEY]))
         {
             TryMove(Vector2.up);
         }
-        else if (Input.GetKey(KKeySetting.key_Dictionary[KeyAction.DOWN_KEY]))
+        else if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.DOWN_KEY]))
         {
             TryMove(Vector2.down);
         }
-        else if (Input.GetKey(KKeySetting.key_Dictionary[KeyAction.LEFT_KEY]))
+        else if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.LEFT_KEY]))
         {
             TryMove(Vector2.left);
         }
-        else if (Input.GetKey(KKeySetting.key_Dictionary[KeyAction.RIGHT_KEY]))
+        else if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.RIGHT_KEY]))
         {
             TryMove(Vector2.right);
+        }
+
+        /*test*/
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            inven.Save();
+        }
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            inven.Load();
         }
     }
 
@@ -69,5 +80,9 @@ public class KPlayerMoveMent : MonoBehaviour
         }
 
         isMove = false;
+    }
+    private void OnApplicationQuit()
+    {
+        inven.Container.Clear();
     }
 }
