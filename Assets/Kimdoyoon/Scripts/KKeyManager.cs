@@ -19,7 +19,7 @@ public static class KKeySetting
 }
 public class KKeyManager : MonoBehaviour
 {
-    [SerializeField] private SettingManager settingManager;
+    [SerializeField] private KSettingManager settingManager;
     [SerializeField] int key = -1;
     private void Awake()
     {
