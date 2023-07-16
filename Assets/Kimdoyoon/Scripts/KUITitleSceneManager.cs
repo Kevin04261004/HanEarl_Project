@@ -17,6 +17,6 @@ public class KUITitleSceneManager : MonoBehaviour
     }
     public void OnClick_ChangeTo_GameScene()
     {
-        SceneManager.LoadScene("KTitleScene");
+        SceneManager.LoadScene("KGameScene");
     }
 }
