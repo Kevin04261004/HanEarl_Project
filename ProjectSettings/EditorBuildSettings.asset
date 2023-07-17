@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Kimdoyoon/KGameScene.unity
+    path: Assets/Kimdoyoon/00_Scenes/KGameScene.unity
     guid: 8da33a287d06bcf48ae0a86e6d0ef2eb
   m_configObjects: {}
