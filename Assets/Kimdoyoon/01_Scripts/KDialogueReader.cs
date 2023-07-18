@@ -34,11 +34,11 @@ public class KDialogueReader : MonoBehaviour
                 wordIndex = 0;
                 if(dialogues[typeIndex].hasOption)
                 {
-                    TalkPanel_Change(dialogues[typeIndex].character_Name,null, dialogues[typeIndex].hasOption);
+                    TalkPanel_Change(dialogues[typeIndex].character_Name, dialogues[typeIndex].characterImage_Name, null, dialogues[typeIndex].hasOption);
                 }
                 else
                 {
-                    TalkPanel_Change(dialogues[typeIndex].character_Name, dialogues[typeIndex].contexts[contextsIndex], dialogues[typeIndex].hasOption);
+                    TalkPanel_Change(dialogues[typeIndex].character_Name, dialogues[typeIndex].characterImage_Name, dialogues[typeIndex].contexts[contextsIndex], dialogues[typeIndex].hasOption);
                 }
             }
             else
@@ -84,7 +84,7 @@ public class KDialogueReader : MonoBehaviour
             if (dialogues[typeIndex].hasOption)
             {
                 isTyping = false;
-                TalkPanel_Change(dialogues[typeIndex].character_Name, null, dialogues[typeIndex].hasOption);
+                TalkPanel_Change(dialogues[typeIndex].character_Name, dialogues[typeIndex].characterImage_Name, null, dialogues[typeIndex].hasOption);
                 return;
             }
             time += Time.deltaTime;
@@ -100,7 +100,7 @@ public class KDialogueReader : MonoBehaviour
                 }
                 else
                 {
-                    TalkPanel_Change_WithTyping(dialogues[typeIndex].character_Name, dialogues[typeIndex].contexts[contextsIndex], wordIndex);
+                    TalkPanel_Change_WithTyping(dialogues[typeIndex].character_Name, dialogues[typeIndex].characterImage_Name, dialogues[typeIndex].contexts[contextsIndex], wordIndex);
                 }
             }
         }
@@ -110,17 +110,26 @@ public class KDialogueReader : MonoBehaviour
         dialogues = _forSetting;
         StartReading();
     }
-    public void TalkPanel_Change(string _name, string _content = null, bool isOption = false)
+    public void TalkPanel_Change(string _name,string Image_Name, string _content = null, bool isOption = false)
     {
         Talk_SetActive_Bool(true);
         OptionBtn_SetActive_Bool(isOption);
+        if(string.IsNullOrEmpty(Image_Name))
+        {
+            ;
+        }
+        else
+        {
+            Sprite needChangePic = Resources.Load<Sprite>(Image_Name);
+            chararcterImage_Image.sprite = needChangePic;
+        }
         if (_content != null)
         {
             name_TMP.text = _name;
             dialogue_TMP.text = _content;
         }
     }
-    public void TalkPanel_Change_WithTyping(string name, string content = null, int typingIndex = 0)
+    public void TalkPanel_Change_WithTyping(string name, string Image_Name, string content = null, int typingIndex = 0)
     {
         if (!dialogue_GO.activeSelf)
         {
@@ -134,6 +143,15 @@ public class KDialogueReader : MonoBehaviour
         {
             name_TMP.text = name;
             dialogue_TMP.text = content.Substring(0, typingIndex);
+        }
+        if (string.IsNullOrEmpty(Image_Name))
+        {
+            ;
+        }
+        else
+        {
+            Sprite needChangePic = Resources.Load<Sprite>(Image_Name);
+            chararcterImage_Image.sprite = needChangePic;
         }
     }
     public void Talk_SetActive_Bool(bool isTrue)
