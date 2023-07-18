@@ -99,6 +99,16 @@ public class KPlayerManager : MonoBehaviour
                 default:
                     break;
             }
+            Collider2D[] collidersW = Physics2D.OverlapCircleAll(rigid.position, 0.2f);
+            foreach (Collider2D collider in collidersW)
+            {
+                if (collider.CompareTag("hasDialogue"))
+                {
+                    KDialogue[] temp = collider.GetComponent<KInteractiveObject>().GetDialogue();
+                    dialogueReader.SetDialogue(temp);
+                }
+
+            }
             Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
             foreach (Collider2D collider in colliders)
             {
