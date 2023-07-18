@@ -97,7 +97,6 @@ public class KPlayerManager : MonoBehaviour
                     targetPos = rigid.position + Vector2.right * gridSize;
                     break;
                 default:
-                    print("1");
                     break;
             }
             Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
@@ -108,7 +107,7 @@ public class KPlayerManager : MonoBehaviour
                     KDialogue[] temp = collider.GetComponent<KInteractiveObject>().GetDialogue();
                     dialogueReader.SetDialogue(temp);
                 }
-
+                
             }
         }
     }
