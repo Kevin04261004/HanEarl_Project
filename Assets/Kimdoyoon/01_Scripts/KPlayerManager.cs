@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class KPlayerMoveMent : MonoBehaviour
+public class KPlayerManager : MonoBehaviour
 {
     [SerializeField] private float curSpeed;
     
@@ -15,8 +16,10 @@ public class KPlayerMoveMent : MonoBehaviour
     [SerializeField] private float runSpeed;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private KDialogueReader dialogueReader;
     private void Awake()
     {
+        dialogueReader = GetComponent<KDialogueReader>();
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -34,7 +37,7 @@ public class KPlayerMoveMent : MonoBehaviour
         {
             return;
         }
-        /* key input */
+        /* move key input */
         if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.UP_KEY]))
         {
             spriteRenderer.flipX = false;
@@ -74,6 +77,39 @@ public class KPlayerMoveMent : MonoBehaviour
         else if (Input.GetKeyUp(KKeySetting.key_Dictionary[KKeyAction.RIGHT_KEY]))
         {
             animator.SetBool("isWalking", false);
+        }
+        /* Interaction key input */
+        if (Input.GetKeyDown(KKeySetting.key_Dictionary[KKeyAction.INTERACTION_KEY]))
+        {
+            Vector2 targetPos = new Vector2(0,0);
+            switch (animator.GetInteger("direction"))
+            {
+                case 0:
+                    targetPos = rigid.position + Vector2.down * gridSize;
+                    break;
+                case 1:
+                    targetPos = rigid.position + Vector2.up * gridSize;
+                    break;
+                case 2:
+                    targetPos = rigid.position + Vector2.left * gridSize;
+                    break;
+                case 3:
+                    targetPos = rigid.position + Vector2.right * gridSize;
+                    break;
+                default:
+                    print("1");
+                    break;
+            }
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.CompareTag("hasDialogue"))
+                {
+                    KDialogue[] temp = collider.GetComponent<KInteractiveObject>().GetDialogue();
+                    dialogueReader.SetDialogue(temp);
+                }
+
+            }
         }
     }
 
