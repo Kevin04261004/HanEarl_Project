@@ -162,6 +162,11 @@ public class KPlayerManager : MonoBehaviour
 
     public void AllEnemyTarget(Vector2 targetPosition)
     {
+        if(!enemys)
+        {
+            Debug.Log("enemys 오브젝트 없음");
+            return;
+        }
         // 모든 Enemy들에게 캐릭터가 이동한 위치를 target으로 이동하게 만들기.
         activeEnemy.Clear();
         for (int i = 0; i < enemys.childCount; ++i)
@@ -170,6 +175,10 @@ public class KPlayerManager : MonoBehaviour
             {
                 activeEnemy.Add(enemys.GetChild(i).gameObject.GetComponent<AstarAlg>());
             }
+        }
+        if(activeEnemy.Count == 0)
+        {
+            return;
         }
         for (int i = 0; i < activeEnemy.Count; ++i)
         {
