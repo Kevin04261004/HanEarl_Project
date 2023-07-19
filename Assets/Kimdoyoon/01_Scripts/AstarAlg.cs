@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 [System.Serializable]
 public class Node
 {
@@ -15,7 +14,6 @@ public class Node
     public int x, y, G, H;
     public int F { get { return G + H; } }
 }
-
 
 public class AstarAlg : MonoBehaviour
 {
@@ -145,7 +143,6 @@ public class AstarAlg : MonoBehaviour
         }
         Debug.Log("경로 못 찾음");
     }
-
     void OpenListAdd(int checkX, int checkY)
     {
         /* 상하좌우 범위를 벗어나지 않고, 벽이 아니면서, 닫힌리스트에 없다면 */
