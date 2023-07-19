@@ -174,6 +174,7 @@ public class KPlayerManager : MonoBehaviour
         for (int i = 0; i < activeEnemy.Count; ++i)
         {
             activeEnemy[i].PathFinding(new Vector2Int((int)targetPosition.x, (int)targetPosition.y));
+            activeEnemy[i].transform.GetComponent<KEnemy>().FindIndex();
         }
     }
 }

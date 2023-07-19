@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,46 +6,49 @@ using UnityEngine;
 public class KEnemy : MonoBehaviour
 {
     private AstarAlg root;
-    public bool playerNoneMove;
     [SerializeField] private float speed = 0.2f;
-    private Coroutine move_Coroutine;
-    public void OnEnable()
+    [SerializeField] private float time = 0;
+    private int index;
+    private void Awake()
     {
         root = GetComponent<AstarAlg>();
     }
-    public void MoveStart()    // AstarAlg에서 루트를 찾았을때 MoveStop()후 실행
+    private void Update()
     {
-        playerNoneMove = true;
-        move_Coroutine = StartCoroutine(MoveNext());
-    }
-    public void MoveStop()
-    {
-        playerNoneMove = false;
-        if(move_Coroutine != null)
+        if(!root.isPlayerFind)
         {
-            StopCoroutine(move_Coroutine);
+            return;
         }
-    }
-    public IEnumerator MoveNext()
-    {
-        int index = 0;
-        while(playerNoneMove)
+
+        if(time >= speed)
         {
-            if (!root.isPlayerFind)
-            {
-                yield break;
-            }
-            if (index +1 < root.FinalNodeList.Count)
+            time = 0;
+            if(index < root.FinalNodeList.Count-1)
             {
                 index++;
+                Move(new Vector2(root.FinalNodeList[index].x, root.FinalNodeList[index].y));
             }
-            else
-            {
-                yield break;
-            }
-            gameObject.transform.position = new Vector2(root.FinalNodeList[index].x, root.FinalNodeList[index].y);
-            yield return new WaitForSeconds(speed);
+        }
+        else
+        {
+            time += Time.deltaTime;
         }
     }
+    private void Move(Vector2 targetVec)
+    {
+        transform.position = targetVec;
+    }
+    public void FindIndex() // 플레이어가 한칸 이동하면 초기화.
+    {
+        index = 0;
+        for (int i = 0; i < root.FinalNodeList.Count; ++i)
+        {
+            if((Vector2)transform.position == new Vector2(root.FinalNodeList[index].x, root.FinalNodeList[index].y))
+            {
+                break;
+            }
+        }
 
+        return;
+    }
 }

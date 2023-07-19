@@ -133,9 +133,6 @@ public class AstarAlg : MonoBehaviour
                 }
                 FinalNodeList.Add(StartNode);
                 FinalNodeList.Reverse();
-                KEnemy enemy = GetComponent<KEnemy>();
-                enemy.MoveStop();
-                enemy.MoveStart();
                 return;
             }
 
