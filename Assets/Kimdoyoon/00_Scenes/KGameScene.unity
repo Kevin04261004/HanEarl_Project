@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e595d8a5d8d09f64ba3af6aa74fc2020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csv_File: {fileID: 4900000, guid: 6d4f7ee659d0dcc479b20b5c945c17f3, type: 3}
+  csv_File: {fileID: 4900000, guid: 7a43ba34e16a81449931a3342fa25ac4, type: 3}
   dialogues: []
 --- !u!1 &90151744
 GameObject:
@@ -25762,7 +25762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcf48672201d9243b1acb85fb5c9c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <data>k__BackingField: {fileID: 11400000, guid: 8b46f9a2c07b1824da007467c845333f, type: 2}
   dialogues_01: []
 --- !u!114 &7827484060866322119
 MonoBehaviour:
@@ -25777,6 +25776,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueEvent:
-    eventName: dd
+    eventName: "\u3147\u3147"
     line: {x: 1, y: 4}
     dialogues: []
