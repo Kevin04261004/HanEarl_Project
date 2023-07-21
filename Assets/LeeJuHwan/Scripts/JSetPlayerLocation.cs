@@ -7,7 +7,7 @@ public class JSetPlayerLocation : MonoBehaviour
     JPlayerData playerData = new JPlayerData();
     void Start()
     {
-        JDataManager.instance.LoadData();
+        //JDataManager.instance.LoadData();
         playerData = JDataManager.instance.playerData;
         if (playerData == null)
             return;

@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JPlayerData
+[Serializable]
+public class JPlayerData : JData
 {
     public Vector2 currentVec;
 
