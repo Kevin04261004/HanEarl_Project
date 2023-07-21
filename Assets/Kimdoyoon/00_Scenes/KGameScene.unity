@@ -2761,11 +2761,11 @@ GameObject:
   - component: {fileID: 321890409}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &321890405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5235,11 +5235,11 @@ GameObject:
   - component: {fileID: 684031313}
   m_Layer: 0
   m_Name: Enemy (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &684031309
 Transform:
   m_ObjectHideFlags: 0
@@ -25693,7 +25693,7 @@ GameObject:
   - component: {fileID: 7827484060866322119}
   m_Layer: 0
   m_Name: Key
-  m_TagString: hasDialogue
+  m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25775,7 +25775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisState: 2
   dialogueEvent:
     eventName: "\u3147\u3147"
     line: {x: 1, y: 4}
     dialogues: []
+  dialogueReader: {fileID: 0}

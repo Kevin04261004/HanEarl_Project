@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Wall
   - Item
-  - hasDialogue
+  - InteractiveObject
   - Enemy
   layers:
   - Default

@@ -104,20 +104,18 @@ public class KPlayerManager : MonoBehaviour
             Collider2D[] collidersW = Physics2D.OverlapCircleAll(rigid.position, 0.2f);
             foreach (Collider2D collider in collidersW)
             {
-                if (collider.CompareTag("hasDialogue"))
+                if (collider.CompareTag("InteractiveObject"))
                 {
-                    KDialogue[] temp = collider.GetComponent<KInteractiveObject>().GetDialogue();
-                    dialogueReader.SetDialogue(temp);
+                    collider.GetComponent<KInteractiveObject>().Interactive();
                 }
 
             }
             Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
             foreach (Collider2D collider in colliders)
             {
-                if (collider.CompareTag("hasDialogue"))
+                if (collider.CompareTag("InteractiveObject"))
                 {
-                    KDialogue[] temp = collider.GetComponent<KInteractiveObject>().GetDialogue();
-                    dialogueReader.SetDialogue(temp);
+                    collider.GetComponent<KInteractiveObject>().Interactive();
                 }
                 
             }
