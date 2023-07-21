@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class KUIManager : MonoBehaviour
 {
-    [SerializeField] private Image SettingBG_Image;
+    [field:SerializeField] public Image SettingBG_Image { get; private set; }
     [SerializeField] private Animator Player_animator;
-
+    [field:SerializeField] public Slider BGM_Slider { get; private set; }
+    [field: SerializeField] public Slider SFX_Slider { get; private set; }
     private void Update()
     {
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[KKeyAction.SETTING_KEY]))
