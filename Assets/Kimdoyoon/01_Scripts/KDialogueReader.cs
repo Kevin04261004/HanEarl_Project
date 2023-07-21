@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,7 +12,7 @@ public class KDialogueReader : MonoBehaviour
     private float time;
     [SerializeField] private float typetime = 0.02f;
     private int wordIndex;
-    private int typeIndex = 0;
+    public int typeIndex = 0;
     private int contextsIndex = 0;
     [SerializeField] private bool isTyping = false;
 
@@ -21,19 +22,24 @@ public class KDialogueReader : MonoBehaviour
     [SerializeField] private TextMeshProUGUI name_TMP;
     [SerializeField] private TextMeshProUGUI dialogue_TMP;
     [SerializeField] private GameObject Btns_GO;
-    [SerializeField] private TextMeshProUGUI Option_01_TMP;
-    [SerializeField] private TextMeshProUGUI Option_02_TMP;
-    [SerializeField] private TextMeshProUGUI Option_03_TMP;
+    [SerializeField] private TextMeshProUGUI[] Options_TMP;
 
     private void Update()
     {
-        if(isReading && Input.GetKeyDown(KeyCode.Return))
+        if(isReading && Input.GetKeyDown(KKeySetting.key_Dictionary[KKeyAction.INTERACTION_KEY]))
         {
             if(isTyping)
             {
                 isTyping = false;
                 wordIndex = 0;
-                TalkPanel_Change(dialogues[typeIndex].character_Name, dialogues[typeIndex].contexts[contextsIndex]);
+                if(dialogues[typeIndex].hasOption)
+                {
+                    TalkPanel_Change(dialogues[typeIndex].character_Name, dialogues[typeIndex].characterImage_Name, null, dialogues[typeIndex].hasOption);
+                }
+                else
+                {
+                    TalkPanel_Change(dialogues[typeIndex].character_Name, dialogues[typeIndex].characterImage_Name, dialogues[typeIndex].contexts[contextsIndex], dialogues[typeIndex].hasOption);
+                }
             }
             else
             {
@@ -46,6 +52,10 @@ public class KDialogueReader : MonoBehaviour
                 }
                 else
                 {
+                    if (dialogues[typeIndex].hasOption)
+                    {
+                        return;   
+                    }
                     isTyping = true;
                     if (dialogues[typeIndex].contexts.Length > contextsIndex+1)
                     {
@@ -58,7 +68,7 @@ public class KDialogueReader : MonoBehaviour
                             isTyping = false;
                             isReading = false;
                             Talk_SetActive_Bool(false);
-                            typeIndex = 0;
+                            typeIndex = -1;
                         }
                         typeIndex++;
                         contextsIndex = 0;
@@ -67,32 +77,121 @@ public class KDialogueReader : MonoBehaviour
             }
         }
     }
+    private void FixedUpdate()
+    {
+        if (isTyping)
+        {
+            if (dialogues[typeIndex].hasOption)
+            {
+                isTyping = false;
+                TalkPanel_Change(dialogues[typeIndex].character_Name, dialogues[typeIndex].characterImage_Name, null, dialogues[typeIndex].hasOption);
+                return;
+            }
+            time += Time.deltaTime;
+            if (time > typetime)
+            {
+                time = 0;
+                wordIndex++;
+               
+                if (wordIndex > dialogues[typeIndex].contexts[contextsIndex].Length)
+                {
+                    isTyping = false;
+                    wordIndex = 0;
+                }
+                else
+                {
+                    TalkPanel_Change_WithTyping(dialogues[typeIndex].character_Name, dialogues[typeIndex].characterImage_Name, dialogues[typeIndex].contexts[contextsIndex], wordIndex);
+                }
+            }
+        }
+    }
     public void SetDialogue(KDialogue[] _forSetting)
     {
         dialogues = _forSetting;
+        StartReading();
     }
-    public void TalkPanel_Change(string _name, string _content = null)
+    public void TalkPanel_Change(string _name,string Image_Name, string _content = null, bool isOption = false)
     {
         Talk_SetActive_Bool(true);
-        if (_content == null)
+        OptionBtn_SetActive_Bool(isOption);
+        if(string.IsNullOrEmpty(Image_Name))
         {
-            
+            ;
         }
         else
+        {
+            Sprite needChangePic = Resources.Load<Sprite>(Image_Name);
+            chararcterImage_Image.sprite = needChangePic;
+        }
+        if (_content != null)
         {
             name_TMP.text = _name;
             dialogue_TMP.text = _content;
         }
     }
+    public void TalkPanel_Change_WithTyping(string name, string Image_Name, string content = null, int typingIndex = 0)
+    {
+        if (!dialogue_GO.activeSelf)
+        {
+            Talk_SetActive_Bool(true);
+        }
+        if (content == null)
+        {
+            //Talk_SetActive_Bool(false);
+        }
+        else
+        {
+            name_TMP.text = name;
+            dialogue_TMP.text = content.Substring(0, typingIndex);
+        }
+        if (string.IsNullOrEmpty(Image_Name))
+        {
+            ;
+        }
+        else
+        {
+            Sprite needChangePic = Resources.Load<Sprite>(Image_Name);
+            chararcterImage_Image.sprite = needChangePic;
+        }
+    }
     public void Talk_SetActive_Bool(bool isTrue)
     {
-        if (isTrue && !dialogue_GO.activeSelf)
+        if (isTrue)
         {
+            KGameManager.instance.canInput = false;
             dialogue_GO.SetActive(true);
         }
         else
         {
+            KGameManager.instance.canInput = true;
             dialogue_GO.SetActive(false);
         }
+    }
+    public void OptionBtn_SetActive_Bool(bool isTrue)
+    {
+        if(isTrue)
+        {
+            Btns_GO.SetActive(true);
+            for (int i = 0; i < dialogues[typeIndex].option_Contexts.Length; ++i)
+            {
+                Options_TMP[i].text = dialogues[typeIndex].option_Contexts[i];
+                Options_TMP[i].transform.parent.GetComponent<KUIButoon>().num = int.Parse(dialogues[typeIndex].nextLine[i]);
+                Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(ButtonState.forChangeLine);
+            }
+        }
+        else
+        {
+            Btns_GO.SetActive(false);
+        }
+    }
+    public void StartReading()
+    {
+        StartCoroutine(read());
+    }
+    private IEnumerator read()
+    {
+        yield return null;
+        isReading = true;
+        isTyping = true;
     }
 }

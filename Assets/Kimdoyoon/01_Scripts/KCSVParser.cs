@@ -21,6 +21,7 @@ public class KCSVParser : MonoBehaviour
             string[] row = data[i].Split(',');
             KDialogue tempDialogue = new KDialogue();
             List<string> contextList = new List<string>();
+            List<string> NextLineList = new List<string>();
 
             tempDialogue.character_Name = row[1];
             if (!(row[2] == ""))
@@ -41,6 +42,10 @@ public class KCSVParser : MonoBehaviour
             do
             {
                 contextList.Add(row[4]);
+                if (!(row[5] == ""))
+                {
+                    NextLineList.Add(row[5]);
+                }
                 if (++i < data.Length)
                 {
                     row = data[i].Split(new char[] { ',' });
@@ -55,6 +60,7 @@ public class KCSVParser : MonoBehaviour
             {
                 case true:
                     tempDialogue.option_Contexts = contextList.ToArray();
+                    tempDialogue.nextLine = NextLineList.ToArray(); 
                     break;
                 case false:
                     tempDialogue.contexts = contextList.ToArray();

@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
 public class KPlayerManager : MonoBehaviour
@@ -17,6 +17,8 @@ public class KPlayerManager : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private KDialogueReader dialogueReader;
+    [SerializeField] private Transform enemys;
+    [SerializeField] private List<AstarAlg> activeEnemy;
     private void Awake()
     {
         dialogueReader = GetComponent<KDialogueReader>();
@@ -97,8 +99,17 @@ public class KPlayerManager : MonoBehaviour
                     targetPos = rigid.position + Vector2.right * gridSize;
                     break;
                 default:
-                    print("1");
                     break;
+            }
+            Collider2D[] collidersW = Physics2D.OverlapCircleAll(rigid.position, 0.2f);
+            foreach (Collider2D collider in collidersW)
+            {
+                if (collider.CompareTag("hasDialogue"))
+                {
+                    KDialogue[] temp = collider.GetComponent<KInteractiveObject>().GetDialogue();
+                    dialogueReader.SetDialogue(temp);
+                }
+
             }
             Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
             foreach (Collider2D collider in colliders)
@@ -108,7 +119,7 @@ public class KPlayerManager : MonoBehaviour
                     KDialogue[] temp = collider.GetComponent<KInteractiveObject>().GetDialogue();
                     dialogueReader.SetDialogue(temp);
                 }
-
+                
             }
         }
     }
@@ -136,6 +147,7 @@ public class KPlayerManager : MonoBehaviour
 
     private IEnumerator MoveToTarget(Vector2 targetPosition)
     {
+        AllEnemyTarget(targetPosition);
         isMoving = true;
         animator.SetBool("isWalking", true);
         while ((Vector2)transform.position != targetPosition)
@@ -145,5 +157,32 @@ public class KPlayerManager : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         isMoving = false;
+    }
+
+    public void AllEnemyTarget(Vector2 targetPosition)
+    {
+        if(!enemys)
+        {
+            Debug.Log("enemys 오브젝트 없음");
+            return;
+        }
+        // 모든 Enemy들에게 캐릭터가 이동한 위치를 target으로 이동하게 만들기.
+        activeEnemy.Clear();
+        for (int i = 0; i < enemys.childCount; ++i)
+        {
+            if (enemys.GetChild(i).gameObject.activeSelf)
+            {
+                activeEnemy.Add(enemys.GetChild(i).gameObject.GetComponent<AstarAlg>());
+            }
+        }
+        if(activeEnemy.Count == 0)
+        {
+            return;
+        }
+        for (int i = 0; i < activeEnemy.Count; ++i)
+        {
+            activeEnemy[i].PathFinding(new Vector2Int((int)targetPosition.x, (int)targetPosition.y));
+            activeEnemy[i].transform.GetComponent<KEnemy>().FindIndex();
+        }
     }
 }

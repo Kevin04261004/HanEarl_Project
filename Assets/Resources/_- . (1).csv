@@ -1,0 +1,11 @@
+index,character_name,characterImage_Name,hasOption,contexts,changeNum
+1,NPC1,NPC1_None,no,안녕? 나는 NPC1이야 만나서 반가워,
+,,,,이 곳은 처음인거 같은데 이 학교의 괴담을 알고 있니?,
+2,플레이어,Player_None,yes,아니 나는 잘 모르겠어,4
+,,,,안녕? 나도 이곳은 처음이라 잘 모르겠넹..,4
+,,,,그게 뭔데 씹덕아,3
+3,NPC1,NPC1_Angry,no,너 뭐라 했냐 ㅂㄷㅂㄷ,
+4,NPC1,NPC1_None,no,이 학교에서는 어쩌구저쩌구~~~~~~~~,
+,,,,~~~~~~~~~~~~~~~~~~~~~~~~~~~~~,
+,,,,~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~한데 ㄷㄷ.,
+5,NPC2,NPC2_Angry,no, ???,

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KInteractiveObject : MonoBehaviour
 {
-    [SerializeField] KDialogueEvent dialogueEvent;
+    [SerializeField] private KDialogueEvent dialogueEvent;
     public KDialogue[] GetDialogue()
     {
         dialogueEvent.dialogues = KDataBaseManager.instance.GetDialogue((int)dialogueEvent.line.x, (int)dialogueEvent.line.y);

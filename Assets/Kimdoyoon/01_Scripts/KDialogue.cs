@@ -8,6 +8,7 @@ public class KDialogue
     [Tooltip("선택지")] public bool hasOption;
     [Tooltip("대사 내용")] public string[] contexts;
     [Tooltip("선택지 내용")] public string[] option_Contexts;
+    [Tooltip("버튼 클릭시 몇 줄로 이동")] public string[] nextLine;
 }
 [System.Serializable]
 public class KDialogueEvent
