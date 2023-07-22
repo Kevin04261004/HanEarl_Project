@@ -15,7 +15,7 @@ public class KCameraMap : MonoBehaviour
     
     private void Awake()
     {
-        offset = transform.position;
+        offset = transform.position - target.transform.position;
     }
     private void Start()
     {
