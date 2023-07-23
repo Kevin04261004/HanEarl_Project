@@ -8,6 +8,7 @@ TagManager:
   - Item
   - InteractiveObject
   - Enemy
+  - FadeObj
   layers:
   - Default
   - TransparentFX
