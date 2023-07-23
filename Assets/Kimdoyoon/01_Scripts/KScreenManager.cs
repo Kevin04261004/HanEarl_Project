@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class KScreenManager : MonoBehaviour
 {
-    private bool isFullScreen;
+    private bool _isFullScreen;
 
     private void Awake()
     {
-        isFullScreen = false;
-        Screen.SetResolution(Screen.width, Screen.height,false);
+        _isFullScreen = false;
+        Screen.SetResolution(Screen.width, Screen.height,_isFullScreen);
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KKeySetting.key_Dictionary[KKeyAction.SETFULLSCREEN_KEY]) && KGameManager.instance.canInput)
+        if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SetFullScreenKey]) && KGameManager.Instance._canInput)
         {
             SetFullScreen();
         }
@@ -21,14 +21,14 @@ public class KScreenManager : MonoBehaviour
 
     private void SetFullScreen()
     {
-        if(!isFullScreen)
+        if(!_isFullScreen)
         {
-            isFullScreen = true;
+            _isFullScreen = true;
         }
         else
         {
-            isFullScreen = false;
+            _isFullScreen = false;
         }
-        Screen.SetResolution(Screen.width, Screen.height, isFullScreen);
+        Screen.SetResolution(Screen.width, Screen.height, _isFullScreen);
     }
 }

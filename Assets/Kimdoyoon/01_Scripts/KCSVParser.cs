@@ -1,34 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class KCSVParser : MonoBehaviour
 {
-    public List<KDialogue> dialogueList;
-    public KDialogue[] Parse(string _CSVFileName)
+    public List<KDialogue> _dialogueList;
+    public KDialogue[] Parse(string CSVFileName)
     {
-        TextAsset csvData = Resources.Load<TextAsset>(_CSVFileName);
+        TextAsset csvData = Resources.Load<TextAsset>(CSVFileName);
         if(!csvData)
         {
-            Debug.Log("TextAsset¿« ∆ƒ¿œ¿ª CSVManagerø°º≠ ∆ƒ¿œ¿ª √ﬂ∞°«ÿ¡÷ººø‰.");
+            Debug.Log("TextAssetÏùò ÌååÏùºÏùÑ CSVManagerÏóêÏÑú ÌååÏùºÏùÑ Ï∂îÍ∞ÄÌï¥Ï£ºÏÑ∏Ïöî.");
             return null;
         }
-        dialogueList = new List<KDialogue>();
+        _dialogueList = new List<KDialogue>();
         string[] data = csvData.text.Split('\n');
         for (int i = 1; i < data.Length;)
         {
             string[] row = data[i].Split(',');
             KDialogue tempDialogue = new KDialogue();
             List<string> contextList = new List<string>();
-            List<string> NextLineList = new List<string>();
-
+            List<string> nextLineList = new List<string>();
             tempDialogue.character_Name = row[1];
-            if (!(row[2] == ""))
+            if (row[2] != string.Empty)
             {
                 tempDialogue.characterImage_Name = row[2];
             }
-            if (!(row[3] == ""))
+            if (row[3] != string.Empty)
             {
                 if (row[3] == "no")
                 {
@@ -42,9 +42,9 @@ public class KCSVParser : MonoBehaviour
             do
             {
                 contextList.Add(row[4]);
-                if (!(row[5] == ""))
+                if (row[5] != string.Empty)
                 {
-                    NextLineList.Add(row[5]);
+                    nextLineList.Add(row[5]);
                 }
                 if (++i < data.Length)
                 {
@@ -55,19 +55,19 @@ public class KCSVParser : MonoBehaviour
                     break;
                 }
 
-            } while (row[0].ToString() == "");
+            } while (row[0] == string.Empty);
             switch (tempDialogue.hasOption)
             {
                 case true:
                     tempDialogue.option_Contexts = contextList.ToArray();
-                    tempDialogue.nextLine = NextLineList.ToArray(); 
+                    tempDialogue.nextLine = nextLineList.ToArray(); 
                     break;
                 case false:
                     tempDialogue.contexts = contextList.ToArray();
                     break;
             }
-            dialogueList.Add(tempDialogue);
+            _dialogueList.Add(tempDialogue);
         }
-        return dialogueList.ToArray();
+        return _dialogueList.ToArray();
     }
 }

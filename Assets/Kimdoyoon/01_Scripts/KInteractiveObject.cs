@@ -2,37 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum InteractiveState
+public enum EInteractiveType
 {
-    Disappearitem,
-    cantDisappearitem,
+    DisappearItem,
+    CantDisappearItem,
     NPC,
 }
 public class KInteractiveObject : MonoBehaviour
 {
-    [SerializeField] private InteractiveState thisState;
-    [SerializeField] private KDialogueEvent dialogueEvent;
-    [SerializeField] private KDialogueReader dialogueReader;
+    [SerializeField] private EInteractiveType _interactiveType;
+    [SerializeField] private KDialogueEvent _dialogueEvent;
+    [SerializeField] private KDialogueReader _dialogueReader;
 
+    private void Awake()
+    {
+        _dialogueReader = FindObjectOfType<KDialogueReader>();
+        Debug.Assert(_dialogueReader != null,"_dialogueReader를 찾지 못했습니다.");
+    }
+    
     public KDialogue[] GetDialogue()
     {
-        dialogueReader = FindObjectOfType<KDialogueReader>();
-        dialogueEvent.dialogues = KDataBaseManager.instance.GetDialogue((int)dialogueEvent.line.x, (int)dialogueEvent.line.y);
-        return dialogueEvent.dialogues;
+        _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_dialogueEvent.line.x, (int)_dialogueEvent.line.y);
+        return _dialogueEvent.dialogues;
     }
     public void Interactive()
     {
-        switch(thisState)
+        switch(_interactiveType)
         {
-            case InteractiveState.Disappearitem:
+            case EInteractiveType.DisappearItem:
                 JItem item = GetComponent<JItem>();
                 item.Get();
                 break;
-            case InteractiveState.cantDisappearitem:
+            case EInteractiveType.CantDisappearItem:
                 break;
-            case InteractiveState.NPC:
-                KDialogue[] temp = GetDialogue();
-                dialogueReader.SetDialogue(temp);
+            case EInteractiveType.NPC:
+                _dialogueReader.SetDialogue(GetDialogue());
                 break;
             default:
                 break;

@@ -26,7 +26,7 @@ public class KDialogueReader : MonoBehaviour
 
     private void Update()
     {
-        if(isReading && Input.GetKeyDown(KKeySetting.key_Dictionary[KKeyAction.INTERACTION_KEY]))
+        if(isReading && Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InteractionKey]))
         {
             if(isTyping)
             {
@@ -110,7 +110,7 @@ public class KDialogueReader : MonoBehaviour
         dialogues = _forSetting;
         StartReading();
     }
-    public void TalkPanel_Change(string _name,string Image_Name, string _content = null, bool isOption = false)
+    private void TalkPanel_Change(string _name,string Image_Name, string _content = null, bool isOption = false)
     {
         Talk_SetActive_Bool(true);
         OptionBtn_SetActive_Bool(isOption);
@@ -129,7 +129,7 @@ public class KDialogueReader : MonoBehaviour
             dialogue_TMP.text = _content;
         }
     }
-    public void TalkPanel_Change_WithTyping(string name, string Image_Name, string content = null, int typingIndex = 0)
+    private void TalkPanel_Change_WithTyping(string name, string Image_Name, string content = null, int typingIndex = 0)
     {
         if (!dialogue_GO.activeSelf)
         {
@@ -154,16 +154,16 @@ public class KDialogueReader : MonoBehaviour
             chararcterImage_Image.sprite = needChangePic;
         }
     }
-    public void Talk_SetActive_Bool(bool isTrue)
+    private void Talk_SetActive_Bool(bool isTrue)
     {
         if (isTrue)
         {
-            KGameManager.instance.canInput = false;
+            KGameManager.Instance._canInput = false;
             dialogue_GO.SetActive(true);
         }
         else
         {
-            KGameManager.instance.canInput = true;
+            KGameManager.Instance._canInput = true;
             dialogue_GO.SetActive(false);
         }
     }
@@ -175,8 +175,8 @@ public class KDialogueReader : MonoBehaviour
             for (int i = 0; i < dialogues[typeIndex].option_Contexts.Length; ++i)
             {
                 Options_TMP[i].text = dialogues[typeIndex].option_Contexts[i];
-                Options_TMP[i].transform.parent.GetComponent<KUIButoon>().num = int.Parse(dialogues[typeIndex].nextLine[i]);
-                Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(ButtonState.forChangeLine);
+                Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._num = int.Parse(dialogues[typeIndex].nextLine[i]);
+                Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.ChangeLine);
             }
         }
         else
@@ -186,9 +186,9 @@ public class KDialogueReader : MonoBehaviour
     }
     public void StartReading()
     {
-        StartCoroutine(read());
+        StartCoroutine(Read());
     }
-    private IEnumerator read()
+    private IEnumerator Read()
     {
         yield return null;
         isReading = true;

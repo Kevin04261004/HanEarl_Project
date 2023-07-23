@@ -5,182 +5,177 @@ using UnityEngine;
 
 public class KPlayerManager : MonoBehaviour
 {
-    [SerializeField] private float curSpeed;
+    [SerializeField] private float _curSpeed;
     
-    [SerializeField] private Rigidbody2D rigid;
-    [SerializeField] private Vector2 dir;
-    [SerializeField] private float gridSize;
-    private bool isMoving;
-    private bool isRunning;
-    [SerializeField] private float walkSpeed;
-    [SerializeField] private float runSpeed;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-    private KDialogueReader dialogueReader;
-    [SerializeField] private Transform enemys;
-    [SerializeField] private List<AstarAlg> activeEnemy;
+    [SerializeField] private Rigidbody2D _rigidbody2D;
+    [SerializeField] private Vector2 _dir;
+    [SerializeField] private float _gridSize;
+    private bool _isMoving;
+    [SerializeField] private float _walkSpeed;
+    [SerializeField] private float _runSpeed;
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
+    private KDialogueReader _dialogueReader;
+    [SerializeField] private Transform _enemys;
+    [SerializeField] private List<KAstarAlg> _activeEnemy;
     private void Awake()
     {
-        dialogueReader = GetComponent<KDialogueReader>();
-        rigid = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _dialogueReader = GetComponent<KDialogueReader>();
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        curSpeed = walkSpeed;
+        _curSpeed = _walkSpeed;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            isRunning = true;
-            curSpeed = runSpeed;
+            _curSpeed = _runSpeed;
         }
-        if(!KGameManager.instance.canInput)
+        if(!KGameManager.Instance._canInput)
         {
             return;
         }
         /* move key input */
-        if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.UP_KEY]))
+        if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.UpKey]))
         {
-            spriteRenderer.flipX = false;
-            animator.SetInteger("direction", 1);
+            _spriteRenderer.flipX = false;
+            _animator.SetInteger("direction", 1);
             TryMove(Vector2.up);
         }
-        else if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.DOWN_KEY]))
+        else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.DownKey]))
         {
-            spriteRenderer.flipX = false;
-            animator.SetInteger("direction", 0);
+            _spriteRenderer.flipX = false;
+            _animator.SetInteger("direction", 0);
             TryMove(Vector2.down);
         }
-        else if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.LEFT_KEY]))
+        else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.LeftKey]))
         {
-            spriteRenderer.flipX = false;
-            animator.SetInteger("direction", 2);
+            _spriteRenderer.flipX = false;
+            _animator.SetInteger("direction", 2);
             TryMove(Vector2.left);
         }
-        else if (Input.GetKey(KKeySetting.key_Dictionary[KKeyAction.RIGHT_KEY]))
+        else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.RightKey]))
         {
-            spriteRenderer.flipX = true;
-            animator.SetInteger("direction", 3);
+            _spriteRenderer.flipX = true;
+            _animator.SetInteger("direction", 3);
             TryMove(Vector2.right);
         }
-        if (Input.GetKeyUp(KKeySetting.key_Dictionary[KKeyAction.UP_KEY]))
+        if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.UpKey]))
         {
-            animator.SetBool("isWalking", false);
+            _animator.SetBool("isWalking", false);
         }
-        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[KKeyAction.DOWN_KEY]))
+        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.DownKey]))
         {
-            animator.SetBool("isWalking", false);
+            _animator.SetBool("isWalking", false);
         }
-        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[KKeyAction.LEFT_KEY]))
+        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.LeftKey]))
         {
-            animator.SetBool("isWalking", false);
+            _animator.SetBool("isWalking", false);
         }
-        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[KKeyAction.RIGHT_KEY]))
+        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.RightKey]))
         {
-            animator.SetBool("isWalking", false);
+            _animator.SetBool("isWalking", false);
         }
         /* Interaction key input */
-        if (Input.GetKeyDown(KKeySetting.key_Dictionary[KKeyAction.INTERACTION_KEY]))
+        if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InteractionKey]))
         {
             Vector2 targetPos = new Vector2(0,0);
-            switch (animator.GetInteger("direction"))
+            switch (_animator.GetInteger("direction"))
             {
                 case 0:
-                    targetPos = rigid.position + Vector2.down * gridSize;
+                    targetPos = _rigidbody2D.position + Vector2.down * _gridSize;
                     break;
                 case 1:
-                    targetPos = rigid.position + Vector2.up * gridSize;
+                    targetPos = _rigidbody2D.position + Vector2.up * _gridSize;
                     break;
                 case 2:
-                    targetPos = rigid.position + Vector2.left * gridSize;
+                    targetPos = _rigidbody2D.position + Vector2.left * _gridSize;
                     break;
                 case 3:
-                    targetPos = rigid.position + Vector2.right * gridSize;
+                    targetPos = _rigidbody2D.position + Vector2.right * _gridSize;
                     break;
                 default:
                     break;
             }
-            Collider2D[] collidersW = Physics2D.OverlapCircleAll(rigid.position, 0.2f);
-            foreach (Collider2D collider in collidersW)
+            Collider2D[] collidersW = Physics2D.OverlapCircleAll(_rigidbody2D.position, 0.2f);
+            foreach (var c in collidersW)
             {
-                if (collider.CompareTag("InteractiveObject"))
-                {
-                    collider.GetComponent<KInteractiveObject>().Interactive();
-                }
+                if (!c.CompareTag("InteractiveObject")) continue;
+                c.TryGetComponent(out KInteractiveObject interactiveObject);
+                interactiveObject.Interactive();
 
             }
             Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
-            foreach (Collider2D collider in colliders)
+            foreach (var c in colliders)
             {
-                if (collider.CompareTag("InteractiveObject"))
-                {
-                    collider.GetComponent<KInteractiveObject>().Interactive();
-                }
-                
+                if (!c.CompareTag("InteractiveObject")) continue;
+                c.TryGetComponent(out KInteractiveObject interactiveObject);
+                interactiveObject.Interactive();
             }
         }
     }
 
+
     private void TryMove(Vector2 direction)
     {
-        Vector2 targetPos = rigid.position + direction * gridSize;
+        Vector2 targetPos = _rigidbody2D.position + direction * _gridSize;
         Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
 
         bool canMove = true;
-        foreach (Collider2D collider in colliders)
+        foreach (var c in colliders)
         {
-            if (collider.CompareTag("Wall"))
+            if (c.CompareTag("Wall"))
             {
                 canMove = false;
                 break;
             }
         }
 
-        if (canMove && !isMoving)
+        if (canMove && !_isMoving)
         {
             StartCoroutine(MoveToTarget(targetPos));
         }
     }
-
     private IEnumerator MoveToTarget(Vector2 targetPosition)
     {
-        AllEnemyTarget(targetPosition);
-        isMoving = true;
-        animator.SetBool("isWalking", true);
+        if (_enemys.gameObject.activeSelf)
+        {
+            AllEnemyTarget(targetPosition);   
+        }
+        _isMoving = true;
+        _animator.SetBool("isWalking", true);
         while ((Vector2)transform.position != targetPosition)
         {
-            Vector2 newPosition = Vector2.MoveTowards(rigid.position, targetPosition, curSpeed * Time.fixedDeltaTime);
-            rigid.MovePosition(newPosition);
+            Vector2 newPosition = Vector2.MoveTowards(_rigidbody2D.position, targetPosition, _curSpeed * Time.fixedDeltaTime);
+            _rigidbody2D.MovePosition(newPosition);
             yield return new WaitForFixedUpdate();
         }
-        isMoving = false;
+        _isMoving = false;
     }
-
-    public void AllEnemyTarget(Vector2 targetPosition)
+    
+    private void AllEnemyTarget(Vector2 targetPosition)
     {
-        if(!enemys)
+        // EnemyÍ∞Ä ÌÉÄÍ≤üÏùÑ ÌîåÎ†àÏù¥Ïñ¥Î°ú Ïû°Í≥† A*ÏïåÍ≥†Î¶¨Ï¶ò ÎèåÎ¶¨Í∏∞
+        _activeEnemy.Clear();
+        for (int i = 0; i < _enemys.childCount; ++i)
         {
-            Debug.Log("enemys ø¿∫Í¡ß∆Æ æ¯¿Ω");
-            return;
-        }
-        // ∏µÁ EnemyµÈø°∞‘ ƒ≥∏Ø≈Õ∞° ¿Ãµø«— ¿ßƒ°∏¶ target¿∏∑Œ ¿Ãµø«œ∞‘ ∏∏µÈ±‚.
-        activeEnemy.Clear();
-        for (int i = 0; i < enemys.childCount; ++i)
-        {
-            if (enemys.GetChild(i).gameObject.activeSelf)
+            if (_enemys.GetChild(i).gameObject.activeSelf)
             {
-                activeEnemy.Add(enemys.GetChild(i).gameObject.GetComponent<AstarAlg>());
+                _enemys.GetChild(i).TryGetComponent(out KAstarAlg astar);
+                _activeEnemy.Add(astar);
             }
         }
-        if(activeEnemy.Count == 0)
+        if(_activeEnemy.Count == 0)
         {
             return;
         }
-        for (int i = 0; i < activeEnemy.Count; ++i)
+        for (int i = 0; i < _activeEnemy.Count; ++i)
         {
-            activeEnemy[i].PathFinding(new Vector2Int((int)targetPosition.x, (int)targetPosition.y));
-            activeEnemy[i].transform.GetComponent<KEnemy>().FindIndex();
+            _activeEnemy[i].PathFinding(new Vector2Int((int)targetPosition.x, (int)targetPosition.y));
+            _activeEnemy[i].transform.TryGetComponent(out KEnemy enemy);
+            enemy.IndexChangeToValue();
         }
     }
 }

@@ -44,7 +44,7 @@ public class JDataManager : MonoBehaviour
         Debug.Log(wantData);
         var fileName = typeof(T).Name.Remove(0, "J".Length);
         //string data = JsonConvert.SerializeObject(wantData);
-        // ÀÌ °÷¿¡¼­ µ¥ÀÌÅÍ°¡ ¸ğµÎ ¼Ò½ÇµÇ¾î¹ö¸²
+        // ì´ ê³³ì—ì„œ ë°ì´í„°ê°€ ëª¨ë‘ ì†Œì‹¤ë˜ì–´ë²„ë¦¼
 
         string data = JsonUtility.ToJson(wantData);
         Debug.Log(data);
@@ -57,7 +57,7 @@ public class JDataManager : MonoBehaviour
     //    Debug.Log(path);
     //    if (!File.Exists(path + fileName))
     //    {
-    //        Debug.Log("ÆÄÀÏÀÌ Á¸ÀçÇÏÁö ¾ÊÀ½!");
+    //        Debug.Log("íŒŒì¼ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŒ!");
     //        return;
     //    }
     //    string data = File.ReadAllText(path + fileName);
