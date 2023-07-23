@@ -18239,6 +18239,8 @@ MonoBehaviour:
   gridSize: 1
   walkSpeed: 8
   runSpeed: 10
+  enemys: {fileID: 0}
+  activeEnemy: []
 --- !u!95 &1617331673
 Animator:
   serializedVersion: 5
@@ -21905,4 +21907,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcf48672201d9243b1acb85fb5c9c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <data>k__BackingField: {fileID: 11400000, guid: 8b46f9a2c07b1824da007467c845333f, type: 2}
+  dialogues_01: []
