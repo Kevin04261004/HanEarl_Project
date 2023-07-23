@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class KDataBaseManager : MonoBehaviour
 {
-    public static KDataBaseManager Instance;
-    [SerializeField] TextAsset _csv_File;
-    [SerializeField] private KDialogue[] _dialogues;
-    Dictionary<int, KDialogue> _dialogueDic = new Dictionary<int, KDialogue>();
+    public static KDataBaseManager instance;
+    [SerializeField] TextAsset csv_File;
+    [SerializeField] private KDialogue[] dialogues;
+    Dictionary<int, KDialogue> dialogueDic = new Dictionary<int, KDialogue>();
 
 
     private void Awake()
     {
-        if(!Instance)
+        if(instance == null)
         {
-            Instance = this;
+            instance = this;
             KCSVParser theParser = GetComponent<KCSVParser>();
-            _dialogues = theParser.Parse(_csv_File.name);
-            for(int i = 0; i< _dialogues.Length; i++)
+            dialogues = theParser.Parse(csv_File.name);
+            for(int i = 0; i< dialogues.Length; i++)
             {
-                _dialogueDic.Add(i + 1, _dialogues[i]);
+                dialogueDic.Add(i+1, dialogues[i]);
             }
         }
     }
 
-    public KDialogue[] GetDialogue(int startNum, int endNum)
+    public KDialogue[] GetDialogue(int _startNum, int _endNum)
     {
         List<KDialogue> dialogueList = new List<KDialogue>();
 
-        for (int i = 0; i <= endNum - startNum; i++)
+        for (int i = 0; i <= _endNum - _startNum; i++)
         {
-            dialogueList.Add(_dialogueDic[startNum + i]);
+            dialogueList.Add(dialogueDic[_startNum + i]);
         }
         return dialogueList.ToArray();
     }

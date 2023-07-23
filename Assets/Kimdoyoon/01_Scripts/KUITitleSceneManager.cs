@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class KUITitleSceneManager : MonoBehaviour
 {
-    [SerializeField] private Image _startGameBG_Image;
+    [SerializeField] private Image StartGameBG_Image;
     public void OnClick_GameStart_Btn()
     {
-        _startGameBG_Image.gameObject.SetActive(true);
+        StartGameBG_Image.gameObject.SetActive(true);
     }
     public void OnClick_GameStartExit_Btn()
     {
-        _startGameBG_Image.gameObject.SetActive(false);
+        StartGameBG_Image.gameObject.SetActive(false);
     }
     public void OnClick_ChangeTo_GameScene()
     {

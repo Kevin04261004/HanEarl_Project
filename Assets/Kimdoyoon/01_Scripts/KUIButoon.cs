@@ -1,44 +1,43 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum EButtonState
+public enum ButtonState
 {
-    ChangeLine,
-    GetItem,
+    forChangeLine,
+    
 }
 
 public class KUIButoon : MonoBehaviour
 {
-    private KDialogueReader _kDialogueReader;
-    private Button _btn;
-    public int _num = 0;
+    // 사용법 : 버튼을 클릭할때 OnClicked()에서 이동할 
+    private KDialogueReader kDialogueReader;
+    private Button btn;
+    public int num = 0;
     private void OnEnable()
     {
-        _kDialogueReader = FindObjectOfType<KDialogueReader>();
-        _btn = transform.GetComponent<Button>();
+        kDialogueReader = FindObjectOfType<KDialogueReader>();
+        btn = transform.GetComponent<Button>();
     }
-    public void AddListener(EButtonState state)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="keyNum"> keyNum = Add할 함수가 다 다르니까 키를 하나 설정해서 사용.  </param>
+    public void AddListener(ButtonState state)
     {
-        _btn.onClick.RemoveAllListeners();
-        switch (state)
+        btn.onClick.RemoveAllListeners();
+        if(state == ButtonState.forChangeLine)
         {
-            case EButtonState.ChangeLine:
-                _btn.onClick.AddListener(OnClicked);
-                break;
-            case EButtonState.GetItem:
-                break;
-            default:
-                break;
+            btn.onClick.AddListener(OnClicked);
         }
     }
-    private void OnClicked()
+    /* 버튼을 클릭했을때 생기는 현상. */
+    public void OnClicked()
     {
-        _kDialogueReader.typeIndex = _num - 1;
-        _kDialogueReader.OptionBtn_SetActive_Bool(false);
-        _kDialogueReader.StartReading();
+        kDialogueReader.typeIndex = num - 1;
+        kDialogueReader.OptionBtn_SetActive_Bool(false);
+        kDialogueReader.StartReading();
     }
 }

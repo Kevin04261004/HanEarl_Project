@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class KItem : MonoBehaviour
 {
-    public KDialogue[] _dialogues;
+    public KDialogue[] dialogues_01;
+    public JItemInstance itemData;
     private void Start()
     {
-        _dialogues = GetComponent<KInteractiveObject>().GetDialogue();
+        dialogues_01 = GetComponent<KInteractiveObject>().GetDialogue();
     }
 }

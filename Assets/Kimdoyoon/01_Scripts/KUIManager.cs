@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KUIManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    [field:SerializeField] public Image _settingBG_Image { get; private set; }
-    [SerializeField] private Animator _player_animator;
-    [field:SerializeField] public Slider _bgm_Slider { get; private set; }
-    [field: SerializeField] public Slider _sfx_Slider { get; private set; }
+    [SerializeField] private Image SettingBG_Image;
+    [SerializeField] private Animator Player_animator;
+
     private void Update()
     {
-        if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SettingKey]))
+        if (Input.GetKeyDown(KKeySetting.key_Dictionary[KKeyAction.SETTING_KEY]))
         {
-            if(_settingBG_Image.gameObject.activeSelf)
+            if(SettingBG_Image.gameObject.activeSelf)
             {
                 OnClick_SettingExit_Btn();
             }
             else
             {
-                _player_animator.SetBool("isWalking", false);
+                Player_animator.SetBool("isWalking", false);
                 OnClick_Setting_Btn();
             }
         }
@@ -27,13 +26,13 @@ public class KUIManager : MonoBehaviour
 
     public void OnClick_Setting_Btn()
     {
-        _settingBG_Image.gameObject.SetActive(true);
-        KGameManager.Instance.GamePause();
+        SettingBG_Image.gameObject.SetActive(true);
+        KGameManager.instance.GamePause();
     }
     public void OnClick_SettingExit_Btn()
     {
-        _settingBG_Image.gameObject.SetActive(false);
-        KGameManager.Instance.GameContinue();
+        SettingBG_Image.gameObject.SetActive(false);
+        KGameManager.instance.GameContinue();
     }
     public void OnClick_GameExit_Btn()
     {

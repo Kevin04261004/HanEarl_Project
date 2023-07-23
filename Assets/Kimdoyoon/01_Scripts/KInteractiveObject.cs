@@ -1,41 +1,37 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EInteractiveType
+public enum InteractiveState
 {
-    DisappearItem,
-    CantDisappearItem,
+    Disappearitem,
+    cantDisappearitem,
     NPC,
 }
 public class KInteractiveObject : MonoBehaviour
 {
-    [SerializeField] private EInteractiveType _interactiveType;
-    [SerializeField] private KDialogueEvent _dialogueEvent;
-    [SerializeField] private KDialogueReader _dialogueReader;
-
-    private void Awake()
-    {
-        _dialogueReader = FindObjectOfType<KDialogueReader>();
-        Debug.Assert(_dialogueReader != null,"_dialogueReader를 찾지 못했습니다.");
-    }
-
+    [SerializeField] private InteractiveState thisState;
+    [SerializeField] private KDialogueEvent dialogueEvent;
+    [SerializeField] private KDialogueReader dialogueReader;
     public KDialogue[] GetDialogue()
     {
-        _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_dialogueEvent.line.x, (int)_dialogueEvent.line.y);
-        return _dialogueEvent.dialogues;
+        dialogueReader = FindObjectOfType<KDialogueReader>();
+        dialogueEvent.dialogues = KDataBaseManager.instance.GetDialogue((int)dialogueEvent.line.x, (int)dialogueEvent.line.y);
+        return dialogueEvent.dialogues;
     }
     public void Interactive()
     {
-        switch(_interactiveType)
+        switch(thisState)
         {
-            case EInteractiveType.DisappearItem:
+            case InteractiveState.Disappearitem:
+                GetComponent<KItem>().itemData.isGet = true;
+                gameObject.SetActive(false);
                 break;
-            case EInteractiveType.CantDisappearItem:
+            case InteractiveState.cantDisappearitem:
                 break;
-            case EInteractiveType.NPC:
-                _dialogueReader.SetDialogue(GetDialogue());
+            case InteractiveState.NPC:
+                KDialogue[] temp = GetDialogue();
+                dialogueReader.SetDialogue(temp);
                 break;
             default:
                 break;

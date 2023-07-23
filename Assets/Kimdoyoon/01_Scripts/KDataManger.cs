@@ -5,45 +5,45 @@ using UnityEngine;
 
 public class PlayerData
 {
-    public string _name;
-    public int _stage = 0;
+    public string name;
+    public int stage = 0;
 }
 
 public class KDataManger : MonoBehaviour
 {
-    public static KDataManger Instance;
-    public string _path;
-    public int _nowSlot;
-    public PlayerData _nowPlayer = new PlayerData();
+    public static KDataManger instance;
+    public string path;
+    public int nowSlot;
+    public PlayerData nowPlayer = new PlayerData();
 
     private void Awake()
     {
-        if(Instance == null)
+        if(instance == null)
         {
-            Instance = this;
+            instance = this;
         }
-        else if(Instance != this)
+        else if(instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(instance.gameObject);
         }
         DontDestroyOnLoad(gameObject);
 
-        _path = Path.Combine(Application.persistentDataPath, "Ksave");
-        print(_path);
+        path = Application.persistentDataPath + "/Ksave";
+        print(path);
     }
     public void SaveData()
     {
-        string data = JsonUtility.ToJson(_nowPlayer);
-        File.WriteAllText(_path+ _nowSlot, data);
+        string data = JsonUtility.ToJson(nowPlayer);
+        File.WriteAllText(path+ nowSlot.ToString(), data);
     }
     public void LoadData()
     {
-        string data = File.ReadAllText(_path + _nowSlot);
-        _nowPlayer = JsonUtility.FromJson<PlayerData>(data);
+        string data = File.ReadAllText(path + nowSlot.ToString());
+        nowPlayer = JsonUtility.FromJson<PlayerData>(data);
     }
     public void DataClear()
     {
-        _nowSlot = -1;
-        _nowPlayer = new PlayerData();
+        nowSlot = -1;
+        nowPlayer = new PlayerData();
     }
 }

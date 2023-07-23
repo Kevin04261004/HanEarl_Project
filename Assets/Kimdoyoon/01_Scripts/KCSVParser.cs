@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,30 +5,30 @@ using UnityEngine;
 
 public class KCSVParser : MonoBehaviour
 {
-    public List<KDialogue> _dialogueList;
-    public KDialogue[] Parse(string CSVFileName)
+    public List<KDialogue> dialogueList;
+    public KDialogue[] Parse(string _CSVFileName)
     {
-        TextAsset csvData = Resources.Load<TextAsset>(CSVFileName);
+        TextAsset csvData = Resources.Load<TextAsset>(_CSVFileName);
         if(!csvData)
         {
-            Debug.Log("csvDataê°€ ì¡´ìž¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+            Debug.Log("TextAssetÀÇ ÆÄÀÏÀ» CSVManager¿¡¼­ ÆÄÀÏÀ» Ãß°¡ÇØÁÖ¼¼¿ä.");
             return null;
         }
-        _dialogueList = new List<KDialogue>();
+        dialogueList = new List<KDialogue>();
         string[] data = csvData.text.Split('\n');
         for (int i = 1; i < data.Length;)
         {
             string[] row = data[i].Split(',');
             KDialogue tempDialogue = new KDialogue();
             List<string> contextList = new List<string>();
-            List<string> nextLineList = new List<string>();
+            List<string> NextLineList = new List<string>();
 
             tempDialogue.character_Name = row[1];
-            if (row[2] != string.Empty)
+            if (!(row[2] == ""))
             {
                 tempDialogue.characterImage_Name = row[2];
             }
-            if (row[3] != string.Empty)
+            if (!(row[3] == ""))
             {
                 if (row[3] == "no")
                 {
@@ -43,9 +42,9 @@ public class KCSVParser : MonoBehaviour
             do
             {
                 contextList.Add(row[4]);
-                if (row[5] != string.Empty)
+                if (!(row[5] == ""))
                 {
-                    nextLineList.Add(row[5]);
+                    NextLineList.Add(row[5]);
                 }
                 if (++i < data.Length)
                 {
@@ -56,19 +55,19 @@ public class KCSVParser : MonoBehaviour
                     break;
                 }
 
-            } while (row[0] == string.Empty);
+            } while (row[0].ToString() == "");
             switch (tempDialogue.hasOption)
             {
                 case true:
                     tempDialogue.option_Contexts = contextList.ToArray();
-                    tempDialogue.nextLine = nextLineList.ToArray(); 
+                    tempDialogue.nextLine = NextLineList.ToArray(); 
                     break;
                 case false:
                     tempDialogue.contexts = contextList.ToArray();
                     break;
             }
-            _dialogueList.Add(tempDialogue);
+            dialogueList.Add(tempDialogue);
         }
-        return _dialogueList.ToArray();
+        return dialogueList.ToArray();
     }
 }
