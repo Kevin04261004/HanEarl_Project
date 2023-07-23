@@ -13,6 +13,7 @@ public class KInteractiveObject : MonoBehaviour
     [SerializeField] private InteractiveState thisState;
     [SerializeField] private KDialogueEvent dialogueEvent;
     [SerializeField] private KDialogueReader dialogueReader;
+
     public KDialogue[] GetDialogue()
     {
         dialogueReader = FindObjectOfType<KDialogueReader>();
@@ -24,8 +25,8 @@ public class KInteractiveObject : MonoBehaviour
         switch(thisState)
         {
             case InteractiveState.Disappearitem:
-                GetComponent<KItem>().itemData.isGet = true;
-                gameObject.SetActive(false);
+                JItem item = GetComponent<JItem>();
+                item.Get();
                 break;
             case InteractiveState.cantDisappearitem:
                 break;

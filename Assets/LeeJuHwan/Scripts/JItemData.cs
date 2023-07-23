@@ -20,5 +20,6 @@ public class JItemInstance
 
     // 변하는 값
     public bool isGet;
+    public bool isInvn; // 인벤토리에 존재하는지
     public Vector3 currentPos;
 }
