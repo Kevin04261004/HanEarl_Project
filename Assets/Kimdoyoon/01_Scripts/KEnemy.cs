@@ -1,62 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KEnemy : MonoBehaviour
 {
-    private AstarAlg root;
-    [SerializeField] private float speed = 0.2f;
-    [SerializeField] private float time = 0;
-    private int index;
+    private KAstarAlg _root;
+    [SerializeField] private float _speed = 0.2f;
+    [SerializeField] private float _time = 0;
+    private int _index;
     private void Awake()
     {
-        root = GetComponent<AstarAlg>();
+        _root = GetComponent<KAstarAlg>();
     }
     private void Update()
     {
-        if(!root.isPlayerFind)
+        if(!_root._isPlayerFind)
         {
             return;
         }
 
-        if(time >= speed)
+        if(_time >= _speed)
         {
-            time = 0;
-            if(index < root.FinalNodeList.Count-1)
-            {
-                index++;
-                Move(new Vector2(root.FinalNodeList[index].x, root.FinalNodeList[index].y));
-            }
+            _time = 0;
+            if (_index >= _root._finalNodeList.Count - 1) return;
+            _index++;
+            Move(new Vector2(_root._finalNodeList[_index]._x, _root._finalNodeList[_index]._y));
         }
         else
         {
-            time += Time.deltaTime;
+            _time += Time.deltaTime;
         }
     }
     private void Move(Vector2 targetVec)
     {
         transform.position = targetVec;
     }
-    public void FindIndex() // 플레이어가 한칸 이동하면 초기화.
-    {
-        index = 0;
-        for (int i = 0; i < root.FinalNodeList.Count; ++i)
-        {
-            if((Vector2)transform.position == new Vector2(root.FinalNodeList[index].x, root.FinalNodeList[index].y))
-            {
-                break;
-            }
-        }
 
-        return;
+    public void IndexChangeToValue(int value = 0)
+    {
+        _index = 0;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(!collision.CompareTag("Player"))
         {
-            collision.gameObject.SetActive(false);
-
+            return;
+        }
+        else
+        {
+            collision.gameObject.SetActive(false);   
         }
     }
 }

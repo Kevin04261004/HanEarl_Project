@@ -7,36 +7,36 @@ using UnityEngine.SceneManagement;
 
 public class KSelect : MonoBehaviour
 {
-    public GameObject creat; // ´Ð³×ÀÓ ÀÔ·Â UI
-    public TextMeshProUGUI[] slot_TMP;
-    public TextMeshProUGUI newPlayerName;
+    public GameObject _creat; // Creat UI
+    public TextMeshProUGUI[] _slot_TMP;
+    public TextMeshProUGUI _newPlayerName;
 
-    private bool[] savefile = new bool[3];
+    private bool[] _hasSavefile = new bool[3];
     private void Awake()
     {
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 3; ++i)
         {
-            if(File.Exists(KDataManger.instance.path + i.ToString()))
+            if(File.Exists(KDataManger.Instance._path + i.ToString()))
             {
-                savefile[i] = true;
-                KDataManger.instance.nowSlot = i;
-                KDataManger.instance.LoadData();
+                _hasSavefile[i] = true;
+                KDataManger.Instance._nowSlot = i;
+                KDataManger.Instance.LoadData();
 
-                slot_TMP[i].text = KDataManger.instance.nowPlayer.name;
+                _slot_TMP[i].text = KDataManger.Instance._nowPlayer._name;
             }
             else
             {
-                slot_TMP[i].text = "ºñ¾îÀÖÀ½";
+                _slot_TMP[i].text = "ë¹„ì–´ìžˆìŒ";
             }
         }
-        KDataManger.instance.DataClear();
+        KDataManger.Instance.DataClear();
     }
     public void OnClick_Slot(int number)
     {
-        KDataManger.instance.nowSlot = number;
-        if (savefile[number])
+        KDataManger.Instance._nowSlot = number;
+        if (_hasSavefile[number])
         {
-            KDataManger.instance.LoadData();
+            KDataManger.Instance.LoadData();
             GoGame();
         }
         else
@@ -46,18 +46,18 @@ public class KSelect : MonoBehaviour
     }
     public void Creat()
     {
-        creat.gameObject.SetActive(true);
+        _creat.gameObject.SetActive(true);
     }
     public void GoGame()
     {
-        if (!savefile[KDataManger.instance.nowSlot])
+        if (!_hasSavefile[KDataManger.Instance._nowSlot])
         {
-            if(newPlayerName.text == "")
+            if(_newPlayerName.text == "")
             {
                 return;
             }
-            KDataManger.instance.nowPlayer.name = newPlayerName.text;
-            KDataManger.instance.SaveData();
+            KDataManger.Instance._nowPlayer._name = _newPlayerName.text;
+            KDataManger.Instance.SaveData();
         }
         SceneManager.LoadScene("KGameScene");
     }

@@ -5,47 +5,56 @@ using UnityEngine.Audio;
 
 public class KSoundManager : MonoBehaviour
 {
-    [SerializeField] private AudioMixer mixer;
-    public AudioSource BGM_audioSource;
-    public AudioClip BGM_AudioClip;
-    public KUIManager uiManager;
+    [SerializeField] private AudioMixer _mixer;
+    public AudioSource _bgm_AudioSource;
+    public AudioClip _bgm_AudioClip;
+    public KUIManager _uiManager;
 
-    public static KSoundManager instance;
+    public static KSoundManager Instance;
 
     public void Awake()
     {
-        BGM_audioSource = GetComponent<AudioSource>();
-        BGM_Play(BGM_AudioClip);
+        if (!Instance)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        _bgm_AudioSource = GetComponent<AudioSource>();
+        BGM_Play(_bgm_AudioClip);
     }
 
     private void Update()
     {
-        if(!uiManager.SettingBG_Image.gameObject.activeSelf)
+        if(!_uiManager._settingBG_Image.gameObject.activeSelf)
         {
             return;
         }
-        /* ����Bar ���� */
-        mixer.SetFloat("BGM_Volume", Mathf.Log10(uiManager.BGM_Slider.value)*20);
-        mixer.SetFloat("SFX_Volume", Mathf.Log10(uiManager.SFX_Slider.value)*20);
+        /* Sound Bar */
+        _mixer.SetFloat("BGM_Volume", Mathf.Log10(_uiManager._bgm_Slider.value)*20);
+        _mixer.SetFloat("SFX_Volume", Mathf.Log10(_uiManager._sfx_Slider.value)*20);
     }
 
-    public void Sound_PlayOneTime(string _soundName, AudioClip clip)
+    /* 추후에 오브젝트 풀 만들어서 사용하기 */
+    public void Sound_PlayOneTime(string soundName, AudioClip clip)
     {
-        GameObject go = new GameObject(_soundName + "Sound");
-        AudioSource audioSource = go.AddComponent<AudioSource>();
-        audioSource.outputAudioMixerGroup = mixer.FindMatchingGroups("EffectSound")[0];
+        var go = new GameObject(soundName + "Sound");
+        var audioSource = go.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = _mixer.FindMatchingGroups("SFX")[0];
         audioSource.clip = clip;
         audioSource.loop = false;
         audioSource.Play();
 
         Destroy(go, clip.length);
     }
-    public void BGM_Play(AudioClip clip)
+    private void BGM_Play(AudioClip clip)
     {
-        BGM_audioSource = GetComponent<AudioSource>();
-        BGM_audioSource.clip = clip;
-        BGM_audioSource.loop = true;
-        BGM_audioSource.volume = 0.5f;
-        BGM_audioSource.Play();
+        _bgm_AudioSource = GetComponent<AudioSource>();
+        _bgm_AudioSource.clip = clip;
+        _bgm_AudioSource.loop = true;
+        _bgm_AudioSource.volume = 0.5f;
+        _bgm_AudioSource.Play();
     }
 }

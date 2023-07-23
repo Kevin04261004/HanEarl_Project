@@ -6,24 +6,28 @@ using UnityEngine;
 
 public class KSettingManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI[] tMP;
+    [SerializeField] private TextMeshProUGUI[] _TMP;
     private void Start()
     {
         Setting_KeyUI();
     }
     public void Setting_KeyUI()
     {
-        for (int i = 0; i < tMP.Length; i++)
+        for (int i = 0; i < _TMP.Length; i++)
         {
-            tMP[i].text = KKeySetting.key_Dictionary[(KKeyAction)i].ToString();
-            if (tMP[i].text == "Return")
+            string str = KKeySetting.key_Dictionary[(EKeyAction)i].ToString();
+            switch (str)
             {
-                tMP[i].text = "Enter";
+                case "Return":
+                    str = "Enter";
+                    break;
+                case "Escape":
+                    str = "Esc";
+                    break;
+                default:
+                    break;
             }
-            if (tMP[i].text == "Escape")
-            {
-                tMP[i].text = "Esc";
-            }
+            _TMP[i].text = str;
         }
     }
 }

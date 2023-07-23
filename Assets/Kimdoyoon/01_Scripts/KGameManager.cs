@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class KGameManager : MonoBehaviour
 {
-    public static KGameManager instance = null;
-    public bool canInput = true;
+    public static KGameManager Instance = null;
+    public bool _canInput = true;
     private void Awake()
     {
-        instance = this;
+        if (!Instance)
+        {
+            Instance = this;   
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
         Time.timeScale = 1.0f;
     }
     public void GamePause()
     {
         Time.timeScale = 0.0f;
-        canInput = false;
+        _canInput = false;
     }
     public void GameContinue()
     {
         Time.timeScale = 1.0f;
-        canInput = true;
+        _canInput = true;
     }
 }
