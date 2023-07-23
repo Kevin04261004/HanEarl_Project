@@ -5,7 +5,17 @@ using UnityEngine;
 
 public class JItemManager : MonoBehaviour
 {
-    JItemData itemDatas = new JItemData();
+    public JItemData itemDatas = new JItemData();
+
+    public static JItemManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
 
     private void Start()
     {
@@ -14,8 +24,8 @@ public class JItemManager : MonoBehaviour
         {
             Debug.Log(itemlist.itemList.Count);
             GameObject item = Instantiate(Resources.Load<GameObject>(itemlist.itemList[i].prefab), itemlist.itemList[i].currentPos, Quaternion.identity);
-            item.GetComponent<JItemBase>().itemData = itemlist.itemList[i];
-            itemDatas.itemList.Add(item.GetComponent<JItemBase>().itemData);
+            item.GetComponent<KItem>().itemData = itemlist.itemList[i];
+            itemDatas.itemList.Add(item.GetComponent<KItem>().itemData);
             //itemDatas.itemList.Add(itemlist.itemList[i]);
             if (itemDatas.itemList[i].isGet)
             {
@@ -28,9 +38,6 @@ public class JItemManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log(itemDatas.itemList[0].isGet);
-            Debug.Log(itemDatas.itemList[0].itemName);
-            Debug.Log(itemDatas.itemList[0].index);
             JDataManager.instance.SaveData(itemDatas);
         }
     }

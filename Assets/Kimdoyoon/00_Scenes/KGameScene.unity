@@ -25763,6 +25763,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues_01: []
+  itemData:
+    itemName: 
+    dialog: 
+    prefab: 
+    index: 0
+    isGet: 0
+    currentPos: {x: 0, y: 0, z: 0}
 --- !u!114 &7827484060866322119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25775,7 +25782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisState: 2
+  thisState: 0
   dialogueEvent:
     eventName: "\u3147\u3147"
     line: {x: 1, y: 4}

@@ -24,6 +24,8 @@ public class KInteractiveObject : MonoBehaviour
         switch(thisState)
         {
             case InteractiveState.Disappearitem:
+                GetComponent<KItem>().itemData.isGet = true;
+                gameObject.SetActive(false);
                 break;
             case InteractiveState.cantDisappearitem:
                 break;
