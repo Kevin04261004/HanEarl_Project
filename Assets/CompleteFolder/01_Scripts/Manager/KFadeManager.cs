@@ -6,14 +6,22 @@ using UnityEngine.UI;
 
 public class KFadeManager : MonoBehaviour
 {
+    [SerializeField] private KPlayerManager _playerManager;
     [SerializeField] private Image _fade_Image;
     [SerializeField] private Animator _playerAnimator;
     private Color A_1 = new Color(0, 0, 0, 1);
     private Color A_0 = new Color(0, 0, 0, 0);
     [SerializeField] private float _fadeTime = 0.5f;
+
+    private void Awake()
+    {
+        _playerManager = FindObjectOfType<KPlayerManager>();
+    }
+
     /* FADE IN */
     public void FadeInRoutine(bool canInputUntilFadeIn = false)
     {
+        _playerManager.ResetInputKey();
         _playerAnimator.SetBool("isWalking", false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = canInputUntilFadeIn;
@@ -23,6 +31,7 @@ public class KFadeManager : MonoBehaviour
 
     public void FadeOutRoutine(bool canInputUntilFadeOut = false)
     {
+        _playerManager.ResetInputKey();
         _playerAnimator.SetBool("isWalking", false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = canInputUntilFadeOut;
@@ -32,6 +41,7 @@ public class KFadeManager : MonoBehaviour
 
     public void FadeInOutAllRoutine(bool canInputUntilFadeInOut = false)
     {
+        _playerManager.ResetInputKey();
         _playerAnimator.SetBool("isWalking", false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = canInputUntilFadeInOut;

@@ -15,7 +15,7 @@ public class KPlayerManager : MonoBehaviour
     private Animator _animator;
     [SerializeField] private Transform _enemyParent;
     [SerializeField] private List<KAstarAlg> _activeEnemy;
-    private int _inputKey;
+    private int _inputKey = -1;
     public bool _isMoving;
     private static readonly int Direction = Animator.StringToHash("direction");
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
