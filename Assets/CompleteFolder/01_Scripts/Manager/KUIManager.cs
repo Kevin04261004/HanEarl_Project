@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class KUIManager : MonoBehaviour
 {
     [field:SerializeField] public Image _settingBG_Image { get; private set; }
     [SerializeField] private Animator _player_animator;
