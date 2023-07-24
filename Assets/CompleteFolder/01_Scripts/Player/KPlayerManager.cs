@@ -10,20 +10,20 @@ public class KPlayerManager : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private Vector2 _dir;
     [SerializeField] private float _gridSize;
-    private bool _isMoving;
     [SerializeField] private float _walkSpeed;
     [SerializeField] private float _runSpeed;
     private Animator _animator;
-    private SpriteRenderer _spriteRenderer;
-    private KDialogueReader _dialogueReader;
-    [SerializeField] private Transform _enemys;
+    [SerializeField] private Transform _enemyParent;
     [SerializeField] private List<KAstarAlg> _activeEnemy;
+    private int _inputKey;
+    public bool _isMoving;
+    private static readonly int Direction = Animator.StringToHash("direction");
+    private static readonly int IsWalking = Animator.StringToHash("isWalking");
+
     private void Awake()
     {
-        _dialogueReader = GetComponent<KDialogueReader>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -38,47 +38,73 @@ public class KPlayerManager : MonoBehaviour
             return;
         }
         /* move key input */
-        if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.UpKey]))
+        if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.DownKey]) && (_inputKey == 0 || _inputKey == -1))
         {
-            _animator.SetInteger("direction", 1);
-            TryMove(Vector2.up);
-        }
-        else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.DownKey]))
-        {
-            _animator.SetInteger("direction", 0);
+            _inputKey = 0;
+            _animator.SetInteger(Direction, 0);
             TryMove(Vector2.down);
         }
-        else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.LeftKey]))
+        else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.UpKey]) && (_inputKey == 1 || _inputKey == -1))
         {
-            _animator.SetInteger("direction", 2);
+            _inputKey = 1;
+            _animator.SetInteger(Direction, 1);
+            TryMove(Vector2.up);
+        }
+        else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.LeftKey]) && (_inputKey == 2 || _inputKey == -1))
+        {
+            _inputKey = 2;
+            _animator.SetInteger(Direction, 2);
             TryMove(Vector2.left);
         }
-        else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.RightKey]))
+        else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.RightKey]) && (_inputKey == 3 || _inputKey == -1))
         {
-            _animator.SetInteger("direction", 3);
+            _inputKey = 3;
+            _animator.SetInteger(Direction, 3);
             TryMove(Vector2.right);
         }
-        if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.UpKey]))
+        
+        if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.DownKey]))
         {
-            _animator.SetBool("isWalking", false);
+            if (_animator.GetInteger(Direction) != 0)
+            {
+                return;
+            }
+            ResetInputKey();
+            _animator.SetBool(IsWalking, false);
         }
-        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.DownKey]))
+        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.UpKey]))
         {
-            _animator.SetBool("isWalking", false);
+            if (_animator.GetInteger(Direction) != 1)
+            {
+                return;
+            }
+            ResetInputKey();
+            _animator.SetBool(IsWalking, false);
         }
         else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.LeftKey]))
         {
-            _animator.SetBool("isWalking", false);
+            if (_animator.GetInteger(Direction) != 2)
+            {
+                return;
+            }
+            ResetInputKey();
+            _animator.SetBool(IsWalking, false);
         }
         else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.RightKey]))
         {
-            _animator.SetBool("isWalking", false);
+            if (_animator.GetInteger(Direction) != 3)
+            {
+                return;
+            }
+
+            ResetInputKey();
+            _animator.SetBool(IsWalking, false);
         }
         /* Interaction key input */
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InteractionKey]))
         {
             Vector2 targetPos = new Vector2(0,0);
-            switch (_animator.GetInteger("direction"))
+            switch (_animator.GetInteger(Direction))
             {
                 case 0:
                     targetPos = _rigidbody2D.position + Vector2.down * _gridSize;
@@ -136,13 +162,13 @@ public class KPlayerManager : MonoBehaviour
     }
     private IEnumerator MoveToTarget(Vector2 targetPosition)
     {
-        if (_enemys.gameObject.activeSelf)
+        if (_enemyParent.gameObject.activeSelf)
         {
-            AllEnemyTarget(targetPosition);   
+            AllEnemyTarget(targetPosition);
         }
         _isMoving = true;
-        _animator.SetBool("isWalking", true);
-        while ((Vector2)transform.position != targetPosition)
+        _animator.SetBool(IsWalking, true);
+        while ((Vector2)transform.position != targetPosition && _isMoving)
         {
             Vector2 newPosition = Vector2.MoveTowards(_rigidbody2D.position, targetPosition, _curSpeed * Time.fixedDeltaTime);
             _rigidbody2D.MovePosition(newPosition);
@@ -155,11 +181,11 @@ public class KPlayerManager : MonoBehaviour
     {
         // Enemy가 타겟을 플레이어로 잡고 A*알고리즘 돌리기
         _activeEnemy.Clear();
-        for (int i = 0; i < _enemys.childCount; ++i)
+        for (int i = 0; i < _enemyParent.childCount; ++i)
         {
-            if (_enemys.GetChild(i).gameObject.activeSelf)
+            if (_enemyParent.GetChild(i).gameObject.activeSelf)
             {
-                _enemys.GetChild(i).TryGetComponent(out KAstarAlg astar);
+                _enemyParent.GetChild(i).TryGetComponent(out KAstarAlg astar);
                 _activeEnemy.Add(astar);
             }
         }
@@ -173,5 +199,10 @@ public class KPlayerManager : MonoBehaviour
             _activeEnemy[i].transform.TryGetComponent(out KEnemy enemy);
             enemy.IndexChangeToValue();
         }
+    }
+
+    public void ResetInputKey()
+    {
+        _inputKey = -1;
     }
 }
