@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class KUIManager : MonoBehaviour
 {
     [field:SerializeField] public Image _settingBG_Image { get; private set; }
+    [field:SerializeField] public Image _keySettingBG_Image { get; private set; }
     [SerializeField] private Animator _player_animator;
     [field:SerializeField] public Slider _bgm_Slider { get; private set; }
     [field: SerializeField] public Slider _sfx_Slider { get; private set; }
@@ -38,5 +39,15 @@ public class KUIManager : MonoBehaviour
     public void OnClick_GameExit_Btn()
     {
         Application.Quit();
+    }
+
+    public void OnClick_KeySetting_Btn()
+    {
+        _keySettingBG_Image.gameObject.SetActive(true);
+    }
+
+    public void OnClick_KeySettingApply_Btn()
+    {
+        _keySettingBG_Image.gameObject.SetActive(false);
     }
 }
