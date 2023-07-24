@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7191256c6b335084d9a0d8dea77feb5c
+guid: 6f2cbd977c68892409803474aab5d214
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toilet2_0
+      name: cleaning_equipment_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c744f84e8959a4a8c01a9caf10881a
+      internalID: -1769035493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleaning_equipment_1
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +158,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 662ee9f78533ed443bdc939464316419
-      internalID: -393876433
+      spriteID: d69ea56febff11f4e96bbc266a256990
+      internalID: 931421047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toilet2_1
+      name: cleaning_equipment_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52284b509ab699f488ce3229aebc4e99
+      internalID: 1679899082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleaning_equipment_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42697a1eb943273458a1b465070a4295
+      internalID: -874888642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleaning_equipment_4
       rect:
         serializedVersion: 2
         x: 0
@@ -158,8 +221,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63b5cbc0a8b1e114ea2b248626b21a12
-      internalID: 743903712
+      spriteID: 45ecc9d26f55a2f4baedb0e97b0026e9
+      internalID: 1657479194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleaning_equipment_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789f04ae831f73647835e9b1d975625c
+      internalID: -1123013475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cleaning_equipment_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34295c27c0a1214d9d831ffc3014458
+      internalID: 745292054
       vertices: []
       indices: 
       edges: []
@@ -175,8 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      toilet2_0: -393876433
-      toilet2_1: 743903712
+      cleaning_equipment_0: -1769035493
+      cleaning_equipment_1: 931421047
+      cleaning_equipment_2: 1679899082
+      cleaning_equipment_3: -874888642
+      cleaning_equipment_4: 1657479194
+      cleaning_equipment_5: -1123013475
+      cleaning_equipment_6: 745292054
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
