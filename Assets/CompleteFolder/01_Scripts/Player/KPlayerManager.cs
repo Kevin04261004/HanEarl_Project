@@ -40,25 +40,21 @@ public class KPlayerManager : MonoBehaviour
         /* move key input */
         if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.UpKey]))
         {
-            _spriteRenderer.flipX = false;
             _animator.SetInteger("direction", 1);
             TryMove(Vector2.up);
         }
         else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.DownKey]))
         {
-            _spriteRenderer.flipX = false;
             _animator.SetInteger("direction", 0);
             TryMove(Vector2.down);
         }
         else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.LeftKey]))
         {
-            _spriteRenderer.flipX = false;
             _animator.SetInteger("direction", 2);
             TryMove(Vector2.left);
         }
         else if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.RightKey]))
         {
-            _spriteRenderer.flipX = true;
             _animator.SetInteger("direction", 3);
             TryMove(Vector2.right);
         }

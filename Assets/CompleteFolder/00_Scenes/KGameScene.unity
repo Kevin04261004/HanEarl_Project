@@ -6477,7 +6477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _center: {x: 0.5, y: 3}
-  _size: {x: 40, y: 30}
+  _size: {x: 200, y: 100}
   _target: {fileID: 1617331667}
   _cameraSpeed: 8
 --- !u!1 &832548390
