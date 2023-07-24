@@ -117,7 +117,7 @@ public class KPlayerManager : MonoBehaviour
     private void TryMove(Vector2 direction)
     {
         Vector2 targetPos = _rigidbody2D.position + direction * _gridSize;
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.4f);
 
         bool canMove = true;
         foreach (var c in colliders)
