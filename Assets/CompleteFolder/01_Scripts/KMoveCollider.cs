@@ -13,13 +13,28 @@ public class KMoveCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!_targetPos || !other.CompareTag("Player"))
+        if (!_targetPos)
         {
             return;
         }
-        _fadeManager.FadeInRoutine();
-        other.transform.position = _targetPos.position;
-        other.TryGetComponent(out KPlayerManager player);
-        player._isMoving = false;
+
+        float time = 1;
+        if (other.CompareTag("Player"))
+        {
+            _fadeManager.FadeInRoutine(time);
+            other.transform.position = _targetPos.position;
+            if(other.TryGetComponent(out KPlayerManager player))
+            {
+                player._isMoving = false;   
+            }
+        }
+        else if (other.CompareTag("Enemy"))
+        {
+            if (other.TryGetComponent(out KEnemy enemy))
+            {
+                enemy.StopMoveWithTimeRoutine(time,_targetPos.position);
+            }
+            
+        }
     }
 }

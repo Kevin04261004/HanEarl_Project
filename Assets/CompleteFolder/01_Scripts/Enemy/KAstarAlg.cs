@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,8 +25,9 @@ public class KAstarAlg : MonoBehaviour
     [Tooltip("타겟 위치 == 플레이어 위치")] public Vector2Int _targetPos;
     [Tooltip("완성된 루트")] public List<KNode> _finalNodeList;
     [Tooltip("플레이어가 범위 내에 존재하는가?")] public bool _isPlayerFind;
-    [Tooltip("좀비 게임 오브젝트")] public Transform _zombie;
-
+    [Tooltip("좀비 게임 오브젝트")] public Transform _enemyPos;
+    
+    private GameObject _target;
     /* NodeArray 크기 */
     private int _sizeX, _sizeY;
     /* Node 이차원 배열 */
@@ -37,18 +39,15 @@ public class KAstarAlg : MonoBehaviour
     /* 닫힌리스트 <--> 열린 리스트 */
     private List<KNode> _closedList;
 
-    private void OnEnable()
-    {
-        _zombie = GetComponent<Transform>();
-    }
-
     /// <summary>
     /// 좀비가 플레이어를 찾을때 사용되는 Astar 알고리즘
     /// </summary>
     public void PathFinding(Vector2Int playerPos)
     {
+        
         /* 시작 위치 == 좀비 위치 */
-        _startPos = new Vector2Int((int)_zombie.position.x, (int)_zombie.position.y);
+        var position = _enemyPos.position;
+        _startPos = new Vector2Int((int)position.x, (int)position.y);
 
         /* 인식 범위 */
         _bottomLeft = new Vector2Int(_startPos.x - _size, _startPos.y - _size);

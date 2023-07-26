@@ -192,10 +192,13 @@ public class KPlayerManager : MonoBehaviour
         _activeEnemy.Clear();
         for (int i = 0; i < _enemyParent.childCount; ++i)
         {
-            if (_enemyParent.GetChild(i).gameObject.activeSelf)
+            if (!_enemyParent.GetChild(i).gameObject.activeSelf)
             {
-                _enemyParent.GetChild(i).TryGetComponent(out KAstarAlg astar);
-                _activeEnemy.Add(astar);
+                continue;
+            }
+            if (_enemyParent.GetChild(i).TryGetComponent(out KAstarAlg astar))
+            {
+                _activeEnemy.Add(astar);   
             }
         }
         if(_activeEnemy.Count == 0)
