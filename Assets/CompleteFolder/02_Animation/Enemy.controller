@@ -60,7 +60,13 @@ AnimatorController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Enemy
   serializedVersion: 5
-  m_AnimatorParameters: []
+  m_AnimatorParameters:
+  - m_Name: Dir
+    m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -103,7 +109,10 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: Dir
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4488246004355478754}
   m_Solo: 0
@@ -181,7 +190,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4488246004355478754}
-    m_Position: {x: -180, y: -90, z: 0}
+    m_Position: {x: -180, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1933543972414505500}
     m_Position: {x: 30, y: 30, z: 0}
@@ -190,7 +199,7 @@ AnimatorStateMachine:
     m_Position: {x: -180, y: 30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5021358630546896826}
-    m_Position: {x: 30, y: -90, z: 0}
+    m_Position: {x: 30, y: -100, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1835458032362433122}
