@@ -39,4 +39,8 @@ public class KGameManager : MonoBehaviour
         _playerAnimator.SetBool(IsWalking, false);
         _playerManager.ResetInputKey();
     }
+    public void SetCanInput(bool isTrue)
+    {
+        _canInput = isTrue;
+    }
 }

@@ -11,6 +11,7 @@ public enum EKeyAction
     SetFullScreenKey,
     SettingKey,
     InventoryKey,
+    SightKey,
     KeySize,
 }
 public static class KKeySetting
@@ -32,7 +33,7 @@ public class KKeyManager : MonoBehaviour
         KKeySetting.key_Dictionary.Add(EKeyAction.SetFullScreenKey, KeyCode.F5);
         KKeySetting.key_Dictionary.Add(EKeyAction.SettingKey, KeyCode.Escape);
         KKeySetting.key_Dictionary.Add(EKeyAction.InventoryKey, KeyCode.Tab);
-
+        KKeySetting.key_Dictionary.Add(EKeyAction.SightKey, KeyCode.Space);
     }
     private void OnGUI()
     {

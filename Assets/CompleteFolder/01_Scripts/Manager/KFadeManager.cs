@@ -11,49 +11,56 @@ public class KFadeManager : MonoBehaviour
     [SerializeField] private Animator _playerAnimator;
     private Color A_1 = new Color(0, 0, 0, 1);
     private Color A_0 = new Color(0, 0, 0, 0);
-    [SerializeField] private float _fadeTime = 0.5f;
-
+    private static readonly int IsWalking = Animator.StringToHash("isWalking");
     private void Awake()
     {
         _playerManager = FindObjectOfType<KPlayerManager>();
     }
 
     /* FADE IN */
-    public void FadeInRoutine(bool canInputUntilFadeIn = false)
+    public void FadeInRoutine(float time = 1)
     {
         _playerManager.ResetInputKey();
-        _playerAnimator.SetBool("isWalking", false);
+        _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
-        KGameManager.Instance._canInput = canInputUntilFadeIn;
+        KGameManager.Instance._canInput = false;
         StopCoroutine(nameof(FadeOut));
-        StartCoroutine(nameof(FadeIn));
+        StartCoroutine(nameof(FadeIn),time);
     }
 
-    public void FadeOutRoutine(bool canInputUntilFadeOut = false)
+    public void FadeOutRoutine(float time= 1)
     {
         _playerManager.ResetInputKey();
-        _playerAnimator.SetBool("isWalking", false);
+        _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
-        KGameManager.Instance._canInput = canInputUntilFadeOut;
+        KGameManager.Instance._canInput = false;
         StopCoroutine(nameof(FadeIn));
-        StartCoroutine(nameof(FadeOut));
+        StartCoroutine(nameof(FadeOut),time);
     }
 
-    public void FadeInOutAllRoutine(bool canInputUntilFadeInOut = false)
+    public void FadeIn_ImageSetActiveTrueRoutine(float time= 1)
     {
         _playerManager.ResetInputKey();
-        _playerAnimator.SetBool("isWalking", false);
+        _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
-        KGameManager.Instance._canInput = canInputUntilFadeInOut;
-        StartCoroutine(nameof(FadeInOutAll));
+        KGameManager.Instance._canInput = false;
+        StartCoroutine(nameof(FadeIn_ImageSetActiveTrue),time);
     }
-    private IEnumerator FadeIn()
+    public void FadeOut_ImageSetActiveTrueRoutine(float time= 1)
+    {
+        _playerManager.ResetInputKey();
+        _playerAnimator.SetBool(IsWalking, false);
+        _fade_Image.gameObject.SetActive(true);
+        KGameManager.Instance._canInput = false;
+        StartCoroutine(nameof(FadeOut_ImageSetActiveTrue),time);
+    }
+    private IEnumerator FadeIn(float time = 1)
     {
         _fade_Image.color = A_1;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a > 0)
         {
-            tempColor.a -= Time.deltaTime / _fadeTime;
+            tempColor.a -= Time.deltaTime / time;
             _fade_Image.color = tempColor;
             yield return null;
         }
@@ -61,13 +68,13 @@ public class KFadeManager : MonoBehaviour
         KGameManager.Instance._canInput = true;
         _fade_Image.gameObject.SetActive(false);
     }
-    private IEnumerator FadeOut()
+    private IEnumerator FadeOut(float time = 1)
     {
         _fade_Image.color = A_0;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a < 1)
         {
-            tempColor.a += Time.deltaTime / _fadeTime;
+            tempColor.a += Time.deltaTime / time;
             _fade_Image.color = tempColor;
             yield return null;
         }
@@ -75,24 +82,30 @@ public class KFadeManager : MonoBehaviour
         KGameManager.Instance._canInput = true;
         _fade_Image.gameObject.SetActive(false);
     }
-    private IEnumerator FadeInOutAll()
+    private IEnumerator FadeIn_ImageSetActiveTrue(float time = 1)
     {
         _fade_Image.color = A_1;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a > 0)
         {
-            tempColor.a -= Time.deltaTime / _fadeTime;
+            tempColor.a -= Time.deltaTime / time;
             _fade_Image.color = tempColor;
             yield return null;
         }
+
+        KGameManager.Instance._canInput = true;
+    }
+    private IEnumerator FadeOut_ImageSetActiveTrue(float time = 1)
+    {
+        _fade_Image.color = A_0;
+        Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a < 1)
         {
-            tempColor.a += Time.deltaTime / _fadeTime;
+            tempColor.a += Time.deltaTime / time;
             _fade_Image.color = tempColor;
             yield return null;
         }
-        
+
         KGameManager.Instance._canInput = true;
-        _fade_Image.gameObject.SetActive(false);
     }
 }

@@ -33,7 +33,7 @@ public class KCameraMap : MonoBehaviour
     private void LateUpdate()
     {
         var position1 = _target.transform.position;
-        gameObject.transform.position = Vector3.Lerp(position1 + _offset, position1 + _offset, Time.deltaTime * _cameraSpeed);
+        gameObject.transform.position = position1 + _offset;
 
         //float lx = _size.x * 0.5f - _width;
         //var position = transform.position;

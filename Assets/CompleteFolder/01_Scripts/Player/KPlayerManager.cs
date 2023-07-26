@@ -15,7 +15,7 @@ public class KPlayerManager : MonoBehaviour
     private Animator _animator;
     [SerializeField] private Transform _enemyParent;
     [SerializeField] private List<KAstarAlg> _activeEnemy;
-    private int _inputKey = -1;
+    [field: SerializeField] public int _inputKey { get; private set; } = -1;
     public bool _isMoving;
     private static readonly int Direction = Animator.StringToHash("direction");
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
@@ -103,7 +103,7 @@ public class KPlayerManager : MonoBehaviour
         /* Interaction key input */
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InteractionKey]))
         {
-            Vector2 targetPos = new Vector2(0,0);
+            var targetPos = new Vector2(0,0);
             switch (_animator.GetInteger(Direction))
             {
                 case 0:
@@ -121,20 +121,29 @@ public class KPlayerManager : MonoBehaviour
                 default:
                     break;
             }
-            Collider2D[] collidersW = Physics2D.OverlapCircleAll(_rigidbody2D.position, 0.2f);
+            var collidersW = Physics2D.OverlapCircleAll(_rigidbody2D.position, 0.2f);
             foreach (var c in collidersW)
             {
                 if (!c.CompareTag("InteractiveObject")) continue;
                 c.TryGetComponent(out KInteractiveObject interactiveObject);
+                c.transform.GetChild(0).TryGetComponent(out Kmark markObj);
                 interactiveObject.Interactive();
-
+                if (markObj)
+                {
+                    markObj._needMark = false;
+                }
             }
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
+            var colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
             foreach (var c in colliders)
             {
                 if (!c.CompareTag("InteractiveObject")) continue;
                 c.TryGetComponent(out KInteractiveObject interactiveObject);
+                c.transform.GetChild(0).TryGetComponent(out Kmark markObj);
                 interactiveObject.Interactive();
+                if (markObj)
+                {
+                    markObj._needMark = false;
+                }
             }
         }
     }
@@ -201,8 +210,12 @@ public class KPlayerManager : MonoBehaviour
         }
     }
 
-    public void ResetInputKey()
+    public void ResetInputKey(int dir = -1)
     {
-        _inputKey = -1;
+        _inputKey = dir;
+    }
+    public void Set_Player_Dir(int dir = 0)
+    {
+        _animator.SetInteger(Direction, dir);
     }
 }

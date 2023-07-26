@@ -35,11 +35,11 @@ public class KScreenManager : MonoBehaviour
 
     private void InitUI()
     {
-        for (int i = 0; i < UnityEngine.Device.Screen.resolutions.Length; i++)
+        foreach (var t in UnityEngine.Device.Screen.resolutions)
         {
-            if ((float)UnityEngine.Device.Screen.resolutions[i].height / UnityEngine.Device.Screen.resolutions[i].width == (float)9/16)
+            if ((float)t.height / t.width == (float)9/16)
             {
-                _resolutions.Add(UnityEngine.Device.Screen.resolutions[i]);
+                _resolutions.Add(t);
             }
         }
         _resolution_Dropdown.options.Clear();
