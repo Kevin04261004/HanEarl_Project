@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/CompleteFolder/00_Scenes/KGameScene.unity
     guid: 8da33a287d06bcf48ae0a86e6d0ef2eb
+  - enabled: 1
+    path: Assets/CompleteFolder/00_Scenes/GraphicScenes.unity
+    guid: bef58dcd9c9ee3a43a5df094ab915e6a
   m_configObjects: {}
