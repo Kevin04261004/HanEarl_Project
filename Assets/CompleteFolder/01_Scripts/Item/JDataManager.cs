@@ -22,13 +22,7 @@ public class JDataManager : MonoBehaviour
         Load(out playerData);
         Load(out itemData);
     }
-
-    private void Start()
-    {
-        //path = "LeeJuHwan/JsonData/PlayerData";
-        Debug.Log(path);
-    }
-
+    
     public void SaveData<T>(T wantData) where T : JData
     {
         var fileName = typeof(T).Name.Remove(0, "J".Length);

@@ -19,7 +19,6 @@ public class JItemManager : MonoBehaviour
         var itemlist = JDataManager.instance.itemData;
         for (int i = 0; i < itemlist.itemList.Count; i++)
         {
-            Debug.Log(itemlist.itemList.Count);
             GameObject item = Instantiate(Resources.Load<GameObject>(itemlist.itemList[i].prefab), itemlist.itemList[i].currentPos, Quaternion.identity);
             item.GetComponent<JItem>().itemData = itemlist.itemList[i];
             itemDatas.itemList.Add(item.GetComponent<JItem>().itemData);

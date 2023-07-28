@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 0
+  _interactiveType: 2
   _dialogueEvent:
     eventName: Key
     line: {x: 1, y: 4}
