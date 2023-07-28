@@ -18,7 +18,7 @@ public class SubtitleTrackMixer : PlayableBehaviour
         }
 
         int inputCount = playable.GetInputCount();
-        for (int i = 0; i < inputCount; i++)
+        for (int i = 0; i < inputCount; ++i)
         {
             float inputWeigth = playable.GetInputWeight(i);
 

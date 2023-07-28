@@ -142,7 +142,6 @@ public class KAstarAlg : MonoBehaviour
             OpenListAdd(_curNode._x, _curNode._y - 1);
             OpenListAdd(_curNode._x - 1, _curNode._y);
         }
-        Debug.Log("경로 못 찾음");
     }
     void OpenListAdd(int checkX, int checkY)
     {
