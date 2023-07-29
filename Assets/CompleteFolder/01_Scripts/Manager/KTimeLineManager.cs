@@ -37,12 +37,7 @@ public class KTimeLineManager : MonoBehaviour
             }
         }
     }
-
-    private void Start()
-    {
-        StartTimeLine("01");
-    }
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SkipKey]) && _curTimeLine != String.Empty)
@@ -77,5 +72,10 @@ public class KTimeLineManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void GameObjectTSetActiveFalse(GameObject go)
+    {
+        go.SetActive(false);
     }
 }

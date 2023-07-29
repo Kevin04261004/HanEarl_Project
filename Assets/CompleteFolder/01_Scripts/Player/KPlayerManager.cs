@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+public enum EDied
+{
+    DiedFromEnemy01,
+    Died02,
+    
+}
+
 public class KPlayerManager : MonoBehaviour
 {
     [SerializeField] private float _curSpeed;
@@ -220,5 +227,19 @@ public class KPlayerManager : MonoBehaviour
     public void Set_Player_Dir(int dir = 0)
     {
         _animator.SetInteger(Direction, dir);
+    }
+
+    public void Died(EDied eDied)
+    {
+        switch (eDied)
+        {
+            case EDied.DiedFromEnemy01:
+                KTimeLineManager.Instance.StartTimeLine("Player_Died_Enemy01");
+                break;
+            case EDied.Died02:
+                break;
+            default:
+                break;
+        }
     }
 }

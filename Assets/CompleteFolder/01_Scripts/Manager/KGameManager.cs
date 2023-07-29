@@ -43,4 +43,5 @@ public class KGameManager : MonoBehaviour
     {
         _canInput = isTrue;
     }
+    
 }

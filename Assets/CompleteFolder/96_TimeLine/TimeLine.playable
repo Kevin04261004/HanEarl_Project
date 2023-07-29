@@ -43,6 +43,7 @@ MonoBehaviour:
     - {fileID: -5741873203983994655}
     - {fileID: 4755005730147326622}
     - {fileID: 5080856129746093704}
+    - {fileID: -2981925123419938556}
 --- !u!114 &-6775564311551035793
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -514,6 +515,22 @@ MonoBehaviour:
   m_Name: PortraitClip
   m_EditorClassIdentifier: 
   _portrait_Sprite: {fileID: 21300000, guid: fe5f0182e5d94214e8865ad62d6fb621, type: 3}
+--- !u!114 &-2981925123419938556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 17
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 5f6a32871f28c3e4399b2388091dc256, type: 2}
 --- !u!114 &-2925345619618949482
 MonoBehaviour:
   m_ObjectHideFlags: 1

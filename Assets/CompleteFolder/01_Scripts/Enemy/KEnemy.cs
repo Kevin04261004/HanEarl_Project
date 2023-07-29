@@ -86,7 +86,11 @@ public class KEnemy : MonoBehaviour
         {
             return;
         }
-        collision.gameObject.SetActive(false);
+        if(collision.TryGetComponent(out KPlayerManager playerManager))
+        {
+            playerManager.Died(EDied.DiedFromEnemy01);
+        }
+        gameObject.SetActive(false);
     }
     private IEnumerator LerpCoroutine(Vector3 current, Vector3 target, float time)
     {

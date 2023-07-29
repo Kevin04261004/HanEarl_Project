@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class KSoundManager : MonoBehaviour
 {
     [SerializeField] private AudioMixer _mixer;
     public AudioSource _bgm_AudioSource;
-    public AudioClip _bgm_AudioClip;
+    public AudioClip[] _bgm_AudioClips;
+    public short _BGMCount;
+    public AudioClip _titleBGM;
     public KUIManager _uiManager;
-    
+    private WaitForSeconds _time = new WaitForSeconds(1);
     public static KSoundManager Instance;
 
     public void Awake()
@@ -23,7 +26,8 @@ public class KSoundManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         _bgm_AudioSource = GetComponent<AudioSource>();
-        BGM_Play(_bgm_AudioClip);
+        
+        StartCoroutine(PlayBGMList());
     }
 
     private void Update()
@@ -48,12 +52,36 @@ public class KSoundManager : MonoBehaviour
 
         Destroy(go, clip.length);
     }
-    private void BGM_Play(AudioClip clip)
+    private IEnumerator PlayBGMList()
     {
-        _bgm_AudioSource = GetComponent<AudioSource>();
-        _bgm_AudioSource.clip = clip;
-        _bgm_AudioSource.loop = true;
-        _bgm_AudioSource.volume = 0.5f;
-        _bgm_AudioSource.Play();
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "00_TitleScene":
+                _bgm_AudioSource.clip = _titleBGM;
+                _bgm_AudioSource.loop = true;
+                _bgm_AudioSource.Play();
+                yield break;
+            case "01_GameScene":
+                if(_bgm_AudioSource.isPlaying)
+                {
+                    _bgm_AudioSource.Stop();
+                }
+                while (true)
+                {
+                    yield return _time;
+                    if (_bgm_AudioSource.isPlaying) continue;
+                    _BGMCount++;
+                    if (_BGMCount >= _bgm_AudioClips.Length)
+                    {
+                        _BGMCount = 0;
+                    }
+
+                    _bgm_AudioSource.clip = _bgm_AudioClips[_BGMCount];
+                    _bgm_AudioSource.Play();
+                }
+                yield break;
+            default:
+                yield break;
+        }
     }
 }
