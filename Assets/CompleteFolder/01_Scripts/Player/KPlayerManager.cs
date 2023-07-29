@@ -133,11 +133,11 @@ public class KPlayerManager : MonoBehaviour
             {
                 if (!c.CompareTag("InteractiveObject")) continue;
                 c.TryGetComponent(out KInteractiveObject interactiveObject);
-                c.transform.GetChild(0).TryGetComponent(out Kmark markObj);
                 interactiveObject.Interactive();
-                if (markObj)
+                if (c.transform.childCount < 1) continue;
+                if (c.transform.GetChild(0).TryGetComponent(out Kmark markObj))
                 {
-                    markObj._needMark = false;
+                    c.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
             var colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
@@ -145,11 +145,11 @@ public class KPlayerManager : MonoBehaviour
             {
                 if (!c.CompareTag("InteractiveObject")) continue;
                 c.TryGetComponent(out KInteractiveObject interactiveObject);
-                c.transform.GetChild(0).TryGetComponent(out Kmark markObj);
+                if (c.transform.childCount < 1) continue;
                 interactiveObject.Interactive();
-                if (markObj)
+                if (c.transform.GetChild(0).TryGetComponent(out Kmark markObj))
                 {
-                    markObj._needMark = false;
+                    c.transform.GetChild(0).gameObject.SetActive(false);
                 }
             }
         }
@@ -234,8 +234,8 @@ public class KPlayerManager : MonoBehaviour
         switch (eDied)
         {
             case EDied.DiedFromEnemy01:
-                KTimeLineManager.Instance.StartTimeLine("Player_Died_Enemy01");
-                gameObject.SetActive(false);
+                KTimeLineManager.Instance.StartTimeLine("03");
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 break;
             case EDied.Died02:
                 break;

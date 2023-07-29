@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Kmark : MonoBehaviour
 {
-    public bool _needMark;
     [SerializeField] private float _fadeTime = 0.75f;
     [SerializeField] private float _speed = 200;
     private Vector3 _a = new Vector3(0, 0, 1);
@@ -19,12 +18,6 @@ public class Kmark : MonoBehaviour
 
     private void Update()
     {
-        if (!_needMark)
-        {
-            _spriteRenderer.color = new Color(1, 1, 1, 0);
-            return;
-        }
-
         transform.Rotate(_a * (Time.deltaTime * _speed));
         if (_twinkleRoutine == null)
         {
@@ -46,11 +39,6 @@ public class Kmark : MonoBehaviour
         float percent = 0.0f;
         while (percent < 1)
         {
-            if (!_needMark)
-            {
-                _twinkleRoutine = null;
-                yield break;
-            }
             curTime += Time.deltaTime;
             percent = curTime / _fadeTime;
 

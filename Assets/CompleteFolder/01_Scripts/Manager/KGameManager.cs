@@ -11,7 +11,7 @@ public class KGameManager : MonoBehaviour
     private KPlayerManager _playerManager;
     private Animator _playerAnimator;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
-    [SerializeField]private bool _isGameEnd = false;
+    [SerializeField] private bool _isGameEnd;
     private void Awake()
     {
         if (!Instance)

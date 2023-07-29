@@ -7,6 +7,7 @@ public enum EInteractiveType
     DisappearItem,
     CantDisappearItem,
     NPC,
+    First_meet_C,
 }
 public class KInteractiveObject : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class KInteractiveObject : MonoBehaviour
                 break;
             case EInteractiveType.NPC:
                 _dialogueReader.SetDialogue(GetDialogue());
+                break;
+            case EInteractiveType.First_meet_C:
+                KTimeLineManager.Instance.StartTimeLine("04");
                 break;
             default:
                 break;

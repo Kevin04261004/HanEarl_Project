@@ -36,6 +36,7 @@ public class KTimeLineManager : MonoBehaviour
                 _timeLines[i] = _timeLineParent.GetChild(i).gameObject;
             }
         }
+        
     }
     
     private void Update()
@@ -68,7 +69,7 @@ public class KTimeLineManager : MonoBehaviour
                 if(t.TryGetComponent(out PlayableDirector playableDirector))
                 {
                     _curTimeLine = String.Empty;
-                    playableDirector.time = playableDirector.duration - 0.1f;
+                    playableDirector.time = playableDirector.duration - 1f;
                 }
             }
         }
