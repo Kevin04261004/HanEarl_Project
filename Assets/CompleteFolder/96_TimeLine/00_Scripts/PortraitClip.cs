@@ -12,7 +12,7 @@ public class PortraitClip : PlayableAsset
     {
         var playable = ScriptPlayable<PortraitBehaviour>.Create(graph);
 
-        PortraitBehaviour portraitBehaviour = playable.GetBehaviour(); 
+        PortraitBehaviour portraitBehaviour = playable.GetBehaviour();
         portraitBehaviour._portrait_sprite = _portrait_Sprite;
 
         return playable;
