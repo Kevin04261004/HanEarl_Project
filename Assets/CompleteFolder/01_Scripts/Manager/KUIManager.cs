@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class KUIManager : MonoBehaviour
@@ -8,7 +9,6 @@ public class KUIManager : MonoBehaviour
     [SerializeField] private Animator _player_animator;
     [field:SerializeField] public Slider _bgm_Slider { get; private set; }
     [field: SerializeField] public Slider _sfx_Slider { get; private set; }
-
     private void Update()
     {
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SettingKey]))
@@ -24,7 +24,8 @@ public class KUIManager : MonoBehaviour
             }
         }
     }
-
+    
+    
     public void OnClick_Setting_Btn()
     {
         _settingBG_Image.gameObject.SetActive(true);

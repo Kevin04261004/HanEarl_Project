@@ -235,6 +235,7 @@ public class KPlayerManager : MonoBehaviour
         {
             case EDied.DiedFromEnemy01:
                 KTimeLineManager.Instance.StartTimeLine("Player_Died_Enemy01");
+                gameObject.SetActive(false);
                 break;
             case EDied.Died02:
                 break;

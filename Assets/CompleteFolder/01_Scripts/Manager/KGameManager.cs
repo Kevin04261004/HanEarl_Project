@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KGameManager : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class KGameManager : MonoBehaviour
     private KPlayerManager _playerManager;
     private Animator _playerAnimator;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
-
+    [SerializeField]private bool _isGameEnd = false;
     private void Awake()
     {
         if (!Instance)
@@ -21,9 +23,25 @@ public class KGameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         Time.timeScale = 1.0f;
-
         _playerManager = FindObjectOfType<KPlayerManager>();
         _playerAnimator = _playerManager.GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        
+        if (_isGameEnd)
+        {
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadScene("01_GameScene");   
+            }
+        }
+    }
+
+    public void IsGameEndTrue()
+    {
+        _isGameEnd = true;
     }
     public void GamePause()
     {
@@ -43,5 +61,4 @@ public class KGameManager : MonoBehaviour
     {
         _canInput = isTrue;
     }
-    
 }

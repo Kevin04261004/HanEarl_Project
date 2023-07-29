@@ -90,7 +90,6 @@ public class KEnemy : MonoBehaviour
         {
             playerManager.Died(EDied.DiedFromEnemy01);
         }
-        gameObject.SetActive(false);
     }
     private IEnumerator LerpCoroutine(Vector3 current, Vector3 target, float time)
     {

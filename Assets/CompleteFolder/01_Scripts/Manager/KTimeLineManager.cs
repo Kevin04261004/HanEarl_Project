@@ -68,7 +68,7 @@ public class KTimeLineManager : MonoBehaviour
                 if(t.TryGetComponent(out PlayableDirector playableDirector))
                 {
                     _curTimeLine = String.Empty;
-                    playableDirector.time = playableDirector.duration - 2;
+                    playableDirector.time = playableDirector.duration - 0.1f;
                 }
             }
         }
