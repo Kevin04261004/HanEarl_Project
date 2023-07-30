@@ -9,6 +9,8 @@ public class JDataManager : MonoBehaviour
     public static JDataManager instance;
 
     string path;
+    
+    // jsonData에서 가져온 데이터
     public JPlayerData playerData;
     public JItemData itemData;
 

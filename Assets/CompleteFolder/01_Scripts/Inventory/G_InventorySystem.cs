@@ -13,9 +13,12 @@ public class G_InventorySystem : MonoBehaviour
     [SerializeField]
     private G_Slot[] slots;
 
+    private List<G_Slot> J_slots = new List<G_Slot>();
+
     private void OnValidate()
     {
         slots = slotParent.GetComponentsInChildren<G_Slot>();
+        
     }
 
     private void Awake()
@@ -35,9 +38,18 @@ public class G_InventorySystem : MonoBehaviour
 
     private void Start()
     {
-        LoadItem();
+        //LoadItem();
 
-        FreshSlot();
+        J_LoadItem();
+        //FreshSlot();
+    }
+
+    public void J_AddItem(JItemInstance wantItem)
+    {
+        var slot = Instantiate(Resources.Load<GameObject>("Prefab/slot"), Vector2.zero, Quaternion.identity, 
+            transform.Find("InventoryImage/Scroll View/Viewport/Content")).GetComponent<G_Slot>();
+        slot.item = wantItem;
+        J_slots.Add(slot);
     }
 
     public void FreshSlot()
@@ -48,12 +60,24 @@ public class G_InventorySystem : MonoBehaviour
             slots[i].item = items[i];
         }
 
+        //Ïù¥Í±¥ Î≠êÏßÄ Ïù¥Ìï¥Í∞Ä ÏïàÎê®
         for (; i < slots.Length; i++)
         {
             slots[i].item = null;
         }
     }
 
+    private void J_LoadItem()
+    {
+        foreach (var Jitems in JItemManager.instance.itemDatas.itemList)
+        {
+            if (Jitems.isInvn)
+            {
+                Debug.Log("Ïä¨Î°Ø ÏÉùÏÑ±");
+                J_AddItem(Jitems);
+            }
+        }
+    }
     public void LoadItem()
     {
         int itemCount = JItemManager.instance.itemDatas.itemList.Count;
@@ -76,7 +100,7 @@ public class G_InventorySystem : MonoBehaviour
         }
         else
         {
-            Debug.Log("ΩΩ∑‘¿Ã ∞°µÊ ¬˜ ¿÷Ω¿¥œ¥Ÿ.");
+            Debug.Log("Ïä¨Î°ØÏù¥ Í∞ÄÎìù Ï∞® ÏûàÏäµÎãàÎã§.");
         }
     }
 
@@ -87,7 +111,7 @@ public class G_InventorySystem : MonoBehaviour
             if (slots[i].item != null && slots[i].item.itemName == _item.itemName)
             {
                 items.Remove(_item);
-                Debug.Log($"{i}π¯¬∞ ΩΩ∑‘ æ∆¿Ã≈€ ªË¡¶µ {_item}");
+                Debug.Log($"{i}Î≤àÏß∏ Ïä¨Î°Ø ÏïÑÏù¥ÌÖú ÏÇ≠Ï†úÎê®{_item}");
                 break;
             }
         }
