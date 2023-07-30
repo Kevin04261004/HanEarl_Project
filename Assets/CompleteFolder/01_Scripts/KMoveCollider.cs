@@ -22,10 +22,10 @@ public class KMoveCollider : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _fadeManager.FadeInRoutine(time);
-            other.transform.position = _targetPos.position;
             if(other.TryGetComponent(out KPlayerManager player))
             {
-                player._isMoving = false;   
+                player._isMoving = false;
+                player.StopMoveWithTimeRoutine(time, _targetPos.position);
             }
         }
         else if (other.CompareTag("Enemy"))

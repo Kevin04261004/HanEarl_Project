@@ -13,7 +13,7 @@ public enum EDied
 public class KPlayerManager : MonoBehaviour
 {
     [SerializeField] private float _curSpeed;
-    
+    [SerializeField] private Transform _playerPos;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private Vector2 _dir;
     [SerializeField] private float _gridSize;
@@ -145,8 +145,8 @@ public class KPlayerManager : MonoBehaviour
             {
                 if (!c.CompareTag("InteractiveObject")) continue;
                 c.TryGetComponent(out KInteractiveObject interactiveObject);
-                if (c.transform.childCount < 1) continue;
                 interactiveObject.Interactive();
+                if (c.transform.childCount < 1) continue;
                 if (c.transform.GetChild(0).TryGetComponent(out Kmark markObj))
                 {
                     c.transform.GetChild(0).gameObject.SetActive(false);
@@ -187,6 +187,7 @@ public class KPlayerManager : MonoBehaviour
         while ((Vector2)transform.position != targetPosition && _isMoving)
         {
             Vector2 newPosition = Vector2.MoveTowards(_rigidbody2D.position, targetPosition, _curSpeed * Time.fixedDeltaTime);
+            _playerPos.position = targetPosition;
             _rigidbody2D.MovePosition(newPosition);
             yield return new WaitForFixedUpdate();
         }
@@ -242,5 +243,17 @@ public class KPlayerManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+
+    public void StopMoveWithTimeRoutine(float time, Vector3 pos)
+    {
+        StartCoroutine(StopMoveWithTime(time,pos));
+    }
+    private IEnumerator StopMoveWithTime(float time,Vector3 pos)
+    {
+        _playerPos.transform.position = pos;
+        gameObject.transform.position = pos;
+        yield return new WaitForSeconds(time);
     }
 }
