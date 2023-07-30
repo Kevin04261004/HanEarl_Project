@@ -17,6 +17,6 @@ public class JItem : MonoBehaviour
         itemData.isGet = true;
         itemData.isInvn = true;
         gameObject.SetActive(false);
-        G_InventorySystem.Instance.AddItem(itemData);
+        G_InventorySystem.Instance.J_AddItem(itemData);
     }
 }
