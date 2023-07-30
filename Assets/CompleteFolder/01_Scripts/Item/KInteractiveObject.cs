@@ -8,6 +8,8 @@ public enum EInteractiveType
     CantDisappearItem,
     NPC,
     First_meet_C,
+    First_meet_B,
+    
 }
 public class KInteractiveObject : MonoBehaviour
 {
@@ -26,6 +28,7 @@ public class KInteractiveObject : MonoBehaviour
         _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_dialogueEvent.line.x, (int)_dialogueEvent.line.y);
         return _dialogueEvent.dialogues;
     }
+    // ReSharper disable Unity.PerformanceAnalysis
     public void Interactive()
     {
         switch(_interactiveType)
@@ -43,6 +46,12 @@ public class KInteractiveObject : MonoBehaviour
                 if (TryGetComponent(out KCManager kcManager))
                 {
                     kcManager.FirstMeetInteractiveRoutine();
+                }
+                break;
+            case EInteractiveType.First_meet_B:
+                if (TryGetComponent(out KBManager kbManager))
+                {
+                    kbManager.FirstMeetInteractiveRoutine();
                 }
                 break;
             default:

@@ -8,7 +8,7 @@ public class KSpotLightManager : MonoBehaviour
 {
     [SerializeField] private GameObject _spotLight;
     [SerializeField] private Light2D _globalLight;
-    private float _baseIntensity; 
+    private float _baseIntensity;
     private void Awake()
     {
         _baseIntensity = _globalLight.intensity;
