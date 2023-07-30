@@ -30051,6 +30051,7 @@ GameObject:
   - component: {fileID: 1221104211}
   - component: {fileID: 1221104214}
   - component: {fileID: 1221104213}
+  - component: {fileID: 1221104215}
   m_Layer: 0
   m_Name: B
   m_TagString: InteractiveObject
@@ -30209,6 +30210,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1221104215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221104209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89fd5a21c8779d74e8fe434b57af1d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 1.5
+  _fadeManager: {fileID: 0}
 --- !u!1 &1232083567
 GameObject:
   m_ObjectHideFlags: 0
@@ -31657,8 +31672,10 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -3410926737540758252, guid: d07c50bfeb89ec3438ce8cdb8fcd3aa1, type: 2}
     value: {fileID: 1617331673}
-  - key: {fileID: -5487185586708361111, guid: d07c50bfeb89ec3438ce8cdb8fcd3aa1, type: 2}
-    value: {fileID: 1617331673}
+  - key: {fileID: 1147653435226715858, guid: d07c50bfeb89ec3438ce8cdb8fcd3aa1, type: 2}
+    value: {fileID: 1221104211}
+  - key: {fileID: 4813796989468041374, guid: d07c50bfeb89ec3438ce8cdb8fcd3aa1, type: 2}
+    value: {fileID: 1617331675}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1299854664
@@ -36608,6 +36625,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a7520b13a79eb0e439b2f20f1d8f17d7, type: 2}
     - {fileID: 11400000, guid: 9a3d45ec37432244c87910603f29a4bb, type: 2}
     - {fileID: 11400000, guid: 60e79341e376e704eb6b5cd9d2be444a, type: 2}
+    - {fileID: 11400000, guid: e862e65bac282374b856538fcf064c5f, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -36827,6 +36845,20 @@ MonoBehaviour:
           m_Mode: 2
           m_Arguments:
             m_ObjectArgument: {fileID: 963141031}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1128294203}
+          m_TargetAssemblyTypeName: KTimeLineManager, Assembly-CSharp
+          m_MethodName: GameObjectTSetActiveFalse
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1292203455}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -41688,8 +41720,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2087624906}
   - {fileID: 1617331671}
+  - {fileID: 2087624906}
   m_Father: {fileID: 2085670029}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

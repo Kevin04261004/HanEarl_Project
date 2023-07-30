@@ -29,7 +29,6 @@ public class KGameManager : MonoBehaviour
 
     private void Update()
     {
-        
         if (_isGameEnd)
         {
             if (Input.anyKeyDown)

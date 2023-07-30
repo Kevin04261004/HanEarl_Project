@@ -38,8 +38,9 @@ public class KCManager : MonoBehaviour
     private IEnumerator FirstInteractiveStart()
     {
         _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         _fadeManager.FadeInRoutine(1);
+        yield return new WaitForSeconds(1);
         KTimeLineManager.Instance.StartTimeLine("04");
     }
 }

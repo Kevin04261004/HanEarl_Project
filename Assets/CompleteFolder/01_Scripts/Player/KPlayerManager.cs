@@ -35,14 +35,14 @@ public class KPlayerManager : MonoBehaviour
 
     private void Update()
     {
+        if(!KGameManager.Instance._canInput)
+        {
+            return;
+        }
         _curSpeed = _walkSpeed;
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _curSpeed = _runSpeed;
-        }
-        if(!KGameManager.Instance._canInput)
-        {
-            return;
         }
         /* move key input */
         if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.DownKey]) && (_inputKey == 0 || _inputKey == -1))
