@@ -79,4 +79,8 @@ public class KTimeLineManager : MonoBehaviour
     {
         go.SetActive(false);
     }
+    public void GameObjectTSetActiveTrue(GameObject go)
+    {
+        go.SetActive(true);
+    }
 }

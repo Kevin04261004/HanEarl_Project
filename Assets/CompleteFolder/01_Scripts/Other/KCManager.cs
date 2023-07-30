@@ -7,17 +7,21 @@ public class KCManager : MonoBehaviour
 {
     [SerializeField] private float _time = 1.5f;
     [SerializeField] private Material _material;
-
+    [SerializeField] private KFadeManager _fadeManager;
     private void Awake()
     {
         _material = GetComponent<SpriteRenderer>().material;
+        _fadeManager = FindObjectOfType<KFadeManager>();
     }
 
     public void NoneEffectRoutine()
     {
         StartCoroutine(NoneEffectStart());
     }
-
+    public void FirstMeetInteractiveRoutine()
+    {
+        StartCoroutine(FirstInteractiveStart());
+    }
     private IEnumerator NoneEffectStart()
     {
         float temp = _material.GetFloat("_SplitValue");
@@ -30,5 +34,12 @@ public class KCManager : MonoBehaviour
         _material.SetFloat("_SplitValue", 2);
         gameObject.SetActive(false);
     }
-    
+
+    private IEnumerator FirstInteractiveStart()
+    {
+        _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
+        yield return new WaitForSeconds(1);
+        _fadeManager.FadeInRoutine(1);
+        KTimeLineManager.Instance.StartTimeLine("04");
+    }
 }

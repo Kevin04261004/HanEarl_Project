@@ -40,7 +40,10 @@ public class KInteractiveObject : MonoBehaviour
                 _dialogueReader.SetDialogue(GetDialogue());
                 break;
             case EInteractiveType.First_meet_C:
-                KTimeLineManager.Instance.StartTimeLine("04");
+                if (TryGetComponent(out KCManager kcManager))
+                {
+                    kcManager.FirstMeetInteractiveRoutine();
+                }
                 break;
             default:
                 break;
