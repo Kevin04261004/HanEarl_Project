@@ -14,13 +14,14 @@ public class KHairDryItem : MonoBehaviour
 
     public void InteractiveRoutine()
     {
-        
+        StartCoroutine(InteractiveCoroutine());
     }
 
-    public IEnumerator InteractiveCoroutine()
+    private IEnumerator InteractiveCoroutine()
     {
+        _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
+        yield return new WaitForSeconds(3);
         _fadeManager.FadeInRoutine(1);
-        
         KTimeLineManager.Instance.StartTimeLine("07");
     }
 }

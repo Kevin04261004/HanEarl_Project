@@ -2035,6 +2035,16 @@ PlayableDirector:
     value: {fileID: 1617331675}
   - key: {fileID: -4637506137844102296, guid: 34b5daaf819c102479bf435a2d81099b, type: 2}
     value: {fileID: 180489023}
+  - key: {fileID: 4958663511183887159, guid: 34b5daaf819c102479bf435a2d81099b, type: 2}
+    value: {fileID: 2139177101}
+  - key: {fileID: 5029408814923197752, guid: 34b5daaf819c102479bf435a2d81099b, type: 2}
+    value: {fileID: 877541852}
+  - key: {fileID: 185385428880738454, guid: 34b5daaf819c102479bf435a2d81099b, type: 2}
+    value: {fileID: 2139177102}
+  - key: {fileID: -3846057588030804659, guid: 34b5daaf819c102479bf435a2d81099b, type: 2}
+    value: {fileID: 877541854}
+  - key: {fileID: -2064610004452736071, guid: 34b5daaf819c102479bf435a2d81099b, type: 2}
+    value: {fileID: 1615043379}
   m_ExposedReferences:
     m_References:
     - 18a51375a2e67f74789a8acda7b468ef: {fileID: 2081002275}
@@ -28696,7 +28706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bad Ending F. \uC601\uAC81\uC758 \uAC10\uC625"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9014df41c3a04c74eba30768ec0d5fa1, type: 2}
   m_sharedMaterial: {fileID: 5031981100164166610, guid: 9014df41c3a04c74eba30768ec0d5fa1, type: 2}
@@ -28706,7 +28716,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

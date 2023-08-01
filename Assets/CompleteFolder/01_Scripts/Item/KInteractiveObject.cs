@@ -57,7 +57,7 @@ public class KInteractiveObject : MonoBehaviour
             case EInteractiveType.HairDry_item:
                 if (TryGetComponent(out KHairDryItem hairdry))
                 {
-                    hairdry.Interactive();
+                    hairdry.InteractiveRoutine();
                 }
                 break;
             default:
