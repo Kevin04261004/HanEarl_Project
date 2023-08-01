@@ -9,7 +9,7 @@ public enum EInteractiveType
     NPC,
     First_meet_C,
     First_meet_B,
-    
+    HairDry_item,
 }
 public class KInteractiveObject : MonoBehaviour
 {
@@ -52,6 +52,12 @@ public class KInteractiveObject : MonoBehaviour
                 if (TryGetComponent(out KBManager kbManager))
                 {
                     kbManager.FirstMeetInteractiveRoutine();
+                }
+                break;
+            case EInteractiveType.HairDry_item:
+                if (TryGetComponent(out KHairDryItem hairdry))
+                {
+                    hairdry.Interactive();
                 }
                 break;
             default:

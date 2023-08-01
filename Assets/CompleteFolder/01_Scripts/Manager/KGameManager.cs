@@ -10,6 +10,7 @@ public class KGameManager : MonoBehaviour
     public bool _canInput = true;
     private KPlayerManager _playerManager;
     private Animator _playerAnimator;
+    public bool _isEnemyFollow;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
     [SerializeField] private bool _isGameEnd;
     private void Awake()

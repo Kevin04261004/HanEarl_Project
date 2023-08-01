@@ -9,7 +9,6 @@ public class KEnemy : MonoBehaviour
     [SerializeField] private float _time = 0;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private Transform _playerPos;
-    private WaitForSeconds _update1sec = new WaitForSeconds(1);
     private Animator _animator;
     private int _index;
     private static readonly int Dir = Animator.StringToHash("Dir");
@@ -23,8 +22,15 @@ public class KEnemy : MonoBehaviour
     }
     private void Update()
     {
-        if(!_root._isPlayerFind || _root._finalNodeList.Count < _index  || !_canMove)
+        if( _root._finalNodeList.Count < _index  || !_canMove)
         {
+            KGameManager.Instance._isEnemyFollow = false;
+            return;
+        }
+
+        if (!_root._isPlayerFind)
+        {
+            KGameManager.Instance._isEnemyFollow = true;
             return;
         }
         if(_time >= _speed)

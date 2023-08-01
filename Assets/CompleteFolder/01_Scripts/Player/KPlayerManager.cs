@@ -26,11 +26,14 @@ public class KPlayerManager : MonoBehaviour
     public bool _isMoving;
     private static readonly int Direction = Animator.StringToHash("direction");
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
+    private Color _baseColor;
+    private Color _transparentColor = new Color(1,1,1,0);
 
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _baseColor = GetComponent<SpriteRenderer>().color;
     }
 
     private void Update()
@@ -42,7 +45,14 @@ public class KPlayerManager : MonoBehaviour
         _curSpeed = _walkSpeed;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            _curSpeed = _runSpeed;
+            if (KGameManager.Instance._isEnemyFollow)
+            {
+                ;
+            }
+            else
+            {
+                _curSpeed = _runSpeed;
+            }
         }
         /* move key input */
         if (Input.GetKey(KKeySetting.key_Dictionary[EKeyAction.DownKey]) && (_inputKey == 0 || _inputKey == -1))
@@ -255,5 +265,15 @@ public class KPlayerManager : MonoBehaviour
         _playerPos.transform.position = pos;
         gameObject.transform.position = pos;
         yield return new WaitForSeconds(time);
+    }
+
+    public void ColorA_0()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = _transparentColor;
+    }
+
+    public void ColorA_1()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = _baseColor;
     }
 }

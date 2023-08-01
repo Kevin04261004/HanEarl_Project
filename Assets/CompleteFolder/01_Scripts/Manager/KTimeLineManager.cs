@@ -1,17 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
-
-
 
 public class KTimeLineManager : MonoBehaviour
 {
     [SerializeField] private Transform _timeLineParent;
     [SerializeField] private GameObject[] _timeLines;
     public static KTimeLineManager Instance;
-    [SerializeField] private bool _canSkip;
     private string _curTimeLine;
     public void Awake()
     {
@@ -38,10 +33,18 @@ public class KTimeLineManager : MonoBehaviour
         }
         
     }
-    
+
+    private void Start()
+    {
+        //StartTimeLine("02");
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SkipKey]) && _curTimeLine != String.Empty)
+        if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SkipKey]) 
+            && _curTimeLine != String.Empty 
+            && _curTimeLine != "06"// Normal Ending;
+            )
         {
             SkipTimeLine(_curTimeLine);
         }

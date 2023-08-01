@@ -8,11 +8,11 @@ public class KSpotLightManager : MonoBehaviour
 {
     [SerializeField] private GameObject _spotLight;
     [SerializeField] private Light2D _globalLight;
+    [SerializeField] private float _intensity = 0.01f;
     private float _baseIntensity;
     private void Awake()
     {
         _baseIntensity = _globalLight.intensity;
-        _spotLight = transform.GetChild(0).gameObject;
     }
     
     /* 타임라인에서 건들기. */
@@ -21,7 +21,7 @@ public class KSpotLightManager : MonoBehaviour
         _spotLight.SetActive(on);
         if (on)
         {
-            _globalLight.intensity = 0;
+            _globalLight.intensity = _intensity;
         }
         else
         {

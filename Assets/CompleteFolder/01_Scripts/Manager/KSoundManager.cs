@@ -59,6 +59,7 @@ public class KSoundManager : MonoBehaviour
             case "00_TitleScene":
                 _bgm_AudioSource.clip = _titleBGM;
                 _bgm_AudioSource.loop = true;
+                _bgm_AudioSource.volume = 0.1f;
                 _bgm_AudioSource.Play();
                 yield break;
             case "01_GameScene":
@@ -77,6 +78,7 @@ public class KSoundManager : MonoBehaviour
                     }
 
                     _bgm_AudioSource.clip = _bgm_AudioClips[_BGMCount];
+                    _bgm_AudioSource.volume = 0.3f;
                     _bgm_AudioSource.Play();
                 }
                 yield break;
