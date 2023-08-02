@@ -6722,6 +6722,7 @@ MonoBehaviour:
   _speed: 0.11
   _time: 0
   _rigidbody2D: {fileID: 0}
+  _playerPos: {fileID: 0}
   _enemyPos: {fileID: 1301909858}
   _canMove: 1
 --- !u!212 &321890406
@@ -10738,6 +10739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canInput: 1
+  _isGameEnd: 0
 --- !u!1 &681458077
 GameObject:
   m_ObjectHideFlags: 0
@@ -13504,6 +13506,7 @@ GameObject:
   - component: {fileID: 828639444}
   - component: {fileID: 828639445}
   - component: {fileID: 828639449}
+  - component: {fileID: 828639450}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13639,6 +13642,50 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &828639450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828639439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &832548390
 GameObject:
   m_ObjectHideFlags: 0
@@ -16934,6 +16981,18 @@ PrefabInstance:
     - target: {fileID: 2214374109238141374, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
       propertyPath: m_Name
       value: Inventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040069937324982105, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040069937324982105, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3040069937324982105, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3759741028381271726, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
       propertyPath: m_Pivot.x
@@ -37680,6 +37739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _curSpeed: 0
+  _playerPos: {fileID: 0}
   _rigidbody2D: {fileID: 0}
   _dir: {x: 0, y: 0}
   _gridSize: 1
@@ -38284,7 +38344,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mixer: {fileID: 24100000, guid: fce5f85604a9ec349b6c1216a8598c00, type: 2}
   _bgm_AudioSource: {fileID: 1664696471}
-  _bgm_AudioClip: {fileID: 8300000, guid: 20f8c1a0d7145ed469cf8be82477b478, type: 3}
+  _bgm_AudioClips: []
+  _BGMCount: 0
+  _titleBGM: {fileID: 0}
   _uiManager: {fileID: 1671671338}
 --- !u!1 &1665962215
 GameObject:
@@ -50129,6 +50191,7 @@ MonoBehaviour:
     isGet: 0
     isInvn: 0
     currentPos: {x: 0, y: 0, z: 0}
+  itemSprite: []
 --- !u!114 &7827484060866322119
 MonoBehaviour:
   m_ObjectHideFlags: 0

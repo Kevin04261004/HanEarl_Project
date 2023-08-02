@@ -36,6 +36,7 @@ public class KInteractiveObject : MonoBehaviour
             case EInteractiveType.DisappearItem:
                 JItem item = GetComponent<JItem>();
                 item.Get();
+                _dialogueReader.SetDialogue(GetDialogue());
                 break;
             case EInteractiveType.CantDisappearItem:
                 break;

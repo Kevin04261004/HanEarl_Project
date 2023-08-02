@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
+using System;
 
 public class JDataManager : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class JDataManager : MonoBehaviour
             instance = this;
         else
             Destroy(this);
-        path = $"{Application.dataPath}/CompleteFolder/97_JsonData";
+        path = $"{Application.streamingAssetsPath}";
         Load(out playerData);
         Load(out itemData);
     }
@@ -30,19 +31,19 @@ public class JDataManager : MonoBehaviour
         var fileName = typeof(T).Name.Remove(0, "J".Length);
         //string data = JsonConvert.SerializeObject(wantdata);
         string data = JsonUtility.ToJson(wantData);
-        Debug.Log(data);
+
         File.WriteAllText($"{path}/{fileName}.json", data);
     }
 
     public void SaveListData<T>(List<T> wantData) where T : JData
     {
-        Debug.Log(wantData);
+
         var fileName = typeof(T).Name.Remove(0, "J".Length);
         //string data = JsonConvert.SerializeObject(wantData);
         // 이 곳에서 데이터가 모두 소실되어버림
 
         string data = JsonUtility.ToJson(wantData);
-        Debug.Log(data);
+
         File.WriteAllText($"{path}/{fileName}.json", data);
 
     }
@@ -64,8 +65,10 @@ public class JDataManager : MonoBehaviour
         var fileName = typeof(T).Name.Remove(0, "J".Length);
 
         var json = File.ReadAllText($"{path}/{fileName}.json");
-
+        //var json = Resources.Load<TextAsset>($"{path}/{fileName}.json").ToString();
+        
         data = FromJson<T>(json);
+        
     }
 
     public void LoadList<T>(out List<T> data) where T : JData

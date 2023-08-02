@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+//using UnityEditor.Searcher;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class KGameManager : MonoBehaviour
 {
     public static KGameManager Instance = null;
     public bool _canInput = true;
+    public bool _jcanInput = true;
     private KPlayerManager _playerManager;
     private Animator _playerAnimator;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
@@ -50,6 +52,23 @@ public class KGameManager : MonoBehaviour
         _playerAnimator.SetBool(IsWalking, false);
         _playerManager.ResetInputKey();
     }
+    
+    public void J_GamePause()
+    {
+        _canInput = false;
+        _jcanInput = false;
+        _playerAnimator.SetBool(IsWalking, false);
+        _playerManager.ResetInputKey();
+    }
+    
+    public void J_GameContinue()
+    {
+        _canInput = true;
+        _jcanInput = true;
+        _playerAnimator.SetBool(IsWalking, false);
+        _playerManager.ResetInputKey();
+    }
+    
     public void GameContinue()
     {
         Time.timeScale = 1.0f;
