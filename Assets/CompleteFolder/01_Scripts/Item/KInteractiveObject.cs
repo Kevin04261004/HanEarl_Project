@@ -10,6 +10,8 @@ public enum EInteractiveType
     First_meet_C,
     First_meet_B,
     HairDry_item,
+    Roop_item,
+    RooftopFence,
 }
 public class KInteractiveObject : MonoBehaviour
 {
@@ -58,6 +60,18 @@ public class KInteractiveObject : MonoBehaviour
                 if (TryGetComponent(out KHairDryItem hairdry))
                 {
                     hairdry.InteractiveRoutine();
+                }
+                break;
+            case EInteractiveType.Roop_item:
+                if (TryGetComponent(out KRoop roop))
+                {
+                    roop.InteractiveRoutine();
+                }
+                break;
+            case EInteractiveType.RooftopFence:
+                if (TryGetComponent(out KRooftopFence rooftopFence))
+                {
+                    rooftopFence.InteractiveRoutine();
                 }
                 break;
             default:

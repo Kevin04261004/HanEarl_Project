@@ -36,7 +36,7 @@ public class KTimeLineManager : MonoBehaviour
 
     private void Start()
     {
-        //StartTimeLine("02");
+        StartTimeLine("02");
     }
 
     private void Update()
