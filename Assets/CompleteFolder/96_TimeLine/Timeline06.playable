@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fee8dc203e51f645b79b4ba4e6761f8, type: 3}
   m_Name: PortraitClip
   m_EditorClassIdentifier: 
-  _portrait_Sprite: {fileID: 2049400529, guid: ffad7201f1d3ef243872bb512cf73b59, type: 3}
+  _portrait_Sprite: {fileID: 21300000, guid: 1eae6d2bda1d7674192e6c74a77a3406, type: 3}
 --- !u!114 &-8220756844905012815
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1800,7 +1800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fee8dc203e51f645b79b4ba4e6761f8, type: 3}
   m_Name: PortraitClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _portrait_Sprite: {fileID: 2049400529, guid: ffad7201f1d3ef243872bb512cf73b59, type: 3}
+  _portrait_Sprite: {fileID: 21300000, guid: 1eae6d2bda1d7674192e6c74a77a3406, type: 3}
 --- !u!114 &-5208140325721748281
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1843,7 +1843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fee8dc203e51f645b79b4ba4e6761f8, type: 3}
   m_Name: PortraitClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _portrait_Sprite: {fileID: 2049400529, guid: ffad7201f1d3ef243872bb512cf73b59, type: 3}
+  _portrait_Sprite: {fileID: 21300000, guid: 1eae6d2bda1d7674192e6c74a77a3406, type: 3}
 --- !u!74 &-4225734404931161049
 AnimationClip:
   m_ObjectHideFlags: 0
@@ -3852,7 +3852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fee8dc203e51f645b79b4ba4e6761f8, type: 3}
   m_Name: PortraitClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _portrait_Sprite: {fileID: 2049400529, guid: ffad7201f1d3ef243872bb512cf73b59, type: 3}
+  _portrait_Sprite: {fileID: 21300000, guid: 1eae6d2bda1d7674192e6c74a77a3406, type: 3}
 --- !u!114 &2221660877724293177
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4721,7 +4721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fee8dc203e51f645b79b4ba4e6761f8, type: 3}
   m_Name: PortraitClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _portrait_Sprite: {fileID: 2049400529, guid: ffad7201f1d3ef243872bb512cf73b59, type: 3}
+  _portrait_Sprite: {fileID: 21300000, guid: 1eae6d2bda1d7674192e6c74a77a3406, type: 3}
 --- !u!114 &6483808553841884358
 MonoBehaviour:
   m_ObjectHideFlags: 1
