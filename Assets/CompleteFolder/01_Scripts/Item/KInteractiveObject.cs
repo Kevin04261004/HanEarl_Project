@@ -11,6 +11,7 @@ public enum EInteractiveType
     First_meet_B,
     
 }
+
 public class KInteractiveObject : MonoBehaviour
 {
     [SerializeField] private EInteractiveType _interactiveType;
@@ -58,5 +59,7 @@ public class KInteractiveObject : MonoBehaviour
                 break;
 
         }
+
+        G_DifurcationManager.Instance.AddInteractionObj(this.gameObject);
     }
 }
