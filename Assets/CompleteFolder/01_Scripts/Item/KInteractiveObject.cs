@@ -13,6 +13,7 @@ public enum EInteractiveType
     Roop_item,
     RooftopFence,
 }
+
 public class KInteractiveObject : MonoBehaviour
 {
     [SerializeField] private EInteractiveType _interactiveType;
@@ -78,5 +79,7 @@ public class KInteractiveObject : MonoBehaviour
                 break;
 
         }
+
+        G_DifurcationManager.Instance.AddInteractionObj(this.gameObject);
     }
 }
