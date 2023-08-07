@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class G_InventorySystem : MonoBehaviour
 {
     public static G_InventorySystem Instance;
+    [SerializeField]
+    private Text currentItemName;
 
     //public List<JItemInstance> items;
 
@@ -45,12 +47,9 @@ public class G_InventorySystem : MonoBehaviour
     {
         if (!_jcanInput)
             return;
-        
+
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InventoryKey]))
         {
-            if (Time.timeScale == 0.0f)
-                return;
-            
             if (inven.gameObject.activeSelf)
             {
                 inven.gameObject.SetActive(false);
@@ -59,8 +58,12 @@ public class G_InventorySystem : MonoBehaviour
             }
             else
             {
-                inven.gameObject.SetActive(true);
-                KGameManager.Instance.J_GamePause();
+                if (KGameManager.Instance._canInput && KGameManager.Instance._jcanInput)
+                {
+                    inven.gameObject.SetActive(true);
+                    currentItemName.text = "";
+                    KGameManager.Instance.J_GamePause();
+                }
             }
         }
     }
@@ -155,6 +158,7 @@ public class G_InventorySystem : MonoBehaviour
     public void ItemClicked(JItem wantitem)
     {
         _currentItem = wantitem;
+        currentItemName.text = _currentItem.itemData.itemName;
         buttons.gameObject.SetActive(true);
     }
 

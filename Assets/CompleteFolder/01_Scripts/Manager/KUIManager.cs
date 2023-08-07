@@ -11,7 +11,6 @@ public class KUIManager : MonoBehaviour
     [field: SerializeField] public Slider _sfx_Slider { get; private set; }
     private void Update()
     {
-
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SettingKey]))
         {
             if (_settingBG_Image.gameObject.activeSelf)
@@ -20,8 +19,11 @@ public class KUIManager : MonoBehaviour
             }
             else
             {
-                _player_animator.SetBool("isWalking", false);
-                OnClick_Setting_Btn();
+                if (KGameManager.Instance._canInput)
+                {
+                    _player_animator.SetBool("isWalking", false);
+                    OnClick_Setting_Btn();
+                }
             }
         }
     }
@@ -29,16 +31,12 @@ public class KUIManager : MonoBehaviour
 
     public void OnClick_Setting_Btn()
     {
-        if (!KGameManager.Instance._jcanInput)
-            return;
         _settingBG_Image.gameObject.SetActive(true);
         KGameManager.Instance.GamePause();
     }
 
     public void OnClick_SettingExit_Btn()
     {
-        if (!KGameManager.Instance._jcanInput)
-            return;
         _settingBG_Image.gameObject.SetActive(false);
         KGameManager.Instance.GameContinue();
     }

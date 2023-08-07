@@ -43,7 +43,7 @@ public class KCSVParser : MonoBehaviour
             do
             {
                 //row[4] = row[4].Replace("플레이어", );
-                row[4] = row[4].Replace("'", ",");
+                //row[4] = row[4].Replace("'", ",");
                 contextList.Add(row[4]);
                 if (row[5] != string.Empty)
                 {

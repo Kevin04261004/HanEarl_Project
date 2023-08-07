@@ -1,1 +1,186 @@
-{"itemList":[{"itemName":"옥상 열쇠","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/rooftopKey","index":1001,"isGet":true,"isInvn":true,"currentPos":{"x":0.0,"y":0.0,"z":0.0}},{"itemName":"화장실 열쇠","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/bathroomKey","index":1002,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":1.0,"z":0.0}},{"itemName":"정문 열쇠","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/frontdoorKey","index":1003,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":2.0,"z":0.0}},{"itemName":"펜던트 조각1","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/pendantPiece","index":1004,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":3.0,"z":0.0}},{"itemName":"펜던트 조각2","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/pendantPiece","index":1005,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":4.0,"z":0.0}},{"itemName":"펜던트 조각3","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/pendantPiece","index":1006,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":5.0,"z":0.0}},{"itemName":"뉴스 기사1","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/newspaper1","index":1007,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":6.0,"z":0.0}},{"itemName":"뉴스 기사2","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/newspaper2","index":1008,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":7.0,"z":0.0}},{"itemName":"생활기록부(플레이어)","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/lifeRecord1","index":1009,"isGet":true,"isInvn":true,"currentPos":{"x":0.0,"y":8.0,"z":0.0}},{"itemName":"생활기록부(이설빈)","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/lifeRecord2","index":1010,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":9.0,"z":0.0}},{"itemName":"생활기록부(천유현X)","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/lifeRecord3","index":1011,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":10.0,"z":0.0}},{"itemName":"생활기록부(천유현O)","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/lifeRecord4","index":1012,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":11.0,"z":0.0}},{"itemName":"이설빈의 편지","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/letter","index":1013,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":12.0,"z":0.0}},{"itemName":"천유현의 일지1","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/journal1","index":1014,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":13.0,"z":0.0}},{"itemName":"천유현의 일지2","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/journal2","index":1015,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":14.0,"z":0.0}},{"itemName":"천유현의 일지3","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/journal3","index":1016,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":15.0,"z":0.0}},{"itemName":"천유현의 일지4","dialog":"문을 열 수 있는 열쇠다.","prefab":"Prefab/journal4","index":1017,"isGet":false,"isInvn":false,"currentPos":{"x":0.0,"y":16.0,"z":0.0}}]}
+{
+  "itemList": [
+    {
+      "itemName": "옥상 열쇠",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/rooftopKey",
+      "index": 1001,
+      "isGet": true,
+      "isInvn": true,
+      "currentPos": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "화장실 열쇠",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/bathroomKey",
+      "index": 1002,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 1.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "정문 열쇠",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/frontdoorKey",
+      "index": 1003,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 2.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "펜던트 조각1",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/pendantPiece",
+      "index": 1004,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 3.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "펜던트 조각2",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/pendantPiece",
+      "index": 1005,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 4.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "펜던트 조각3",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/pendantPiece",
+      "index": 1006,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 5.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "뉴스 기사1",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/newspaper1",
+      "index": 1007,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 6.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "뉴스 기사2",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/newspaper2",
+      "index": 1008,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 7.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "생활기록부(플레이어)",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/lifeRecord1",
+      "index": 1009,
+      "isGet": true,
+      "isInvn": true,
+      "currentPos": {
+        "x": 0.0,
+        "y": 8.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "생활기록부(이설빈)",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/lifeRecord2",
+      "index": 1010,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 9.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "생활기록부(천유현X)",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/lifeRecord3",
+      "index": 1011,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 10.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "생활기록부(천유현O)",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/lifeRecord4",
+      "index": 1012,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 11.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "이설빈의 편지",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/letter",
+      "index": 1013,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 12.0,
+        "z": 0.0
+      }
+    },
+    {
+      "itemName": "천유현의 일지",
+      "dialog": "문을 열 수 있는 열쇠다.",
+      "prefab": "Prefab/journal",
+      "index": 1014,
+      "isGet": false,
+      "isInvn": false,
+      "currentPos": {
+        "x": 0.0,
+        "y": 13.0,
+        "z": 0.0
+      }
+    }
+  ]
+}

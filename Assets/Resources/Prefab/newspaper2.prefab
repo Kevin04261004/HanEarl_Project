@@ -148,7 +148,7 @@ MonoBehaviour:
   _interactiveType: 0
   _dialogueEvent:
     eventName: Key
-    line: {x: 1, y: 4}
+    line: {x: 6, y: 6}
     dialogues: []
   _dialogueReader: {fileID: 0}
 --- !u!114 &-6492700650343546601
