@@ -145,10 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 2
+  _interactiveType: 0
   _dialogueEvent:
     eventName: Key
-    line: {x: 1, y: 4}
+    line: {x: 7, y: 7}
     dialogues: []
   _dialogueReader: {fileID: 0}
 --- !u!114 &-6492700650343546601
@@ -172,6 +172,8 @@ MonoBehaviour:
     isGet: 0
     isInvn: 0
     currentPos: {x: 0, y: 0, z: 0}
+  itemSprite: []
+  itemImage: {fileID: 21300000, guid: a9f4970ab5865234cada1ad2f213283a, type: 3}
 --- !u!1001 &3268721461581599903
 PrefabInstance:
   m_ObjectHideFlags: 0

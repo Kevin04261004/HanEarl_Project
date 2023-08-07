@@ -148,7 +148,7 @@ MonoBehaviour:
   _interactiveType: 0
   _dialogueEvent:
     eventName: Key
-    line: {x: 1, y: 4}
+    line: {x: 2, y: 2}
     dialogues: []
   _dialogueReader: {fileID: 0}
 --- !u!114 &-6492700650343546601
@@ -172,6 +172,8 @@ MonoBehaviour:
     isGet: 0
     isInvn: 0
     currentPos: {x: 0, y: 0, z: 0}
+  itemSprite: []
+  itemImage: {fileID: 21300000, guid: f438edcba198c8a40afd103419c939c3, type: 3}
 --- !u!1001 &4361735097018566608
 PrefabInstance:
   m_ObjectHideFlags: 0

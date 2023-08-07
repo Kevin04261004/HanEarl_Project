@@ -159,11 +159,13 @@ public class KDialogueReader : MonoBehaviour
         if (isTrue)
         {
             KGameManager.Instance._canInput = false;
+            KGameManager.Instance._jcanInput = false;
             dialogue_GO.SetActive(true);
         }
         else
         {
             KGameManager.Instance._canInput = true;
+            KGameManager.Instance._jcanInput = true;
             dialogue_GO.SetActive(false);
         }
     }
