@@ -789,9 +789,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData:
+    name: 
     currentVec: {x: 0, y: 0}
   itemData:
     itemList: []
+  stageData:
+    currentStageNum: 0
+    beforeActName: []
 --- !u!1001 &53866707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8798,6 +8802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 419031212}
   - component: {fileID: 419031211}
+  - component: {fileID: 419031213}
   m_Layer: 0
   m_Name: StageManagerTEST
   m_TagString: Untagged
@@ -8820,28 +8825,7 @@ MonoBehaviour:
   <allGameObjectList>k__BackingField:
   - {fileID: 1118643186}
   - {fileID: 1221104209}
-  stageData:
-  - <StageObject>k__BackingField:
-    - {fileID: 1118643186}
-    <interactionObj>k__BackingField:
-    - {fileID: 1118643190}
-    <actName>k__BackingField: Act001
-    <clearBeforeActName>k__BackingField: []
-  - <StageObject>k__BackingField:
-    - {fileID: 1221104209}
-    <interactionObj>k__BackingField:
-    - {fileID: 1221104213}
-    <actName>k__BackingField: Act002
-    <clearBeforeActName>k__BackingField:
-    - Act001
-  - <StageObject>k__BackingField:
-    - {fileID: 1118643186}
-    <interactionObj>k__BackingField:
-    - {fileID: 1221104213}
-    <actName>k__BackingField: Act003
-    <clearBeforeActName>k__BackingField:
-    - Act001
-    - Act002
+  <stageData>k__BackingField: []
   clearObjects: []
   <currentData>k__BackingField:
     <StageObject>k__BackingField: []
@@ -8849,7 +8833,6 @@ MonoBehaviour:
     <actName>k__BackingField: 
     <clearBeforeActName>k__BackingField: []
   currentStageNum: 0
-  <actClear>k__BackingField: 0
   <TrueEndingItem>k__BackingField: []
 --- !u!4 &419031212
 Transform:
@@ -8866,6 +8849,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &419031213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419031210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5a68df6b56e0147ba963608ec994a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <stageInformation>k__BackingField: []
 --- !u!1 &425189166
 GameObject:
   m_ObjectHideFlags: 0
@@ -43636,7 +43632,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1888245339}
   - component: {fileID: 1888245341}
-  - component: {fileID: 1888245340}
   m_Layer: 0
   m_Name: StageDataManager
   m_TagString: Untagged
@@ -43659,42 +43654,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1888245340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888245337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5a68df6b56e0147ba963608ec994a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <stageInformation>k__BackingField:
-  - <StageObject>k__BackingField: []
-    <interactionObj>k__BackingField:
-    - {fileID: 1118643190}
-    <actName>k__BackingField: 
-    <clearBeforeActName>k__BackingField: []
-  - <StageObject>k__BackingField: []
-    <interactionObj>k__BackingField:
-    - {fileID: 1118643190}
-    <actName>k__BackingField: 
-    <clearBeforeActName>k__BackingField: []
-  - <StageObject>k__BackingField: []
-    <interactionObj>k__BackingField:
-    - {fileID: 1118643190}
-    <actName>k__BackingField: Act003
-    <clearBeforeActName>k__BackingField:
-    - Act001
-    - 002
-    - 003
-  - <StageObject>k__BackingField: []
-    <interactionObj>k__BackingField:
-    - {fileID: 1118643190}
-    <actName>k__BackingField: 
-    <clearBeforeActName>k__BackingField: []
 --- !u!114 &1888245341
 MonoBehaviour:
   m_ObjectHideFlags: 0
