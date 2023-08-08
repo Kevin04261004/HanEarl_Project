@@ -82,5 +82,6 @@ public class KInteractiveObject : MonoBehaviour
         }
 
         G_DifurcationManager.Instance.AddInteractionObj(this.gameObject);
+        Debug.Log(this.gameObject.name);
     }
 }
