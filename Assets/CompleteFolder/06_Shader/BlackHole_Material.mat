@@ -66,7 +66,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _NoiseAmount: 0.19
+    - _NoiseAmount: 0.2
     - _NoiseScale: 50
     - _RotationAmount: 1
     - _TwirlStrength: 0
