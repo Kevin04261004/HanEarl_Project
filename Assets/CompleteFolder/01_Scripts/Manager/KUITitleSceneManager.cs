@@ -7,12 +7,16 @@ using UnityEngine.UI;
 public class KUITitleSceneManager : MonoBehaviour
 {
     [SerializeField] private Image _name_Input_Image;
+    [SerializeField] private List<Sprite> _endingSprites;
     [SerializeField] private InputField wantName;
 
     private void Awake()
     {
         Sprite backGround = FindObjectOfType<Sprite>();
-        //backGround
+        // switch (JDataManager.instance.stageData.currentStageNum)
+        // {
+        //     //case 
+        // }
     }
 
     public void OnClick_GameStart_Btn()
