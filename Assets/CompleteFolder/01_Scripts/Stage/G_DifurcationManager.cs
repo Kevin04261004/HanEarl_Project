@@ -27,12 +27,16 @@ public class G_DifurcationManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void Start()
+    {
+        stageManager = FindObjectOfType<G_StageManager>().GetComponent<G_StageManager>();
     }
 
     public void AddInteractionObj(GameObject obj)

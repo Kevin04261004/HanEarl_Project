@@ -8817,25 +8817,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09945a2f54437054c80dcda9235250cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <allGameObjectList>k__BackingField:
+  - {fileID: 1118643186}
+  - {fileID: 1221104209}
   stageData:
-  - <StageObject>k__BackingField: []
+  - <StageObject>k__BackingField:
+    - {fileID: 1118643186}
     <interactionObj>k__BackingField:
     - {fileID: 1118643190}
     <actName>k__BackingField: Act001
     <clearBeforeActName>k__BackingField: []
-  - <StageObject>k__BackingField: []
+  - <StageObject>k__BackingField:
+    - {fileID: 1221104209}
     <interactionObj>k__BackingField:
     - {fileID: 1221104213}
     <actName>k__BackingField: Act002
     <clearBeforeActName>k__BackingField:
-    - Act003
+    - Act001
+  - <StageObject>k__BackingField:
+    - {fileID: 1118643186}
+    <interactionObj>k__BackingField:
+    - {fileID: 1221104213}
+    <actName>k__BackingField: Act003
+    <clearBeforeActName>k__BackingField:
+    - Act001
+    - Act002
   clearObjects: []
-  <beforeActName>k__BackingField: []
   <currentData>k__BackingField:
     <StageObject>k__BackingField: []
     <interactionObj>k__BackingField: []
     <actName>k__BackingField: 
     <clearBeforeActName>k__BackingField: []
+  currentStageNum: 0
   <actClear>k__BackingField: 0
   <TrueEndingItem>k__BackingField: []
 --- !u!4 &419031212
@@ -17765,6 +17778,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canInput: 1
+  _jcanInput: 1
+  _isEnemyFollow: 0
   _isGameEnd: 0
 --- !u!1 &681458077
 GameObject:
@@ -28780,7 +28795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1118643187
 Transform:
   m_ObjectHideFlags: 0
@@ -28793,7 +28808,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1921233447}
+  - {fileID: 1365653295}
   m_Father: {fileID: 105701195}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28948,6 +28963,7 @@ MonoBehaviour:
   _time: 1.5
   _material: {fileID: 0}
   _fadeManager: {fileID: 0}
+  _startState: 1
 --- !u!1 &1122910245
 GameObject:
   m_ObjectHideFlags: 0
@@ -29031,7 +29047,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeLineParent: {fileID: 332215659}
   _timeLines: []
-  _canSkip: 0
 --- !u!1 &1131535376
 GameObject:
   m_ObjectHideFlags: 0
@@ -30391,7 +30406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1221104210
 Transform:
   m_ObjectHideFlags: 0
@@ -33648,6 +33663,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &1365653295 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+  m_PrefabInstance: {fileID: 1459168517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1368815399
 GameObject:
   m_ObjectHideFlags: 0
@@ -36439,6 +36459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerManager: {fileID: 0}
   _fade_Image: {fileID: 1755609669}
+  _flash_Image: {fileID: 0}
   _playerAnimator: {fileID: 1617331673}
 --- !u!1 &1566319265
 GameObject:
@@ -49196,11 +49217,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &1921233447 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2561330459475059392, guid: 075f041ae5607d84d984949d078200a4, type: 3}
-  m_PrefabInstance: {fileID: 1459168517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923013550
 GameObject:
   m_ObjectHideFlags: 0
