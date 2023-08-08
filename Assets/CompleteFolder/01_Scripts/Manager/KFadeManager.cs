@@ -12,6 +12,8 @@ public class KFadeManager : MonoBehaviour
     [SerializeField] private Animator _playerAnimator;
     private Color A_1 = new Color(0, 0, 0, 1);
     private Color A_0 = new Color(0, 0, 0, 0);
+    private Color White_A_1 = new Color(1, 1, 1, 1);
+    private Color White_A_0 = new Color(1, 1, 1, 0);
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
     private void Awake()
     {
@@ -143,7 +145,7 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FlashIn(float time = 1)
     {
-        _flash_Image.color = A_1;
+        _flash_Image.color = White_A_1;
         Color tempColor = _flash_Image.color;
         while (_flash_Image.color.a > 0)
         {
@@ -157,7 +159,7 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FlashOut(float time = 1)
     {
-        _flash_Image.color = A_0;
+        _flash_Image.color = White_A_0;
         Color tempColor = _flash_Image.color;
         while (_flash_Image.color.a < 1)
         {

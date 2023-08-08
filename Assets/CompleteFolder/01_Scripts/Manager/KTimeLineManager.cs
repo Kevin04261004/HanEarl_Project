@@ -44,6 +44,7 @@ public class KTimeLineManager : MonoBehaviour
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SkipKey]) 
             && _curTimeLine != String.Empty 
             && _curTimeLine != "06"// Normal Ending;
+            && _curTimeLine != "11"// Real Ending;
             )
         {
             SkipTimeLine(_curTimeLine);
