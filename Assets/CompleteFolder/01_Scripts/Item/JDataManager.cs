@@ -14,18 +14,21 @@ public class JDataManager : MonoBehaviour
     // jsonData에서 가져온 데이터
     public JPlayerData playerData;
     public JItemData itemData;
+    public GStageSaveData stageData;
 
     private void Awake()
     {
         if (instance == null)
             instance = this;
         else
-            Destroy(this);
+            Destroy(gameObject);
+        DontDestroyOnLoad(this);
         path = $"{Application.streamingAssetsPath}";
         Load(out playerData);
         Load(out itemData);
+        Load(out stageData);
     }
-    
+
     public void SaveData<T>(T wantData) where T : JData
     {
         var fileName = typeof(T).Name.Remove(0, "J".Length);

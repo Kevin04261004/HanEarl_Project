@@ -22,8 +22,8 @@ public class KCSVParser : MonoBehaviour
             KDialogue tempDialogue = new KDialogue();
             List<string> contextList = new List<string>();
             List<string> nextLineList = new List<string>();
-            //if (row[1] == "플레이어")
-            //    row[1] = row[1].Replace("플레이어", );
+            if (row[1] == "플레이어")
+                row[1] = row[1].Replace("플레이어", JDataManager.instance.playerData.name);
             tempDialogue.character_Name = row[1];
             if (row[2] != string.Empty)
             {
@@ -42,8 +42,8 @@ public class KCSVParser : MonoBehaviour
             }
             do
             {
-                //row[4] = row[4].Replace("플레이어", );
-                //row[4] = row[4].Replace("'", ",");
+                row[4] = row[4].Replace("플레이어", JDataManager.instance.playerData.name);
+                row[4] = row[4].Replace("'", ",");
                 contextList.Add(row[4]);
                 if (row[5] != string.Empty)
                 {

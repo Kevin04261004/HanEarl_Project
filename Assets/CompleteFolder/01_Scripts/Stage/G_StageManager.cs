@@ -1,44 +1,40 @@
+using System;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-
-
 using static G_StageData;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+[Serializable]
+public class GStageSaveData : JData
+{
+    public int currentStageNum = 0; // ï¿½ï¿½ï¿½ï¿½ Act ï¿½Ñ¹ï¿½
+
+    //public List<string> beforeActName { get; private set; } = new List<string>(); 
+    public List<string> beforeActName = new List<string>();
+}
 
 public class G_StageManager : MonoBehaviour
 {
-    [SerializeField]
-    protected class StageSaveData : JData
-    {
-        [field: SerializeField]
-        public int currentStageNum = 0; // ÇöÀç Act ³Ñ¹ö
-        [field: SerializeField]
-        public List<string> beforeActName { get; private set; } = new List<string>();
-    }
+    private GStageSaveData stageSaveData; // = new GStageSaveData();
 
-    private StageSaveData stageSaveData = new StageSaveData();
 
-    [field:SerializeField]
-    public List<GameObject> allGameObjectList { get; private set; } = new List<GameObject>();
+    [field: SerializeField] public List<GameObject> allGameObjectList { get; private set; } = new List<GameObject>();
 
     [field: SerializeField]
-    public List<G_StageInformation> stageData { get; private set; } // ÇØ´ç ¾×Æ®¿¡ ÇÊ¿äÇÑ ¿ÀºêÁ§Æ® µ¥ÀÌÅÍ
+    public List<G_StageInformation> stageData { get; private set; } // ï¿½Ø´ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-    [SerializeField]
-    private List<GameObject> clearObjects; // ¾×Æ®¿¡¼­ »ç¿ëÇÑ ¿ÀºêÁ§Æ® µ¥ÀÌÅÍ
+    [SerializeField] private List<GameObject> clearObjects; // ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private G_EndingManager endingManager;
 
-    [field:SerializeField]
-    public G_StageInformation currentData { get;  private set; }
+    [field: SerializeField] public G_StageInformation currentData { get; private set; }
 
-    [field: SerializeField]
-    public int currentStageNum; // ÀÓ½Ã È®ÀÎ ¿ë..
+    [field: SerializeField] public int currentStageNum; // ï¿½Ó½ï¿½ È®ï¿½ï¿½ ï¿½ï¿½..
 
-    [field:SerializeField]
-    public GameObject[] TrueEndingItem { get; private set; } // ÃÖÁ¾ ¿£µù¿¡ ÇÊ¿äÇÑ ¾ÆÀÌÅÛµé
+    [field: SerializeField] public GameObject[] TrueEndingItem { get; private set; } // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½
 
     public void Start()
     {
@@ -51,42 +47,45 @@ public class G_StageManager : MonoBehaviour
         }
     }
 
-    // Act Á¾·á
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+            AfterSchool();
+    }
+
+    // Act ï¿½ï¿½ï¿½ï¿½
     public void ActEnd()
     {
-
         if (ObjectCheckClear() && BeforeActNameCheck())
         {
             stageSaveData.currentStageNum++;
             stageSaveData.beforeActName.Add(currentData.actName);
-            SceneManager.LoadScene("Test_Title");
-        }
-        else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-        JDataManager.instance.SaveData<StageSaveData>(stageSaveData);
-        ActStart();
+        SceneManager.LoadScene("00_TitleScene");
+
+        JDataManager.instance.SaveData(stageSaveData);
     }
 
-    // Act ½ÃÀÛ
+    // Act ï¿½ï¿½ï¿½ï¿½
     public void ActStart()
     {
-        SetActiveAllObject(); // ¸ðµç ¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­
+        SetActiveAllObject(); // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½È°ï¿½ï¿½È­
 
-        JDataManager.instance.Load<StageSaveData>(out stageSaveData);
+        //JDataManager.instance.Load(out stageSaveData);
+        stageSaveData = JDataManager.instance.stageData;
         currentStageNum = stageSaveData.currentStageNum;
+
 
         currentData = stageData[currentStageNum];
 
         SetActiveObject();
     }
 
-    public void AfterSchool() // ÇÏ±³
+    public void AfterSchool() // ï¿½Ï±ï¿½
     {
         ActEnd();
-        SceneManager.LoadScene("JMainMenu");
+        SceneManager.LoadScene("00_TitleScene");
     }
 
     public void AddClearObject(GameObject obj)
@@ -102,7 +101,7 @@ public class G_StageManager : MonoBehaviour
         endingManager.CallEnding(endingName);
     }
 
-    private bool BeforeActNameCheck() // ÀÌÀü¿¡ Å¬¸®¾îÇÑ ¾×Æ®ÀÇ ÀÌ¸§À» Ã¼Å©ÇÔ.
+    private bool BeforeActNameCheck() // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ Ã¼Å©ï¿½ï¿½.
     {
         if (currentData.clearBeforeActName == null)
         {
@@ -111,7 +110,7 @@ public class G_StageManager : MonoBehaviour
 
         int clearPoint = 0;
 
-        foreach (string actName in currentData.clearBeforeActName) 
+        foreach (string actName in currentData.clearBeforeActName)
         {
             if (stageSaveData.beforeActName.Contains(actName))
             {
@@ -137,7 +136,7 @@ public class G_StageManager : MonoBehaviour
 
     private void SetActiveAllObject()
     {
-        for(int i = 0;i < allGameObjectList.Count; i++)
+        for (int i = 0; i < allGameObjectList.Count; i++)
         {
             allGameObjectList[i].SetActive(false);
         }
@@ -151,7 +150,7 @@ public class G_StageManager : MonoBehaviour
         {
             for (int j = 0; j < clearObjects.Count; j++)
             {
-                // ½ºÅ×ÀÌÁö¿¡ ÇÊ¼ö·Î ÇÊ¿äÇÑ ¿ÀºêÁ§Æ®ÀÇ ÀÌ¸§°ú ÇÃ·¹ÀÌ µµÁß »ç¿ëÇÑ ¿ÀºêÁ§Æ® ÀÌ¸§À» ´ëÁ¶ÇØ È®ÀÎ
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¼ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
                 if (currentData.interactionObj[i].gameObject.name == clearObjects[j].name)
                 {
                     clearPoint++;
@@ -161,11 +160,9 @@ public class G_StageManager : MonoBehaviour
                     }
                 }
             }
-
         }
 
         clearObjects.Clear();
         return false;
     }
 }
-
