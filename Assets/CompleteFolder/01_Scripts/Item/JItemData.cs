@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class JItemData : JData
+public class JItemData : JData 
 {
     public List<JItemInstance> itemList = new List<JItemInstance>();
 }

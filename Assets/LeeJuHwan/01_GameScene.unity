@@ -811,14 +811,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory
       objectReference: {fileID: 0}
-    - target: {fileID: 2663679751028681121, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
-      propertyPath: inven
-      value: 
-      objectReference: {fileID: 1895005920}
-    - target: {fileID: 2663679751028681121, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
-      propertyPath: buttons
-      value: 
-      objectReference: {fileID: 115760037}
     - target: {fileID: 2879438986574897521, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1980,11 +1972,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!224 &115760037 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8462469024038841946, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
-  m_PrefabInstance: {fileID: 21882157}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &135660747
 GameObject:
   m_ObjectHideFlags: 0
@@ -17950,6 +17937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canInput: 1
   _jcanInput: 1
+  _isEnemyFollow: 0
   _isGameEnd: 0
 --- !u!1 &681458077
 GameObject:
@@ -28978,7 +28966,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1921233447}
+  - {fileID: 1459168518}
   m_Father: {fileID: 105701195}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29133,6 +29121,7 @@ MonoBehaviour:
   _time: 1.5
   _material: {fileID: 0}
   _fadeManager: {fileID: 0}
+  _startState: 0
 --- !u!1 &1122910245
 GameObject:
   m_ObjectHideFlags: 0
@@ -29216,7 +29205,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _timeLineParent: {fileID: 332215659}
   _timeLines: []
-  _canSkip: 0
 --- !u!1 &1131535376
 GameObject:
   m_ObjectHideFlags: 0
@@ -36265,6 +36253,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+--- !u!4 &1459168518 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+  m_PrefabInstance: {fileID: 1459168517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1471017323
 GameObject:
   m_ObjectHideFlags: 0
@@ -36624,6 +36617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerManager: {fileID: 0}
   _fade_Image: {fileID: 1755609669}
+  _flash_Image: {fileID: 0}
   _playerAnimator: {fileID: 1617331673}
 --- !u!1 &1566319265
 GameObject:
@@ -43884,17 +43878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1895005920 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3568140555503900511, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
-  m_PrefabInstance: {fileID: 21882157}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1895723637
 GameObject:
   m_ObjectHideFlags: 0
@@ -49404,11 +49387,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &1921233447 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2561330459475059392, guid: 075f041ae5607d84d984949d078200a4, type: 3}
-  m_PrefabInstance: {fileID: 1459168517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923013550
 GameObject:
   m_ObjectHideFlags: 0
