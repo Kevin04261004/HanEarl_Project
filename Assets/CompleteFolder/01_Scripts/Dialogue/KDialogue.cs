@@ -3,12 +3,13 @@ using UnityEngine;
 [System.Serializable]
 public class KDialogue
 {
-    [Tooltip("Ä³¸¯ÅÍÀÌ¸§")] public string character_Name;
-    [Tooltip("Ä³¸¯ÅÍ ÀÌ¹ÌÁö")] public string characterImage_Name;
-    [Tooltip("¼±ÅÃÁö")] public bool hasOption;
-    [Tooltip("´ë»ç ³»¿ë")] public string[] contexts;
-    [Tooltip("¼±ÅÃÁö ³»¿ë")] public string[] option_Contexts;
-    [Tooltip("¹öÆ° Å¬¸¯½Ã ¸î ÁÙ·Î ÀÌµ¿")] public string[] nextLine;
+    [Tooltip("ì¸ë±ìŠ¤")] public int index;
+    [Tooltip("ìºë¦­í„°ì´ë¦„")] public string character_Name;
+    [Tooltip("ìºë¦­í„° ì´ë¯¸ì§€")] public string characterImage_Name;
+    [Tooltip("ì„ íƒì§€")] public bool hasOption;
+    [Tooltip("ëŒ€ì‚¬ ë‚´ìš©")] public string[] contexts;
+    [Tooltip("ì„ íƒì§€ ë‚´ìš©")] public string[] option_Contexts;
+    [Tooltip("ë²„íŠ¼ í´ë¦­ì‹œ ëª‡ ì¤„ë¡œ ì´ë™")] public string[] nextLine;
 }
 [System.Serializable]
 public class KDialogueEvent

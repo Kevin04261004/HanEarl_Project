@@ -38,6 +38,43 @@ public class KPlayerManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.DownKey]))
+        {
+            if (_animator.GetInteger(Direction) != 0)
+            {
+                return;
+            }
+            ResetInputKey();
+            _animator.SetBool(IsWalking, false);
+        }
+        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.UpKey]))
+        {
+            if (_animator.GetInteger(Direction) != 1)
+            {
+                return;
+            }
+            ResetInputKey();
+            _animator.SetBool(IsWalking, false);
+        }
+        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.LeftKey]))
+        {
+            if (_animator.GetInteger(Direction) != 2)
+            {
+                return;
+            }
+            ResetInputKey();
+            _animator.SetBool(IsWalking, false);
+        }
+        else if (Input.GetKeyUp(KKeySetting.key_Dictionary[EKeyAction.RightKey]))
+        {
+            if (_animator.GetInteger(Direction) != 3)
+            {
+                return;
+            }
+
+            ResetInputKey();
+            _animator.SetBool(IsWalking, false);
+        }
         if(!KGameManager.Instance._canInput)
         {
             return;

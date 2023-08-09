@@ -54,7 +54,7 @@ public class KDialogueReader : MonoBehaviour
                 {
                     if (dialogues[typeIndex].hasOption)
                     {
-                        return;   
+                        return;
                     }
                     isTyping = true;
                     if (dialogues[typeIndex].contexts.Length > contextsIndex+1)
@@ -70,6 +70,17 @@ public class KDialogueReader : MonoBehaviour
                             Talk_SetActive_Bool(false);
                             typeIndex = -1;
                         }
+                        else
+                        {
+                            if (!string.IsNullOrEmpty(dialogues[typeIndex].nextLine[contextsIndex]))
+                            {
+                                if (int.TryParse(dialogues[typeIndex].nextLine[contextsIndex], out int a))
+                                {
+                                    typeIndex = a - dialogues[typeIndex].index + 1;   
+                                }
+                            }
+                        }
+                        
                         typeIndex++;
                         contextsIndex = 0;
                     }
@@ -112,14 +123,17 @@ public class KDialogueReader : MonoBehaviour
     }
     private void TalkPanel_Change(string _name,string Image_Name, string _content = null, bool isOption = false)
     {
+        name_TMP.color = Color.black;
+        dialogue_TMP.color = Color.white;
         Talk_SetActive_Bool(true);
         OptionBtn_SetActive_Bool(isOption);
-        if(string.IsNullOrEmpty(Image_Name))
+        if(string.IsNullOrEmpty(Image_Name) || Image_Name == "None")
         {
-            ;
+            chararcterImage_Image.gameObject.SetActive(false);
         }
         else
         {
+            chararcterImage_Image.gameObject.SetActive(true);
             Sprite needChangePic = Resources.Load<Sprite>(Image_Name);
             chararcterImage_Image.sprite = needChangePic;
         }
@@ -131,6 +145,8 @@ public class KDialogueReader : MonoBehaviour
     }
     private void TalkPanel_Change_WithTyping(string name, string Image_Name, string content = null, int typingIndex = 0)
     {
+        name_TMP.color = Color.black;
+        dialogue_TMP.color = Color.white;
         if (!dialogue_GO.activeSelf)
         {
             Talk_SetActive_Bool(true);
@@ -144,12 +160,13 @@ public class KDialogueReader : MonoBehaviour
             name_TMP.text = name;
             dialogue_TMP.text = content.Substring(0, typingIndex);
         }
-        if (string.IsNullOrEmpty(Image_Name))
+        if (string.IsNullOrEmpty(Image_Name)|| Image_Name == "None")
         {
-            ;
+            chararcterImage_Image.gameObject.SetActive(false);
         }
         else
         {
+            chararcterImage_Image.gameObject.SetActive(true);
             Sprite needChangePic = Resources.Load<Sprite>(Image_Name);
             chararcterImage_Image.sprite = needChangePic;
         }
@@ -177,7 +194,8 @@ public class KDialogueReader : MonoBehaviour
             for (int i = 0; i < dialogues[typeIndex].option_Contexts.Length; ++i)
             {
                 Options_TMP[i].text = dialogues[typeIndex].option_Contexts[i];
-                Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._num = int.Parse(dialogues[typeIndex].nextLine[i]);
+                Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._num =
+                    int.Parse(dialogues[typeIndex].nextLine[i]) - dialogues[typeIndex].index + 1;
                 Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.ChangeLine);
             }
         }

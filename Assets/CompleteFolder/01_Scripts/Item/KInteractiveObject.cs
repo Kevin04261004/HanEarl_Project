@@ -37,11 +37,14 @@ public class KInteractiveObject : MonoBehaviour
         switch(_interactiveType)
         {
             case EInteractiveType.DisappearItem:
-                JItem item = GetComponent<JItem>();
-                item.Get();
+                if (TryGetComponent(out JItem item))
+                {
+                    item.Get();
+                }
                 _dialogueReader.SetDialogue(GetDialogue());
                 break;
             case EInteractiveType.CantDisappearItem:
+                _dialogueReader.SetDialogue(GetDialogue());
                 break;
             case EInteractiveType.NPC:
                 _dialogueReader.SetDialogue(GetDialogue());
@@ -81,7 +84,7 @@ public class KInteractiveObject : MonoBehaviour
 
         }
 
-        G_DifurcationManager.Instance.AddInteractionObj(this.gameObject);
+        //G_DifurcationManager.Instance.AddInteractionObj(this.gameObject);
         Debug.Log(this.gameObject.name);
     }
 }
