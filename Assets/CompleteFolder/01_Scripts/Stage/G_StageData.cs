@@ -8,9 +8,9 @@ public class G_StageData : MonoBehaviour
     public class G_StageInformation
     {
         [field: SerializeField]
-        public List<GameObject> StageObject { get; private set; } = new List<GameObject>(); // ½ºÅ×ÀÌÁö¿¡ Á¸ÀçÇÏ´Â ÀüÃ¼ object
+        public List<GameObject> StageObject { get; private set; } = new List<GameObject>(); // ìŠ¤í…Œì´ì§€ì— ì¡´ì¬í•˜ëŠ” ì „ì²´ object
         [field: SerializeField]
-        public List<KInteractiveObject> interactionObj { get; private set; } = new List<KInteractiveObject>(); // ½ºÅ×ÀÌÁö Å¬¸®¾î¿¡ ÇÊ¼ö
+        public List<KInteractiveObject> interactionObj { get; private set; } = new List<KInteractiveObject>(); // ìŠ¤í…Œì´ì§€ í´ë¦¬ì–´ì— í•„ìˆ˜
         [field: SerializeField]
         public string actName { get; private set; }
         [field: SerializeField]

@@ -7,11 +7,13 @@ public enum EInteractiveType
     DisappearItem,
     CantDisappearItem,
     NPC,
-    First_meet_C,
-    First_meet_B,
+    C_Act3,
+    B_Act6,
     HairDry_item,
     Roop_item,
     RooftopFence,
+    FairyTaleBook,
+    
 }
 
 public class KInteractiveObject : MonoBehaviour
@@ -41,21 +43,21 @@ public class KInteractiveObject : MonoBehaviour
                 {
                     item.Get();
                 }
-                _dialogueReader.SetDialogue(GetDialogue());
+                _dialogueReader.SetDialogue(GetDialogue(), gameObject);
                 break;
             case EInteractiveType.CantDisappearItem:
-                _dialogueReader.SetDialogue(GetDialogue());
+                _dialogueReader.SetDialogue(GetDialogue(),gameObject);
                 break;
             case EInteractiveType.NPC:
-                _dialogueReader.SetDialogue(GetDialogue());
+                _dialogueReader.SetDialogue(GetDialogue(),gameObject);
                 break;
-            case EInteractiveType.First_meet_C:
+            case EInteractiveType.C_Act3:
                 if (TryGetComponent(out KCManager kcManager))
                 {
                     kcManager.FirstMeetInteractiveRoutine();
                 }
                 break;
-            case EInteractiveType.First_meet_B:
+            case EInteractiveType.B_Act6:
                 if (TryGetComponent(out KBManager kbManager))
                 {
                     kbManager.FirstMeetInteractiveRoutine();
@@ -78,6 +80,17 @@ public class KInteractiveObject : MonoBehaviour
                 {
                     rooftopFence.InteractiveRoutine();
                 }
+                break;
+            case EInteractiveType.FairyTaleBook:
+                if (TryGetComponent(out JItem fairyTaleBook))
+                {
+                    fairyTaleBook.Get();
+                }
+                if (TryGetComponent(out KFairTaleBook book))
+                {
+                    book.Used();
+                }
+                _dialogueReader.SetDialogue(GetDialogue(),gameObject);
                 break;
             default:
                 break;

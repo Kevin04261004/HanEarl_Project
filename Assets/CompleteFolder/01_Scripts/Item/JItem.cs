@@ -24,14 +24,4 @@ public class JItem : MonoBehaviour
         gameObject.SetActive(false);
         G_InventorySystem.Instance.J_AddItem(this);
     }
-    //
-    // public void Use()
-    // {
-    //     
-    // }
-    //
-    // public void Examine()
-    // {
-    //     
-    // }
 }

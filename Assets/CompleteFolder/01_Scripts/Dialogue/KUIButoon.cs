@@ -34,7 +34,7 @@ public class KUIButoon : MonoBehaviour
     }
     private void OnClicked()
     {
-        _kDialogueReader.typeIndex = _num;
+        _kDialogueReader.typeIndex += _num;
         _kDialogueReader.OptionBtn_SetActive_Bool(false);
         _kDialogueReader.StartReading();
     }

@@ -23,7 +23,7 @@ public class KDialogueReader : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogue_TMP;
     [SerializeField] private GameObject Btns_GO;
     [SerializeField] private TextMeshProUGUI[] Options_TMP;
-
+    [SerializeField] private GameObject _from_GameObject;
     private void Update()
     {
         if(isReading && Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InteractionKey]))
@@ -69,6 +69,15 @@ public class KDialogueReader : MonoBehaviour
                             isReading = false;
                             Talk_SetActive_Bool(false);
                             typeIndex = -1;
+                            typeIndex++;
+                            contextsIndex = 0;
+                            if (_from_GameObject != null)
+                            {
+                                if (_from_GameObject.layer == 6)//LayerMask.NameToLayer("AfterDialogueDisappear"))
+                                {
+                                    _from_GameObject.SetActive(false);
+                                }   
+                            }
                         }
                         else
                         {
@@ -76,13 +85,16 @@ public class KDialogueReader : MonoBehaviour
                             {
                                 if (int.TryParse(dialogues[typeIndex].nextLine[contextsIndex], out int a))
                                 {
-                                    typeIndex = a - dialogues[typeIndex].index + 1;   
+                                    typeIndex += a - dialogues[typeIndex].index;
+                                    contextsIndex = 0;
+                                }
+                                else
+                                {
+                                    typeIndex++;
+                                    contextsIndex = 0;
                                 }
                             }
                         }
-                        
-                        typeIndex++;
-                        contextsIndex = 0;
                     }
                 }
             }
@@ -116,8 +128,9 @@ public class KDialogueReader : MonoBehaviour
             }
         }
     }
-    public void SetDialogue(KDialogue[] _forSetting)
+    public void SetDialogue(KDialogue[] _forSetting, GameObject _from = null)
     {
+        _from_GameObject = _from;
         dialogues = _forSetting;
         StartReading();
     }
@@ -195,7 +208,7 @@ public class KDialogueReader : MonoBehaviour
             {
                 Options_TMP[i].text = dialogues[typeIndex].option_Contexts[i];
                 Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._num =
-                    int.Parse(dialogues[typeIndex].nextLine[i]) - dialogues[typeIndex].index + 1;
+                    int.Parse(dialogues[typeIndex].nextLine[i]) - dialogues[typeIndex].index;
                 Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.ChangeLine);
             }
         }
