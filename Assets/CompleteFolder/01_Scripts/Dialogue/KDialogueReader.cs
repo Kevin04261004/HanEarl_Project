@@ -147,6 +147,7 @@ public class KDialogueReader : MonoBehaviour
         else
         {
             chararcterImage_Image.gameObject.SetActive(true);
+            chararcterImage_Image.color = Color.white;
             Sprite needChangePic = Resources.Load<Sprite>(Image_Name);
             chararcterImage_Image.sprite = needChangePic;
         }
@@ -180,6 +181,7 @@ public class KDialogueReader : MonoBehaviour
         else
         {
             chararcterImage_Image.gameObject.SetActive(true);
+            chararcterImage_Image.color = Color.white;
             Sprite needChangePic = Resources.Load<Sprite>(Image_Name);
             chararcterImage_Image.sprite = needChangePic;
         }

@@ -13,6 +13,7 @@ public enum EInteractiveType
     Roop_item,
     RooftopFence,
     FairyTaleBook,
+    C_Act4,
     
 }
 
@@ -82,13 +83,20 @@ public class KInteractiveObject : MonoBehaviour
                 }
                 break;
             case EInteractiveType.FairyTaleBook:
-                if (TryGetComponent(out JItem fairyTaleBook))
+                if (TryGetComponent(out JItem item2))
                 {
-                    fairyTaleBook.Get();
+                    item2.Get();
                 }
                 if (TryGetComponent(out KFairTaleBook book))
                 {
                     book.Used();
+                }
+                _dialogueReader.SetDialogue(GetDialogue(),gameObject);
+                break;
+            case EInteractiveType.C_Act4:
+                if (TryGetComponent(out KCAfterDialogue c))
+                {
+                    c.Used();
                 }
                 _dialogueReader.SetDialogue(GetDialogue(),gameObject);
                 break;
