@@ -40,7 +40,8 @@ public class KUITitleSceneManager : MonoBehaviour
     // 이 함수는 이름 정하기 완료 버튼, 이름 정한 후면 그냥 게임 시작버튼에서 실행 됨
     public void OnClick_ChangeTo_GameScene()
     {
-        SceneManager.LoadScene("01_GameScene");
+        //SceneManager.LoadScene("01_GameScene"); 본겜 사용할 코드
+        SceneManager.LoadScene("01_G_GameScene"); // 임시 테스트용
     }
 
     public void OnClick_SetName_Btn()
