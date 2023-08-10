@@ -9,14 +9,27 @@ public class KUITitleSceneManager : MonoBehaviour
     [SerializeField] private Image _name_Input_Image;
     [SerializeField] private List<Sprite> _endingSprites;
     [SerializeField] private InputField wantName;
+    [SerializeField] private Image backGround;
 
     private void Awake()
     {
-        Sprite backGround = FindObjectOfType<Sprite>();
-        // switch (JDataManager.instance.stageData.currentStageNum)
-        // {
-        //     //case 
-        // }
+    }
+
+    private void Start()
+    {
+        switch (JDataManager.instance.stageData.currentStageNum)
+        {
+            case 1:
+                backGround.sprite = _endingSprites[1];
+                break;
+            case 2:
+                backGround.sprite = _endingSprites[2];
+                break;
+            case 3:
+                backGround.sprite = _endingSprites[3];
+                break;
+        }
+        
     }
 
     public void OnClick_GameStart_Btn()

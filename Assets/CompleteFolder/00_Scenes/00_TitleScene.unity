@@ -749,7 +749,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name_Input_Image: {fileID: 1851207749}
+  _endingSprites:
+  - {fileID: 21300000, guid: 3fda523ddf40fc04398366b19febdd37, type: 3}
+  - {fileID: 21300000, guid: c435df2857e0b974da59cafd0d48fffb, type: 3}
+  - {fileID: 21300000, guid: 9c63c988de335bf4191c37c91b8a9d78, type: 3}
+  - {fileID: 21300000, guid: e9216b3cc0f427348b53c59f95236deb, type: 3}
   wantName: {fileID: 32293198}
+  backGround: {fileID: 183572007}
 --- !u!4 &357641883
 Transform:
   m_ObjectHideFlags: 0
@@ -1570,6 +1576,9 @@ MonoBehaviour:
     currentVec: {x: 0, y: 0}
   itemData:
     itemList: []
+  stageData:
+    currentStageNum: 0
+    beforeActName: []
 --- !u!4 &1221555218
 Transform:
   m_ObjectHideFlags: 0
