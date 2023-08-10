@@ -44,12 +44,12 @@ public class G_DifurcationManager : MonoBehaviour
         stageManager.AddClearObject(obj);
     }
 
-    public void NormalEndingStart() // ¾×Æ®7 ÀÌÈÄ ¾×Æ® ÃÊ±âÈ­
+    public void NormalEndingStart() // ì•¡íŠ¸7 ì´í›„ ì•¡íŠ¸ ì´ˆê¸°í™”
     {
         stageManager.Act7_Reset();
     }
 
-    public void CallEnding(string endingName) // ¿£µù È£Ãâ
+    public void CallEnding(string endingName) // ì—”ë”© í˜¸ì¶œ
     {
         stageManager.EndingStart(endingName);
     }

@@ -86,6 +86,18 @@ public class G_InventorySystem : MonoBehaviour
         J_slots.Add(slot);
     }
 
+    public bool HasItemF(string name)
+    {
+        foreach (var v in  J_slots)
+        {
+            if (v.Jitem.itemData.itemName == name)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
     // public void FreshSlot()
     // {
     //     int i = 0;

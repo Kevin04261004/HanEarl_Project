@@ -10,23 +10,21 @@ public class KUITitleSceneManager : MonoBehaviour
     [SerializeField] private List<Sprite> _endingSprites;
     [SerializeField] private InputField wantName;
     [SerializeField] private Image backGround;
-
-    private void Awake()
-    {
-    }
-
+    
     private void Start()
     {
         switch (JDataManager.instance.stageData.currentStageNum)
         {
-            case 1:
+            case 7:
                 backGround.sprite = _endingSprites[1];
                 break;
-            case 2:
+            case 8:
                 backGround.sprite = _endingSprites[2];
                 break;
-            case 3:
+            case 9:
                 backGround.sprite = _endingSprites[3];
+                break;
+            default:
                 break;
         }
         
@@ -50,11 +48,9 @@ public class KUITitleSceneManager : MonoBehaviour
         _name_Input_Image.gameObject.SetActive(false);
     }
 
-    // 이 함수는 이름 정하기 완료 버튼, 이름 정한 후면 그냥 게임 시작버튼에서 실행 됨
     public void OnClick_ChangeTo_GameScene()
     {
-        //SceneManager.LoadScene("01_GameScene"); 본겜 사용할 코드
-        SceneManager.LoadScene("01_G_GameScene"); // 임시 테스트용
+        SceneManager.LoadScene("01_GameScene");
     }
 
     public void OnClick_SetName_Btn()

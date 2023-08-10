@@ -13,7 +13,7 @@ public class JDataManager : MonoBehaviour
     
     // jsonData에서 가져온 데이터
     public JPlayerData playerData;
-    public JItemData itemData;
+    //public JItemData itemData;
     public GStageSaveData stageData;
 
     private void Awake()
@@ -25,7 +25,7 @@ public class JDataManager : MonoBehaviour
         DontDestroyOnLoad(this);
         path = $"{Application.streamingAssetsPath}";
         Load(out playerData);
-        Load(out itemData);
+        //Load(out itemData);
         Load(out stageData);
     }
 

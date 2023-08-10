@@ -14,8 +14,6 @@ public class JItemInstance
 {
     // 고정 값
     public string itemName;
-    public string dialog;
-    public string prefab;
     public int index;
 
     // 변하는 값

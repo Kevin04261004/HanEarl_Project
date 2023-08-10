@@ -118,7 +118,7 @@ public class KInteractiveObject : MonoBehaviour
                 _dialogueReader.SetDialogue(GetDialogue(),gameObject);
                 break;
             case EInteractiveType.Roof_Key_Event:
-                if (true) //만약 Key아이템이 존재한다면 
+                if (G_InventorySystem.Instance.HasItemF("옥상 열쇠"))
                 {
                     _dialogueReader.SetDialogue(GetSecondDialogue(),gameObject);
                     gameObject.SetActive(false);

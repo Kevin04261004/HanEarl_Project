@@ -98,6 +98,10 @@ MonoBehaviour:
     line: {x: 2, y: 2}
     dialogues: []
   _dialogueReader: {fileID: 0}
+  _secondDialogueEvent:
+    eventName: 
+    line: {x: 0, y: 0}
+    dialogues: []
 --- !u!114 &-6492700650343546601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,15 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcf48672201d9243b1acb85fb5c9c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogues_01: []
   itemData:
-    itemName: 
-    dialog: 
-    prefab: 
-    index: 0
+    itemName: "\uC625\uC0C1 \uC5F4\uC1E0"
+    index: 1000
     isGet: 0
     isInvn: 0
-    currentPos: {x: 0, y: 0, z: 0}
   itemSprite: []
   itemImage: {fileID: 21300000, guid: f438edcba198c8a40afd103419c939c3, type: 3}
 --- !u!1001 &4361735097018566608

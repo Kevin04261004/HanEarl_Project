@@ -22,7 +22,7 @@ public class G_EndingManager : MonoBehaviour
 
     [field:SerializeField] public bool normalEndingCheck { get; private set; } = false;
 
-    public void CallEnding(string endingName) // stage¸Å´ÏÀú ¿¡°Ô¼­ Á¤º¸¸¦ ¹Ş°í ¿£µùÀ» È£ÃâÇÔ
+    public void CallEnding(string endingName) // stageë§¤ë‹ˆì € ì—ê²Œì„œ ì •ë³´ë¥¼ ë°›ê³  ì—”ë”©ì„ í˜¸ì¶œí•¨
     {
         EndingTypeSetting(endingName);
     }

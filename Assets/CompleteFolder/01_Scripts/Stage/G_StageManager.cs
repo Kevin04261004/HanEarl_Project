@@ -20,8 +20,7 @@ public class GStageSaveData : JData
 public class G_StageManager : MonoBehaviour
 {
     private GStageSaveData stageSaveData; // = new GStageSaveData();
-
-    [field: SerializeField] public List<GameObject> allGameObjectList { get; private set; } = new List<GameObject>();
+    
 
     [field: SerializeField]
     public List<G_StageInformation> stageData { get; private set; }
@@ -53,7 +52,6 @@ public class G_StageManager : MonoBehaviour
 
     public void ActStart()
     {
-        ResetObject();
 
         //JDataManager.instance.Load(out stageSaveData);
         stageSaveData = JDataManager.instance.stageData;
@@ -147,15 +145,6 @@ public class G_StageManager : MonoBehaviour
             currentData.StageObject[i].SetActive(true);
         }
     }
-
-    private void ResetObject()
-    {
-        for (int i = 0; i < allGameObjectList.Count; i++)
-        {
-            allGameObjectList[i].SetActive(false);
-        }
-    }
-
     private bool ObjectCheckClear()
     {
         if (stageSaveData.currentStageNum == 0)

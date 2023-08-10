@@ -145,7 +145,7 @@ index,character_name,characterImage_Name,hasOption,contexts,changeNum
 92,플레이어,Player_None,no,이곳을 탈출하라고…? 그게 도대체 무슨 말이지…,
 93,플레이어,Player_Blind,no,…다시 해야 할 것을 하자.,
 94,이설빈,B_Smile,no,나 대신에 도서실 정리해줘서 정말 고마워!,
-95,,B_None,no,나는 아직 뒷정리할 게 남아서 먼저 집에 가야 할 거 같아.,
+95,이설빈,B_None,no,나는 아직 뒷정리할 게 남아서 먼저 집에 가야 할 거 같아.,
 96,플레이어,Player_None,yes,천유현에 대해,97
 ,,,,환각에 대해,98
 97,이설빈,B_None,no,…뭐? 복도에 천유현이 있었다고…?,99
@@ -336,8 +336,8 @@ index,character_name,characterImage_Name,hasOption,contexts,changeNum
 226,플레이어,Player_None,no,조사하기 전에 옥상 문을 잠글까?,
 227,플레이어,Player_None,yes,옥상 문을 잠근다.,228
 ,,,,옥상 문을 잠그지 않는다.,229
-228,플레이어,Player_None,no,혹시 모르니 옥상 문을 잠그고 조사를 시작하자.,236
-229,플레이어,Player_None,no,잠겨있었던 옥상을 한 번 조사해볼까?,230
+228,플레이어,Player_None,no,혹시 모르니 옥상 문을 잠그고 조사를 시작하자.,
+229,플레이어,Player_None,no,잠겨있었던 옥상을 한 번 조사해볼까?,
 230,플레이어,Player_None,no,그럼 어디서부터…,
 231,이설빈,B_Smile,no,뭐해 플레이어?,
 ,,,,아하하' 옥상은 위험하잖아.,
