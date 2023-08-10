@@ -18,37 +18,37 @@ public class JItemManager : MonoBehaviour
         // else
         //     Destroy(this);
 
-        Initialize();
+        //Initialize();
     }
 
-    public void Initialize()
-    {
-        // jsonData에 있던 데이터
-        var itemlist = JDataManager.instance.itemData;
-        for (int i = 0; i < itemlist.itemList.Count; i++)
-        {
-            var item = Instantiate(Resources.Load<GameObject>(itemlist.itemList[i].prefab),
-                itemlist.itemList[i].currentPos, Quaternion.identity).GetComponent<JItem>();
-            item.itemData = itemlist.itemList[i];
-            itemDatas.itemList.Add(item.itemData);
-            //itemDatas.itemList.Add(itemlist.itemList[i]);
-            if (itemDatas.itemList[i].isGet)
-            {
-                item.gameObject.SetActive(false);
-            }
+    //public void Initialize()
+    //{
+    //    // jsonData에 있던 데이터
+    //    var itemlist = JDataManager.instance.itemData;
+    //    for (int i = 0; i < itemlist.itemList.Count; i++)
+    //    {
+    //        var item = Instantiate(Resources.Load<GameObject>(itemlist.itemList[i].prefab),
+    //            itemlist.itemList[i].currentPos, Quaternion.identity).GetComponent<JItem>();
+    //        item.itemData = itemlist.itemList[i];
+    //        itemDatas.itemList.Add(item.itemData);
+    //        //itemDatas.itemList.Add(itemlist.itemList[i]);
+    //        if (itemDatas.itemList[i].isGet)
+    //        {
+    //            item.gameObject.SetActive(false);
+    //        }
 
-            if (itemDatas.itemList[i].isInvn)
-            {
-                G_InventorySystem.Instance.J_AddItem(item);
-            }
-        }
-    }
+    //        if (itemDatas.itemList[i].isInvn)
+    //        {
+    //            G_InventorySystem.Instance.J_AddItem(item);
+    //        }
+    //    }
+    //}
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            JDataManager.instance.SaveData(itemDatas);
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space))
+    //    {
+    //        //JDataManager.instance.SaveData(itemDatas);
+    //    }
+    //}
 }
