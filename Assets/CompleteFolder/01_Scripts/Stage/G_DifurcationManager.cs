@@ -44,6 +44,11 @@ public class G_DifurcationManager : MonoBehaviour
         stageManager.AddClearObject(obj);
     }
 
+    public void NormalEndingStart() // 액트7 이후 액트 초기화
+    {
+        stageManager.Act7_Reset();
+    }
+
     public void CallEnding(string endingName) // 엔딩 호출
     {
         stageManager.EndingStart(endingName);

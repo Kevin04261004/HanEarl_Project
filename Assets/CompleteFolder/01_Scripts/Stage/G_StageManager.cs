@@ -7,13 +7,13 @@ using UnityEngine;
 using static G_StageData;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 [Serializable]
 public class GStageSaveData : JData
 {
     public int currentStageNum = 0;
 
-    //public List<string> beforeActName { get; private set; } = new List<string>(); 
     public List<string> beforeActName = new List<string>();
 }
 
@@ -30,20 +30,13 @@ public class G_StageManager : MonoBehaviour
     private G_EndingManager endingManager;
 
     [field: SerializeField] public G_StageInformation currentData { get; private set; }
+    [field: SerializeField] public int currentStageNum { get; private set; }
 
-    [field: SerializeField] public int currentStageNum; // �ӽ� Ȯ�� ��..
-
-    [field: SerializeField] public GameObject[] TrueEndingItem { get; private set; }
-
-    public void Start()
+    private void Start()
     {
+        endingManager = GetComponent<G_EndingManager>();
         stageData = GetComponent<G_StageData>().stageInformation;
         ActStart();
-
-        foreach (string BeforeactName in stageSaveData.beforeActName)
-        {
-            Debug.Log(BeforeactName);
-        }
     }
 
     private void Update()
@@ -52,34 +45,23 @@ public class G_StageManager : MonoBehaviour
             AfterSchool();
     }
 
-    private void ActEnd()
+    public void AfterSchool() // Act End + InGame - > TitleScene
     {
-        if (ObjectCheckClear() && BeforeActNameCheck())
-        {
-            stageSaveData.currentStageNum++;
-            stageSaveData.beforeActName.Add(currentData.actName);
-        }
-        JDataManager.instance.SaveData(stageSaveData);
+        ActEnd(); // CS95
+        SceneManager.LoadScene("00_TitleScene");
     }
 
     public void ActStart()
     {
-        SetActiveAllObject();
+        ResetObject();
 
         //JDataManager.instance.Load(out stageSaveData);
         stageSaveData = JDataManager.instance.stageData;
         currentStageNum = stageSaveData.currentStageNum;
 
-
         currentData = stageData[currentStageNum];
 
         SetActiveObject();
-    }
-
-    public void AfterSchool() // Act End + InGame - > TitleScene
-    {
-        ActEnd();
-        SceneManager.LoadScene("00_TitleScene");
     }
 
     public void AddClearObject(GameObject obj)
@@ -95,7 +77,45 @@ public class G_StageManager : MonoBehaviour
         endingManager.CallEnding(endingName);
     }
 
-    private bool BeforeActNameCheck() // ������ Ŭ������ ��Ʈ�� �̸��� üũ��.
+    public void Act7_Reset()
+    {
+        if (endingManager.normalEndingCheck)
+        {
+            stageSaveData.currentStageNum = 0;
+            stageSaveData.beforeActName.Clear();
+            JDataManager.instance.SaveData(stageSaveData);
+            SceneManager.LoadScene("00_TitleScene");
+        }
+    }
+
+    private void ActEnd()
+    {
+        if (TrueEndingActCheck())
+        {
+            stageSaveData.currentStageNum = 9;
+            stageSaveData.beforeActName.Add("Act007");
+        }
+        else if (ObjectCheckClear() && BeforeActNameCheck())
+        {
+            stageSaveData.currentStageNum++;
+            stageSaveData.beforeActName.Add(currentData.actName);
+        }
+
+
+        JDataManager.instance.SaveData(stageSaveData);
+    }
+
+    private bool TrueEndingActCheck() // 액트7 조건을 모두 클리어 하였는지
+    {
+        if (endingManager.normalEndingCheck && currentStageNum == 6)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool BeforeActNameCheck()
     {
         if (currentData.clearBeforeActName == null)
         {
@@ -128,7 +148,7 @@ public class G_StageManager : MonoBehaviour
         }
     }
 
-    private void SetActiveAllObject()
+    private void ResetObject()
     {
         for (int i = 0; i < allGameObjectList.Count; i++)
         {
@@ -138,6 +158,11 @@ public class G_StageManager : MonoBehaviour
 
     private bool ObjectCheckClear()
     {
+        if (stageSaveData.currentStageNum == 0)
+        {
+            return true;
+        }
+
         int clearPoint = 0;
 
         for (int i = 0; i < currentData.interactionObj.Count; i++)
@@ -156,6 +181,11 @@ public class G_StageManager : MonoBehaviour
         }
 
         clearObjects.Clear();
+        return false;
+    }
+
+    private bool ItemCheckClear()
+    {
         return false;
     }
 }

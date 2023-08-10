@@ -41647,8 +41647,8 @@ MonoBehaviour:
     <interactionObj>k__BackingField: []
     <actName>k__BackingField: 
     <clearBeforeActName>k__BackingField: []
-  currentStageNum: 0
   <TrueEndingItem>k__BackingField: []
+  currentStageNum: 0
 --- !u!114 &956133921
 MonoBehaviour:
   m_ObjectHideFlags: 0
