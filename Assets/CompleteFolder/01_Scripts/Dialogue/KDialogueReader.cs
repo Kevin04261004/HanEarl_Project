@@ -65,12 +65,7 @@ public class KDialogueReader : MonoBehaviour
                     {
                         if(typeIndex+1 == dialogues.Length)
                         {
-                            isTyping = false;
-                            isReading = false;
-                            Talk_SetActive_Bool(false);
-                            typeIndex = -1;
-                            typeIndex++;
-                            contextsIndex = 0;
+                            StopReading();
                             if (_from_GameObject != null)
                             {
                                 if (_from_GameObject.layer == 6)//LayerMask.NameToLayer("AfterDialogueDisappear"))
@@ -209,9 +204,20 @@ public class KDialogueReader : MonoBehaviour
             for (int i = 0; i < dialogues[typeIndex].option_Contexts.Length; ++i)
             {
                 Options_TMP[i].text = dialogues[typeIndex].option_Contexts[i];
-                Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._num =
-                    int.Parse(dialogues[typeIndex].nextLine[i]) - dialogues[typeIndex].index;
-                Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.ChangeLine);
+                switch (int.Parse(dialogues[typeIndex].nextLine[i]))
+                {
+                    case 228: // 옥상에서 문을 잠금.
+                        Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.Exit_Btn);
+                        break;
+                    case 229: // 옥상에서 문을 잠그지 않음.
+                        Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.StartTimeLine_Act4_1_At_Roof);
+                        break;
+                    default: // 평상시
+                        Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._num =
+                            int.Parse(dialogues[typeIndex].nextLine[i]) - dialogues[typeIndex].index;
+                        Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.ChangeLine);
+                        break;
+                }
             }
         }
         else
@@ -228,5 +234,15 @@ public class KDialogueReader : MonoBehaviour
         yield return null;
         isReading = true;
         isTyping = true;
+    }
+
+    public void StopReading()
+    {
+        isTyping = false;
+        isReading = false;
+        Talk_SetActive_Bool(false);
+        typeIndex = -1;
+        typeIndex++;
+        contextsIndex = 0;
     }
 }

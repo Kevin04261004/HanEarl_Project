@@ -16,9 +16,16 @@ public class ActFour_Trigger : MonoBehaviour
         {
             return;
         }
+        if (TryGetComponent(out KInteractiveObject i))
+        {
+            i.Interactive();
+        }
+    }
+
+    public void BadEndingAStartRoutine()
+    {
         StartCoroutine(BadEndingAStart());
     }
-    
     private IEnumerator BadEndingAStart()
     {
         _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);

@@ -10,9 +10,24 @@ public class KCAfterDialogue : MonoBehaviour
     [SerializeField] private GameObject NewObj2;
     public void Used()
     {
-        BeforeObj.SetActive(false);
-        NewObj.SetActive(true);
-        BeforeObj2.SetActive(false);
-        NewObj2.SetActive(true);
+        if (BeforeObj != null)
+        {
+            BeforeObj.SetActive(false);
+        }
+        if (NewObj != null)
+        {
+            NewObj.SetActive(true);
+        }
+        if (BeforeObj2 != null)
+        {
+            BeforeObj2.SetActive(false);
+        }
+        if (NewObj2 != null)
+        {
+            NewObj2.SetActive(true);
+        }
+        
+        
+        
     }
 }

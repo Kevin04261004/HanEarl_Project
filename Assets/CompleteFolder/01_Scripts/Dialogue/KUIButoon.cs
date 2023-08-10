@@ -6,6 +6,8 @@ public enum EButtonState
 {
     ChangeLine,
     GetItem,
+    Exit_Btn,
+    StartTimeLine_Act4_1_At_Roof,
 }
 
 public class KUIButoon : MonoBehaviour
@@ -24,18 +26,36 @@ public class KUIButoon : MonoBehaviour
         switch (state)
         {
             case EButtonState.ChangeLine:
-                _btn.onClick.AddListener(OnClicked);
+                _btn.onClick.AddListener(OnClicked_ChangeLineAndStartReading);
                 break;
             case EButtonState.GetItem:
+                
+                break;
+            case EButtonState.Exit_Btn:
+                _btn.onClick.AddListener(Onclick_Exit);
+                break;
+            case EButtonState.StartTimeLine_Act4_1_At_Roof:
+                _btn.onClick.AddListener(OnClicked_StartTimeLine_Act4_1_Roof);
                 break;
             default:
                 break;
         }
     }
-    private void OnClicked()
+    private void OnClicked_ChangeLineAndStartReading()
     {
         _kDialogueReader.typeIndex += _num;
         _kDialogueReader.OptionBtn_SetActive_Bool(false);
         _kDialogueReader.StartReading();
+    }
+
+    private void OnClicked_StartTimeLine_Act4_1_Roof()
+    {
+        _kDialogueReader.StopReading();
+        KTimeLineManager.Instance.StartTimeLine("10");
+    }
+
+    private void Onclick_Exit()
+    {
+        _kDialogueReader.StopReading();
     }
 }

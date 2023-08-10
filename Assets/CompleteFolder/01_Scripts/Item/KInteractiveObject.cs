@@ -14,7 +14,8 @@ public enum EInteractiveType
     RooftopFence,
     FairyTaleBook,
     C_Act4,
-    
+    C_Act4_1_newPaper,
+    Roof_Key_Event,
 }
 
 public class KInteractiveObject : MonoBehaviour
@@ -22,7 +23,7 @@ public class KInteractiveObject : MonoBehaviour
     [SerializeField] private EInteractiveType _interactiveType;
     [SerializeField] private KDialogueEvent _dialogueEvent;
     [SerializeField] private KDialogueReader _dialogueReader;
-
+    [SerializeField] private KDialogueEvent _secondDialogueEvent;
     private void Awake()
     {
         _dialogueReader = FindObjectOfType<KDialogueReader>();
@@ -32,6 +33,11 @@ public class KInteractiveObject : MonoBehaviour
     public KDialogue[] GetDialogue()
     {
         _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_dialogueEvent.line.x, (int)_dialogueEvent.line.y);
+        return _dialogueEvent.dialogues;
+    }
+    public KDialogue[] GetSecondDialogue()
+    {
+        _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_secondDialogueEvent.line.x, (int)_secondDialogueEvent.line.y);
         return _dialogueEvent.dialogues;
     }
     // ReSharper disable Unity.PerformanceAnalysis
@@ -99,6 +105,28 @@ public class KInteractiveObject : MonoBehaviour
                     c.Used();
                 }
                 _dialogueReader.SetDialogue(GetDialogue(),gameObject);
+                break;
+            case EInteractiveType.C_Act4_1_newPaper:
+                if (TryGetComponent(out JItem item3))
+                {
+                    item3.Get();
+                }
+                if (TryGetComponent(out KCAfterDialogue newspaper))
+                {
+                    newspaper.Used();
+                }
+                _dialogueReader.SetDialogue(GetDialogue(),gameObject);
+                break;
+            case EInteractiveType.Roof_Key_Event:
+                if (true) //만약 Key아이템이 존재한다면 
+                {
+                    _dialogueReader.SetDialogue(GetSecondDialogue(),gameObject);
+                    gameObject.SetActive(false);
+                }
+                else
+                {
+                    _dialogueReader.SetDialogue(GetDialogue(),gameObject);   
+                }
                 break;
             default:
                 break;
