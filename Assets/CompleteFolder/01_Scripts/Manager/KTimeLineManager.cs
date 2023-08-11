@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -7,6 +8,7 @@ public class KTimeLineManager : MonoBehaviour
     [SerializeField] private Transform _timeLineParent;
     [SerializeField] private GameObject[] _timeLines;
     public static KTimeLineManager Instance;
+    private KFadeManager _fadeManager;
     private string _curTimeLine;
     public void Awake()
     {
@@ -31,7 +33,9 @@ public class KTimeLineManager : MonoBehaviour
                 _timeLines[i] = _timeLineParent.GetChild(i).gameObject;
             }
         }
-        
+
+        _fadeManager = FindObjectOfType<KFadeManager>();
+
     }
 
     private void Start()
@@ -86,5 +90,17 @@ public class KTimeLineManager : MonoBehaviour
     public void GameObjectTSetActiveTrue(GameObject go)
     {
         go.SetActive(true);
+    }
+
+    public void StartTimeLine10Routine()
+    {
+        StartCoroutine(StartTimeLine10());
+    }
+    private IEnumerator StartTimeLine10()
+    {
+        _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
+        yield return new WaitForSeconds(3);
+        KTimeLineManager.Instance.StartTimeLine("10");
+        _fadeManager.FadeInRoutine();
     }
 }

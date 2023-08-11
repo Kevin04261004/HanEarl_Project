@@ -16,6 +16,7 @@ public enum EInteractiveType
     C_Act4,
     C_Act4_1_newPaper,
     Roof_Key_Event,
+    B_Act4_1_newItems,
 }
 
 public class KInteractiveObject : MonoBehaviour
@@ -127,6 +128,13 @@ public class KInteractiveObject : MonoBehaviour
                 {
                     _dialogueReader.SetDialogue(GetDialogue(),gameObject);   
                 }
+                break;
+            case EInteractiveType.B_Act4_1_newItems:
+                if (TryGetComponent(out KCAfterDialogue B_Act_4_1))
+                {
+                    B_Act_4_1.Used();
+                }
+                _dialogueReader.SetDialogue(GetDialogue(),gameObject);
                 break;
             default:
                 break;

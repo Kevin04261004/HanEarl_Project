@@ -212,6 +212,9 @@ public class KDialogueReader : MonoBehaviour
                     case 229: // 옥상에서 문을 잠그지 않음.
                         Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.StartTimeLine_Act4_1_At_Roof);
                         break;
+                    case 30: // 하교
+                        Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.GoToMainScene);
+                        break;
                     default: // 평상시
                         Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._num =
                             int.Parse(dialogues[typeIndex].nextLine[i]) - dialogues[typeIndex].index;

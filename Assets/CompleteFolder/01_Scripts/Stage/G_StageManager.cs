@@ -140,9 +140,9 @@ public class G_StageManager : MonoBehaviour
 
     private void SetActiveObject()
     {
-        for (int i = 0; i < currentData.StageObject.Count; i++)
+        foreach (var t in currentData.StageObject)
         {
-            currentData.StageObject[i].SetActive(true);
+            t.SetActive(true);
         }
     }
     private bool ObjectCheckClear()
