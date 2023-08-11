@@ -12,11 +12,11 @@ public enum EInteractiveType
     HairDry_item,
     Roop_item,
     RooftopFence,
-    FairyTaleBook,
-    C_Act4,
-    C_Act4_1_newPaper,
+    KAfterDialogue_Changed_And_GetItem,
+    KAfterDialogue_Changed,
     Roof_Key_Event,
-    B_Act4_1_newItems,
+    Toilet_Key_Event,
+    Mirror_Event,
 }
 
 public class KInteractiveObject : MonoBehaviour
@@ -52,6 +52,7 @@ public class KInteractiveObject : MonoBehaviour
                     item.Get();
                 }
                 _dialogueReader.SetDialogue(GetDialogue(), gameObject);
+                gameObject.SetActive(false);
                 break;
             case EInteractiveType.CantDisappearItem:
                 _dialogueReader.SetDialogue(GetDialogue(),gameObject);
@@ -89,32 +90,21 @@ public class KInteractiveObject : MonoBehaviour
                     rooftopFence.InteractiveRoutine();
                 }
                 break;
-            case EInteractiveType.FairyTaleBook:
+            case EInteractiveType.KAfterDialogue_Changed_And_GetItem:
                 if (TryGetComponent(out JItem item2))
                 {
                     item2.Get();
                 }
-                if (TryGetComponent(out KFairTaleBook book))
+                if (TryGetComponent(out KAfterDialogue d))
                 {
-                    book.Used();
+                    d.Used();
                 }
                 _dialogueReader.SetDialogue(GetDialogue(),gameObject);
                 break;
-            case EInteractiveType.C_Act4:
-                if (TryGetComponent(out KCAfterDialogue c))
+            case EInteractiveType.KAfterDialogue_Changed:
+                if (TryGetComponent(out KAfterDialogue d2))
                 {
-                    c.Used();
-                }
-                _dialogueReader.SetDialogue(GetDialogue(),gameObject);
-                break;
-            case EInteractiveType.C_Act4_1_newPaper:
-                if (TryGetComponent(out JItem item3))
-                {
-                    item3.Get();
-                }
-                if (TryGetComponent(out KCAfterDialogue newspaper))
-                {
-                    newspaper.Used();
+                    d2.Used();
                 }
                 _dialogueReader.SetDialogue(GetDialogue(),gameObject);
                 break;
@@ -129,12 +119,16 @@ public class KInteractiveObject : MonoBehaviour
                     _dialogueReader.SetDialogue(GetDialogue(),gameObject);   
                 }
                 break;
-            case EInteractiveType.B_Act4_1_newItems:
-                if (TryGetComponent(out KCAfterDialogue B_Act_4_1))
+            case EInteractiveType.Toilet_Key_Event:
+                if (G_InventorySystem.Instance.HasItemF("화장실 열쇠"))
                 {
-                    B_Act_4_1.Used();
+                    _dialogueReader.SetDialogue(GetSecondDialogue(),gameObject);
+                    gameObject.SetActive(false);
                 }
-                _dialogueReader.SetDialogue(GetDialogue(),gameObject);
+                else
+                {
+                    _dialogueReader.SetDialogue(GetDialogue(),gameObject);   
+                }
                 break;
             default:
                 break;

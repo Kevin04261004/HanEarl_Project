@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KCAfterDialogue : MonoBehaviour
+public class KAfterDialogue : MonoBehaviour
 {
     [SerializeField] private GameObject BeforeObj;
     [SerializeField] private GameObject NewObj;
@@ -26,8 +26,10 @@ public class KCAfterDialogue : MonoBehaviour
         {
             NewObj2.SetActive(true);
         }
-        
-        
+    }
+
+    public void GetItem(string itemName)
+    {
         
     }
 }

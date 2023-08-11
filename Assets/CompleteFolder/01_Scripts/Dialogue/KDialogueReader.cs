@@ -24,6 +24,7 @@ public class KDialogueReader : MonoBehaviour
     [SerializeField] private GameObject Btns_GO;
     [SerializeField] private TextMeshProUGUI[] Options_TMP;
     [SerializeField] private GameObject _from_GameObject;
+
     private void Update()
     {
         if(isReading && Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InteractionKey]))
@@ -238,7 +239,7 @@ public class KDialogueReader : MonoBehaviour
         isReading = true;
         isTyping = true;
     }
-
+    
     public void StopReading()
     {
         isTyping = false;
