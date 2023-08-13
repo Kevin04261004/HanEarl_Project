@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using static G_StageData;
 using UnityEngine.SceneManagement;

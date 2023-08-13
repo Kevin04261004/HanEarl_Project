@@ -50125,7 +50125,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 335544319
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -66242,7 +66242,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 318767104
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -66636,7 +66636,7 @@ GameObject:
   - component: {fileID: 1467895263}
   - component: {fileID: 1467895262}
   - component: {fileID: 1467895261}
-  - component: {fileID: 1467895260}
+  - component: {fileID: 1467895264}
   m_Layer: 0
   m_Name: "\uB3D9\uD654\uCC45 \uC561\uD2B84"
   m_TagString: InteractiveObject
@@ -66660,23 +66660,6 @@ Transform:
   m_Father: {fileID: 105701195}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1467895260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467895258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d416c4aecdddeb4dbfcb86c8c9012a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _state: 1
-  B_ForAct2: {fileID: 0}
-  B_ForAct2_After_GetBook: {fileID: 0}
-  C_ForAct3: {fileID: 503865411}
-  C_ForAct3_After_GetBook: {fileID: 193823081}
 --- !u!114 &1467895261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66763,6 +66746,22 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+--- !u!114 &1467895264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467895258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9db684bafb47645abf05dc86a3ca5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeforeObj: {fileID: 503865411}
+  NewObj: {fileID: 193823081}
+  BeforeObj2: {fileID: 0}
+  NewObj2: {fileID: 0}
 --- !u!1 &1468476889
 GameObject:
   m_ObjectHideFlags: 0
@@ -68193,7 +68192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498325222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37, y: 3.5, z: -10}
+  m_LocalPosition: {x: -37, y: 3.5229177, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
