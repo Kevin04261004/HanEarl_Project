@@ -21,5 +21,6 @@ public class KRoop : MonoBehaviour
         yield return new WaitForSeconds(3);
         _fadeManager.FadeInRoutine(1);
         KTimeLineManager.Instance.StartTimeLine("08");
+        G_DifurcationManager.Instance.CallEnding("BadEndingE");
     }
 }

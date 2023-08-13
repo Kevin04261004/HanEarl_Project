@@ -15,9 +15,12 @@ public class G_StageData : MonoBehaviour
         [field:SerializeField]
         public List<JItem> needItem { get; private set; } = new List<JItem> ();
 
-        [field:SerializeField] public string actName { get; private set; }
 
+        [field:SerializeField] public string actName { get; private set; }
         [field:SerializeField] public string[] clearBeforeActName { get; private set; }
+
+        [field: SerializeField]
+        public bool stageInteractionSkip { get; private set; } = false;
     }
 
     [field : SerializeField]

@@ -15,6 +15,7 @@ public enum EInteractiveType
     Roof_Key_Event,
     Toilet_Key_Event,
     Mirror_Event,
+    Roof_Table_Event,
 }
 
 public class KInteractiveObject : MonoBehaviour
@@ -84,6 +85,10 @@ public class KInteractiveObject : MonoBehaviour
                 {
                     kbManager.FirstMeetInteractiveRoutine();
                 }
+                if (TryGetComponent(out KAfterDialogue d0))
+                {
+                    d0.Used();
+                }
                 break;
             case EInteractiveType.HairDry_item:
                 if (TryGetComponent(out KHairDryItem hairdry))
@@ -142,6 +147,18 @@ public class KInteractiveObject : MonoBehaviour
                 {
                     _dialogueReader.SetDialogue(GetDialogue(),gameObject);   
                 }
+                break;
+            case EInteractiveType.Roof_Table_Event:
+                _dialogueReader.SetDialogue(GetDialogue(), gameObject);
+                if (TryGetComponent(out KAfterDialogue d3))
+                {
+                    d3.Used();
+                }
+                if (TryGetComponent(out G_RooftopTable table))
+                {
+                    table.InteractiveRoutine();
+                }
+
                 break;
             default:
                 break;

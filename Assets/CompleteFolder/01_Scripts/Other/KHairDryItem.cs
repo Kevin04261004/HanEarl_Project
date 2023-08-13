@@ -21,5 +21,6 @@ public class KHairDryItem : MonoBehaviour
         yield return new WaitForSeconds(3);
         _fadeManager.FadeInRoutine(1);
         KTimeLineManager.Instance.StartTimeLine("07");
+        G_DifurcationManager.Instance.CallEnding("BadEndingD");
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 public enum EndingType
 {
     None,
-    BedEndingA,
-    BedEndingB, 
-    BedEndingC,
-    BedEndingD,
-    BedEndingE,
-    BedEndingF,
+    BadEndingA,
+    BadEndingB, 
+    BadEndingC,
+    BadEndingD,
+    BadEndingE,
+    BadEndingF,
     NormalEnding,
     TrueEnding
 }
@@ -17,7 +17,7 @@ public enum EndingType
 public class G_EndingManager : MonoBehaviour
 {
     public EndingType currentEndingName;
-    public Dictionary<string, bool> endingList;
+    public Dictionary<string, bool> endingList = new Dictionary<string, bool>();
 
     [field:SerializeField] public bool normalEndingCheck { get; private set; } = false;
 
@@ -32,22 +32,22 @@ public class G_EndingManager : MonoBehaviour
 
         switch (currentEndingName)
         {
-            case EndingType.BedEndingA:
+            case EndingType.BadEndingA:
                 endingList.Add(endingName, true);
                 break;
-            case EndingType.BedEndingB:
+            case EndingType.BadEndingB:
                 endingList.Add(endingName, true);
                 break;
-            case EndingType.BedEndingC:
+            case EndingType.BadEndingC:
                 endingList.Add(endingName, true);
                 break;
-            case EndingType.BedEndingD:
+            case EndingType.BadEndingD:
                 endingList.Add(endingName, true);
                 break;
-            case EndingType.BedEndingE:
+            case EndingType.BadEndingE:
                 endingList.Add(endingName, true);
                 break;
-            case EndingType.BedEndingF:
+            case EndingType.BadEndingF:
                 endingList.Add(endingName, true);
                 break;
             case EndingType.NormalEnding:
@@ -61,18 +61,5 @@ public class G_EndingManager : MonoBehaviour
             default:
                 break;
         }
-    }
-
-    public bool CheckEndingList(string endingName)
-    {
-        foreach (KeyValuePair<string, bool> check in endingList)
-        {
-            if (check.Key == endingName && check.Value)
-            {
-                return true;
-            }
-        }
-
-        return false;
     }
 }
