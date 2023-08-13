@@ -36,7 +36,7 @@ public class KGameManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                SceneManager.LoadScene("01_GameScene");   
+                SceneManager.LoadScene("00_TitleScene");   
             }
         }
     }

@@ -53,4 +53,9 @@ public class G_DifurcationManager : MonoBehaviour
     {
         stageManager.EndingStart(endingName);
     }
+
+    public bool NormalChangeEndingCheck() // 노말 엔딩이 check 되어있는지
+    {
+        return stageManager.NormalEndingCheck();
+    }
 }

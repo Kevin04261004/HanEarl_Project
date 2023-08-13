@@ -29,6 +29,7 @@ public class Normal_Ending_Trigger : MonoBehaviour
         yield return new WaitForSeconds(3);
         _fadeManager.FadeInRoutine(2);
         KTimeLineManager.Instance.StartTimeLine("06");
+        G_DifurcationManager.Instance.CallEnding("NormalEnding");
         gameObject.SetActive(false);
     }
 }

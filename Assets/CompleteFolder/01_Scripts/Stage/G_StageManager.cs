@@ -13,15 +13,14 @@ using Unity.VisualScripting;
 public class GStageSaveData : JData
 {
     public int currentStageNum = 0;
-
     public List<string> beforeActName = new List<string>();
+    public bool normalEndingCheck = false;
 }
 
 public class G_StageManager : MonoBehaviour
 {
     private GStageSaveData stageSaveData; // = new GStageSaveData();
     
-
     [field: SerializeField]
     public List<G_StageInformation> stageData { get; private set; }
 
@@ -42,6 +41,11 @@ public class G_StageManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
             AfterSchool();
+    }
+
+    public bool NormalEndingCheck()
+    {
+        return stageSaveData.normalEndingCheck;
     }
 
     public void AfterSchool() // Act End + InGame - > TitleScene
@@ -73,6 +77,7 @@ public class G_StageManager : MonoBehaviour
     {
         stageSaveData.beforeActName.Add(endingName);
         endingManager.CallEnding(endingName);
+        ActEnd();
     }
 
     public void Act7_Reset()
@@ -81,8 +86,8 @@ public class G_StageManager : MonoBehaviour
         {
             stageSaveData.currentStageNum = 0;
             stageSaveData.beforeActName.Clear();
+            stageSaveData.normalEndingCheck = true;
             JDataManager.instance.SaveData(stageSaveData);
-            SceneManager.LoadScene("00_TitleScene");
         }
     }
 
@@ -105,7 +110,7 @@ public class G_StageManager : MonoBehaviour
 
     private bool TrueEndingActCheck() // 액트7 조건을 모두 클리어 하였는지
     {
-        if (endingManager.normalEndingCheck && currentStageNum == 6)
+        if (stageSaveData.normalEndingCheck && currentStageNum == 6)
         {
             return true;
         }
@@ -147,7 +152,7 @@ public class G_StageManager : MonoBehaviour
     }
     private bool ObjectCheckClear()
     {
-        if (stageSaveData.currentStageNum == 0)
+        if (currentData.stageInteractionSkip)
         {
             return true;
         }
