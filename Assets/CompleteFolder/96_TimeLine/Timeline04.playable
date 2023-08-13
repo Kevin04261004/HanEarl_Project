@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uC74C... \uC624\uB79C\uB9CC\uC774\uC57C..."
+  _subtitle_TMP: "\uC74C... \uD50C\uB808\uC774\uC5B4 \uC624\uB79C\uB9CC\uC774\uC57C..."
 --- !u!114 &-6966630788587249986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uB098"
+  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4"
 --- !u!114 &-4770133781964091671
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uB098\n"
+  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4"
 --- !u!114 &-3352626808576941209
 MonoBehaviour:
   m_ObjectHideFlags: 1

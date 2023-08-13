@@ -3605,7 +3605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uB0B4 \uB4A4\uCABD\uC73C\uB85C \uC640!"
+  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4, \uB0B4 \uB4A4\uCABD\uC73C\uB85C \uC640!"
 --- !u!114 &-3166727365630220824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3782,7 +3782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uB098"
+  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4"
 --- !u!114 &-2523787236601924071
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5232,7 +5232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uB098"
+  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4"
 --- !u!114 &-1670736311520200313
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7460,7 +7460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uB098"
+  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4"
 --- !u!114 &3484970636596675744
 MonoBehaviour:
   m_ObjectHideFlags: 1

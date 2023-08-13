@@ -25,6 +25,7 @@ public class KInteractiveObject : MonoBehaviour
     [SerializeField] private KDialogueEvent _dialogueEvent;
     [SerializeField] private KDialogueReader _dialogueReader;
     [SerializeField] private KDialogueEvent _secondDialogueEvent;
+    [SerializeField] private short _interactiveCount;
     private void Awake()
     {
         _dialogueReader = FindObjectOfType<KDialogueReader>();
@@ -58,7 +59,21 @@ public class KInteractiveObject : MonoBehaviour
                 _dialogueReader.SetDialogue(GetDialogue(),gameObject);
                 break;
             case EInteractiveType.NPC:
-                _dialogueReader.SetDialogue(GetDialogue(),gameObject);
+                if (_interactiveCount < 1)
+                {
+                    _dialogueReader.SetDialogue(GetDialogue(),gameObject);   
+                }
+                else 
+                {
+                    if (_secondDialogueEvent.line.x < 1)
+                    {
+                        _dialogueReader.SetDialogue(GetDialogue(),gameObject);
+                    }
+                    else
+                    {
+                        _dialogueReader.SetDialogue(GetSecondDialogue(),gameObject);   
+                    }
+                }
                 break;
             case EInteractiveType.C_Act3:
                 if (TryGetComponent(out KCManager kcManager))
@@ -132,9 +147,9 @@ public class KInteractiveObject : MonoBehaviour
                 break;
             default:
                 break;
-
         }
 
+        _interactiveCount++;
         G_DifurcationManager.Instance.AddInteractionObj(this.gameObject);
     }
 }

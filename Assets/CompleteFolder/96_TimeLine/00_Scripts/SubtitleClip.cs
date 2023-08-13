@@ -13,6 +13,7 @@ public class SubtitleClip : PlayableAsset
         var playable = ScriptPlayable<SubtitleBehaviour>.Create(graph);
 
         SubtitleBehaviour subtitleBehaviour = playable.GetBehaviour();
+        _subtitle_TMP = _subtitle_TMP.Replace("플레이어", JDataManager.instance.playerData.name);
         subtitleBehaviour._subtitle_TMP = _subtitle_TMP;
 
         return playable;
