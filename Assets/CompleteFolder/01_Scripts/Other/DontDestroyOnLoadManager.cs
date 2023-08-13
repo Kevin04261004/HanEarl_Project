@@ -2,22 +2,21 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class Data : JData
+public class KSettingData : JData
 {
-    
+    public float _bgmSound;
+    public float _SfxSound;
 }
 
 public class DontDestroyOnLoadManager : MonoBehaviour
 {
     public static DontDestroyOnLoadManager Instance;
-    [SerializeField] private float _BgmSound_Float;
-    [SerializeField] private float _SfxSound_Float;
+    public KSettingData _settingData = new KSettingData();
     private void Awake()
     {
         if (Instance != null)
         {
             Destroy(this.gameObject);
-            print(1);
         }
         else
         {
@@ -27,6 +26,9 @@ public class DontDestroyOnLoadManager : MonoBehaviour
         // 사운드 로드해서 초기화
         // 여기서 키 세팅들 초기화
     }
-    
-    
+
+    private void Start()
+    {
+        JDataManager.instance.SaveData(_settingData);   
+    }
 }
