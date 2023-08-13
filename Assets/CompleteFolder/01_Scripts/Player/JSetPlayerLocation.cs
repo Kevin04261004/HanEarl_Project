@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JSetPlayerLocation : MonoBehaviour
@@ -17,7 +15,7 @@ public class JSetPlayerLocation : MonoBehaviour
 
     void Update()
     {
-        // ÀúÀå
+        // ï¿½ï¿½ï¿½ï¿½
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerData.currentVec = transform.position;

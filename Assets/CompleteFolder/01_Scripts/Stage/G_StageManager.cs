@@ -1,12 +1,8 @@
 using System;
-using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using static G_StageData;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using Unity.VisualScripting;
 
 [Serializable]
 public class GStageSaveData : JData
@@ -46,7 +42,7 @@ public class G_StageManager : MonoBehaviour
     public void AfterSchool() // Act End + InGame - > TitleScene
     {
         ActEnd(); // CS95
-        SceneManager.LoadScene("00_TitleScene");
+        KLoadingSceneManager.LoadScene("00_TitleScene");
     }
 
     public void ActStart()
@@ -81,7 +77,7 @@ public class G_StageManager : MonoBehaviour
             stageSaveData.currentStageNum = 0;
             stageSaveData.beforeActName.Clear();
             JDataManager.instance.SaveData(stageSaveData);
-            SceneManager.LoadScene("00_TitleScene");
+            KLoadingSceneManager.LoadScene("00_TitleScene");
         }
     }
 

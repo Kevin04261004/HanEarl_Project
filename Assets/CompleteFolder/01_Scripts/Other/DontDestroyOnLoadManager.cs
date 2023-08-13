@@ -1,7 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class Data : JData
+{
+    
+}
 
 public class DontDestroyOnLoadManager : MonoBehaviour
 {
@@ -13,6 +17,7 @@ public class DontDestroyOnLoadManager : MonoBehaviour
         if (Instance != null)
         {
             Destroy(this.gameObject);
+            print(1);
         }
         else
         {
@@ -22,5 +27,6 @@ public class DontDestroyOnLoadManager : MonoBehaviour
         // 사운드 로드해서 초기화
         // 여기서 키 세팅들 초기화
     }
+    
     
 }

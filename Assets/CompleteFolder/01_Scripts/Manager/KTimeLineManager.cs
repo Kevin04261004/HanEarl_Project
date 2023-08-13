@@ -37,12 +37,7 @@ public class KTimeLineManager : MonoBehaviour
         _fadeManager = FindObjectOfType<KFadeManager>();
 
     }
-
-    private void Start()
-    {
-        //StartTimeLine("02");
-    }
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SkipKey]) 

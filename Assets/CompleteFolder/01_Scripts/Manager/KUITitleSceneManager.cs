@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class KUITitleSceneManager : MonoBehaviour
@@ -50,7 +48,7 @@ public class KUITitleSceneManager : MonoBehaviour
 
     public void OnClick_ChangeTo_GameScene()
     {
-        SceneManager.LoadScene("01_GameScene");
+        KLoadingSceneManager.LoadScene("01_GameScene");
     }
 
     public void OnClick_SetName_Btn()

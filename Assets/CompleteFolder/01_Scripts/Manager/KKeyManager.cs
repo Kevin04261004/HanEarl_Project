@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public enum EKeyAction
@@ -13,7 +12,6 @@ public enum EKeyAction
     InventoryKey,
     SightKey,
     SkipKey,
-    KeySize,
 }
 public static class KKeySetting
 {

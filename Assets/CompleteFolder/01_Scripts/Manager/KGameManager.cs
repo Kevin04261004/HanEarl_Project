@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-//using UnityEditor.Searcher;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class KGameManager : MonoBehaviour
 {
@@ -36,7 +31,7 @@ public class KGameManager : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                SceneManager.LoadScene("01_GameScene");   
+                KLoadingSceneManager.LoadScene("01_GameScene");
             }
         }
     }

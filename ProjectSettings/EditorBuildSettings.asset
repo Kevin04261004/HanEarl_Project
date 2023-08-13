@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CompleteFolder/00_Scenes/01_GameScene.unity
     guid: bef58dcd9c9ee3a43a5df094ab915e6a
+  - enabled: 1
+    path: Assets/CompleteFolder/00_Scenes/02_LoadingScene.unity
+    guid: 681da4e0af0c2bb40b555283dbed60d0
   m_configObjects: {}
