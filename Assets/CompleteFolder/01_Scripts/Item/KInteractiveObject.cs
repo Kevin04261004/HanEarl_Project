@@ -31,12 +31,13 @@ public class KInteractiveObject : MonoBehaviour
         Debug.Assert(_dialogueReader != null,"_dialogueReader를 찾지 못했습니다.");
     }
     
-    public KDialogue[] GetDialogue()
+    private KDialogue[] GetDialogue()
     {
         _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_dialogueEvent.line.x, (int)_dialogueEvent.line.y);
         return _dialogueEvent.dialogues;
     }
-    public KDialogue[] GetSecondDialogue()
+
+    private KDialogue[] GetSecondDialogue()
     {
         _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_secondDialogueEvent.line.x, (int)_secondDialogueEvent.line.y);
         return _dialogueEvent.dialogues;

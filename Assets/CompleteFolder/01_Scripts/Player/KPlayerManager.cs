@@ -174,17 +174,25 @@ public class KPlayerManager : MonoBehaviour
                 default:
                     break;
             }
+
+            bool hasInteract = false;
             var collidersW = Physics2D.OverlapCircleAll(_rigidbody2D.position, 0.2f);
             foreach (var c in collidersW)
             {
                 if (!c.CompareTag("InteractiveObject")) continue;
                 c.TryGetComponent(out KInteractiveObject interactiveObject);
                 interactiveObject.Interactive();
+                hasInteract = true;
                 if (c.transform.childCount < 1) continue;
                 if (c.transform.GetChild(0).TryGetComponent(out Kmark markObj))
                 {
                     c.transform.GetChild(0).gameObject.SetActive(false);
                 }
+            }
+
+            if (hasInteract)
+            {
+                return;
             }
             var colliders = Physics2D.OverlapCircleAll(targetPos, 0.2f);
             foreach (var c in colliders)

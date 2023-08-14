@@ -24,7 +24,12 @@ public class KCSVParser : MonoBehaviour
             {
                 row[1] = row[1].Replace("플레이어", JDataManager.instance.playerData.name);
             }
-
+            if (row[1] == "레이어" && !string.IsNullOrEmpty(JDataManager.instance.playerData.name))
+            {
+                string name = JDataManager.instance.playerData.name.Remove(0, 1);
+                print(name);
+                row[1] = row[1].Replace("레이어", name);
+            }
             if (int.TryParse(row[0],out int a))
             {
                 tempDialogue.index = a;
@@ -49,7 +54,9 @@ public class KCSVParser : MonoBehaviour
             {
                 if (!string.IsNullOrEmpty(JDataManager.instance.playerData.name))
                 {
-                    row[4] = row[4].Replace("플레이어", JDataManager.instance.playerData.name);   
+                    row[4] = row[4].Replace("플레이어", JDataManager.instance.playerData.name);  
+                    string name = JDataManager.instance.playerData.name.Remove(0, 1);
+                    row[4] = row[4].Replace("레이어", name);
                 }
                 row[4] = row[4].Replace("'", ",");
                 contextList.Add(row[4]);

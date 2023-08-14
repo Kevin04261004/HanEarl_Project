@@ -1285,6 +1285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB3C4\uC11C\uC2E4 \uAE08\uACE0"
@@ -1329,6 +1330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 0
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
@@ -1535,6 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB2E4\uC12F\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
@@ -1546,6 +1549,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!61 &33996214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3249,7 +3253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e595d8a5d8d09f64ba3af6aa74fc2020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _csv_File: {fileID: 4900000, guid: 492e06e08dc3341498ca0cb2b0d5d180, type: 3}
+  _csv_File: {fileID: 4900000, guid: cdd7d8e6990ef62498b01b679ff83805, type: 3}
   _dialogues: []
 --- !u!1001 &53866707
 PrefabInstance:
@@ -4556,6 +4560,9 @@ Transform:
   - {fileID: 677777230}
   - {fileID: 405742067}
   - {fileID: 766270633}
+  - {fileID: 1949946813}
+  - {fileID: 124094976}
+  - {fileID: 957164986}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5131,7 +5138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1919916799}
+  m_Father: {fileID: 105701195}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &124094977
@@ -5191,6 +5198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC138\uBA74\uB300"
@@ -5757,6 +5765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uD654\uC7A5\uC2E4 \uCE78 \uBB38"
@@ -6606,6 +6615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC625\uC0C1 \uD39C\uC2A4"
@@ -6883,6 +6893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 0
   _dialogueEvent:
     eventName: "Act4-1\uC758 \uC625\uC0C1 \uBB38 \uC7A0\uADF8\uAE30"
@@ -7782,6 +7793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -8019,6 +8031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
@@ -8260,6 +8273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
@@ -9466,6 +9480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "\uD32C\uB358\uD2B8 \uC870\uAC01"
@@ -9493,7 +9508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &229345162
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9776,6 +9791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB2E4\uC12F\uBC88\uC9F8 \uB9CC\uB0A8"
@@ -9786,6 +9802,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!61 &238374323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11665,6 +11682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC625\uC0C1 \uD39C\uC2A4"
@@ -11927,6 +11945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 0
   _dialogueEvent:
     eventName: "\uD32C\uB358\uD2B8 \uC870\uAC01"
@@ -13330,6 +13349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
@@ -13566,6 +13586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
@@ -15789,6 +15810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
@@ -18494,7 +18516,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cursor: {fileID: 2800000, guid: 7217592fbba24a347a42478b26121adf, type: 3}
   _hotspot: {x: 54, y: 40}
-  _hotspot: {x: 0, y: 0}
 --- !u!1 &405742066
 GameObject:
   m_ObjectHideFlags: 0
@@ -18596,6 +18617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 13
   _dialogueEvent:
     eventName: "Act6\uC625\uC0C1 \uCC45\uC0C1"
@@ -18606,6 +18628,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!61 &405742072
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18923,6 +18946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -19275,6 +19299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB2EC\uB825"
@@ -20786,6 +20811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
@@ -21961,6 +21987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: TV
@@ -22346,6 +22373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8"
@@ -22745,7 +22773,7 @@ GameObject:
   - component: {fileID: 524474655}
   - component: {fileID: 524474654}
   - component: {fileID: 524474653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: B_ForAct5-1_After_GetBook
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
@@ -22778,6 +22806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC5EC\uC12F\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
@@ -22789,6 +22818,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!61 &524474655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23181,6 +23211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -23471,6 +23502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -23993,6 +24025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 11
   _dialogueEvent:
     eventName: "\uC7A0\uAE34 \uC5EC\uC790\uD654\uC7A5\uC2E4 \uBB38"
@@ -24094,6 +24127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
@@ -24305,6 +24339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
@@ -24563,6 +24598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uC0AC\uBB3C\uD568"
@@ -25921,6 +25957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
@@ -29152,6 +29189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
@@ -32866,6 +32904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
@@ -34194,6 +34233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -34557,6 +34597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uCCAB \uB9CC\uB0A8"
@@ -35339,6 +35380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
@@ -36889,6 +36931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -37101,6 +37144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uB124\uBC88\uC9F8 \uB9CC\uB0A8"
@@ -37111,6 +37155,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!61 &762082637
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39618,6 +39663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
@@ -40341,6 +40387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -42035,6 +42082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -43557,6 +43605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uB2E4\uC12F\uBC88\uC9F8 \uB9CC\uB0A8"
@@ -43567,6 +43616,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!61 &906060787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43775,6 +43825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
@@ -48110,6 +48161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uD654\uC7A5\uC2E4 \uCE78 \uBB38"
@@ -48689,7 +48741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &957164986
 Transform:
   m_ObjectHideFlags: 0
@@ -48702,7 +48754,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1919916799}
+  m_Father: {fileID: 105701195}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &957164987
@@ -48762,6 +48814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC138\uBA74\uB300"
@@ -49044,7 +49097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &970393257
 Transform:
   m_ObjectHideFlags: 0
@@ -49976,6 +50029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
@@ -49986,6 +50040,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!1 &1030502683
 GameObject:
   m_ObjectHideFlags: 0
@@ -50469,6 +50524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB0A8\uC790\uD654\uC7A5\uC2E4 \uD45C\uC9C0\uD310"
@@ -50838,6 +50894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uAD50\uD0C1\uC5D0 \uC788\uB294 \uB274\uC2A4"
@@ -51315,6 +51372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
@@ -51501,6 +51559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -52165,7 +52224,8 @@ GameObject:
   - component: {fileID: 1148893506}
   - component: {fileID: 1148893508}
   - component: {fileID: 1148893507}
-  m_Layer: 0
+  - component: {fileID: 1148893509}
+  m_Layer: 7
   m_Name: "\uD558\uAD50"
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
@@ -52244,6 +52304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 0
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uD558\uAD50\uACC4\uB2E8"
@@ -52255,6 +52316,18 @@ MonoBehaviour:
     line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+--- !u!114 &1148893509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148893505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e7d4732057f61d45a402087a7720394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1149763259
 GameObject:
   m_ObjectHideFlags: 0
@@ -52302,6 +52375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB124\uBC88\uC9F8 \uB9CC\uB0A8"
@@ -52645,6 +52719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uD0C1"
@@ -52895,6 +52970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -53185,6 +53261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
@@ -53890,6 +53967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
@@ -54427,6 +54505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 4
   _dialogueEvent:
     eventName: 
@@ -55336,6 +55415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
@@ -56044,7 +56124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1247533494
 Transform:
   m_ObjectHideFlags: 0
@@ -57360,6 +57440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
@@ -60626,6 +60707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC5EC\uC12F\uBC88\uC9F8 \uB9CC\uB0A8"
@@ -60636,6 +60718,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!61 &1363818892
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61449,6 +61532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
@@ -62588,6 +62672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 7
   _dialogueEvent:
     eventName: "\uBC30\uB4DC \uC5D4\uB529C - \uC625\uC0C1"
@@ -68460,6 +68545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCF5\uB3C4 \uAC8C\uC2DC\uD310"
@@ -68806,6 +68892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
@@ -70949,6 +71036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uD45C\uC9C0\uD310"
@@ -71355,6 +71443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
@@ -71881,6 +71970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uCCAB \uB9CC\uB0A8 - \uB3D9\uD654\uCC45 \uC774\uD6C4"
@@ -72101,6 +72191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 10
   _dialogueEvent:
     eventName: "\uC7A0\uAE34 \uB0A8\uC790\uD654\uC7A5\uC2E4 \uBB38"
@@ -75111,6 +75202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
@@ -75347,6 +75439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uD45C\uC9C0\uD310"
@@ -75425,6 +75518,8 @@ MonoBehaviour:
     - {fileID: 554725266}
     - {fileID: 1593918366}
     - {fileID: 1919916798}
+    - {fileID: 124094975}
+    - {fileID: 957164985}
     <interactionObj>k__BackingField: []
     <needItem>k__BackingField: []
     <actName>k__BackingField: Act001
@@ -75499,6 +75594,7 @@ MonoBehaviour:
     - {fileID: 221645432}
     - {fileID: 353652701}
     - {fileID: 1731851721}
+    - {fileID: 1949946812}
     <interactionObj>k__BackingField:
     - {fileID: 221645437}
     - {fileID: 787368196}
@@ -75521,6 +75617,8 @@ MonoBehaviour:
     - {fileID: 1882333910}
     - {fileID: 1704384190}
     - {fileID: 2003138849}
+    - {fileID: 124094975}
+    - {fileID: 957164985}
     <interactionObj>k__BackingField: []
     <needItem>k__BackingField: []
     <actName>k__BackingField: Act005
@@ -75541,6 +75639,8 @@ MonoBehaviour:
     - {fileID: 1919916798}
     - {fileID: 762082632}
     - {fileID: 2003138849}
+    - {fileID: 124094975}
+    - {fileID: 957164985}
     <interactionObj>k__BackingField:
     - {fileID: 762082636}
     <needItem>k__BackingField: []
@@ -75558,6 +75658,8 @@ MonoBehaviour:
     - {fileID: 1891387649}
     - {fileID: 405742066}
     - {fileID: 2003138849}
+    - {fileID: 124094975}
+    - {fileID: 957164985}
     <interactionObj>k__BackingField:
     - {fileID: 906060786}
     - {fileID: 405742071}
@@ -75568,6 +75670,8 @@ MonoBehaviour:
     <stageInteractionSkip>k__BackingField: 0
   - <StageObject>k__BackingField:
     - {fileID: 677777229}
+    - {fileID: 124094975}
+    - {fileID: 957164985}
     <interactionObj>k__BackingField: []
     <needItem>k__BackingField: []
     <actName>k__BackingField: Act007
@@ -75582,6 +75686,8 @@ MonoBehaviour:
     <stageInteractionSkip>k__BackingField: 0
   - <StageObject>k__BackingField:
     - {fileID: 677777229}
+    - {fileID: 124094975}
+    - {fileID: 957164985}
     <interactionObj>k__BackingField: []
     <needItem>k__BackingField: []
     <actName>k__BackingField: Act008
@@ -76029,6 +76135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 6
   _dialogueEvent:
     eventName: "\uBC30\uB4DC \uC5D4\uB529E - \uB85C\uD504"
@@ -82999,6 +83106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
@@ -83222,6 +83330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
@@ -83232,6 +83341,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!1001 &1788256398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83665,6 +83775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB2EC\uB825"
@@ -84805,6 +84916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB450\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
@@ -85134,6 +85246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5EC\uC790\uD654\uC7A5\uC2E4 \uD45C\uC9C0\uD310"
@@ -86269,6 +86382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB3C4\uC11C\uC2E4 \uD45C\uC9C0\uD310"
@@ -86428,6 +86542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 5
   _dialogueEvent:
     eventName: "\uBC30\uB4DC \uC5D4\uB529D - \uB4DC\uB77C\uC774\uAE30"
@@ -86553,7 +86668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1891387650
 Transform:
   m_ObjectHideFlags: 0
@@ -92788,15 +92903,12 @@ Transform:
   - {fileID: 1062926068}
   - {fileID: 139932731}
   - {fileID: 247292926}
-  - {fileID: 124094976}
-  - {fileID: 957164986}
   - {fileID: 450867004}
   - {fileID: 276885161}
   - {fileID: 1238463412}
   - {fileID: 180162808}
   - {fileID: 665169414}
   - {fileID: 908977326}
-  - {fileID: 1949946813}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -95403,7 +95515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1949946813
 Transform:
   m_ObjectHideFlags: 0
@@ -95419,7 +95531,7 @@ Transform:
   - {fileID: 912638279}
   - {fileID: 292546322}
   - {fileID: 1608703634}
-  m_Father: {fileID: 1919916799}
+  m_Father: {fileID: 105701195}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1949946814
@@ -95448,6 +95560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "\uAC70\uC6B8 \uC0C1\uD638\uC791\uC6A9"
@@ -96386,6 +96499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 11
   _dialogueEvent:
     eventName: "\uC7A0\uAE34 \uB0A8\uC790\uD654\uC7A5\uC2E4 \uBB38"
@@ -96529,6 +96643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB450\uBC88\uC9F8 \uB9CC\uB0A8"
@@ -97726,6 +97841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uBC88\uC9F8 \uB9CC\uB0A8"
@@ -107599,6 +107715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D4\uB529 \uAC8C\uC2DC\uD310"
@@ -108149,6 +108266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
@@ -108763,6 +108881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uB450\uBC88\uC9F8 \uB9CC\uB0A8"

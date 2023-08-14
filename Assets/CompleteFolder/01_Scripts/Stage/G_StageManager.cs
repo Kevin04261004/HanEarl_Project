@@ -32,12 +32,6 @@ public class G_StageManager : MonoBehaviour
         ActStart();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-            AfterSchool();
-    }
-
     public bool NormalEndingCheck()
     {
         return stageSaveData.normalEndingCheck;
