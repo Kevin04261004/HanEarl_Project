@@ -25,6 +25,7 @@ public class KInteractiveObject : MonoBehaviour
     [SerializeField] private KDialogueReader _dialogueReader;
     [SerializeField] private KDialogueEvent _secondDialogueEvent;
     [SerializeField] private short _interactiveCount;
+    [SerializeField] private bool normalEndingChange = false;
     private void Awake()
     {
         _dialogueReader = FindObjectOfType<KDialogueReader>();
@@ -33,6 +34,12 @@ public class KInteractiveObject : MonoBehaviour
     
     private KDialogue[] GetDialogue()
     {
+        if (normalEndingChange)
+        {
+            _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_dialogueEvent.N_line.x, (int)_dialogueEvent.N_line.y);
+            return _dialogueEvent.dialogues;
+        }
+
         _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_dialogueEvent.line.x, (int)_dialogueEvent.line.y);
         return _dialogueEvent.dialogues;
     }

@@ -17,5 +17,6 @@ public class KDialogueEvent
     public string eventName;
 
     public Vector2 line;
+    public Vector2 N_line;
     public KDialogue[] dialogues;
 }
