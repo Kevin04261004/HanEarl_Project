@@ -66,7 +66,7 @@ public class G_StageManager : MonoBehaviour
     {
         stageSaveData.beforeActName.Add(endingName);
         endingManager.CallEnding(endingName);
-        ActEnd();
+        //ActEnd();
     }
 
     public void Act7_Reset()

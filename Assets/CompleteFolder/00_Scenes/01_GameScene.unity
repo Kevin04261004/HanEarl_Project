@@ -1285,18 +1285,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB3C4\uC11C\uC2E4 \uAE08\uACE0"
     line: {x: 19, y: 19}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &26087196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,19 +1332,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 0
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
       \uC774\uD6C4"
     line: {x: 247, y: 249}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!114 &26087198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1490,6 +1494,76 @@ Transform:
   m_Father: {fileID: 105701195}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &28203670
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 791279078}
+    m_Modifications:
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004682665216558149, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_Name
+      value: mark
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004682665216558149, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+--- !u!4 &28203671 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+  m_PrefabInstance: {fileID: 28203670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &33996211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,19 +1611,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB2E4\uC12F\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
       \uC774\uD6C4"
     line: {x: 332, y: 342}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &33996214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4552,6 +4628,7 @@ Transform:
   - {fileID: 1787058288}
   - {fileID: 762082633}
   - {fileID: 906060783}
+  - {fileID: 124391168}
   - {fileID: 554725267}
   - {fileID: 1976303080}
   - {fileID: 1593918367}
@@ -4563,6 +4640,9 @@ Transform:
   - {fileID: 1949946813}
   - {fileID: 124094976}
   - {fileID: 957164986}
+  - {fileID: 1491424259}
+  - {fileID: 950089091}
+  - {fileID: 791279078}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5198,18 +5278,234 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC138\uBA74\uB300"
     line: {x: 20, y: 20}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
+--- !u!1 &124391161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124391168}
+  - component: {fileID: 124391167}
+  - component: {fileID: 124391166}
+  - component: {fileID: 124391165}
+  - component: {fileID: 124391162}
+  - component: {fileID: 124391164}
+  - component: {fileID: 124391163}
+  m_Layer: 6
+  m_Name: C_ForAct8
+  m_TagString: InteractiveObject
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &124391162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124391161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactiveType: 9
+  _dialogueEvent:
+    eventName: "C\uC640\uC758 \uC5EC\uC12F\uBC88\uC9F8 \uB9CC\uB0A8"
+    line: {x: 595, y: 637}
+    N_line: {x: 0, y: 0}
+    dialogues: []
+  _dialogueReader: {fileID: 0}
+  _secondDialogueEvent:
+    eventName: 
+    line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
+    dialogues: []
+  _interactiveCount: 0
+  normalEndingChange: 0
+--- !u!114 &124391163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124391161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9db684bafb47645abf05dc86a3ca5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeforeObj: {fileID: 0}
+  NewObj: {fileID: 0}
+  BeforeObj2: {fileID: 0}
+  NewObj2: {fileID: 0}
+--- !u!114 &124391164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124391161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5bebeb075445f479bf81209d746b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 1.5
+  _material: {fileID: 0}
+  _fadeManager: {fileID: 0}
+  _startState: 1
+--- !u!61 &124391165
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124391161}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!95 &124391166
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124391161}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e951574fb397ff4fb30ec6c4a24b006, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &124391167
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124391161}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 90657143b23a81a489b2d77361a50d84, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1877955267, guid: 2e0a9430a40c577458f4b0fc7c570812, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &124391168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124391161}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -50, y: 9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1691249191}
+  m_Father: {fileID: 105701195}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &129230240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5765,18 +6061,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uD654\uC7A5\uC2E4 \uCE78 \uBB38"
     line: {x: 22, y: 22}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1001 &134434566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6615,18 +6913,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC625\uC0C1 \uD39C\uC2A4"
     line: {x: 18, y: 18}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1001 &143454171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6893,18 +7193,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 0
   _dialogueEvent:
     eventName: "Act4-1\uC758 \uC625\uC0C1 \uBB38 \uC7A0\uADF8\uAE30"
     line: {x: 226, y: 236}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &149792730
 GameObject:
   m_ObjectHideFlags: 0
@@ -7793,18 +8095,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &178384972
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8031,18 +8335,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
     line: {x: 21, y: 21}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &180489023
 GameObject:
   m_ObjectHideFlags: 0
@@ -8273,19 +8579,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
       \uC774\uD6C4"
     line: {x: 157, y: 165}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &193823085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9480,18 +9788,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "\uD32C\uB358\uD2B8 \uC870\uAC01"
     line: {x: 236, y: 236}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &229345161
 GameObject:
   m_ObjectHideFlags: 0
@@ -9791,18 +10101,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB2E4\uC12F\uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 317, y: 331}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &238374323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11682,18 +11994,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC625\uC0C1 \uD39C\uC2A4"
     line: {x: 18, y: 18}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &251705090
 GameObject:
   m_ObjectHideFlags: 0
@@ -11945,18 +12259,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 0
   _dialogueEvent:
     eventName: "\uD32C\uB358\uD2B8 \uC870\uAC01"
     line: {x: 221, y: 221}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &272954395
 GameObject:
   m_ObjectHideFlags: 0
@@ -13349,18 +13665,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
     line: {x: 21, y: 21}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &277288022
 GameObject:
   m_ObjectHideFlags: 0
@@ -13586,18 +13904,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
     line: {x: 8, y: 8}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!4 &284995527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5860101420153844668, guid: 056a6164afde0c546838794b69a5dea6, type: 3}
@@ -13775,6 +14095,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &307125587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307125588}
+  - component: {fileID: 307125589}
+  m_Layer: 0
+  m_Name: table_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &307125588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307125587}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 791279078}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &307125589
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307125587}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -901401926, guid: e4fb595768c11c14ea103503fef5d71c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &307770753
 GameObject:
   m_ObjectHideFlags: 0
@@ -15810,18 +16214,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
     line: {x: 8, y: 8}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &344279696
 GameObject:
   m_ObjectHideFlags: 0
@@ -18617,18 +19023,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 13
   _dialogueEvent:
     eventName: "Act6\uC625\uC0C1 \uCC45\uC0C1"
     line: {x: 441, y: 442}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &405742072
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18946,18 +19354,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &416141068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19299,18 +19709,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB2EC\uB825"
     line: {x: 1, y: 1}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &442284795
 GameObject:
   m_ObjectHideFlags: 0
@@ -20811,18 +21223,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
     line: {x: 21, y: 21}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &452086256
 GameObject:
   m_ObjectHideFlags: 0
@@ -21987,18 +22401,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: TV
     line: {x: 7, y: 7}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &497067985
 GameObject:
   m_ObjectHideFlags: 0
@@ -22373,18 +22789,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 114, y: 126}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 2
     line: {x: 643, y: 643}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &503865415
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22806,19 +23224,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC5EC\uC12F\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
       \uC774\uD6C4"
     line: {x: 387, y: 389}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &524474655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23211,18 +23631,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &538392345
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23502,18 +23924,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &547532399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24025,18 +24449,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 11
   _dialogueEvent:
     eventName: "\uC7A0\uAE34 \uC5EC\uC790\uD654\uC7A5\uC2E4 \uBB38"
     line: {x: 10, y: 10}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: "\uD654\uC7A5\uC2E4 \uD0A4\uB97C \uAC00\uC9C0\uACE0 \uC788\uC744\uB54C"
     line: {x: 250, y: 250}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &556548002
 GameObject:
   m_ObjectHideFlags: 0
@@ -24127,18 +24553,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
     line: {x: 8, y: 8}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &558277569
 GameObject:
   m_ObjectHideFlags: 3
@@ -24339,18 +24767,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
     line: {x: 48, y: 53}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!114 &559289901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24598,18 +25028,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uC0AC\uBB3C\uD568"
     line: {x: 6, y: 6}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &582308776
 GameObject:
   m_ObjectHideFlags: 0
@@ -25957,18 +26389,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
     line: {x: 2, y: 2}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &598469849
 GameObject:
   m_ObjectHideFlags: 0
@@ -29189,18 +29623,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
     line: {x: 8, y: 8}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &606056112
 GameObject:
   m_ObjectHideFlags: 0
@@ -32904,18 +33340,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
     line: {x: 21, y: 21}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &671430797
 GameObject:
   m_ObjectHideFlags: 0
@@ -34233,18 +34671,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &694478277
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34597,18 +35037,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uCCAB \uB9CC\uB0A8"
     line: {x: 39, y: 47}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: "\uB450\uBC88\uC9F8 \uC0C1\uD638\uC791\uC6A9"
     line: {x: 642, y: 642}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &706284343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35380,18 +35822,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
     line: {x: 641, y: 641}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!4 &709104303
 Transform:
   m_ObjectHideFlags: 0
@@ -36931,18 +37375,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &757726516
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37144,18 +37590,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uB124\uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 390, y: 413}
+    N_line: {x: 563, y: 590}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 1
 --- !u!61 &762082637
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39663,19 +40111,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
       \uC774\uD6C4"
     line: {x: 237, y: 243}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &787368197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39866,6 +40316,263 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 302502210}
+--- !u!1 &791279077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 791279078}
+  - component: {fileID: 791279085}
+  - component: {fileID: 791279084}
+  - component: {fileID: 791279083}
+  - component: {fileID: 791279082}
+  - component: {fileID: 791279081}
+  - component: {fileID: 791279080}
+  - component: {fileID: 791279079}
+  m_Layer: 0
+  m_Name: "Act8_\uC625\uC0C1\uCC45\uC0C1"
+  m_TagString: InteractiveObject
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &791279078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791279077}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17, y: -35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 28203671}
+  - {fileID: 1554021902}
+  - {fileID: 307125588}
+  m_Father: {fileID: 105701195}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &791279079
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791279077}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7, y: 5}
+  m_EdgeRadius: 0
+--- !u!212 &791279080
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791279077}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &791279081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791279077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43cf1910dfeb864cb2f3a203dd49be4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeManager: {fileID: 0}
+  b_obj: {fileID: 766270632}
+  target_Pos: {fileID: 2032689783}
+  _other: {fileID: 0}
+--- !u!114 &791279082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791279077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9db684bafb47645abf05dc86a3ca5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeforeObj: {fileID: 124391161}
+  NewObj: {fileID: 950089084}
+  BeforeObj2: {fileID: 0}
+  NewObj2: {fileID: 0}
+--- !u!114 &791279083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791279077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5bebeb075445f479bf81209d746b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 1.5
+  _material: {fileID: 0}
+  _fadeManager: {fileID: 0}
+  _startState: 1
+--- !u!114 &791279084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791279077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactiveType: 13
+  _dialogueEvent:
+    eventName: "Act6\uC625\uC0C1 \uCC45\uC0C1"
+    line: {x: 441, y: 442}
+    N_line: {x: 0, y: 0}
+    dialogues: []
+  _dialogueReader: {fileID: 0}
+  _secondDialogueEvent:
+    eventName: 
+    line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
+    dialogues: []
+  _interactiveCount: 0
+  normalEndingChange: 0
+--- !u!61 &791279085
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791279077}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2}
+  m_EdgeRadius: 0
 --- !u!1 &791977663
 GameObject:
   m_ObjectHideFlags: 0
@@ -40387,18 +41094,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &827341297
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42082,18 +42791,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &880192671
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43605,18 +44316,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uB2E4\uC12F\uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 421, y: 439}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &906060787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43825,18 +44538,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
     line: {x: 21, y: 21}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &912295913
 GameObject:
   m_ObjectHideFlags: 0
@@ -48161,18 +48876,231 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uD654\uC7A5\uC2E4 \uCE78 \uBB38"
     line: {x: 22, y: 22}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
+--- !u!1 &950089084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950089091}
+  - component: {fileID: 950089090}
+  - component: {fileID: 950089089}
+  - component: {fileID: 950089088}
+  - component: {fileID: 950089085}
+  - component: {fileID: 950089087}
+  - component: {fileID: 950089086}
+  m_Layer: 0
+  m_Name: B_ForAct8
+  m_TagString: InteractiveObject
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &950089085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950089084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactiveType: 4
+  _dialogueEvent:
+    eventName: 
+    line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
+    dialogues: []
+  _dialogueReader: {fileID: 0}
+  _secondDialogueEvent:
+    eventName: 
+    line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
+    dialogues: []
+  _interactiveCount: 0
+  normalEndingChange: 0
+--- !u!114 &950089086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950089084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9db684bafb47645abf05dc86a3ca5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeforeObj: {fileID: 0}
+  NewObj: {fileID: 1491424254}
+  BeforeObj2: {fileID: 0}
+  NewObj2: {fileID: 7422630503718192237}
+--- !u!114 &950089087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950089084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89fd5a21c8779d74e8fe434b57af1d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 1.5
+  _fadeManager: {fileID: 0}
+--- !u!61 &950089088
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950089084}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!95 &950089089
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950089084}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b9120b2f4b890fc4c9caf34c754ba05d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &950089090
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950089084}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 378439909, guid: 530a1722eb0bfd5448d972fbfbf3c45b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &950089091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950089084}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -35, y: 11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 105701195}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &955001907
 GameObject:
   m_ObjectHideFlags: 0
@@ -48814,18 +49742,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC138\uBA74\uB300"
     line: {x: 20, y: 20}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &958818092
 GameObject:
   m_ObjectHideFlags: 0
@@ -50029,18 +50959,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
     line: {x: 379, y: 386}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1030502683
 GameObject:
   m_ObjectHideFlags: 0
@@ -50524,18 +51456,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB0A8\uC790\uD654\uC7A5\uC2E4 \uD45C\uC9C0\uD310"
     line: {x: 17, y: 17}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1067027551
 GameObject:
   m_ObjectHideFlags: 0
@@ -50894,18 +51828,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uAD50\uD0C1\uC5D0 \uC788\uB294 \uB274\uC2A4"
     line: {x: 192, y: 194}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!114 &1088428003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51372,18 +52308,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
     line: {x: 2, y: 2}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1107425433
 GameObject:
   m_ObjectHideFlags: 0
@@ -51559,18 +52497,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &1110806110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -52304,18 +53244,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 0
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uD558\uAD50\uACC4\uB2E8"
     line: {x: 28, y: 32}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!114 &1148893509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52375,18 +53317,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB124\uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 177, y: 191}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 2
     line: {x: 642, y: 642}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1149763262
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52719,18 +53663,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uD0C1"
     line: {x: 4, y: 4}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1181344223
 GameObject:
   m_ObjectHideFlags: 0
@@ -52970,18 +53916,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &1185581711
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53261,18 +54209,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
     line: {x: 8, y: 8}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1190128864
 GameObject:
   m_ObjectHideFlags: 0
@@ -53967,19 +54917,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
       \uC774\uD6C4"
     line: {x: 212, y: 220}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1211666852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54505,18 +55457,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 4
   _dialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1221104214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54591,7 +55545,7 @@ MonoBehaviour:
   BeforeObj: {fileID: 0}
   NewObj: {fileID: 1762963654}
   BeforeObj2: {fileID: 0}
-  NewObj2: {fileID: 7422630503718192237}
+  NewObj2: {fileID: 0}
 --- !u!1 &1226434667
 GameObject:
   m_ObjectHideFlags: 0
@@ -55415,18 +56369,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCC0\uAE30"
     line: {x: 21, y: 21}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1239328419
 GameObject:
   m_ObjectHideFlags: 0
@@ -57440,18 +58396,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
     line: {x: 2, y: 2}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1303993981
 GameObject:
   m_ObjectHideFlags: 0
@@ -60707,18 +61665,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC5EC\uC12F\uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 366, y: 378}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1363818892
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61532,18 +62492,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
     line: {x: 48, y: 53}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!114 &1373181351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62672,18 +63634,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 7
   _dialogueEvent:
     eventName: "\uBC30\uB4DC \uC5D4\uB529C - \uC625\uC0C1"
     line: {x: 348, y: 352}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1397722575
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -68545,18 +69509,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBCF5\uB3C4 \uAC8C\uC2DC\uD310"
     line: {x: 12, y: 12}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1453455735
 GameObject:
   m_ObjectHideFlags: 0
@@ -68892,18 +69858,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
     line: {x: 641, y: 641}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!114 &1467895264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70241,6 +71209,190 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1491424254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1491424259}
+  - component: {fileID: 1491424258}
+  - component: {fileID: 1491424257}
+  - component: {fileID: 1491424256}
+  - component: {fileID: 1491424255}
+  m_Layer: 0
+  m_Name: True_Ending_Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1491424255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491424254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbce9189cb41a124da55824a00cc659b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fadeManager: {fileID: 0}
+  _followEnemy: {fileID: 482315023}
+--- !u!61 &1491424256
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491424254}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1, y: 1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!61 &1491424257
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491424254}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1, y: 1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!61 &1491424258
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491424254}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1491424259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491424254}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2, y: -34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 105701195}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491673394
 GameObject:
   m_ObjectHideFlags: 0
@@ -71036,18 +72188,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uD45C\uC9C0\uD310"
     line: {x: 14, y: 14}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1545497267
 GameObject:
   m_ObjectHideFlags: 0
@@ -71443,18 +72597,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D1\uC2A4\uD2B8\uB77C \uD559\uC0DD"
     line: {x: 104, y: 104}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!212 &1552859735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71502,6 +72658,90 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &1554021901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1554021902}
+  - component: {fileID: 1554021903}
+  m_Layer: 0
+  m_Name: table_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1554021902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554021901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 791279078}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1554021903
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554021901}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -1249057603, guid: e4fb595768c11c14ea103503fef5d71c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -71970,18 +73210,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uCCAB \uB9CC\uB0A8 - \uB3D9\uD654\uCC45 \uC774\uD6C4"
     line: {x: 54, y: 56}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1584227287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -72191,18 +73433,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 10
   _dialogueEvent:
     eventName: "\uC7A0\uAE34 \uB0A8\uC790\uD654\uC7A5\uC2E4 \uBB38"
     line: {x: 640, y: 640}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: "\uC5F4\uC1E0\uAC00 \uC788\uC744\uB584 \uC77D\uC744\uAC70."
     line: {x: 225, y: 225}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1597841494
 GameObject:
   m_ObjectHideFlags: 0
@@ -75202,18 +76446,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
     line: {x: 2, y: 2}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1686036428
 GameObject:
   m_ObjectHideFlags: 0
@@ -75439,18 +76685,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uD45C\uC9C0\uD310"
     line: {x: 14, y: 14}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1686977321
 GameObject:
   m_ObjectHideFlags: 0
@@ -75668,10 +76916,7 @@ MonoBehaviour:
     <actName>k__BackingField: Act006
     <clearBeforeActName>k__BackingField: []
     <stageInteractionSkip>k__BackingField: 0
-  - <StageObject>k__BackingField:
-    - {fileID: 677777229}
-    - {fileID: 124094975}
-    - {fileID: 957164985}
+  - <StageObject>k__BackingField: []
     <interactionObj>k__BackingField: []
     <needItem>k__BackingField: []
     <actName>k__BackingField: Act007
@@ -75683,23 +76928,21 @@ MonoBehaviour:
     - Act004.1
     - Act005
     - Act005.1
-    <stageInteractionSkip>k__BackingField: 0
+    <stageInteractionSkip>k__BackingField: 1
   - <StageObject>k__BackingField:
-    - {fileID: 677777229}
+    - {fileID: 124391161}
+    - {fileID: 1891387649}
+    - {fileID: 791279077}
+    - {fileID: 2003138849}
     - {fileID: 124094975}
     - {fileID: 957164985}
-    <interactionObj>k__BackingField: []
+    <interactionObj>k__BackingField:
+    - {fileID: 124391162}
+    - {fileID: 791279084}
+    - {fileID: 950089085}
     <needItem>k__BackingField: []
     <actName>k__BackingField: Act008
-    <clearBeforeActName>k__BackingField:
-    - Act001
-    - Act002
-    - Act003
-    - Act004
-    - Act004.1
-    - Act005
-    - Act005.1
-    - Act007
+    <clearBeforeActName>k__BackingField: []
     <stageInteractionSkip>k__BackingField: 0
 --- !u!114 &1686977325
 MonoBehaviour:
@@ -75868,6 +77111,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+--- !u!1001 &1691249190
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 124391168}
+    m_Modifications:
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004682665216558149, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+      propertyPath: m_Name
+      value: mark
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+--- !u!4 &1691249191 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1215881007159797055, guid: 075f041ae5607d84d984949d078200a4, type: 3}
+  m_PrefabInstance: {fileID: 1691249190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1699664974
 GameObject:
   m_ObjectHideFlags: 0
@@ -76135,18 +77444,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 6
   _dialogueEvent:
     eventName: "\uBC30\uB4DC \uC5D4\uB529E - \uB85C\uD504"
     line: {x: 343, y: 347}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1704384194
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -83106,18 +84417,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC758\uC790"
     line: {x: 2, y: 2}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1786819502
 GameObject:
   m_ObjectHideFlags: 0
@@ -83330,18 +84643,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 8
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
     line: {x: 379, y: 386}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1001 &1788256398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83775,18 +85090,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB2EC\uB825"
     line: {x: 145, y: 156}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1805347047
 GameObject:
   m_ObjectHideFlags: 0
@@ -84916,19 +86233,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB450\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
       \uC774\uD6C4"
     line: {x: 94, y: 103}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1842650920
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -85246,18 +86565,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5EC\uC790\uD654\uC7A5\uC2E4 \uD45C\uC9C0\uD310"
     line: {x: 16, y: 16}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1858500660
 GameObject:
   m_ObjectHideFlags: 0
@@ -86382,18 +87703,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uB3C4\uC11C\uC2E4 \uD45C\uC9C0\uD310"
     line: {x: 15, y: 15}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &1878371842
 GameObject:
   m_ObjectHideFlags: 3
@@ -86542,18 +87865,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 5
   _dialogueEvent:
     eventName: "\uBC30\uB4DC \uC5D4\uB529D - \uB4DC\uB77C\uC774\uAE30"
     line: {x: 353, y: 357}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1882333914
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -95560,18 +96885,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "\uAC70\uC6B8 \uC0C1\uD638\uC791\uC6A9"
     line: {x: 251, y: 259}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 2
     line: {x: 644, y: 644}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1949946816
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -96499,19 +97826,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 11
   _dialogueEvent:
     eventName: "\uC7A0\uAE34 \uB0A8\uC790\uD654\uC7A5\uC2E4 \uBB38"
     line: {x: 11, y: 11}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: "\uD654\uC7A5\uC2E4 \uD0A4 \uC788\uC744 \uB54C \uB0A8\uC790\uD654\uC7A5\uC2E4
       \uBB38"
     line: {x: 250, y: 250}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1001 &1980961836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96643,18 +97972,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uB450\uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 39, y: 47}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 2
     line: {x: 642, y: 642}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!61 &1992053382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -97841,18 +99172,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 195, y: 211}
+    N_line: {x: 543, y: 562}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 1
 --- !u!61 &2018973145
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -107715,18 +109048,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uC5D4\uB529 \uAC8C\uC2DC\uD310"
     line: {x: 13, y: 13}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1 &2133860848
 GameObject:
   m_ObjectHideFlags: 0
@@ -108266,18 +109601,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 1
   _dialogueEvent:
     eventName: "\uAD50\uC2E4 \uCC3D\uBB38"
     line: {x: 8, y: 8}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1001 &2142378280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108881,18 +110218,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canInteractive: 1
   _interactiveType: 9
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uB450\uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 127, y: 144}
+    N_line: {x: 523, y: 542}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 1
 --- !u!212 &7175644547420741861
 SpriteRenderer:
   m_ObjectHideFlags: 0
