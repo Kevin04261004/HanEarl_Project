@@ -1332,7 +1332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 0
+  _interactiveType: 2
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
       \uC774\uD6C4"
@@ -3329,7 +3329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e595d8a5d8d09f64ba3af6aa74fc2020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _csv_File: {fileID: 4900000, guid: cdd7d8e6990ef62498b01b679ff83805, type: 3}
+  _csv_File: {fileID: 4900000, guid: efcf8a6754681564d867450fba97eef3, type: 3}
   _dialogues: []
 --- !u!1001 &53866707
 PrefabInstance:
@@ -42042,6 +42042,8 @@ PlayableDirector:
     value: {fileID: 877541854}
   - key: {fileID: 5852898674459046602, guid: 6eb9f256acd012f4e9aefc1a95e803ae, type: 2}
     value: {fileID: 877541852}
+  - key: {fileID: 7028733586242179400, guid: 6eb9f256acd012f4e9aefc1a95e803ae, type: 2}
+    value: {fileID: 7422630503718192237}
   m_ExposedReferences:
     m_References:
     - 7aed0d206e7c3954dba0a3fa48b0f5f0: {fileID: 1149789852}
@@ -50472,6 +50474,10 @@ PrefabInstance:
     - target: {fileID: 7551026531147655067, guid: ab8beb98194dbc74a9c37348fc3a7afa, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9168191856965764248, guid: ab8beb98194dbc74a9c37348fc3a7afa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -69649,6 +69655,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7768481473506061804, guid: 3a3972a304729004dad8f9fa59af9888, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -76854,7 +76864,6 @@ MonoBehaviour:
     - Act002
     - Act003
     - Act004
-    - BedEndingB
     <stageInteractionSkip>k__BackingField: 0
   - <StageObject>k__BackingField:
     - {fileID: 677777229}

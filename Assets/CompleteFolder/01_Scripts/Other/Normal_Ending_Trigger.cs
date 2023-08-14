@@ -22,12 +22,12 @@ public class Normal_Ending_Trigger : MonoBehaviour
     
     private IEnumerator NormalEndingStart()
     {
+        G_DifurcationManager.Instance.CallEnding("NormalEnding");
         _followEnemy.SetActive(false);
         _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
         yield return new WaitForSeconds(3);
         _fadeManager.FadeInRoutine(2);
         KTimeLineManager.Instance.StartTimeLine("06");
-        G_DifurcationManager.Instance.CallEnding("NormalEnding");
         gameObject.SetActive(false);
     }
 }
