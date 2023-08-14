@@ -34,7 +34,7 @@ public class KInteractiveObject : MonoBehaviour
     
     private KDialogue[] GetDialogue()
     {
-        if (normalEndingChange)
+        if (normalEndingChange && G_DifurcationManager.Instance.NormalChangeEndingCheck())
         {
             _dialogueEvent.dialogues = KDataBaseManager.Instance.GetDialogue((int)_dialogueEvent.N_line.x, (int)_dialogueEvent.N_line.y);
             return _dialogueEvent.dialogues;
