@@ -5,12 +5,12 @@ using UnityEngine;
 public class KSettingData : JData
 {
     public float _bgmSound;
-    public float _SfxSound;
+    public float _sfxSound;
+    public KeyCode[] _keyData = new KeyCode[(int)EKeyAction.KeySize];
 }
-
-public class DontDestroyOnLoadManager : MonoBehaviour
+public class KDontDestroyOnLoadManager : MonoBehaviour
 {
-    public static DontDestroyOnLoadManager Instance;
+    public static KDontDestroyOnLoadManager Instance;
     public KSettingData _settingData = new KSettingData();
     private void Awake()
     {
@@ -24,11 +24,16 @@ public class DontDestroyOnLoadManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);   
         }
         // 사운드 로드해서 초기화
-        // 여기서 키 세팅들 초기화
+        
     }
 
-    private void Start()
+    public void SaveSettingData()
     {
-        JDataManager.instance.SaveData(_settingData);   
+        JDataManager.instance.SaveData(_settingData);
+    }
+
+    public void LoadSettingData()
+    {
+        JDataManager.instance.Load(out _settingData);
     }
 }

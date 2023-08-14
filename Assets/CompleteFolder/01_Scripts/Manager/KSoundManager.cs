@@ -36,6 +36,11 @@ public class KSoundManager : MonoBehaviour
             return;
         }
         /* Sound Bar */
+        MixerSet();
+    }
+
+    public void MixerSet()
+    {
         _mixer.SetFloat("BGM_Volume", Mathf.Log10(_uiManager._bgm_Slider.value)*20);
         _mixer.SetFloat("SFX_Volume", Mathf.Log10(_uiManager._sfx_Slider.value)*20);
     }

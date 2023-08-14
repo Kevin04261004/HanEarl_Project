@@ -33,9 +33,23 @@ public class KScreenManager : MonoBehaviour
     {
         foreach (var t in UnityEngine.Device.Screen.resolutions)
         {
+            bool isSame = false;
             if ((float)t.height / t.width == (float)9/16)
             {
-                _resolutions.Add(t);
+                foreach (var item in _resolutions)
+                {
+                    if (t.height == item.height && t.width == item.width)
+                    {
+                        isSame = true;
+                        continue;
+                    }
+                }
+
+                if (!isSame)
+                {
+                    _resolutions.Add(t);    
+                }
+                
             }
         }
         _resolution_Dropdown.options.Clear();

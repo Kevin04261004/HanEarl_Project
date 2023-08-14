@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum EKeyAction
 {
-    UpKey,
+    UpKey = 0,
     DownKey,
     LeftKey,
     RightKey,
@@ -12,6 +12,8 @@ public enum EKeyAction
     InventoryKey,
     SightKey,
     SkipKey,
+    KeySize,
+    
 }
 public static class KKeySetting
 {
@@ -22,6 +24,22 @@ public class KKeyManager : MonoBehaviour
     [SerializeField] private KSettingManager _kSettingManager;
     [SerializeField] int key = -1;
     private void Awake()
+    {
+        KKeySetting.key_Dictionary.Clear();
+        KDontDestroyOnLoadManager.Instance.LoadSettingData();
+        if (KDontDestroyOnLoadManager.Instance._settingData._keyData[0] == null 
+            || KDontDestroyOnLoadManager.Instance._settingData._keyData[0] == KeyCode.None)
+        {
+            First_KeySetting();
+            SaveKeySetting();
+        }
+        else
+        {
+            LoadKeySetting();
+        }
+    }
+
+    private void First_KeySetting()
     {
         KKeySetting.key_Dictionary.Clear();
         KKeySetting.key_Dictionary.Add(EKeyAction.UpKey, KeyCode.UpArrow);
@@ -44,10 +62,29 @@ public class KKeyManager : MonoBehaviour
         }
         KKeySetting.key_Dictionary[(EKeyAction)key] = keyEvent.keyCode;
         _kSettingManager.Setting_KeyUI();
+        SaveKeySetting();
         key = -1;
     }
     public void ChangeKey(int num)
     {
         key = num;
+    }
+
+    private void SaveKeySetting()
+    {
+        for (int i = 0; i < (int)EKeyAction.KeySize; i++)
+        {
+            print(KKeySetting.key_Dictionary[(EKeyAction)i]);
+            KDontDestroyOnLoadManager.Instance._settingData._keyData[i] = KKeySetting.key_Dictionary[(EKeyAction)i];
+            KDontDestroyOnLoadManager.Instance.SaveSettingData();
+        }
+    }
+    private void LoadKeySetting()
+    {
+        for (int i = 0; i < (int)EKeyAction.KeySize; i++)
+        {
+            KDontDestroyOnLoadManager.Instance.LoadSettingData();
+            KKeySetting.key_Dictionary[(EKeyAction)i] = KDontDestroyOnLoadManager.Instance._settingData._keyData[i];
+        }
     }
 }
