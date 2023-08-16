@@ -78672,6 +78672,7 @@ MonoBehaviour:
   _player_animator: {fileID: 1617331673}
   <_bgm_Slider>k__BackingField: {fileID: 229345163}
   <_sfx_Slider>k__BackingField: {fileID: 691313342}
+  _keyManager: {fileID: 0}
 --- !u!1 &1678661906
 GameObject:
   m_ObjectHideFlags: 0
@@ -90805,14 +90806,13 @@ GameObject:
   - component: {fileID: 1882333915}
   - component: {fileID: 1882333914}
   - component: {fileID: 1882333913}
-  - component: {fileID: 1882333912}
   m_Layer: 0
   m_Name: BadEnding_hair_dryer
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1882333911
 Transform:
   m_ObjectHideFlags: 0
@@ -90828,19 +90828,6 @@ Transform:
   m_Father: {fileID: 105701195}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1882333912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882333910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e677c0792c0fb7648975c1408bd28e44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fadeManager: {fileID: 0}
 --- !u!114 &1882333913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90853,7 +90840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 5
+  _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBC30\uB4DC \uC5D4\uB529D - \uB4DC\uB77C\uC774\uAE30"
     line: {x: 353, y: 357}
@@ -113464,13 +113451,16 @@ MonoBehaviour:
   _dialogueEvent:
     eventName: Key
     line: {x: 2, y: 2}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!1001 &7038534021659255865
 PrefabInstance:
   m_ObjectHideFlags: 0

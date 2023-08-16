@@ -7,7 +7,6 @@ public enum EInteractiveType
     NPC,
     C_Act3,
     B_Act6,
-    HairDry_item,
     Roop_item,
     RooftopFence,
     KAfterDialogue_Changed_And_GetItem,
@@ -102,13 +101,6 @@ public class KInteractiveObject : MonoBehaviour
                 if (TryGetComponent(out KAfterDialogue d0))
                 {
                     d0.Used();
-                }
-                break;
-            case EInteractiveType.HairDry_item:
-                _dialogueReader.SetDialogue(GetDialogue(), gameObject);
-                if (TryGetComponent(out KHairDryItem hairdry))
-                {
-                    hairdry.InteractiveRoutine();
                 }
                 break;
             case EInteractiveType.Roop_item:

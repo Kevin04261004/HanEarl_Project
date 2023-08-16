@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public enum EButtonState
     Exit_Btn,
     StartTimeLine_Act4_1_At_Roof,
     GoToMainScene,
+    HairDryDied,
+    
 }
 
 public class KUIButoon : MonoBehaviour
@@ -44,6 +47,9 @@ public class KUIButoon : MonoBehaviour
             case EButtonState.GoToMainScene:
                 _btn.onClick.AddListener(OnClicked_GoToMainScene);
                 break;
+            case EButtonState.HairDryDied:
+                _btn.onClick.AddListener(HairDryTimeLineStart);
+                break;
             default:
                 break;
         }
@@ -73,5 +79,18 @@ public class KUIButoon : MonoBehaviour
     private void Onclick_Exit()
     {
         _kDialogueReader.StopReading();
+    }
+
+    private void HairDryTimeLineStart()
+    {
+        StartCoroutine(InteractiveCoroutine());
+    }
+    private IEnumerator InteractiveCoroutine()
+    {
+        _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
+        yield return new WaitForSeconds(3);
+        _fadeManager.FadeInRoutine(1);
+        KTimeLineManager.Instance.StartTimeLine("07");
+        G_DifurcationManager.Instance.CallEnding("BadEndingD");
     }
 }

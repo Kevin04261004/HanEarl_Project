@@ -214,6 +214,9 @@ public class KDialogueReader : MonoBehaviour
                     case 30: // 하교
                         Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.GoToMainScene);
                         break;
+                    case 355:
+                        Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.HairDryDied);
+                        break;
                     default: // 평상시
                         Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._num =
                             int.Parse(dialogues[typeIndex].nextLine[i]) - dialogues[typeIndex].index;
