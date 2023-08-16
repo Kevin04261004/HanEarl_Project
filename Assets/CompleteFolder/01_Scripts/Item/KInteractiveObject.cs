@@ -55,10 +55,16 @@ public class KInteractiveObject : MonoBehaviour
         switch(_interactiveType)
         {
             case EInteractiveType.DisappearItem:
-                if (TryGetComponent(out JItem item))
+                //if (TryGetComponent(out JItem item))
+                //{
+                //    item.Get();
+                //}
+                JItem[] item = GetComponents<JItem>();
+                for(int i = 0; i < item.Length;i++)
                 {
-                    item.Get();
+                    item[i].Get();
                 }
+                
                 _dialogueReader.SetDialogue(GetDialogue(), gameObject);
                 gameObject.SetActive(false);
                 break;
@@ -118,9 +124,14 @@ public class KInteractiveObject : MonoBehaviour
                 }
                 break;
             case EInteractiveType.KAfterDialogue_Changed_And_GetItem:
-                if (TryGetComponent(out JItem item2))
+                //if (TryGetComponent(out JItem item2))
+                //{
+                //    item2.Get();
+                //}
+                JItem[] item2 = GetComponents<JItem>();
+                for (int i = 0; i < item2.Length; i++)
                 {
-                    item2.Get();
+                    item2[i].Get();
                 }
                 if (TryGetComponent(out KAfterDialogue d))
                 {
