@@ -67,7 +67,11 @@ public class G_StageManager : MonoBehaviour
     {
         stageSaveData.beforeActName.Add(endingName);
         endingManager.CallEnding(endingName);
-        //ActEnd();
+
+        if (!NormalEndingCheck())
+        {
+            ActEnd();
+        }
     }
 
     public void Act7_Reset()
@@ -179,11 +183,6 @@ public class G_StageManager : MonoBehaviour
         }
 
         clearObjects.Clear();
-        return false;
-    }
-
-    private bool ItemCheckClear()
-    {
         return false;
     }
 }

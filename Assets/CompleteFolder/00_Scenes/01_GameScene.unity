@@ -19718,7 +19718,7 @@ MonoBehaviour:
   fadeManager: {fileID: 0}
   b_obj: {fileID: 766270632}
   target_Pos: {fileID: 2032689783}
-  _other: {fileID: 0}
+  _other: {fileID: 1617331669}
 --- !u!114 &405742069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41640,7 +41640,7 @@ MonoBehaviour:
   fadeManager: {fileID: 0}
   b_obj: {fileID: 766270632}
   target_Pos: {fileID: 2032689783}
-  _other: {fileID: 0}
+  _other: {fileID: 1617331669}
 --- !u!114 &791279082
 MonoBehaviour:
   m_ObjectHideFlags: 0
