@@ -102,6 +102,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!114 &-6492700650343546601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +120,8 @@ MonoBehaviour:
     index: 0
     isGet: 0
     isInvn: 0
-  itemSprite: []
+  itemSprite:
+  - {fileID: 21300000, guid: a8e902484506c424f94b61cadfb14fb2, type: 3}
   itemImage: {fileID: 21300000, guid: a9f4970ab5865234cada1ad2f213283a, type: 3}
 --- !u!1001 &3268721461581599903
 PrefabInstance:

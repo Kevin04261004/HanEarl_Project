@@ -14,6 +14,8 @@ public class GStageSaveData : JData
 
 public class G_StageManager : MonoBehaviour
 {
+    [SerializeField]
+    private List<JItem> wantItems;
     private GStageSaveData stageSaveData; // = new GStageSaveData();
     
     [field: SerializeField]
@@ -53,6 +55,15 @@ public class G_StageManager : MonoBehaviour
         currentData = stageData[currentStageNum];
 
         SetActiveObject();
+        switch (currentStageNum)
+        {
+            case 4:
+                G_InventorySystem.Instance.J_AddItem(wantItems[0]);
+                break;
+            case 5:
+                break;
+
+        }
     }
 
     public void AddClearObject(GameObject obj)

@@ -102,6 +102,7 @@ MonoBehaviour:
     eventName: 
     line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
 --- !u!114 &-6492700650343546601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData:
-    itemName: 
+    itemName: "\uD39C\uB358\uD2B8 \uC870\uAC01"
     index: 0
     isGet: 0
     isInvn: 0
