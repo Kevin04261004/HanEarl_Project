@@ -1,7 +1,15 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+
+[Serializable]
+public struct KAct_TimeLine
+{
+    public string actName;
+    public GameObject[] actObj;
+};
 
 public class KTimeLineManager : MonoBehaviour
 {
@@ -10,6 +18,8 @@ public class KTimeLineManager : MonoBehaviour
     public static KTimeLineManager Instance;
     private KFadeManager _fadeManager;
     private string _curTimeLine;
+    [SerializeField] private PlayableDirector[] pd;
+    public KAct_TimeLine[] _actTimeLine;
     public void Awake()
     {
         if (Instance == null)
@@ -28,25 +38,72 @@ public class KTimeLineManager : MonoBehaviour
         else
         {
             _timeLines = new GameObject[_timeLineParent.childCount];
+            pd = new PlayableDirector[_timeLineParent.childCount];
             for (int i = 0; i < _timeLineParent.childCount; ++i)
             {
                 _timeLines[i] = _timeLineParent.GetChild(i).gameObject;
+                pd[i] = _timeLineParent.GetChild(i).GetComponent<PlayableDirector>();
             }
         }
-
+        
         _fadeManager = FindObjectOfType<KFadeManager>();
 
     }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SkipKey]) 
-            && _curTimeLine != String.Empty 
-            && _curTimeLine != "06"// Normal Ending;
-            && _curTimeLine != "11"// Real Ending;
-            )
+        if (!Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SkipKey]))
         {
-            SkipTimeLine(_curTimeLine);
+            return;
+        }
+        foreach (var v in pd)
+        {
+            if (!v.gameObject.activeSelf)
+            {
+                continue;
+            }
+            _curTimeLine = v.gameObject.name;
+        }
+        
+        foreach (var playedAct in JDataManager.instance.stageData.playedActName)
+        {
+            print(playedAct);
+            KAct_TimeLine temp = new KAct_TimeLine();
+            bool hasPlayedAct = false;
+            foreach (var a in _actTimeLine)
+            {
+                if (a.actName != playedAct)
+                {
+                    continue;
+                }
+                foreach (var v in a.actObj)
+                {
+                    if (_curTimeLine != v.name)
+                    {
+                        continue;
+                    }
+                    hasPlayedAct = true;
+                    temp = a;
+                }
+            }
+
+            if (!hasPlayedAct)
+            {
+                continue;
+            }
+            print(temp.actName);
+            foreach (var actObj in temp.actObj)
+            {
+                if (actObj.name != _curTimeLine)
+                {
+                    continue;
+                }
+                if (_curTimeLine == String.Empty || _curTimeLine == "06" || _curTimeLine == "11")
+                {
+                    return;
+                }
+                SkipTimeLine(_curTimeLine);
+            }
         }
     }
     

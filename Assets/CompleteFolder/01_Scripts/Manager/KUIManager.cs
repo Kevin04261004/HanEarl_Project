@@ -9,10 +9,11 @@ public class KUIManager : MonoBehaviour
     [SerializeField] private Animator _player_animator;
     [field: SerializeField] public Slider _bgm_Slider { get; private set; }
     [field: SerializeField] public Slider _sfx_Slider { get; private set; }
-
+    [SerializeField] private KKeyManager _keyManager;
     private void Awake()
     {
         LoadSoundVolume();
+        _keyManager = FindObjectOfType<KKeyManager>();
     }
 
     private void Update()
@@ -60,6 +61,7 @@ public class KUIManager : MonoBehaviour
     public void OnClick_KeySettingApply_Btn()
     {
         _keySettingBG_Image.gameObject.SetActive(false);
+        _keyManager.SaveKeySetting();
     }
 
     private void SaveSoundVolume()

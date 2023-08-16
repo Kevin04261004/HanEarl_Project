@@ -10,6 +10,7 @@ public class GStageSaveData : JData
     public int currentStageNum = 0;
     public List<string> beforeActName = new List<string>();
     public bool normalEndingCheck = false;
+    public List<string> playedActName = new List<string>();
 }
 
 public class G_StageManager : MonoBehaviour
@@ -92,8 +93,22 @@ public class G_StageManager : MonoBehaviour
             stageSaveData.currentStageNum++;
             stageSaveData.beforeActName.Add(currentData.actName);
         }
+        /* 도윤 추가 */
+        bool hasAct = false;
+        foreach (var act in stageSaveData.playedActName)
+        {
+            if (act == currentData.actName)
+            {
+                hasAct = true;
+            }
+        }
 
-
+        if (!hasAct)
+        {
+            stageSaveData.playedActName.Add(currentData.actName);
+        }
+        
+        /* 여기까지 도윤 */
         JDataManager.instance.SaveData(stageSaveData);
     }
 

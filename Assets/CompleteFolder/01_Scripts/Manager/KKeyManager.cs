@@ -62,7 +62,6 @@ public class KKeyManager : MonoBehaviour
         }
         KKeySetting.key_Dictionary[(EKeyAction)key] = keyEvent.keyCode;
         _kSettingManager.Setting_KeyUI();
-        SaveKeySetting();
         key = -1;
     }
     public void ChangeKey(int num)
@@ -70,7 +69,7 @@ public class KKeyManager : MonoBehaviour
         key = num;
     }
 
-    private void SaveKeySetting()
+    public void SaveKeySetting()
     {
         for (int i = 0; i < (int)EKeyAction.KeySize; i++)
         {

@@ -13,7 +13,6 @@ public class JDataManager : MonoBehaviour
     public JPlayerData playerData;
     //public JItemData itemData;
     public GStageSaveData stageData;
-    public KSettingData _settingData;
     private void Awake()
     {
         if (instance == null)
@@ -26,7 +25,6 @@ public class JDataManager : MonoBehaviour
         //Load(out itemData);
         Load(out stageData);
         Load(out playerData);
-        Load(out _settingData);
     }
 
     public void SaveData<T>(T wantData) where T : JData
