@@ -99,6 +99,7 @@ public class KInteractiveObject : MonoBehaviour
                 }
                 break;
             case EInteractiveType.HairDry_item:
+                _dialogueReader.SetDialogue(GetDialogue(), gameObject);
                 if (TryGetComponent(out KHairDryItem hairdry))
                 {
                     hairdry.InteractiveRoutine();
