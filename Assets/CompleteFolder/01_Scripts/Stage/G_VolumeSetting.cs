@@ -25,7 +25,6 @@ public class G_VolumeSetting : MonoBehaviour
 
         if (!colorLookup)
         {
-            Debug.Log("�÷� ��ȯ X");
             return;
         }
 
