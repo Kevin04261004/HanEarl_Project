@@ -34,7 +34,7 @@ public class MoveUp_Credit : MonoBehaviour
         yield return new WaitForSeconds(3);
         while (a)
         {
-            gameObject.transform.position += new Vector3(0, _speed);
+            gameObject.transform.position += new Vector3(0, _speed) * Time.deltaTime;
             yield return null;
         }
     }
