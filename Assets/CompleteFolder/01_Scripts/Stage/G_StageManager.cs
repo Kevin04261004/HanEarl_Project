@@ -10,7 +10,6 @@ public class GStageSaveData : JData
     public int currentStageNum = 0;
     public List<string> beforeActName = new List<string>();
     public bool normalEndingCheck = false;
-    public bool trueEndingCheck = false;
     public List<string> playedActName = new List<string>();
 }
 
@@ -29,25 +28,16 @@ public class G_StageManager : MonoBehaviour
     [field: SerializeField] public G_StageInformation currentData { get; private set; }
     [field: SerializeField] public int currentStageNum { get; private set; }
 
-    private void Awake()
+    private void Start()
     {
         endingManager = GetComponent<G_EndingManager>();
         stageData = GetComponent<G_StageData>().stageInformation;
-    }
-
-    private void Start()
-    {
         ActStart();
     }
 
     public bool NormalEndingCheck()
     {
         return stageSaveData.normalEndingCheck;
-    }
-
-    public bool TrueEndingCheck()
-    {
-        return stageSaveData.trueEndingCheck;
     }
 
     public void AfterSchool() // Act End + InGame - > TitleScene
@@ -58,6 +48,8 @@ public class G_StageManager : MonoBehaviour
 
     public void ActStart()
     {
+
+        //JDataManager.instance.Load(out stageSaveData);
         stageSaveData = JDataManager.instance.stageData;
         currentStageNum = stageSaveData.currentStageNum;
 
@@ -71,11 +63,7 @@ public class G_StageManager : MonoBehaviour
                 break;
             case 5:
                 break;
-        }
 
-        foreach (string actName in stageSaveData.beforeActName)
-        {
-            endingManager.Endinginitialization(actName);
         }
     }
 
@@ -104,16 +92,6 @@ public class G_StageManager : MonoBehaviour
             stageSaveData.currentStageNum = 0;
             stageSaveData.beforeActName.Clear();
             stageSaveData.normalEndingCheck = true;
-            JDataManager.instance.SaveData(stageSaveData);
-            endingManager.Endinginitialization("NormalEnding");
-        }
-    }
-
-    public void Act9_TrueEndingCheck()
-    {
-        if (endingManager.trueEndingCheck)
-        {
-            stageSaveData.trueEndingCheck = true;
             JDataManager.instance.SaveData(stageSaveData);
         }
     }
