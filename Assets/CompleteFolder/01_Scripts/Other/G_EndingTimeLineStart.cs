@@ -6,6 +6,11 @@ public class G_EndingTimeLineStart : MonoBehaviour
 {
     [SerializeField] private KFadeManager _fadeManager;
 
+    private void Awake()
+    {
+        _fadeManager = FindObjectOfType<KFadeManager>();
+    }
+
     public void HairDry()
     {
         StartCoroutine(HairDry_InteractiveCoroutine());
@@ -33,15 +38,10 @@ public class G_EndingTimeLineStart : MonoBehaviour
 
     private IEnumerator Rope_InteractiveCoroutine()
     {
-        Debug.Log("FadeOut");
         _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
-        Debug.Log("Wait");
         yield return new WaitForSeconds(1);
-        Debug.Log("FadeIn");
         _fadeManager.FadeInRoutine(1);
-        Debug.Log("CallBadEnding");
         G_DifurcationManager.Instance.CallEnding("BadEndingE");
-        Debug.Log("TimeLineStart");
         KTimeLineManager.Instance.StartTimeLine("08");
     }
 
