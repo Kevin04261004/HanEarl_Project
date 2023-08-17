@@ -94,6 +94,7 @@ public class KEnemy : MonoBehaviour
         }
         if(collision.TryGetComponent(out KPlayerManager playerManager))
         {
+            G_DifurcationManager.Instance.CallEnding("BadEndingF");
             playerManager.Died(EDied.DiedFromEnemy01);
         }
     }
