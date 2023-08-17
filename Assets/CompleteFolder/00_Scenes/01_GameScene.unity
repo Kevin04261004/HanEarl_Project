@@ -10633,8 +10633,8 @@ MonoBehaviour:
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
-    eventName: 
-    line: {x: 0, y: 0}
+    eventName: "B\uC640\uC758 \uB2E4\uC12F\uBC88\uC9F8 \uB9CC\uB0A82"
+    line: {x: 646, y: 646}
     N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
@@ -64813,8 +64813,8 @@ MonoBehaviour:
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
-    eventName: 
-    line: {x: 0, y: 0}
+    eventName: "B\uC640\uC758 \uC5EC\uC12F\uBC88\uC9F8 \uB9CC\uB0A82"
+    line: {x: 647, y: 647}
     N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
