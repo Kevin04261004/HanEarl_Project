@@ -214,14 +214,8 @@ public class KDialogueReader : MonoBehaviour
                     case 30: // 하교
                         Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.GoToMainScene);
                         break;
-                    case 355: // 헤어드라이기
+                    case 355:
                         Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.HairDryDied);
-                        break;
-                    case 345: // 올가미
-                        Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.Rope);
-                        break;
-                    case 350: // 옥상
-                        Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.Rooftop_Fence);
                         break;
                     default: // 평상시
                         Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._num =

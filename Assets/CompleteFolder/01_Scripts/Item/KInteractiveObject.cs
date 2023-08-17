@@ -7,6 +7,8 @@ public enum EInteractiveType
     NPC,
     C_Act3,
     B_Act6,
+    Roop_item,
+    RooftopFence,
     KAfterDialogue_Changed_And_GetItem,
     KAfterDialogue_Changed,
     Roof_Key_Event,
@@ -99,6 +101,18 @@ public class KInteractiveObject : MonoBehaviour
                 if (TryGetComponent(out KAfterDialogue d0))
                 {
                     d0.Used();
+                }
+                break;
+            case EInteractiveType.Roop_item:
+                if (TryGetComponent(out KRoop roop))
+                {
+                    roop.InteractiveRoutine();
+                }
+                break;
+            case EInteractiveType.RooftopFence:
+                if (TryGetComponent(out KRooftopFence rooftopFence))
+                {
+                    rooftopFence.InteractiveRoutine();
                 }
                 break;
             case EInteractiveType.KAfterDialogue_Changed_And_GetItem:
