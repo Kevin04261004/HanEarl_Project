@@ -80696,6 +80696,7 @@ MonoBehaviour:
     - {fileID: 2003138849}
     - {fileID: 124094975}
     - {fileID: 957164985}
+    - {fileID: 2134245913}
     <interactionObj>k__BackingField: []
     <needItem>k__BackingField: []
     <actName>k__BackingField: Act005
@@ -80718,6 +80719,7 @@ MonoBehaviour:
     - {fileID: 2003138849}
     - {fileID: 124094975}
     - {fileID: 957164985}
+    - {fileID: 1555533609}
     <interactionObj>k__BackingField:
     - {fileID: 762082636}
     <needItem>k__BackingField: []
@@ -80737,6 +80739,7 @@ MonoBehaviour:
     - {fileID: 2003138849}
     - {fileID: 124094975}
     - {fileID: 957164985}
+    - {fileID: 792796263}
     <interactionObj>k__BackingField:
     - {fileID: 906060786}
     - {fileID: 405742071}
@@ -80765,6 +80768,7 @@ MonoBehaviour:
     - {fileID: 2003138849}
     - {fileID: 124094975}
     - {fileID: 957164985}
+    - {fileID: 792796263}
     <interactionObj>k__BackingField:
     - {fileID: 124391162}
     - {fileID: 791279084}
