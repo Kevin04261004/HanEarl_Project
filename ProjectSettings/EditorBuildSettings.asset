@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CompleteFolder/00_Scenes/02_LoadingScene.unity
     guid: 681da4e0af0c2bb40b555283dbed60d0
+  - enabled: 1
+    path: Assets/CompleteFolder/00_Scenes/03_CreditScene.unity
+    guid: f952082956d00df4c8c7aab3d2ddbc05
   m_configObjects: {}

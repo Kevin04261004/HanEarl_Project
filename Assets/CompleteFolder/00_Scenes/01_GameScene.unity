@@ -35184,6 +35184,7 @@ MonoBehaviour:
   _jcanInput: 1
   _isEnemyFollow: 0
   _isGameEnd: 0
+  _isRealGameEnd: 0
 --- !u!1 &681458077
 GameObject:
   m_ObjectHideFlags: 0
@@ -43773,7 +43774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Real Ending
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9014df41c3a04c74eba30768ec0d5fa1, type: 2}
   m_sharedMaterial: {fileID: 5031981100164166610, guid: 9014df41c3a04c74eba30768ec0d5fa1, type: 2}
@@ -43782,8 +43783,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 1627389951
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+    rgba: 218103807
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.048592597}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -55173,7 +55174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149789850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40, y: 5, z: -10}
+  m_LocalPosition: {x: 91, y: -32, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76870,6 +76871,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 6e92ead6d6cefb741b508c235ed79d50, type: 2}
     - {fileID: 11400000, guid: f89214fab21032640a029075cdb6950e, type: 2}
     - {fileID: 11400000, guid: 211605425ced5a947a6fac0a7893d39c, type: 2}
+    - {fileID: 11400000, guid: 9e33ef945965b0b42a8fdd07fcc1e33f, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -77524,6 +77526,20 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 792796263}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 680933200}
+          m_TargetAssemblyTypeName: KGameManager, Assembly-CSharp
+          m_MethodName: IsRealGameEndTrue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -80249,7 +80265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 6
+  _interactiveType: 1
   _dialogueEvent:
     eventName: "\uBC30\uB4DC \uC5D4\uB529E - \uB85C\uD504"
     line: {x: 343, y: 347}
@@ -90985,7 +91001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1882333911
 Transform:
   m_ObjectHideFlags: 0
@@ -112613,14 +112629,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e9216b3cc0f427348b53c59f95236deb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

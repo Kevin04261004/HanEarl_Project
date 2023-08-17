@@ -10,6 +10,7 @@ public class KGameManager : MonoBehaviour
     public bool _isEnemyFollow;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
     [SerializeField] private bool _isGameEnd;
+    [SerializeField] private bool _isRealGameEnd;
     private void Awake()
     {
         if (!Instance)
@@ -34,11 +35,23 @@ public class KGameManager : MonoBehaviour
                 KLoadingSceneManager.LoadScene("00_TitleScene");
             }
         }
+
+        if (_isRealGameEnd)
+        {
+            if (Input.anyKeyDown)
+            {
+                KLoadingSceneManager.LoadScene("03_CreditScene");
+            }
+        }
     }
 
     public void IsGameEndTrue()
     {
         _isGameEnd = true;
+    }
+    public void IsRealGameEndTrue()
+    {
+        _isRealGameEnd = true;
     }
     public void GamePause()
     {
