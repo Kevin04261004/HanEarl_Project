@@ -69,6 +69,7 @@ public class KUIButoon : MonoBehaviour
     private void OnClicked_StartTimeLine_Act4_1_Roof()
     {
         _kDialogueReader.StopReading();
+        G_InventorySystem.Instance.J_RemoveItem("¿Á»ó ¿­¼è");
         KTimeLineManager.Instance.StartTimeLine10Routine();
     }
 

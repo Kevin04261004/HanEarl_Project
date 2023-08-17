@@ -10044,7 +10044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 8
+  _interactiveType: 7
   _dialogueEvent:
     eventName: "\uC774\uC124\uBE48\uC758 \uC0DD\uD65C\uAE30\uB85D\uBD80"
     line: {x: 236, y: 236}
@@ -25568,7 +25568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 11
+  _interactiveType: 10
   _dialogueEvent:
     eventName: "\uC7A0\uAE34 \uC5EC\uC790\uD654\uC7A5\uC2E4 \uBB38"
     line: {x: 10, y: 10}
@@ -36965,7 +36965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 8
+  _interactiveType: 7
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
     line: {x: 641, y: 641}
@@ -56675,7 +56675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 9
+  _interactiveType: 8
   _dialogueEvent:
     eventName: "B\uC640\uC758 \uC138\uBC88\uC9F8 \uB9CC\uB0A8 - \uB3D9\uD654\uCC45
       \uC774\uD6C4"
@@ -72288,7 +72288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 8
+  _interactiveType: 7
   _dialogueEvent:
     eventName: "\uB3D9\uD654\uCC45"
     line: {x: 641, y: 641}
@@ -75863,7 +75863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 10
+  _interactiveType: 9
   _dialogueEvent:
     eventName: "\uC7A0\uAE34 \uB0A8\uC790\uD654\uC7A5\uC2E4 \uBB38"
     line: {x: 640, y: 640}
@@ -102081,6 +102081,7 @@ GameObject:
   - component: {fileID: 2018973144}
   - component: {fileID: 2018973143}
   - component: {fileID: 2018973142}
+  - component: {fileID: 2018973148}
   m_Layer: 6
   m_Name: C_ForAct4-1
   m_TagString: InteractiveObject
@@ -102148,7 +102149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 9
+  _interactiveType: 7
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 195, y: 211}
@@ -102280,6 +102281,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2018973148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018973140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffcf48672201d9243b1acb85fb5c9c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData:
+    itemName: "\uCC9C\uC720\uD604\uC758 \uC77C\uC9C0"
+    index: 0
+    isGet: 0
+    isInvn: 0
+  itemSprite: []
+  itemImage: {fileID: 0}
 --- !u!1001 &2025370593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113542,7 +113562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6aa8a7f4f59b42a56b4a91637c490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactiveType: 9
+  _interactiveType: 8
   _dialogueEvent:
     eventName: "C\uC640\uC758 \uB450\uBC88\uC9F8 \uB9CC\uB0A8"
     line: {x: 127, y: 144}
