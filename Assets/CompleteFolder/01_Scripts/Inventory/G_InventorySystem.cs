@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -83,6 +84,18 @@ public class G_InventorySystem : MonoBehaviour
         slot.Jitem = wantItem;
         slot.GetComponent<Image>().sprite = slot.Jitem.itemImage;
         J_slots.Add(slot);
+    }
+
+    public void J_RemoveItem(string wantName)
+    {
+        for(int i = 0; i < J_slots.Count; i++)
+        {
+            if (J_slots[i].Jitem.itemData.itemName == wantName)
+            {
+                Destroy(J_slots[i].gameObject);
+                J_slots.RemoveAt(i);
+            }
+        }
     }
 
     public bool HasItemF(string name)
