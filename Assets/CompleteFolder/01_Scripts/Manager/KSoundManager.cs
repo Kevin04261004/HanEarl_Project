@@ -74,14 +74,16 @@ public class KSoundManager : MonoBehaviour
                 while (true)
                 {
                     yield return _time;
-                    if (_bgm_AudioSource.isPlaying) continue;
+                    if (_bgm_AudioSource.isPlaying)
+                    {
+                        continue;
+                    }
                     _BGMCount++;
                     if (_BGMCount >= _bgm_AudioClips.Length)
                     {
                         _BGMCount = 0;
                     }
-
-                    _bgm_AudioSource.clip = _bgm_AudioClips[_BGMCount];
+                    _bgm_AudioSource.clip = _bgm_AudioClips[Gacha()];
                     _bgm_AudioSource.volume = 0.3f;
                     _bgm_AudioSource.Play();
                 }
@@ -89,5 +91,10 @@ public class KSoundManager : MonoBehaviour
             default:
                 yield break;
         }
+    }
+    private int Gacha()
+    {
+        int temp = Random.Range(0, _bgm_AudioClips.Length);
+        return temp;
     }
 }
