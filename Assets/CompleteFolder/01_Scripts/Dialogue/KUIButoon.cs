@@ -10,7 +10,8 @@ public enum EButtonState
     StartTimeLine_Act4_1_At_Roof,
     GoToMainScene,
     HairDryDied,
-    
+    Rope,
+    Rooftop_Fence
 }
 
 public class KUIButoon : MonoBehaviour
@@ -19,10 +20,14 @@ public class KUIButoon : MonoBehaviour
     private Button _btn;
     public int _num = 0;
     private G_StageManager _stageManager;
+    private G_EndingTimeLineStart _endingTimeLineStart;
     [SerializeField] private KFadeManager _fadeManager;
+
+
     private void OnEnable()
     {
         _stageManager = FindObjectOfType<G_StageManager>();
+        _endingTimeLineStart = FindObjectOfType<G_EndingTimeLineStart>();
         _kDialogueReader = FindObjectOfType<KDialogueReader>();
         _btn = transform.GetComponent<Button>();
     }
@@ -49,6 +54,12 @@ public class KUIButoon : MonoBehaviour
                 break;
             case EButtonState.HairDryDied:
                 _btn.onClick.AddListener(HairDryTimeLineStart);
+                break;
+            case EButtonState.Rope:
+                _btn.onClick.AddListener(RopeTimeLineStart);
+                break;
+            case EButtonState.Rooftop_Fence:
+                _btn.onClick.AddListener(RooftopTimeLineStart);
                 break;
             default:
                 break;
@@ -83,14 +94,19 @@ public class KUIButoon : MonoBehaviour
 
     private void HairDryTimeLineStart()
     {
-        StartCoroutine(InteractiveCoroutine());
+        _endingTimeLineStart.HairDry();
+        _kDialogueReader.StopReading();
     }
-    private IEnumerator InteractiveCoroutine()
+
+    private void RopeTimeLineStart()
     {
-        _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
-        yield return new WaitForSeconds(3);
-        _fadeManager.FadeInRoutine(1);
-        KTimeLineManager.Instance.StartTimeLine("07");
-        G_DifurcationManager.Instance.CallEnding("BadEndingD");
+        _endingTimeLineStart.Rope();
+        _kDialogueReader.StopReading();
+    }
+
+    private void RooftopTimeLineStart()
+    {
+        _endingTimeLineStart.Rooftop();
+        _kDialogueReader.StopReading();
     }
 }

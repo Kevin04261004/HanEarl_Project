@@ -47,6 +47,11 @@ public class G_DifurcationManager : MonoBehaviour
         stageManager.Act7_Reset();
     }
 
+    public void TrueEndingStart() // 진엔딩 시작
+    {
+        stageManager.Act9_TrueEndingCheck();
+    }
+
     public void CallEnding(string endingName) // 엔딩 호출
     {
         stageManager.EndingStart(endingName);
@@ -55,5 +60,10 @@ public class G_DifurcationManager : MonoBehaviour
     public bool NormalChangeEndingCheck() // 노말 엔딩이 check 되어있는지
     {
         return stageManager.NormalEndingCheck();
+    }
+
+    public bool TrueChangeEndingCheck() // 진 엔딩이 check 되어있는지
+    {
+        return stageManager.TrueEndingCheck();
     }
 }
