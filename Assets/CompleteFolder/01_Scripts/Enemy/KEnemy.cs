@@ -21,7 +21,7 @@ public class KEnemy : MonoBehaviour
     }
     private void Update()
     {
-        if (_root._isPlayerFind)
+        if (_root._isPlayerFind || _index < _root._finalNodeList.Count - 1)
         {
             KGameManager.Instance._isEnemyFollow = true;
         }
@@ -31,6 +31,10 @@ public class KEnemy : MonoBehaviour
             return;
         }
 
+        if (!_canMove)
+        {
+            return;
+        }
         if(_time >= _speed)
         {
             _time = 0;
@@ -127,12 +131,9 @@ public class KEnemy : MonoBehaviour
         yield return new WaitForSeconds(time);
         _enemyPos.transform.position = pos;
         gameObject.transform.position = pos;
+        _root.RootReset();
+        IndexChangeToValue();
+        _root.PathFinding(new Vector2Int((int)_playerPos.position.x, (int)_playerPos.position.y));
         _canMove = true;
-        if (!_root._isPlayerFind)
-        {
-            Debug.Log("Finding player again!");
-            _root.PathFinding(new Vector2Int((int)_playerPos.position.x, (int)_playerPos.position.y));
-            IndexChangeToValue();
-        }
     }
 }

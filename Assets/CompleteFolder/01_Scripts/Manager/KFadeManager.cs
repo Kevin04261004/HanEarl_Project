@@ -108,7 +108,6 @@ public class KFadeManager : MonoBehaviour
     public void DeactivateFadeImage()
     {
         _fade_Image.gameObject.SetActive(false);
-        _fade_Image.color = A_1;
     }
     private IEnumerator FadeIn(float time = 1)
     {

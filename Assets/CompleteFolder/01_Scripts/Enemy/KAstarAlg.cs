@@ -166,4 +166,9 @@ public class KAstarAlg : MonoBehaviour
             }
         }
     }
+
+    public void RootReset()
+    {
+        _finalNodeList.Clear();
+    }
 }
