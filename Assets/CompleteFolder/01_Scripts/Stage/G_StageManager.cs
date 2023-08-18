@@ -73,6 +73,8 @@ public class G_StageManager : MonoBehaviour
                 break;
         }
 
+        endingManager.NormalAndTrueEndingTextObjSetting();
+
         foreach (string actName in stageSaveData.beforeActName)
         {
             endingManager.Endinginitialization(actName);
@@ -91,7 +93,11 @@ public class G_StageManager : MonoBehaviour
         stageSaveData.beforeActName.Add(endingName);
         endingManager.CallEnding(endingName);
 
-        if (!NormalEndingCheck())
+        if (NormalEndingCheck() && stageSaveData.currentStageNum == 0)
+        {
+            return;
+        }
+        else
         {
             ActEnd();
         }
@@ -105,7 +111,6 @@ public class G_StageManager : MonoBehaviour
             stageSaveData.beforeActName.Clear();
             stageSaveData.normalEndingCheck = true;
             JDataManager.instance.SaveData(stageSaveData);
-            endingManager.Endinginitialization("NormalEnding");
         }
     }
 
@@ -125,7 +130,7 @@ public class G_StageManager : MonoBehaviour
             stageSaveData.currentStageNum = 9;
             stageSaveData.beforeActName.Add("Act007");
         }
-        else if (ObjectCheckClear() && BeforeActNameCheck())
+        else if (ObjectCheckClear() && BeforeActNameCheck() && currentStageNum != 7)
         {
             stageSaveData.currentStageNum++;
             stageSaveData.beforeActName.Add(currentData.actName);
