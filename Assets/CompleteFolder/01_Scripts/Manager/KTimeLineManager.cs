@@ -149,6 +149,7 @@ public class KTimeLineManager : MonoBehaviour
     {
         _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
         yield return new WaitForSeconds(3);
+        G_DifurcationManager.Instance.CallEnding("BadEndingA");
         KTimeLineManager.Instance.StartTimeLine("10");
         _fadeManager.FadeInRoutine();
     }
