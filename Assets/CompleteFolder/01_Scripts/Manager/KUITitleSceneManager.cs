@@ -20,7 +20,9 @@ public class KUITitleSceneManager : MonoBehaviour
                 backGround.sprite = _endingSprites[2];
                 break;
             case 9:
-                backGround.sprite = _endingSprites[3];
+                if (JDataManager.instance.stageData.trueEndingCheck)
+                { backGround.sprite = _endingSprites[3]; }
+                else { backGround.sprite = _endingSprites[1]; }
                 break;
             default:
                 break;
