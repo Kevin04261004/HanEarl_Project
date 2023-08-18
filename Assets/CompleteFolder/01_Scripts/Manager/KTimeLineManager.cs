@@ -68,7 +68,6 @@ public class KTimeLineManager : MonoBehaviour
         
         foreach (var playedAct in JDataManager.instance.stageData.playedActName)
         {
-            print(playedAct);
             KAct_TimeLine temp = new KAct_TimeLine();
             bool hasPlayedAct = false;
             foreach (var a in _actTimeLine)
