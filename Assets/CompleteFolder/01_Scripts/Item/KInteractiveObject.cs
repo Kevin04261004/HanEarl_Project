@@ -13,6 +13,7 @@ public enum EInteractiveType
     Toilet_Key_Event,
     Mirror_Event,
     Roof_Table_Event,
+    SafeBox
 }
 
 public class KInteractiveObject : MonoBehaviour
@@ -156,7 +157,9 @@ public class KInteractiveObject : MonoBehaviour
                 {
                     table.InteractiveRoutine();
                 }
-
+                break;
+            case EInteractiveType.SafeBox:
+                JSafeBox.instance.SetSafeBoxActive();
                 break;
             default:
                 break;
