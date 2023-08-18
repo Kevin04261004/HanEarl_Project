@@ -91,7 +91,6 @@ public class KTimeLineManager : MonoBehaviour
             {
                 continue;
             }
-            print(temp.actName);
             foreach (var actObj in temp.actObj)
             {
                 if (actObj.name != _curTimeLine)
