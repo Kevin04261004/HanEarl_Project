@@ -30,6 +30,7 @@ public class ActFour_Trigger : MonoBehaviour
         _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
         yield return new WaitForSeconds(3);
         _fadeManager.FadeInRoutine(2);
+        G_DifurcationManager.Instance.CallEnding("BadEndingA");
         KTimeLineManager.Instance.StartTimeLine("10");
         gameObject.SetActive(false);
     }

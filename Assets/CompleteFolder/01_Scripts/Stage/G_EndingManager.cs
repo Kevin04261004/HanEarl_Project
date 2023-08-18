@@ -36,16 +36,8 @@ public class G_EndingManager : MonoBehaviour
         EndingClearSetting(endingName);
     }
 
-    private void EndingClearSetting(string endingName)
+    public void NormalAndTrueEndingTextObjSetting()
     {
-        for (int i = 0; i < endingTextObj.Length; i++)
-        {
-            if (endingTextObj[i].name == endingName)
-            {
-                endingTextObj[i].SetActive(true);
-            }
-        }
-
         if (G_DifurcationManager.Instance.NormalChangeEndingCheck())
         {
             normalEndingText.SetActive(true);
@@ -56,6 +48,18 @@ public class G_EndingManager : MonoBehaviour
             trueEndingText.SetActive(true);
         }
     }
+
+    private void EndingClearSetting(string endingName)
+    {
+        for (int i = 0; i < endingTextObj.Length; i++)
+        {
+            if (endingTextObj[i].name == endingName)
+            {
+                endingTextObj[i].SetActive(true);
+            }
+        }
+    }
+
 
     private void EndingTypeSetting(string endingName)
     {
