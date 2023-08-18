@@ -7,13 +7,16 @@ public class KSoundManager : MonoBehaviour
 {
     [SerializeField] private AudioMixer _mixer;
     public AudioSource _bgm_AudioSource;
+    [Tooltip("BGM은 꺼지고 브금이 켜지고 다시 꺼지면 이어서 실행하게")]
+    public AudioSource _continue_Bgm_AudioSource;
     public AudioClip[] _bgm_AudioClips;
     public short _BGMCount;
     public AudioClip _titleBGM;
     public KUIManager _uiManager;
     private WaitForSeconds _time = new WaitForSeconds(1);
     public static KSoundManager Instance;
-
+    [SerializeField] private float _baseAudioSourceVolume = 0.3f;
+    [SerializeField] private AudioClip _followEnemyBGM;
     public void Awake()
     {
         if (!Instance)
@@ -31,6 +34,26 @@ public class KSoundManager : MonoBehaviour
 
     private void Update()
     {
+        if (KGameManager.Instance._isEnemyFollow)
+        {
+            _bgm_AudioSource.volume = 0f;
+            if (!_continue_Bgm_AudioSource.isPlaying)
+            {
+                _continue_Bgm_AudioSource.clip = _followEnemyBGM;
+                _continue_Bgm_AudioSource.loop = true;
+                _continue_Bgm_AudioSource.volume = 1f;
+                _continue_Bgm_AudioSource.Play();
+            }
+            
+        }
+        else
+        {
+            _bgm_AudioSource.volume = _baseAudioSourceVolume;
+            if (_continue_Bgm_AudioSource.isPlaying)
+            {
+                _continue_Bgm_AudioSource.Stop();
+            }
+        }
         if(!_uiManager._settingBG_Image.gameObject.activeSelf)
         {
             return;
@@ -63,7 +86,7 @@ public class KSoundManager : MonoBehaviour
             case "00_TitleScene":
                 _bgm_AudioSource.clip = _titleBGM;
                 _bgm_AudioSource.loop = true;
-                _bgm_AudioSource.volume = 0.1f;
+                _bgm_AudioSource.volume = _baseAudioSourceVolume;
                 _bgm_AudioSource.Play();
                 yield break;
             case "01_GameScene":
@@ -84,7 +107,7 @@ public class KSoundManager : MonoBehaviour
                         _BGMCount = 0;
                     }
                     _bgm_AudioSource.clip = _bgm_AudioClips[Gacha()];
-                    _bgm_AudioSource.volume = 0.3f;
+                    _bgm_AudioSource.volume = _baseAudioSourceVolume;
                     _bgm_AudioSource.Play();
                 }
                 yield break;

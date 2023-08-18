@@ -4,6 +4,7 @@ public class KGameManager : MonoBehaviour
 {
     public static KGameManager Instance = null;
     public bool _canInput = true;
+    public bool _canSkip = true;
     public bool _jcanInput = true;
     private KPlayerManager _playerManager;
     private Animator _playerAnimator;

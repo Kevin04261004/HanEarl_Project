@@ -14,7 +14,10 @@ public class JItem : MonoBehaviour
     {
         itemData.isGet = true;
         itemData.isInvn = true;
-        gameObject.SetActive(false);
+        if (this.gameObject.layer != 6)
+        {
+            gameObject.SetActive(false);   
+        }
         G_InventorySystem.Instance.J_AddItem(this);
     }
 }

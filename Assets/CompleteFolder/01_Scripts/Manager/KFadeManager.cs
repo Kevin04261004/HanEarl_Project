@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class KFadeManager : MonoBehaviour
 {
     [SerializeField] private KPlayerManager _playerManager;
-    [SerializeField] private Image _fade_Image;
-    [SerializeField] private Image _flash_Image;
+    [field:SerializeField] public  Image _fade_Image { get; private set; }
+    [field:SerializeField] public Image _flash_Image { get; private set; }
     [SerializeField] private Animator _playerAnimator;
     private Color A_1 = new Color(0, 0, 0, 1);
     private Color A_0 = new Color(0, 0, 0, 0);
@@ -24,8 +24,9 @@ public class KFadeManager : MonoBehaviour
         _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
+        KGameManager.Instance._canSkip = false;
         StopCoroutine(nameof(FadeOut));
-        StartCoroutine(nameof(FadeIn),time);
+        StartCoroutine(FadeIn());
     }
     /* FADE OUT */
     public void FadeOutRoutine(float time= 1)
@@ -34,8 +35,9 @@ public class KFadeManager : MonoBehaviour
         _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
+        KGameManager.Instance._canSkip = false;
         StopCoroutine(nameof(FadeIn));
-        StartCoroutine(nameof(FadeOut),time);
+        StartCoroutine(FadeOut());
     }
     /* FLASH IN */
     public void FlashInRoutine(float time = 1)
@@ -43,6 +45,7 @@ public class KFadeManager : MonoBehaviour
         _playerManager.ResetInputKey();
         _playerAnimator.SetBool(IsWalking, false);
         _flash_Image.gameObject.SetActive(true);
+        KGameManager.Instance._canSkip = false;
         KGameManager.Instance._canInput = false;
         StopCoroutine(nameof(FlashOut));
         StartCoroutine(FlashIn());
@@ -53,6 +56,7 @@ public class KFadeManager : MonoBehaviour
         _playerManager.ResetInputKey();
         _playerAnimator.SetBool(IsWalking, false);
         _flash_Image.gameObject.SetActive(true);
+        KGameManager.Instance._canSkip = false;
         KGameManager.Instance._canInput = false;
         StopCoroutine(nameof(FlashIn));
         StartCoroutine(FlashOut());
@@ -63,6 +67,7 @@ public class KFadeManager : MonoBehaviour
         _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
+        KGameManager.Instance._canSkip = false;
         StartCoroutine(nameof(FadeIn_ImageSetActiveTrue),time);
     }
     public void FadeOut_ImageSetActiveTrueRoutine(float time= 1)
@@ -71,6 +76,7 @@ public class KFadeManager : MonoBehaviour
         _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
+        KGameManager.Instance._canSkip = false;
         StartCoroutine(nameof(FadeOut_ImageSetActiveTrue),time);
     }
     public void FlashIn_ImageSetActiveTrueRoutine(float time = 1)
@@ -79,6 +85,7 @@ public class KFadeManager : MonoBehaviour
         _playerAnimator.SetBool(IsWalking, false);
         _flash_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
+        KGameManager.Instance._canSkip = false;
         StartCoroutine(nameof(FlashIn_ImageSetActiveTrue),time);
     }
     public void FlashOut_ImageSetActiveTrueRoutine(float time = 1)
@@ -87,7 +94,21 @@ public class KFadeManager : MonoBehaviour
         _playerAnimator.SetBool(IsWalking, false);
         _flash_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
+        KGameManager.Instance._canSkip = false;
         StartCoroutine(nameof(FlashOut_ImageSetActiveTrue),time);
+    }
+    public void StopAllFadingRoutines()
+    {
+        StopCoroutine(nameof(FadeIn));
+        StopCoroutine(nameof(FadeOut));
+        StopCoroutine(nameof(FlashIn));
+        StopCoroutine(nameof(FlashOut));
+        // Add more stopping for other fading routines if needed
+    }
+    public void DeactivateFadeImage()
+    {
+        _fade_Image.gameObject.SetActive(false);
+        _fade_Image.color = A_1;
     }
     private IEnumerator FadeIn(float time = 1)
     {
@@ -101,6 +122,7 @@ public class KFadeManager : MonoBehaviour
         }
 
         KGameManager.Instance._canInput = true;
+        KGameManager.Instance._canSkip = true;
         _fade_Image.gameObject.SetActive(false);
     }
     private IEnumerator FadeOut(float time = 1)
@@ -115,6 +137,7 @@ public class KFadeManager : MonoBehaviour
         }
 
         KGameManager.Instance._canInput = true;
+        KGameManager.Instance._canSkip = true;
         _fade_Image.gameObject.SetActive(false);
     }
     private IEnumerator FadeIn_ImageSetActiveTrue(float time = 1)
@@ -129,6 +152,7 @@ public class KFadeManager : MonoBehaviour
         }
 
         KGameManager.Instance._canInput = true;
+        KGameManager.Instance._canSkip = true;
     }
     private IEnumerator FadeOut_ImageSetActiveTrue(float time = 1)
     {
@@ -153,6 +177,7 @@ public class KFadeManager : MonoBehaviour
         }
 
         KGameManager.Instance._canInput = true;
+        KGameManager.Instance._canSkip = true;
         _flash_Image.gameObject.SetActive(false);
     }
     private IEnumerator FlashOut(float time = 1)
@@ -167,6 +192,7 @@ public class KFadeManager : MonoBehaviour
         }
 
         KGameManager.Instance._canInput = true;
+        KGameManager.Instance._canSkip = true;
         _flash_Image.gameObject.SetActive(false);
     }
     private IEnumerator FlashIn_ImageSetActiveTrue(float time = 1)

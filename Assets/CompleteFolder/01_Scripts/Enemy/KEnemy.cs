@@ -21,17 +21,16 @@ public class KEnemy : MonoBehaviour
     }
     private void Update()
     {
-        if( _root._finalNodeList.Count < _index  || !_canMove)
+        if (_root._isPlayerFind)
+        {
+            KGameManager.Instance._isEnemyFollow = true;
+        }
+        else
         {
             KGameManager.Instance._isEnemyFollow = false;
             return;
         }
 
-        if (!_root._isPlayerFind)
-        {
-            KGameManager.Instance._isEnemyFollow = true;
-            return;
-        }
         if(_time >= _speed)
         {
             _time = 0;

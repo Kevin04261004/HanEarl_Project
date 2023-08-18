@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -98,10 +99,6 @@ public class KTimeLineManager : MonoBehaviour
                 {
                     continue;
                 }
-                if (_curTimeLine == String.Empty || _curTimeLine == "06" || _curTimeLine == "11")
-                {
-                    return;
-                }
                 SkipTimeLine(_curTimeLine);
             }
         }
@@ -129,12 +126,14 @@ public class KTimeLineManager : MonoBehaviour
                 if(t.TryGetComponent(out PlayableDirector playableDirector))
                 {
                     _curTimeLine = String.Empty;
-                    playableDirector.time = playableDirector.duration - 1f;
+                    playableDirector.time = playableDirector.duration - 2f;
                 }
             }
         }
+        _fadeManager.StopAllFadingRoutines();
+        _fadeManager.DeactivateFadeImage();
+        
     }
-
     public void GameObjectTSetActiveFalse(GameObject go)
     {
         go.SetActive(false);
