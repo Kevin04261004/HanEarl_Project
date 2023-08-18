@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,43 +6,66 @@ using UnityEngine;
 
 public class JSafeBox : MonoBehaviour
 {
-    public static JSafeBox instance;
-    [SerializeField] 
-    private GameObject folder;
-    private JSafeBoxButton[] nums;
-    string currentNum = "";
+    public static JSafeBox Instance;
+    [SerializeField] private GameObject folder;
+    private JSafeBoxButton[] _nums;
+    string _currentNum = "";
+    public KAfterDialogue dia;
+    private bool _opened = false;
+
     private void Awake()
     {
-        if(instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(this);
-        nums = transform.gameObject.GetComponentsInChildren<JSafeBoxButton>();
+        _nums = folder.GetComponentsInChildren<JSafeBoxButton>();
     }
 
+    // private void Update()
+    // {
+    //     if (folder.activeSelf)
+    //     {
+    //         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InteractionKey]))
+    //         {
+    //             Debug.Log("Ìò∏Ï∂úÎê®");
+    //             folder.SetActive(false);
+    //             KGameManager.Instance.J_GameContinue();
+    //         }
+    //     }
+    // }
     //
-    //public string GetPassword()
-    //{
-    //    currentNum = "";
-    //    for (int i = 0; i < 4; i++)
-    //    {
-    //        currentNum += nums[i].num.ToString();
-    //    }
-    //    Debug.Log(currentNum);
-    //    return currentNum;
-    //}
+    
+    
+    private void GetPassword()
+    {
+        _currentNum = "";
+        for (int i = 0; i < 4; i++)
+        {
+            _currentNum += _nums[i].num.ToString();
+        }
+        Debug.Log(_currentNum);
+    }
 
     public void CheckPassword()
     {
-        switch(currentNum)
+        GetPassword();
+        switch (_currentNum)
         {
+            // Ïù¥ÏÑ§Îπà + Ï£ºÏù∏Í≥µ
             case "1331":
-                gameObject.SetActive(false);
-                // »≠¿ÂΩ«ø≠ºË, √µ¿Ø«ˆ ª˝»∞±‚∑œ∫Œ ∂≥ƒ°±‚ø¥≥™
+                SetSBUIActiveFalse();
+                _opened = true;
+                // ÌôîÏû•Ïã§Ïó¥Ïá†, Ï≤úÏú†ÌòÑ ÏÉùÌôúÍ∏∞Î°ùÎ∂Ä Îñ®ÏπòÍ∏∞ÏòÄÎÇò
+                dia.Used1();
                 break;
-            case "ππø¥¥ı∂Û":
-                gameObject.SetActive(false);
+            // Ï≤úÏú†ÌòÑ + Ï£ºÏù∏Í≥µ
+            case "Î≠êÏòÄÎçîÎùº":
+                SetSBUIActiveFalse();
+                _opened = true;
+                dia.Used2();
                 break;
+            // ÎπÑÎ≤à ÌãÄÎ¶º
             default:
                 break;
         }
@@ -49,14 +73,15 @@ public class JSafeBox : MonoBehaviour
 
     public void SetSafeBoxActive()
     {
-        folder.SetActive(!folder.activeSelf);
-        if(folder.activeSelf)
-        {
+        if (_opened)
+            return;
+        folder.SetActive(true);
             KGameManager.Instance.J_GamePause();
-        }
-        else
-        {
+    }
+
+    public void SetSBUIActiveFalse()
+    {
+        folder.SetActive(false);
             KGameManager.Instance.J_GameContinue();
-        }
     }
 }

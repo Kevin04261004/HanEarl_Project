@@ -216,7 +216,7 @@ public class G_InventorySystem : MonoBehaviour
 
             while (true)
             {
-                if (Input.GetKeyDown(KeyCode.Return))
+                if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InteractionKey]))
                 {
                     break;
                 }

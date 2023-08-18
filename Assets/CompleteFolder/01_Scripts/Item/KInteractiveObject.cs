@@ -58,9 +58,9 @@ public class KInteractiveObject : MonoBehaviour
                 //    item.Get();
                 //}
                 JItem[] item = GetComponents<JItem>();
-                for(int i = 0; i < item.Length;i++)
+                foreach(JItem item4 in item)
                 {
-                    item[i].Get();
+                    item4.Get();
                 }
                 
                 _dialogueReader.SetDialogue(GetDialogue(), gameObject);
@@ -108,9 +108,9 @@ public class KInteractiveObject : MonoBehaviour
                 //    item2.Get();
                 //}
                 JItem[] item2 = GetComponents<JItem>();
-                for (int i = 0; i < item2.Length; i++)
+                foreach(JItem item3 in item2)
                 {
-                    item2[i].Get();
+                    item3.Get();
                 }
                 if (TryGetComponent(out KAfterDialogue d))
                 {
@@ -159,7 +159,11 @@ public class KInteractiveObject : MonoBehaviour
                 }
                 break;
             case EInteractiveType.SafeBox:
-                JSafeBox.instance.SetSafeBoxActive();
+                JSafeBox.Instance.SetSafeBoxActive();
+                if (TryGetComponent(out KAfterDialogue d1))
+                {
+                    JSafeBox.Instance.dia = d1;
+                }
                 break;
             default:
                 break;
