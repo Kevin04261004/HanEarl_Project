@@ -4,15 +4,28 @@ using UnityEngine.UI;
 
 public class KFadeManager : MonoBehaviour
 {
-    [SerializeField] private KPlayerManager _playerManager;
-    [field:SerializeField] public  Image _fade_Image { get; private set; }
-    [field:SerializeField] public Image _flash_Image { get; private set; }
-    [SerializeField] private Animator _playerAnimator;
+    private enum FadeKind
+    {
+        FadeIn,
+        FadeOut,
+        FlashIn,
+        FlashOut
+    }
+
+    [SerializeField]
+    private KPlayerManager _playerManager;
+    [field: SerializeField] public Image _fade_Image { get; private set; }
+    [field: SerializeField] public Image _flash_Image { get; private set; }
+    [SerializeField]
+    private Animator _playerAnimator;
     private Color A_1 = new Color(0, 0, 0, 1);
     private Color A_0 = new Color(0, 0, 0, 0);
     private Color White_A_1 = new Color(1, 1, 1, 1);
     private Color White_A_0 = new Color(1, 1, 1, 0);
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
+
+    private Coroutine _fadeCoroutine;
+
     private void Awake()
     {
         _playerManager = FindObjectOfType<KPlayerManager>();
@@ -25,19 +38,25 @@ public class KFadeManager : MonoBehaviour
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
         KGameManager.Instance._canSkip = false;
-        StopCoroutine(nameof(FadeOut));
-        StartCoroutine(FadeIn());
+
+        if (_fadeCoroutine != null)
+            StopCoroutine(_fadeCoroutine);
+
+        _fadeCoroutine = StartCoroutine(FadeIn());
     }
     /* FADE OUT */
-    public void FadeOutRoutine(float time= 1)
+    public void FadeOutRoutine(float time = 1)
     {
         _playerManager.ResetInputKey();
         _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
         KGameManager.Instance._canSkip = false;
-        StopCoroutine(nameof(FadeIn));
-        StartCoroutine(FadeOut());
+
+        if (_fadeCoroutine != null)
+            StopCoroutine(_fadeCoroutine);
+
+        _fadeCoroutine = StartCoroutine(FadeOut());
     }
     /* FLASH IN */
     public void FlashInRoutine(float time = 1)
@@ -47,8 +66,11 @@ public class KFadeManager : MonoBehaviour
         _flash_Image.gameObject.SetActive(true);
         KGameManager.Instance._canSkip = false;
         KGameManager.Instance._canInput = false;
-        StopCoroutine(nameof(FlashOut));
-        StartCoroutine(FlashIn());
+
+        if (_fadeCoroutine != null)
+            StopCoroutine(_fadeCoroutine);
+
+        _fadeCoroutine = StartCoroutine(FlashIn());
     }
     /* FLASH OUT */
     public void FlashOutRoutine(float time = 1)
@@ -58,26 +80,31 @@ public class KFadeManager : MonoBehaviour
         _flash_Image.gameObject.SetActive(true);
         KGameManager.Instance._canSkip = false;
         KGameManager.Instance._canInput = false;
-        StopCoroutine(nameof(FlashIn));
-        StartCoroutine(FlashOut());
+
+        if (_fadeCoroutine != null)
+            StopCoroutine(_fadeCoroutine);
+
+        _fadeCoroutine = StartCoroutine(FlashOut());
     }
-    public void FadeIn_ImageSetActiveTrueRoutine(float time= 1)
+    public void FadeIn_ImageSetActiveTrueRoutine(float time = 1)
     {
         _playerManager.ResetInputKey();
         _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
         KGameManager.Instance._canSkip = false;
-        StartCoroutine(nameof(FadeIn_ImageSetActiveTrue),time);
+
+        _fadeCoroutine = StartCoroutine(FadeIn_ImageSetActiveTrue(time));
     }
-    public void FadeOut_ImageSetActiveTrueRoutine(float time= 1)
+    public void FadeOut_ImageSetActiveTrueRoutine(float time = 1)
     {
         _playerManager.ResetInputKey();
         _playerAnimator.SetBool(IsWalking, false);
         _fade_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
         KGameManager.Instance._canSkip = false;
-        StartCoroutine(nameof(FadeOut_ImageSetActiveTrue),time);
+
+        _fadeCoroutine = StartCoroutine(FadeOut_ImageSetActiveTrue(time));
     }
     public void FlashIn_ImageSetActiveTrueRoutine(float time = 1)
     {
@@ -86,7 +113,8 @@ public class KFadeManager : MonoBehaviour
         _flash_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
         KGameManager.Instance._canSkip = false;
-        StartCoroutine(nameof(FlashIn_ImageSetActiveTrue),time);
+
+        _fadeCoroutine = StartCoroutine(FlashIn_ImageSetActiveTrue(time));
     }
     public void FlashOut_ImageSetActiveTrueRoutine(float time = 1)
     {
@@ -95,15 +123,13 @@ public class KFadeManager : MonoBehaviour
         _flash_Image.gameObject.SetActive(true);
         KGameManager.Instance._canInput = false;
         KGameManager.Instance._canSkip = false;
-        StartCoroutine(nameof(FlashOut_ImageSetActiveTrue),time);
+
+        _fadeCoroutine = StartCoroutine(FlashOut_ImageSetActiveTrue(time));
     }
     public void StopAllFadingRoutines()
     {
-        StopCoroutine(nameof(FadeIn));
-        StopCoroutine(nameof(FadeOut));
-        StopCoroutine(nameof(FlashIn));
-        StopCoroutine(nameof(FlashOut));
-        // Add more stopping for other fading routines if needed
+        if (_fadeCoroutine != null)
+            StopCoroutine(_fadeCoroutine);
     }
     public void DeactivateFadeImage()
     {
@@ -111,11 +137,13 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FadeIn(float time = 1)
     {
+        Debug.Log("FadeIn");
         _fade_Image.color = A_1;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a > 0)
         {
-            tempColor.a -= Time.deltaTime / time;
+            Debug.Log("FadeIn while");
+            tempColor.a -= Time.deltaTime/time;
             _fade_Image.color = tempColor;
             yield return null;
         }
@@ -126,11 +154,13 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FadeOut(float time = 1)
     {
+        Debug.Log("FadeOut");
         _fade_Image.color = A_0;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a < 1)
         {
-            tempColor.a += Time.deltaTime / time;
+            Debug.Log("FadeOut while");
+            tempColor.a += Time.deltaTime/time;
             _fade_Image.color = tempColor;
             yield return null;
         }
@@ -141,11 +171,13 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FadeIn_ImageSetActiveTrue(float time = 1)
     {
+        Debug.Log("FadeIn_ImageSetActiveTrue");
         _fade_Image.color = A_1;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a > 0)
         {
-            tempColor.a -= Time.deltaTime / time;
+            Debug.Log("FadeIn_ImageSetActiveTrue while");
+            tempColor.a -= Time.deltaTime/time;
             _fade_Image.color = tempColor;
             yield return null;
         }
@@ -155,11 +187,13 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FadeOut_ImageSetActiveTrue(float time = 1)
     {
+        Debug.Log("FadeOut_ImageSetActiveTrue");
         _fade_Image.color = A_0;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a < 1)
         {
-            tempColor.a += Time.deltaTime / time;
+            Debug.Log("FadeOut_ImageSetActiveTrue while");
+            tempColor.a += Time.deltaTime/time;
             _fade_Image.color = tempColor;
             yield return null;
         }
@@ -170,7 +204,7 @@ public class KFadeManager : MonoBehaviour
         Color tempColor = _flash_Image.color;
         while (_flash_Image.color.a > 0)
         {
-            tempColor.a -= Time.deltaTime / time;
+            tempColor.a -= Time.deltaTime/time;
             _flash_Image.color = tempColor;
             yield return null;
         }
@@ -185,7 +219,7 @@ public class KFadeManager : MonoBehaviour
         Color tempColor = _flash_Image.color;
         while (_flash_Image.color.a < 1)
         {
-            tempColor.a += Time.deltaTime / time;
+            tempColor.a += Time.deltaTime/time;
             _flash_Image.color = tempColor;
             yield return null;
         }
@@ -196,11 +230,11 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FlashIn_ImageSetActiveTrue(float time = 1)
     {
-        _flash_Image.color = new Color(_flash_Image.color.r,_flash_Image.color.g,_flash_Image.color.b,1);
+        _flash_Image.color = new Color(_flash_Image.color.r, _flash_Image.color.g, _flash_Image.color.b, 1);
         Color tempColor = _flash_Image.color;
         while (_flash_Image.color.a > 0)
         {
-            tempColor.a -= Time.deltaTime / time;
+            tempColor.a -= Time.deltaTime/time;
             _flash_Image.color = tempColor;
             yield return null;
         }
@@ -208,11 +242,11 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FlashOut_ImageSetActiveTrue(float time = 1)
     {
-        _flash_Image.color = new Color(_flash_Image.color.r,_flash_Image.color.g,_flash_Image.color.b,0);
+        _flash_Image.color = new Color(_flash_Image.color.r, _flash_Image.color.g, _flash_Image.color.b, 0);
         Color tempColor = _flash_Image.color;
         while (_flash_Image.color.a < 1)
         {
-            tempColor.a += Time.deltaTime / time;
+            tempColor.a += Time.deltaTime/time;
             _flash_Image.color = tempColor;
             yield return null;
         }
