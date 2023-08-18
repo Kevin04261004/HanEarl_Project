@@ -60,7 +60,6 @@ public class G_EndingManager : MonoBehaviour
         }
     }
 
-
     private void EndingTypeSetting(string endingName)
     {
         currentEndingName = (EndingType)System.Enum.Parse(typeof(EndingType), endingName);

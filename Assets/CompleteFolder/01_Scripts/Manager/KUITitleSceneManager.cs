@@ -51,6 +51,21 @@ public class KUITitleSceneManager : MonoBehaviour
         KLoadingSceneManager.LoadScene("01_GameScene");
     }
 
+    public void OnClick_ResetGame_Btn()
+    {
+        JDataManager.instance.stageData.currentStageNum = 0;
+        JDataManager.instance.stageData.beforeActName.Clear();
+        JDataManager.instance.stageData.normalEndingCheck = false;
+        JDataManager.instance.stageData.trueEndingCheck = false;
+        JDataManager.instance.stageData.playedActName.Clear();
+        JPlayerData playerdata = JDataManager.instance.playerData;
+        playerdata.name = "";
+        JDataManager.instance.SaveData(JDataManager.instance.stageData);
+        JDataManager.instance.SaveData(playerdata);
+
+        OnClick_GameStart_Btn();
+    }
+
     public void OnClick_SetName_Btn()
     {
         if (wantName.text == "")
