@@ -4,9 +4,9 @@ using UnityEngine;
 
 public enum EDied
 {
-    DiedFromEnemy01,
-    Died02,
-    
+    DiedBadEndingF,
+    DiedBadEndingB,
+
 }
 
 public class KPlayerManager : MonoBehaviour
@@ -288,11 +288,13 @@ public class KPlayerManager : MonoBehaviour
     {
         switch (eDied)
         {
-            case EDied.DiedFromEnemy01:
+            case EDied.DiedBadEndingF:
                 KTimeLineManager.Instance.StartTimeLine("03");
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 break;
-            case EDied.Died02:
+            case EDied.DiedBadEndingB:
+                KTimeLineManager.Instance.StartTimeLine("BadEndingB");
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 break;
             default:
                 break;

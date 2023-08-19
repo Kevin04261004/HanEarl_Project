@@ -1,8 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
+public enum EBadEnding
+{
+    BadEndingF,
+    BadEndingB,
+}
+
 public class KEnemy : MonoBehaviour
 {
+    [SerializeField] private EBadEnding _badEndingType;
     private KAstarAlg _root;
     [SerializeField] private float _speed = 0.2f;
     [SerializeField] private float _time = 0;
@@ -97,8 +104,19 @@ public class KEnemy : MonoBehaviour
         }
         if(collision.TryGetComponent(out KPlayerManager playerManager))
         {
-            G_DifurcationManager.Instance.CallEnding("BadEndingF");
-            playerManager.Died(EDied.DiedFromEnemy01);
+            switch (_badEndingType)
+            {
+                case EBadEnding.BadEndingF:
+                    G_DifurcationManager.Instance.CallEnding("BadEndingF");
+                    playerManager.Died(EDied.DiedBadEndingF);
+                    break;
+                case EBadEnding.BadEndingB:
+                    G_DifurcationManager.Instance.CallEnding("BadEndingB");
+                    playerManager.Died(EDied.DiedBadEndingB);
+                    break;
+                default:
+                    break;
+            }
         }
     }
     private IEnumerator LerpCoroutine(Vector3 current, Vector3 target, float time)
