@@ -1512,7 +1512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &25043382
 Transform:
   m_ObjectHideFlags: 0
@@ -1525,7 +1525,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1919916799}
+  m_Father: {fileID: 105701195}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &25043383
@@ -5352,6 +5352,7 @@ Transform:
   - {fileID: 677777230}
   - {fileID: 405742067}
   - {fileID: 766270633}
+  - {fileID: 25043382}
   - {fileID: 1949946813}
   - {fileID: 124094976}
   - {fileID: 957164986}
@@ -83383,6 +83384,7 @@ MonoBehaviour:
     - {fileID: 1373181347}
     - {fileID: 1919916798}
     - {fileID: 554725266}
+    - {fileID: 1593918366}
     <interactionObj>k__BackingField:
     - {fileID: 1373181350}
     - {fileID: 1584227286}
@@ -83444,6 +83446,7 @@ MonoBehaviour:
     - {fileID: 677777229}
     - {fileID: 221645432}
     - {fileID: 1949946812}
+    - {fileID: 25043381}
     <interactionObj>k__BackingField:
     - {fileID: 221645437}
     - {fileID: 787368196}
@@ -101934,7 +101937,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1148893506}
-  - {fileID: 25043382}
   - {fileID: 437228985}
   - {fileID: 1105586894}
   - {fileID: 592944551}
