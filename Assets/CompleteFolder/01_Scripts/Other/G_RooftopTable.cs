@@ -29,26 +29,26 @@ public class G_RooftopTable : MonoBehaviour
         fadeManager.FadeInRoutine(1);
         KTimeLineManager.Instance.StartTimeLine("12");
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        _other = other;
-    }
-
-    private void PlayerMoveRestroom(Collider2D other)
-    {
-        if (!target_Pos || other == null)
-        {
-            return;
-        }
-
-        if (other.CompareTag("Player"))
-        {
-            if (other.TryGetComponent(out KPlayerManager player))
-            {
-                player._isMoving = false;
-                player.StopMoveWithTimeRoutine(0.1f, target_Pos.position);
-            }
-        }
-    }
+    //
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     _other = other;
+    // }
+    //
+    // private void PlayerMoveRestroom(Collider2D other)
+    // {
+    //     if (!target_Pos || other == null)
+    //     {
+    //         return;
+    //     }
+    //
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         if (other.TryGetComponent(out KPlayerManager player))
+    //         {
+    //             player._isMoving = false;
+    //             player.StopMoveWithTimeRoutine(0.1f, target_Pos.position);
+    //         }
+    //     }
+    // }
 }
