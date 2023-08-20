@@ -4,14 +4,6 @@ using UnityEngine.UI;
 
 public class KFadeManager : MonoBehaviour
 {
-    private enum FadeKind
-    {
-        FadeIn,
-        FadeOut,
-        FlashIn,
-        FlashOut
-    }
-
     [SerializeField]
     private KPlayerManager _playerManager;
     [field: SerializeField] public Image _fade_Image { get; private set; }
@@ -137,12 +129,10 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FadeIn(float time = 1)
     {
-        Debug.Log("FadeIn");
         _fade_Image.color = A_1;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a > 0)
         {
-            Debug.Log("FadeIn while");
             tempColor.a -= Time.deltaTime/time;
             _fade_Image.color = tempColor;
             yield return null;
@@ -154,12 +144,10 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FadeOut(float time = 1)
     {
-        Debug.Log("FadeOut");
         _fade_Image.color = A_0;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a < 1)
         {
-            Debug.Log("FadeOut while");
             tempColor.a += Time.deltaTime/time;
             _fade_Image.color = tempColor;
             yield return null;
@@ -171,12 +159,10 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FadeIn_ImageSetActiveTrue(float time = 1)
     {
-        Debug.Log("FadeIn_ImageSetActiveTrue");
         _fade_Image.color = A_1;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a > 0)
         {
-            Debug.Log("FadeIn_ImageSetActiveTrue while");
             tempColor.a -= Time.deltaTime/time;
             _fade_Image.color = tempColor;
             yield return null;
@@ -187,12 +173,10 @@ public class KFadeManager : MonoBehaviour
     }
     private IEnumerator FadeOut_ImageSetActiveTrue(float time = 1)
     {
-        Debug.Log("FadeOut_ImageSetActiveTrue");
         _fade_Image.color = A_0;
         Color tempColor = _fade_Image.color;
         while (_fade_Image.color.a < 1)
         {
-            Debug.Log("FadeOut_ImageSetActiveTrue while");
             tempColor.a += Time.deltaTime/time;
             _fade_Image.color = tempColor;
             yield return null;

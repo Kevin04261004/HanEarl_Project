@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,7 +23,7 @@ public class KUIButoon : MonoBehaviour
     private G_StageManager _stageManager;
     private G_EndingTimeLineStart _endingTimeLineStart;
     [SerializeField] private KFadeManager _fadeManager;
-
+    public GameObject _from_GameObject;
 
     private void OnEnable()
     {
@@ -31,6 +32,8 @@ public class KUIButoon : MonoBehaviour
         _kDialogueReader = FindObjectOfType<KDialogueReader>();
         _btn = transform.GetComponent<Button>();
     }
+    
+
     public void AddListener(EButtonState state)
     {
         _btn.onClick.RemoveAllListeners();
@@ -54,12 +57,15 @@ public class KUIButoon : MonoBehaviour
                 break;
             case EButtonState.HairDryDied:
                 _btn.onClick.AddListener(HairDryTimeLineStart);
+                _btn.onClick.AddListener(FromGameObjectSetActiveFalse);
                 break;
             case EButtonState.Rope:
                 _btn.onClick.AddListener(RopeTimeLineStart);
+                _btn.onClick.AddListener(FromGameObjectSetActiveFalse);
                 break;
             case EButtonState.Rooftop_Fence:
                 _btn.onClick.AddListener(RooftopTimeLineStart);
+                _btn.onClick.AddListener(FromGameObjectSetActiveFalse);
                 break;
             default:
                 break;
@@ -77,11 +83,16 @@ public class KUIButoon : MonoBehaviour
         _kDialogueReader.StartReading();
     }
 
+    private void FromGameObjectSetActiveFalse()
+    {
+        _from_GameObject.SetActive(false);
+    }
     private void OnClicked_StartTimeLine_Act4_1_Roof()
     {
         _kDialogueReader.StopReading();
-        G_InventorySystem.Instance.J_RemoveItem("ø¡ªÛ ø≠ºË");
+        G_InventorySystem.Instance.J_RemoveItem("ÔøΩÔøΩÔøΩÔøΩ ÔøΩÔøΩÔøΩÔøΩ"); // Ïù¥Í±∞ ÌïúÍ∏Ä Íπ®ÏßÄÎãàÍπå Ï†úÎ∞ú UTF-8Ïì∞ÏÇº.
         KTimeLineManager.Instance.StartTimeLine10Routine();
+        G_DifurcationManager.Instance.CallEnding("BadEndingA");
     }
 
     private void OnClicked_GoToMainScene()

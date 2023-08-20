@@ -22,6 +22,7 @@ public class Normal_Ending_Trigger : MonoBehaviour
     
     private IEnumerator NormalEndingStart()
     {
+        KGameManager.Instance._isEnemyFollow = false;
         G_DifurcationManager.Instance.CallEnding("NormalEnding");
         _followEnemy.SetActive(false);
         _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);

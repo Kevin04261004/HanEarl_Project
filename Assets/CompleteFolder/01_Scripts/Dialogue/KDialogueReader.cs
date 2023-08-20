@@ -27,6 +27,7 @@ public class KDialogueReader : MonoBehaviour
     {
         if(isReading && Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.InteractionKey]))
         {
+            
             if(isTyping)
             {
                 isTyping = false;
@@ -229,13 +230,7 @@ public class KDialogueReader : MonoBehaviour
                         Options_TMP[i].transform.parent.GetComponent<KUIButoon>().AddListener(EButtonState.ChangeLine);
                         break;
                 }
-                if (_from_GameObject != null)
-                {
-                    if (_from_GameObject.layer == 6)//LayerMask.NameToLayer("AfterDialogueDisappear"))
-                    {
-                        _from_GameObject.SetActive(false);
-                    }   
-                }
+                Options_TMP[i].transform.parent.GetComponent<KUIButoon>()._from_GameObject = _from_GameObject;
             }
         }
         else

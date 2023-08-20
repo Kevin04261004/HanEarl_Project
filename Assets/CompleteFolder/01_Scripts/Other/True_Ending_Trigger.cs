@@ -23,6 +23,7 @@ public class True_Ending_Trigger : MonoBehaviour
 
     private IEnumerator TrueEndingStart()
     {
+        KGameManager.Instance._isEnemyFollow = false;
         G_DifurcationManager.Instance.CallEnding("TrueEnding");
         _followEnemy.SetActive(false);
         _fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class KUIManager : MonoBehaviour
@@ -10,6 +11,9 @@ public class KUIManager : MonoBehaviour
     [field: SerializeField] public Slider _bgm_Slider { get; private set; }
     [field: SerializeField] public Slider _sfx_Slider { get; private set; }
     [SerializeField] private KKeyManager _keyManager;
+    [SerializeField] private GameObject _reallyExitGameObject;
+    [SerializeField] private Image _optionImage;
+    [SerializeField] private GameObject _dialogue;
     private void Awake()
     {
         LoadSoundVolume();
@@ -18,6 +22,14 @@ public class KUIManager : MonoBehaviour
 
     private void Update()
     {
+        if (_dialogue.activeSelf)
+        {
+            _optionImage.raycastTarget = false;
+        }
+        else
+        {
+            _optionImage.raycastTarget = true;
+        }
         if (Input.GetKeyDown(KKeySetting.key_Dictionary[EKeyAction.SettingKey]))
         {
             if (_settingBG_Image.gameObject.activeSelf)
@@ -50,7 +62,7 @@ public class KUIManager : MonoBehaviour
     }
     public void OnClick_GameExit_Btn()
     {
-        Application.Quit();
+        _reallyExitGameObject.gameObject.SetActive(true);
     }
 
     public void OnClick_KeySetting_Btn()
@@ -77,5 +89,15 @@ public class KUIManager : MonoBehaviour
         _bgm_Slider.value = KDontDestroyOnLoadManager.Instance._settingData._bgmSound;
         _sfx_Slider.value = KDontDestroyOnLoadManager.Instance._settingData._sfxSound;
         KSoundManager.Instance.MixerSet();
+    }
+
+    public void GameExit()
+    {
+        Application.Quit();
+    }
+
+    public void ReallyExitGameObjectOff()
+    {
+        _reallyExitGameObject.SetActive(false);
     }
 }

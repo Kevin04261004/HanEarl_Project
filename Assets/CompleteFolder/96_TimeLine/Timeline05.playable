@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   _subtitle_TMP: "\uAC00\uB9CC\uD788 \uC9C0\uB0B4\uBA74 \uB418\uB294 \uAC78, \uC65C
-    \uAD73\uC774 \uBC8C\uB798\uB9C8\uB0E5 \uD0C8\uCD9C\uD558\uB824\uACE0 \uD558\uB294\uAC70\uC57C
+    \uAD73\uC774 \uBC8C\uB808\uB9C8\uB0E5 \uD0C8\uCD9C\uD558\uB824\uACE0 \uD558\uB294\uAC70\uC57C
     \uB3C4\uB300\uCCB4..."
 --- !u!114 &-7973340310971804229
 MonoBehaviour:
@@ -2715,7 +2715,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -2859,7 +2877,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
