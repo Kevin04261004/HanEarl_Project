@@ -7,7 +7,7 @@ public class KDialogue
     [Tooltip("캐릭터이름")] public string character_Name;
     [Tooltip("캐릭터 이미지")] public string characterImage_Name;
     [Tooltip("선택지")] public bool hasOption;
-    [Tooltip("대사 내용")] public string[] contexts;
+    [TextArea(3,5)] [Tooltip("대사 내용")] public string[] contexts;
     [Tooltip("선택지 내용")] public string[] option_Contexts;
     [Tooltip("버튼 클릭시 몇 줄로 이동")] public string[] nextLine;
 }

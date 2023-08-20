@@ -106,7 +106,19 @@ public class G_StageManager : MonoBehaviour
 
     public void EndingStart(string endingName)
     {
-        stageSaveData.beforeActName.Add(endingName);
+        bool hasKey = false;
+        foreach (var act in stageSaveData.beforeActName)
+        {
+            if (act == endingName)
+            {
+                hasKey = true;
+            }
+        }
+        if (hasKey == false)
+        {
+            stageSaveData.beforeActName.Add(endingName);   
+        }
+        
         endingManager.CallEnding(endingName);
 
         if (NormalEndingCheck() && stageSaveData.currentStageNum == 0)
@@ -148,8 +160,19 @@ public class G_StageManager : MonoBehaviour
         }
         else if (ObjectCheckClear() && BeforeActNameCheck() && currentStageNum != 7)
         {
-            stageSaveData.currentStageNum++;
-            stageSaveData.beforeActName.Add(currentData.actName);
+            bool hasKey = false;
+            foreach (var act in stageSaveData.beforeActName)
+            {
+                if (act == currentData.actName)
+                {
+                    hasKey = true;
+                }
+            }
+            if (hasKey == false)
+            {
+                stageSaveData.currentStageNum++;
+                stageSaveData.beforeActName.Add(currentData.actName); 
+            }
         }
         /* 도윤 추가 */
         bool hasAct = false;
@@ -221,11 +244,11 @@ public class G_StageManager : MonoBehaviour
 
         int clearPoint = 0;
 
-        for (int i = 0; i < currentData.interactionObj.Count; i++)
+        foreach (var t in currentData.interactionObj)
         {
-            for (int j = 0; j < clearObjects.Count; j++)
+            foreach (var t1 in clearObjects)
             {
-                if (currentData.interactionObj[i].gameObject.name == clearObjects[j].name)
+                if (t.gameObject.name == t1.name)
                 {
                     clearPoint++;
                     if (clearPoint == currentData.interactionObj.Count)

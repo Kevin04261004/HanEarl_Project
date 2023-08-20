@@ -13,25 +13,30 @@ public class KUITitleSceneManager : MonoBehaviour
 
     private void Start()
     {
-        switch (JDataManager.instance.stageData.currentStageNum)
+        if (JDataManager.instance.stageData.normalEndingCheck)
         {
-            case 5 or 6 or 7:
-                backGround.sprite = _endingSprites[1];
-                foreach (Text tx in _texts)
-                {
-                    tx.color = Color.white;
-                }
-                break;
-            case 8:
-                backGround.sprite = _endingSprites[2];
-                break;
-            case 9:
-                backGround.sprite = _endingSprites[3];
-                break;
-            default:
-                break;
+            backGround.sprite = _endingSprites[2];
         }
-
+        else if (JDataManager.instance.stageData.trueEndingCheck)
+        {
+            backGround.sprite = _endingSprites[3];
+        }
+        else
+        {
+            switch (JDataManager.instance.stageData.currentStageNum)
+            {
+                case 5 or 6 or 7:
+                    backGround.sprite = _endingSprites[1];
+                    foreach (Text tx in _texts)
+                    {
+                        tx.color = Color.white;
+                    }
+                    break;
+                default:
+                    backGround.sprite = _endingSprites[0];
+                    break;
+            }   
+        }
     }
 
     // NewGame 버튼에 쓰임

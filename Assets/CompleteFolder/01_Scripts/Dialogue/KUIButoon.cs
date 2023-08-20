@@ -90,7 +90,7 @@ public class KUIButoon : MonoBehaviour
     private void OnClicked_StartTimeLine_Act4_1_Roof()
     {
         _kDialogueReader.StopReading();
-        G_InventorySystem.Instance.J_RemoveItem("���� ����"); // 이거 한글 깨지니까 제발 UTF-8쓰삼.
+        G_InventorySystem.Instance.J_RemoveItem("옥상 열쇠"); // 이거 한글 깨지니까 제발 UTF-8쓰삼.
         KTimeLineManager.Instance.StartTimeLine10Routine();
         G_DifurcationManager.Instance.CallEnding("BadEndingA");
     }

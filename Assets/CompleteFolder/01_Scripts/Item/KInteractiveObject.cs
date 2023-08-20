@@ -97,6 +97,14 @@ public class KInteractiveObject : MonoBehaviour
                 {
                     d10.Used();
                 }
+                if (TryGetComponent(out JItem test4))
+                {
+                    JItem[] item6 = GetComponents<JItem>();
+                    foreach(JItem item7 in item6)
+                    {
+                        item7.Get();
+                    }
+                }
                 break;
             case EInteractiveType.B_Act6:
                 if (TryGetComponent(out KBManager kbManager))

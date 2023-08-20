@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uC74C... \uD50C\uB808\uC774\uC5B4 \uC624\uB79C\uB9CC\uC774\uC57C..."
+  _subtitle_TMP: "\uC74C... \uAE40\uB3C4\uC724 \uC624\uB79C\uB9CC\uC774\uC57C..."
 --- !u!114 &-6966630788587249986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4"
+  _subtitle_TMP: "\uAE40\uB3C4\uC724"
 --- !u!114 &-4770133781964091671
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4"
+  _subtitle_TMP: "\uAE40\uB3C4\uC724"
 --- !u!114 &-3352626808576941209
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -671,6 +671,22 @@ MonoBehaviour:
   m_Name: PortraitClip
   m_EditorClassIdentifier: 
   _portrait_Sprite: {fileID: 21300000, guid: d63ee23f82f6e704b976ac85c1785aba, type: 3}
+--- !u!114 &-1883479896886121970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 32.2
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 5e4e2ca01b5ed6a4cb7e46d29b9b2964, type: 2}
 --- !u!114 &-1730790779051666622
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1261,6 +1277,7 @@ MonoBehaviour:
     - {fileID: 2891811789386561276}
     - {fileID: 8923141084470410416}
     - {fileID: -6311102880066048967}
+    - {fileID: -1883479896886121970}
 --- !u!114 &560659365980677383
 MonoBehaviour:
   m_ObjectHideFlags: 1

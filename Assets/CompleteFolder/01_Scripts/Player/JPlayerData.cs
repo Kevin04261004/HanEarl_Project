@@ -5,6 +5,4 @@ using UnityEngine;
 public class JPlayerData : JData
 {
     public string name;
-    public Vector2 currentVec;
-
 }
