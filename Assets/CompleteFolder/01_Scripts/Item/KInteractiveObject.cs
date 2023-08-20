@@ -57,12 +57,14 @@ public class KInteractiveObject : MonoBehaviour
                 //{
                 //    item.Get();
                 //}
-                JItem[] item = GetComponents<JItem>();
-                foreach(JItem item4 in item)
+                if (TryGetComponent(out JItem test))
                 {
-                    item4.Get();
+                    JItem[] item = GetComponents<JItem>();
+                    foreach(JItem item4 in item)
+                    {
+                        item4.Get();
+                    }
                 }
-                
                 _dialogueReader.SetDialogue(GetDialogue(), gameObject);
                 gameObject.SetActive(false);
                 break;
@@ -107,15 +109,15 @@ public class KInteractiveObject : MonoBehaviour
                 }
                 break;
             case EInteractiveType.KAfterDialogue_Changed_And_GetItem:
-                //if (TryGetComponent(out JItem item2))
-                //{
-                //    item2.Get();
-                //}
-                JItem[] item2 = GetComponents<JItem>();
-                foreach(JItem item3 in item2)
+                if (TryGetComponent(out JItem test2))
                 {
-                    item3.Get();
+                    JItem[] item2 = GetComponents<JItem>();
+                    foreach(JItem item3 in item2)
+                    {
+                        item3.Get();
+                    }
                 }
+                
                 if (TryGetComponent(out KAfterDialogue d))
                 {
                     d.Used();
@@ -159,6 +161,14 @@ public class KInteractiveObject : MonoBehaviour
                 if (TryGetComponent(out G_RooftopTable table))
                 {
                     table.InteractiveRoutine();
+                }
+                if (TryGetComponent(out JItem test3))
+                {
+                    JItem[] item5 = GetComponents<JItem>();
+                    foreach(JItem item6 in item5)
+                    {
+                        item6.Get();
+                    }
                 }
                 break;
             case EInteractiveType.SafeBox:

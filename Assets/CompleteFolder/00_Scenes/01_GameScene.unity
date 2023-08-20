@@ -5362,6 +5362,7 @@ Transform:
   - {fileID: 1491424259}
   - {fileID: 950089091}
   - {fileID: 791279078}
+  - {fileID: 1827525858}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20754,13 +20755,13 @@ GameObject:
   - component: {fileID: 405742073}
   - component: {fileID: 405742074}
   - component: {fileID: 405742075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "Act6_\uC625\uC0C1 \uCC45\uC0C1"
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &405742067
 Transform:
   m_ObjectHideFlags: 0
@@ -20841,7 +20842,7 @@ MonoBehaviour:
     N_line: {x: 0, y: 0}
     dialogues: []
   _interactiveCount: 0
-  normalEndingChange: 0
+  normalEndingChange: 1
 --- !u!61 &405742072
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -95835,6 +95836,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1827525858 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5127587612121543351, guid: e58c4bf462985bc4ca5ea22c9445cd46, type: 3}
+  m_PrefabInstance: {fileID: 1980961836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1828639572
 GameObject:
   m_ObjectHideFlags: 0
