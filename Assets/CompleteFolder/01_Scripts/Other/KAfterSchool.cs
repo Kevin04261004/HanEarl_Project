@@ -14,7 +14,6 @@ public class KAfterSchool : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            print(1);
             _interactiveObject.Interactive();
         }
     }

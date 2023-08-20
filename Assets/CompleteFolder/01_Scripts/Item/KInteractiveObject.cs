@@ -26,7 +26,7 @@ public class KInteractiveObject : MonoBehaviour
     [SerializeField] private bool normalEndingChange = false;
     private void Awake()
     {
-        _dialogueReader = FindObjectOfType<KDialogueReader>();
+        _dialogueReader = FindAnyObjectByType<KDialogueReader>();
         Debug.Assert(_dialogueReader != null,"_dialogueReader를 찾지 못했습니다.");
     }
     

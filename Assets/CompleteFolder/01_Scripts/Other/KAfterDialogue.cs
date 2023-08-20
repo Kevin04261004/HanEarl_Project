@@ -8,6 +8,8 @@ public class KAfterDialogue : MonoBehaviour
     [SerializeField] private GameObject NewObj2;
     [SerializeField] private GameObject BeforeObj3;
     [SerializeField] private GameObject NewObj3;
+    [SerializeField] private GameObject BeforeObj4;
+    [SerializeField] private GameObject NewObj4;
     public void Used()
     {
         if (BeforeObj != null)
@@ -25,6 +27,14 @@ public class KAfterDialogue : MonoBehaviour
         if (NewObj2 != null)
         {
             NewObj2.SetActive(true);
+        }
+        if (BeforeObj4 != null)
+        {
+            BeforeObj4.SetActive(false);
+        }
+        if (NewObj4 != null)
+        {
+            NewObj4.SetActive(true);
         }
     }
 

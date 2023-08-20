@@ -12,6 +12,7 @@ public enum EKeyAction
     InventoryKey,
     SightKey,
     SkipKey,
+    RunKey,
     KeySize,
     
 }
@@ -52,6 +53,7 @@ public class KKeyManager : MonoBehaviour
         KKeySetting.key_Dictionary.Add(EKeyAction.InventoryKey, KeyCode.Tab);
         KKeySetting.key_Dictionary.Add(EKeyAction.SightKey, KeyCode.Space);
         KKeySetting.key_Dictionary.Add(EKeyAction.SkipKey,KeyCode.P);
+        KKeySetting.key_Dictionary.Add(EKeyAction.RunKey, KeyCode.LeftShift);
     }
     private void OnGUI()
     {
