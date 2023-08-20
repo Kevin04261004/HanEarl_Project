@@ -1248,6 +1248,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5376194391246351174, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Examine
+      objectReference: {fileID: 0}
     - target: {fileID: 6545131237924305813, guid: 04cef4b1d33c0e044afa6d640ecdc44f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -107008,7 +107012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData:
-    itemName: "\uCC9C\uC720\uD604\uC758 \uC77C\uC9C0 1"
+    itemName: "\uC0DD\uD65C\uAE30\uB85D\uBD80"
     index: 0
     isGet: 0
     isInvn: 0

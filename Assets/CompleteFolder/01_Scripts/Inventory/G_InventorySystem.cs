@@ -187,9 +187,9 @@ public class G_InventorySystem : MonoBehaviour
     }
 
     // 사용 버튼
-    public void Use()
+    public void Examine()
     {
-        if (_currentItem.itemSprite.Count <= 0)
+        if (_currentItem.itemSprite.Count <= 0 || !_jcanInput)
         {
             Debug.Log("사용할 수 없는 아이템입니다.");
             return;
@@ -239,9 +239,4 @@ public class G_InventorySystem : MonoBehaviour
         yield return null;
     }
 
-
-    // 조사 버튼
-    public void Examine()
-    {
-    }
 }
