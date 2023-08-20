@@ -2021,6 +2021,9 @@ MonoBehaviour:
     _bgmSound: 0
     _sfxSound: 0
     _keyData: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+    _width: 0
+    _height: 0
+    _isFullScreen: 0
 --- !u!4 &1083370794
 Transform:
   m_ObjectHideFlags: 0
