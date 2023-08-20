@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6865490948662828369}
   - component: {fileID: -6492700650343546601}
   m_Layer: 0
-  m_Name: journal
+  m_Name: journal 2
   m_TagString: InteractiveObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,12 +96,16 @@ MonoBehaviour:
   _dialogueEvent:
     eventName: Key
     line: {x: 1, y: 1}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!114 &-6492700650343546601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,16 +119,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData:
-    itemName: 
+    itemName: "\uCC9C\uC720\uD604\uC758 \uC77C\uC9C0 2"
     index: 0
     isGet: 0
     isInvn: 0
   itemSprite:
-  - {fileID: 21300000, guid: 85180f8b075882f49aab9336524cc90e, type: 3}
-  - {fileID: 21300000, guid: 5f765bedce9582f4f90a57af9f7f63ea, type: 3}
   - {fileID: 21300000, guid: 7ad7f998acd57f54a81341d7942b6e7b, type: 3}
-  - {fileID: 21300000, guid: 1a43f6ababded7648ab21e24f3aaa3bb, type: 3}
-  - {fileID: 21300000, guid: 66ca09261577d444babf84ad39e3d761, type: 3}
   itemImage: {fileID: 21300000, guid: 9a78816e1b4aff347abb821b29d5746a, type: 3}
 --- !u!1001 &5022806482869231495
 PrefabInstance:

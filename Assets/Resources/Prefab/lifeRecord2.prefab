@@ -96,12 +96,16 @@ MonoBehaviour:
   _dialogueEvent:
     eventName: Key
     line: {x: 9, y: 9}
+    N_line: {x: 0, y: 0}
     dialogues: []
   _dialogueReader: {fileID: 0}
   _secondDialogueEvent:
     eventName: 
     line: {x: 0, y: 0}
+    N_line: {x: 0, y: 0}
     dialogues: []
+  _interactiveCount: 0
+  normalEndingChange: 0
 --- !u!114 &-6492700650343546601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData:
-    itemName: 
+    itemName: "\uC774\uC124\uBE48\uC758 \uC0DD\uD65C\uAE45\uB85D\uBD80"
     index: 0
     isGet: 0
     isInvn: 0

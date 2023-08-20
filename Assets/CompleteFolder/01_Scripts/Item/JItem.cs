@@ -12,8 +12,8 @@ public class JItem : MonoBehaviour
     
     public void Get()
     {
-        itemData.isGet = true;
-        itemData.isInvn = true;
+        //itemData.isGet = true;
+        //itemData.isInvn = true;
         if (this.gameObject.layer != 6)
         {
             gameObject.SetActive(false);   
