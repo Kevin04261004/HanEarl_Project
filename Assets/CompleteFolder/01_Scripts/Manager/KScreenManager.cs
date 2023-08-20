@@ -27,6 +27,7 @@ public class KScreenManager : MonoBehaviour
 
     private void InitUI()
     {
+        
         foreach (var t in UnityEngine.Device.Screen.resolutions)
         {
             bool isSame = false;
@@ -59,11 +60,11 @@ public class KScreenManager : MonoBehaviour
             if (item.width == UnityEngine.Device.Screen.width
                 && item.height == UnityEngine.Device.Screen.height)
             {
-                _resolutionNum = optionNum;
+                _resolutionNum = _resolutions.IndexOf(item); // _resolutions 리스트 내에서의 인덱스 값을 사용
             }
-
-            optionNum++;
         }
+
+        _resolution_Dropdown.value = _resolutionNum; // 드롭다운의 선택 항목을 설정
         _resolution_Dropdown.RefreshShownValue();
     }
     
@@ -72,6 +73,8 @@ public class KScreenManager : MonoBehaviour
         _isFullScreen = !_isFullScreen;
         _check_TMP.text = _isFullScreen ? "V" : string.Empty;
         Screen.SetResolution(Screen.width, Screen.height, _isFullScreen);
+        KDontDestroyOnLoadManager.Instance._settingData._isFullScreen = _isFullScreen;
+        KDontDestroyOnLoadManager.Instance.SaveSettingData();
     }
 
     public void DropboxOptionChange(int x)
@@ -82,9 +85,9 @@ public class KScreenManager : MonoBehaviour
     public void OnClick_ScreenResolution_Btn()
     {
         Screen.SetResolution(_resolutions[_resolutionNum].width, _resolutions[_resolutionNum].height, _isFullScreen);
-        KDontDestroyOnLoadManager.Instance._settingData._width = Screen.width;
-        KDontDestroyOnLoadManager.Instance._settingData._width = Screen.height;
-        KDontDestroyOnLoadManager.Instance._settingData._isFullScreen = Screen.fullScreen;
+        KDontDestroyOnLoadManager.Instance._settingData._width = _resolutions[_resolutionNum].width;
+        KDontDestroyOnLoadManager.Instance._settingData._height = _resolutions[_resolutionNum].height;
+        KDontDestroyOnLoadManager.Instance._settingData._isFullScreen = _isFullScreen;
         KDontDestroyOnLoadManager.Instance.SaveSettingData();
     }
 }
