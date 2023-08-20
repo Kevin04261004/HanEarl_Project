@@ -15,7 +15,7 @@ public class KUITitleSceneManager : MonoBehaviour
     {
         switch (JDataManager.instance.stageData.currentStageNum)
         {
-            case 7:
+            case 5 or 6 or 7:
                 backGround.sprite = _endingSprites[1];
                 foreach (Text tx in _texts)
                 {

@@ -8,7 +8,7 @@ public class G_RooftopTable : MonoBehaviour
     [SerializeField] private GameObject b_obj;
     [SerializeField] private Transform target_Pos;
     [SerializeField] private Collider2D _other;
-
+    [SerializeField] private Coroutine a;
     private void Awake()
     {
         fadeManager = FindObjectOfType<KFadeManager>();
@@ -16,20 +16,18 @@ public class G_RooftopTable : MonoBehaviour
 
     public void InteractiveRoutine()
     {
-        StartCoroutine(InteractiveCoroutine());
+        if (a == null)
+        {
+            a = StartCoroutine(InteractiveCoroutine());   
+        }
     }
 
     private IEnumerator InteractiveCoroutine()
     {
-        yield return new WaitForSeconds(2);
-        b_obj.SetActive(true);
-        yield return new WaitForSeconds(1);
-        fadeManager.FadeOut_ImageSetActiveTrueRoutine(0.1f);
-        b_obj.SetActive(false);
+        fadeManager.FadeOut_ImageSetActiveTrueRoutine(1);
         yield return new WaitForSeconds(3);
-        PlayerMoveRestroom(_other);
-        fadeManager.FadeInRoutine(3);
-        this.gameObject.SetActive(false);
+        fadeManager.FadeInRoutine(1);
+        KTimeLineManager.Instance.StartTimeLine("12");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

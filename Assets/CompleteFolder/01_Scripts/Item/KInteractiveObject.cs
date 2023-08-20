@@ -148,7 +148,6 @@ public class KInteractiveObject : MonoBehaviour
                 }
                 break;
             case EInteractiveType.Roof_Table_Event:
-                _dialogueReader.SetDialogue(GetDialogue(), gameObject);
                 if (TryGetComponent(out KAfterDialogue d3))
                 {
                     d3.Used();
