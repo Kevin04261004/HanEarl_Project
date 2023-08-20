@@ -10,16 +10,15 @@ public class KUITitleSceneManager : MonoBehaviour
     [SerializeField] private InputField wantName;
     [SerializeField] private Image backGround;
     [SerializeField] private List<Text> _texts;
-
+    [SerializeField] private Button _startGame_Btn;
+    [SerializeField] private Button _newGame_Btn;
+    [SerializeField] private Button _exit_Btn;
+    
     private void Start()
     {
         if (JDataManager.instance.stageData.normalEndingCheck)
         {
             backGround.sprite = _endingSprites[2];
-        }
-        else if (JDataManager.instance.stageData.trueEndingCheck)
-        {
-            backGround.sprite = _endingSprites[3];
         }
         else
         {
@@ -35,7 +34,29 @@ public class KUITitleSceneManager : MonoBehaviour
                 default:
                     backGround.sprite = _endingSprites[0];
                     break;
-            }   
+            }
+        }
+        if (JDataManager.instance.stageData.trueEndingCheck)
+        {
+            _startGame_Btn.gameObject.SetActive(false);
+            
+            bool hasEnding = false;
+            foreach (var act in JDataManager.instance.stageData.beforeActName)
+            {
+                if (act == "TrueEnding")
+                {
+                    hasEnding = true;
+                }
+            }
+
+            if (hasEnding)
+            {
+                backGround.sprite = _endingSprites[3];
+            }
+            else
+            {
+                backGround.sprite = _endingSprites[0];
+            }
         }
     }
 

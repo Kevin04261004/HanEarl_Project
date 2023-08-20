@@ -13,7 +13,9 @@ public enum EInteractiveType
     Toilet_Key_Event,
     Mirror_Event,
     Roof_Table_Event,
-    SafeBox
+    SafeBox,
+    B_Act8,
+    
 }
 
 public class KInteractiveObject : MonoBehaviour
@@ -184,6 +186,16 @@ public class KInteractiveObject : MonoBehaviour
                 if (TryGetComponent(out KAfterDialogue d1))
                 {
                     JSafeBox.Instance.dia = d1;
+                }
+                break;
+            case EInteractiveType.B_Act8:
+                if (TryGetComponent(out KBManager kbManager2))
+                {
+                    kbManager2.SecondMeetInteractiveRoutine();
+                }
+                if (TryGetComponent(out KAfterDialogue d4))
+                {
+                    d4.Used();
                 }
                 break;
             default:
