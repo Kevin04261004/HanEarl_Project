@@ -9,15 +9,11 @@ public class KScreenManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _check_TMP;
     private List<Resolution> _resolutions = new List<Resolution>();
     [SerializeField] private int _resolutionNum;
-    private void Awake()
-    {
-        Application.targetFrameRate = 60;
-        _isFullScreen = false;
-        SetFullScreen();
-    }
-
+    
     private void Start()
     {
+        _isFullScreen = Screen.fullScreen;
+        _check_TMP.text = _isFullScreen ? "V" : string.Empty;
         InitUI();
     }
 
@@ -85,6 +81,10 @@ public class KScreenManager : MonoBehaviour
 
     public void OnClick_ScreenResolution_Btn()
     {
-        UnityEngine.Device.Screen.SetResolution(_resolutions[_resolutionNum].width, _resolutions[_resolutionNum].height, _isFullScreen);
+        Screen.SetResolution(_resolutions[_resolutionNum].width, _resolutions[_resolutionNum].height, _isFullScreen);
+        KDontDestroyOnLoadManager.Instance._settingData._width = Screen.width;
+        KDontDestroyOnLoadManager.Instance._settingData._width = Screen.height;
+        KDontDestroyOnLoadManager.Instance._settingData._isFullScreen = Screen.fullScreen;
+        KDontDestroyOnLoadManager.Instance.SaveSettingData();
     }
 }
