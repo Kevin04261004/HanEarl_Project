@@ -13,6 +13,7 @@ public class JDataManager : MonoBehaviour
     public JPlayerData playerData;
     //public JItemData itemData;
     public GStageSaveData stageData;
+    // 이 변수들처럼 변수 만들고
     private void Awake()
     {
         if (instance == null)
@@ -24,7 +25,8 @@ public class JDataManager : MonoBehaviour
         Load(out playerData);
         //Load(out itemData);
         Load(out stageData);
-        Load(out playerData);
+        // 여기서 로드하는 방식임
+        
     }
 
     public void SaveData<T>(T wantData) where T : JData

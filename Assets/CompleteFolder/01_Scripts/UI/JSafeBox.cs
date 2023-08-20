@@ -63,7 +63,7 @@ public class JSafeBox : MonoBehaviour
                 break;
             // 천유현 + 주인공
             case "1052":
-                if (JDataManager.instance.stageData.currentStageNum != 8)
+                if (JDataManager.instance.stageData.currentStageNum != 9)
                     return;
                 SetSBUIActiveFalse();
                 _opened = true;

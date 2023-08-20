@@ -40,11 +40,6 @@ public class KAfterDialogue : MonoBehaviour
 
     public void Used1()
     {
-        if (BeforeObj != null)
-        {
-            BeforeObj.SetActive(false);
-        }
-
         if (NewObj != null)
         {
             NewObj.SetActive(true);
@@ -53,10 +48,6 @@ public class KAfterDialogue : MonoBehaviour
 
     public void Used2()
     {
-        if (BeforeObj3 != null)
-        {
-            BeforeObj3.SetActive(false);
-        }
         if (NewObj3 != null)
         {
             NewObj3.SetActive(true);
