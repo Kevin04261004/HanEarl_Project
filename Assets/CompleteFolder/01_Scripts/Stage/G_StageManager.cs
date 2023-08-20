@@ -19,7 +19,7 @@ public class G_StageManager : MonoBehaviour
     [SerializeField]
     private List<JItem> wantItems;
     private GStageSaveData stageSaveData; // = new GStageSaveData();
-    
+
     [field: SerializeField]
     public List<G_StageInformation> stageData { get; private set; }
 
@@ -64,13 +64,29 @@ public class G_StageManager : MonoBehaviour
         currentData = stageData[currentStageNum];
 
         SetActiveObject();
-        switch (currentStageNum)
+
+        // currentStagenum = 4 => act4.1
+        //                   5 => act 5
+
+        if (currentStageNum >= 3)
         {
-            case 4:
-                G_InventorySystem.Instance.J_AddItem(wantItems[0]);
-                break;
-            case 5:
-                break;
+            G_InventorySystem.Instance.J_AddItem(wantItems[0]);
+        }
+        if (currentStageNum >= 4)
+        {
+            G_InventorySystem.Instance.J_AddItem(wantItems[1]);
+        }
+        if (currentStageNum >= 5)
+        {
+            G_InventorySystem.Instance.J_AddItem(wantItems[2]);
+            G_InventorySystem.Instance.J_AddItem(wantItems[4]);
+            G_InventorySystem.Instance.J_AddItem(wantItems[5]);
+            G_InventorySystem.Instance.J_AddItem(wantItems[6]);
+        }
+        if(currentStageNum >= 6)
+        {
+            G_InventorySystem.Instance.J_AddItem(wantItems[3]);
+
         }
 
         endingManager.NormalAndTrueEndingTextObjSetting();
@@ -149,7 +165,7 @@ public class G_StageManager : MonoBehaviour
         {
             stageSaveData.playedActName.Add(currentData.actName);
         }
-        
+
         /* 여기까지 도윤 */
         JDataManager.instance.SaveData(stageSaveData);
     }

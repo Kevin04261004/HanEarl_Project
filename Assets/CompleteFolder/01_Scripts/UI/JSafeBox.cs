@@ -44,7 +44,6 @@ public class JSafeBox : MonoBehaviour
         {
             _currentNum += _nums[i].num.ToString();
         }
-        Debug.Log(_currentNum);
     }
 
     public void CheckPassword()
@@ -54,13 +53,18 @@ public class JSafeBox : MonoBehaviour
         {
             // 이설빈 + 주인공
             case "1331":
+                Debug.Log(JDataManager.instance.stageData.currentStageNum);
+                if (JDataManager.instance.stageData.currentStageNum != 4)
+                    return;
                 SetSBUIActiveFalse();
                 _opened = true;
                 // 화장실열쇠, 천유현 생활기록부 떨치기였나
                 dia.Used1();
                 break;
             // 천유현 + 주인공
-            case "뭐였더라":
+            case "1052":
+                if (JDataManager.instance.stageData.currentStageNum != 8)
+                    return;
                 SetSBUIActiveFalse();
                 _opened = true;
                 dia.Used2();

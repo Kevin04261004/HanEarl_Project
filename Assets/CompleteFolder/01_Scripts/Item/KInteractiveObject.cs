@@ -91,6 +91,10 @@ public class KInteractiveObject : MonoBehaviour
                 {
                     kcManager.FirstMeetInteractiveRoutine();
                 }
+                if (TryGetComponent(out KAfterDialogue d10))
+                {
+                    d10.Used();
+                }
                 break;
             case EInteractiveType.B_Act6:
                 if (TryGetComponent(out KBManager kbManager))

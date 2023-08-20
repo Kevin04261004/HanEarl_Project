@@ -21,6 +21,10 @@ public class G_RooftopTable : MonoBehaviour
 
     private IEnumerator InteractiveCoroutine()
     {
+        //if (TryGetComponent(out JItem jitem))
+        //{
+        //    jitem.Get();
+        //}
         yield return new WaitForSeconds(2);
         b_obj.SetActive(true);
         yield return new WaitForSeconds(1);
