@@ -6375,7 +6375,7 @@ MonoBehaviour:
     isInvn: 0
   itemSprite:
   - {fileID: 21300000, guid: b7be357aca043f34d968c32d30929181, type: 3}
-  - {fileID: 21300000, guid: 88c4705d9266ee2478b2908418ff128d, type: 3}
+  - {fileID: 21300000, guid: 71f8915a179da454cbfd6aab813b529c, type: 3}
   itemImage: {fileID: 21300000, guid: ed845063e5307f24a997258950d9418f, type: 3}
 --- !u!1 &129230240
 GameObject:
