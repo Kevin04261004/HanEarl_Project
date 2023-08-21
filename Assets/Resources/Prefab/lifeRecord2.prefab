@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemData:
-    itemName: "\uC774\uC124\uBE48\uC758 \uC0DD\uD65C\uAE45\uB85D\uBD80"
+    itemName: "\uC774\uC124\uBE48\uC758 \uC0DD\uD65C\uAE30\uB85D\uBD80"
     index: 0
     isGet: 0
     isInvn: 0
