@@ -1,7 +1,16 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
+
+[Serializable]
+public struct KBGMs
+{
+    public AudioClip[] _bgms;
+}
 
 public class KSoundManager : MonoBehaviour
 {
@@ -17,6 +26,7 @@ public class KSoundManager : MonoBehaviour
     public static KSoundManager Instance;
     [SerializeField] private float _baseAudioSourceVolume = 0.3f;
     [SerializeField] private AudioClip _followEnemyBGM;
+    [SerializeField] private List<KBGMs> _stageAudioClipList;
     public void Awake()
     {
         if (!Instance)
@@ -106,7 +116,12 @@ public class KSoundManager : MonoBehaviour
                     {
                         _BGMCount = 0;
                     }
-                    _bgm_AudioSource.clip = _bgm_AudioClips[Gacha()];
+
+                    AudioClip audioClip = GachaAudioClip();
+                    if (audioClip)
+                    {
+                        _bgm_AudioSource.clip = audioClip;   
+                    }
                     _bgm_AudioSource.volume = _baseAudioSourceVolume;
                     _bgm_AudioSource.Play();
                 }
@@ -115,9 +130,14 @@ public class KSoundManager : MonoBehaviour
                 yield break;
         }
     }
-    private int Gacha()
+    private AudioClip GachaAudioClip()
     {
-        int temp = Random.Range(0, _bgm_AudioClips.Length);
-        return temp;
+        if (_stageAudioClipList.Count < JDataManager.instance.stageData.currentStageNum)
+        {
+            return null;
+        }
+        int index = 0;
+        index = Random.Range(0,_stageAudioClipList[JDataManager.instance.stageData.currentStageNum]._bgms.Length);
+        return _stageAudioClipList[JDataManager.instance.stageData.currentStageNum]._bgms[index];
     }
 }

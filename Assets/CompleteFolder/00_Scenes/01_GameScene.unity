@@ -21453,7 +21453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417743958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37, y: 3.5, z: -10}
+  m_LocalPosition: {x: -40, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43793,7 +43793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790552547}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16, y: -15, z: -10}
+  m_LocalPosition: {x: -40, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45309,7 +45309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828639439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36, y: 11, z: -10}
+  m_LocalPosition: {x: 5, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46945,7 +46945,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 33554431
+    rgba: 2986344447
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -58242,7 +58242,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2684354559
+    rgba: 335544319
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -58857,7 +58857,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149789850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: -33, z: -10}
+  m_LocalPosition: {x: -40, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -78453,7 +78453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471569720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50, y: 5, z: -10}
+  m_LocalPosition: {x: -40, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -80011,7 +80011,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492609728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16, y: -35, z: -10}
+  m_LocalPosition: {x: -40, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -80044,7 +80044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498325222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50, y: 5, z: -10}
+  m_LocalPosition: {x: -40, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -82082,7 +82082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578139800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -46.62963, y: 5, z: -10}
+  m_LocalPosition: {x: -40, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -84872,9 +84872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC774\uACF3\uC744 \uD0C8\uCD9C\uD558\uB77C\uACE0\u2026? \uADF8\uAC8C
-    \uB3C4\uB300\uCCB4 \uBB34\uC2A8 \uB9D0\uC774\uC9C0\u2026\n\u2026\uB2E4\uC2DC
-    \uD574\uC57C \uD560 \uAC83\uC744 \uD558\uC790."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8af16097a69c5c84ba56dc01a57d655d, type: 2}
   m_sharedMaterial: {fileID: -806820259733106442, guid: 8af16097a69c5c84ba56dc01a57d655d, type: 2}
@@ -84883,8 +84881,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 50331647
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -85749,6 +85747,61 @@ MonoBehaviour:
   _uiManager: {fileID: 1671671338}
   _baseAudioSourceVolume: 0.3
   _followEnemyBGM: {fileID: 8300000, guid: 373f382781193f54b9a8146aa151ab49, type: 3}
+  _stageAudioClipList:
+  - _bgms:
+    - {fileID: 8300000, guid: d6f82e4830ffa2142a22b29bed0f733b, type: 3}
+    - {fileID: 8300000, guid: 32a230156c24918439f17988d971279f, type: 3}
+    - {fileID: 8300000, guid: 932cd9704ad19b24fa8c12420be23b93, type: 3}
+    - {fileID: 8300000, guid: 4d6170474b03708439f61f6be1d878a0, type: 3}
+    - {fileID: 8300000, guid: ef2cfb8539e5af147ac2bd0befaa33cf, type: 3}
+  - _bgms:
+    - {fileID: 8300000, guid: d6f82e4830ffa2142a22b29bed0f733b, type: 3}
+    - {fileID: 8300000, guid: 32a230156c24918439f17988d971279f, type: 3}
+    - {fileID: 8300000, guid: 932cd9704ad19b24fa8c12420be23b93, type: 3}
+    - {fileID: 8300000, guid: 4d6170474b03708439f61f6be1d878a0, type: 3}
+    - {fileID: 8300000, guid: ef2cfb8539e5af147ac2bd0befaa33cf, type: 3}
+  - _bgms:
+    - {fileID: 8300000, guid: d6f82e4830ffa2142a22b29bed0f733b, type: 3}
+    - {fileID: 8300000, guid: 32a230156c24918439f17988d971279f, type: 3}
+    - {fileID: 8300000, guid: 932cd9704ad19b24fa8c12420be23b93, type: 3}
+    - {fileID: 8300000, guid: 4d6170474b03708439f61f6be1d878a0, type: 3}
+    - {fileID: 8300000, guid: ef2cfb8539e5af147ac2bd0befaa33cf, type: 3}
+  - _bgms:
+    - {fileID: 8300000, guid: d6f82e4830ffa2142a22b29bed0f733b, type: 3}
+    - {fileID: 8300000, guid: 32a230156c24918439f17988d971279f, type: 3}
+    - {fileID: 8300000, guid: 932cd9704ad19b24fa8c12420be23b93, type: 3}
+    - {fileID: 8300000, guid: 4d6170474b03708439f61f6be1d878a0, type: 3}
+    - {fileID: 8300000, guid: ef2cfb8539e5af147ac2bd0befaa33cf, type: 3}
+  - _bgms:
+    - {fileID: 8300000, guid: d6f82e4830ffa2142a22b29bed0f733b, type: 3}
+    - {fileID: 8300000, guid: 32a230156c24918439f17988d971279f, type: 3}
+    - {fileID: 8300000, guid: 932cd9704ad19b24fa8c12420be23b93, type: 3}
+    - {fileID: 8300000, guid: 4d6170474b03708439f61f6be1d878a0, type: 3}
+    - {fileID: 8300000, guid: ef2cfb8539e5af147ac2bd0befaa33cf, type: 3}
+  - _bgms:
+    - {fileID: 8300000, guid: d6f82e4830ffa2142a22b29bed0f733b, type: 3}
+    - {fileID: 8300000, guid: 32a230156c24918439f17988d971279f, type: 3}
+    - {fileID: 8300000, guid: 932cd9704ad19b24fa8c12420be23b93, type: 3}
+    - {fileID: 8300000, guid: 4d6170474b03708439f61f6be1d878a0, type: 3}
+    - {fileID: 8300000, guid: ef2cfb8539e5af147ac2bd0befaa33cf, type: 3}
+  - _bgms:
+    - {fileID: 8300000, guid: d6f82e4830ffa2142a22b29bed0f733b, type: 3}
+    - {fileID: 8300000, guid: 32a230156c24918439f17988d971279f, type: 3}
+    - {fileID: 8300000, guid: 932cd9704ad19b24fa8c12420be23b93, type: 3}
+    - {fileID: 8300000, guid: 4d6170474b03708439f61f6be1d878a0, type: 3}
+    - {fileID: 8300000, guid: ef2cfb8539e5af147ac2bd0befaa33cf, type: 3}
+  - _bgms:
+    - {fileID: 8300000, guid: d00148b131f4b7841a4ef5c218fb2a11, type: 3}
+    - {fileID: 8300000, guid: 32a230156c24918439f17988d971279f, type: 3}
+    - {fileID: 8300000, guid: a492507150aad2e4086f7d2c36c4e5bb, type: 3}
+  - _bgms:
+    - {fileID: 8300000, guid: acc683d4ed7dd5e49b037af1c3112446, type: 3}
+    - {fileID: 8300000, guid: 932cd9704ad19b24fa8c12420be23b93, type: 3}
+    - {fileID: 8300000, guid: a492507150aad2e4086f7d2c36c4e5bb, type: 3}
+  - _bgms:
+    - {fileID: 8300000, guid: d00148b131f4b7841a4ef5c218fb2a11, type: 3}
+    - {fileID: 8300000, guid: 32a230156c24918439f17988d971279f, type: 3}
+    - {fileID: 8300000, guid: a492507150aad2e4086f7d2c36c4e5bb, type: 3}
 --- !u!1 &1668352379
 GameObject:
   m_ObjectHideFlags: 0
@@ -98696,7 +98749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873344074}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50, y: 5, z: -10}
+  m_LocalPosition: {x: -40, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

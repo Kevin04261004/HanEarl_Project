@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uC74C... \uAE40\uB3C4\uC724 \uC624\uB79C\uB9CC\uC774\uC57C..."
+  _subtitle_TMP: "\uC74C... \uD50C\uB808\uC774\uC5B4 \uC624\uB79C\uB9CC\uC774\uC57C..."
 --- !u!114 &-6966630788587249986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uAE40\uB3C4\uC724"
+  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4"
 --- !u!114 &-4770133781964091671
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51233627c4f1e6e49b914ccd39ddca83, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  _subtitle_TMP: "\uAE40\uB3C4\uC724"
+  _subtitle_TMP: "\uD50C\uB808\uC774\uC5B4"
 --- !u!114 &-3352626808576941209
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1352,7 +1352,25 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -1379,7 +1397,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
