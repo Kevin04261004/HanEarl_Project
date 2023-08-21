@@ -83,7 +83,7 @@ public class G_StageManager : MonoBehaviour
             G_InventorySystem.Instance.J_AddItem(wantItems[5]);
             G_InventorySystem.Instance.J_AddItem(wantItems[6]);
         }
-        if(currentStageNum >= 6)
+        if(currentStageNum >= 7)
         {
             G_InventorySystem.Instance.J_AddItem(wantItems[3]);
 
