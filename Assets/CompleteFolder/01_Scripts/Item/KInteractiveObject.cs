@@ -20,9 +20,13 @@ public enum EInteractiveType
 
 public class KInteractiveObject : MonoBehaviour
 {
-    [SerializeField] private EInteractiveType _interactiveType;
-    [SerializeField] private KDialogueEvent _dialogueEvent;
-    [SerializeField] private KDialogueReader _dialogueReader;
+    [SerializeField]
+    [Tooltip("121")]
+    private EInteractiveType _interactiveType;
+    [SerializeField, Tooltip("12312")]
+    private KDialogueEvent _dialogueEvent;
+    [SerializeField] [Tooltip("213")]
+    private KDialogueReader _dialogueReader;
     [SerializeField] private KDialogueEvent _secondDialogueEvent;
     [SerializeField] private short _interactiveCount;
     [SerializeField] private bool normalEndingChange = false;
